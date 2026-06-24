@@ -1,0 +1,343 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+
+% \section{Giới thiệu}
+
+% \subsection{Phân tích bài toán}
+
+% \subsection{Tổng quan hệ thống}
+
+% \section{Nguyên lý thiết kế}
+
+% \subsection{Two U-NetR Structure}
+
+% \cite{hatamizadeh_unetr_2021}
+
+% \cite{lee_end--end_2022}
+
+% \cite{almadani_one-dimensional_2023}
+
+% \subsection{KAN-ViT - Replacement for MLP in Vision Transformer}
+
+
+% \subsection{Proposed KAN-WNetR Structure}
+
+% \section{Training strat and implementation}
+
+% \subsection{Hàm Huber Loss}
+
+% \subsection{Tham số tối ưu mô hình}
+
+\section{Mô hình MiT-UNET (Mixed Transformer UNET)}
+
+% \subsection{KAN, KAN-ViT và tích hợp vào kiến trúc KAN-WNETR}
+
+% \subsubsection{Kolmogorov--Arnold Networks (KAN) và đối chiếu với MLP}
+% Trong UNETR/W-NETR, mỗi Transformer encoder block gồm hai nhánh chính: self-attention và nhánh feed-forward (MLP). Cụ thể, đầu ra sau attention được đưa qua MLP theo dạng residual; MLP trong W-NETR được mô tả là chuỗi \textit{hai lớp tuyến tính} với kích hoạt \textit{GELU}. \cite{wnetr}
+% Về mặt công thức:
+% \begin{equation}
+%   z_i'=\mathrm{MSA}(\mathrm{Norm}(z_{i-1}))+z_{i-1}, \qquad
+%   z_i=\mathrm{MLP}(\mathrm{Norm}(z_i'))+z_i'.
+% \end{equation}
+% \cite{almadani_one-dimensional_2023}
+
+% Khác với MLP (học ma trận trọng số tuyến tính và dùng hàm kích hoạt cố định), KAN đặt \textit{hàm kích hoạt có thể học} trên các cạnh (edges) của mạng, và các hàm này thường được tham số hoá bằng spline (ví dụ B-spline). \cite{kanvit}
+% Một dạng cài đặt điển hình là \textit{residual activation}:
+% \begin{equation}
+%   f(x)=b(x)+\mathrm{spline}(x), \qquad
+%   \mathrm{spline}(x)=\sum_t c_t\,B_t(x),
+% \end{equation}
+% trong đó $b(x)$ là hàm nền và $\{B_t(x)\}$ là các B-spline, với các hệ số $c_t$ được học. \cite{kanvit}
+% Nhìn tổng thể, KAN chuyển trọng tâm từ “kích hoạt cố định + học tuyến tính” sang “học trực tiếp phi tuyến tham số hoá”, qua đó tăng tính biểu đạt và khả năng diễn giải của nhánh feed-forward. \cite{kanvit}
+
+% \subsubsection{KAN-ViT: thay thế MLP trong ViT bằng KAN}
+% KAN-ViT được xây dựng dựa trên cấu hình ViT, nhưng thay thế \textit{các lớp MLP trong encoder block} (và cả MLP head) bằng các lớp KAN, nhằm tăng độ chính xác và tính diễn giải nhờ cơ chế kích hoạt spline có thể học. \cite{kanvit}
+% Trong mỗi encoder module, self-attention được giữ nguyên, và nhánh feed-forward được thay bởi KAN:
+% \begin{equation}
+%   z_\ell'=\mathrm{MSA}(\mathrm{LN}(z_{\ell-1}))+z_{\ell-1}, \qquad
+%   z_\ell=\mathrm{KAN}(\mathrm{LN}(z_\ell'))+z_\ell', \quad \ell=1,\dots,L.
+% \end{equation}
+% \cite{kanvit}
+
+% \subsubsection{Tích hợp KAN-ViT vào W-NETR: kiến trúc KAN-WNETR}
+% W-NETR gồm \textit{hai UNETR 1D liên kết} tạo dạng chữ W: nhánh phải cho trích xuất fECG và nhánh trái cho trích xuất mECG. \cite{wnetr}
+% Điểm mấu chốt của W-NETR là cơ chế \textit{loại bỏ đặc trưng mECG} khỏi nhánh fECG bằng phép trừ tại \textit{mỗi bước encoder} và sau đó áp dụng $\tanh$. \cite{wnetr}
+
+% Đối với UNETR 1D trong W-NETR, tín hiệu đầu vào cửa sổ $992\times 1\times C$ được chia thành các patch không chồng lấp kích thước $N=16$; mỗi patch được chiếu tuyến tính lên không gian embedding kích thước $K=360$, và số lớp Transformer là $L=12$. \cite{wnetr}
+% Các đặc trưng skip được trích tại các tầng Transformer $i\in\{3,6,9,12\}$ để ghép với decoder CNN. \cite{wnetr}
+
+% Trong KAN-WNETR đề xuất, toàn bộ khung W-NETR được giữ nguyên (hai nhánh UNETR + cơ chế feature elimination), nhưng \textit{các encoder block ViT} bên trong mỗi UNETR được nâng cấp theo hướng KAN-ViT: thay nhánh MLP bằng nhánh KAN (tức KAN thay MLP trong transformer block), trong khi MSA, residual và normalization được giữ nguyên. \cite{wnetr,kanvit}
+
+% (Gợi ý) cần gói: \usepackage{amsmath,amssymb}
+
+\subsection{KAN, KAN-ViT và tích hợp vào KAN-WNETR}
+
+\subsubsection{KAN là gì và khác MLP ở đâu?}
+
+\paragraph{MLP (Feed-Forward Network) trong Transformer/Vision Transformer.}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{Hinhve/image_42.png}
+  \caption{Cấu trúc của một Transformer Encoder}
+  \label{fig:example_image}
+  
+\end{figure}
+
+Trong một Transformer encoder block tiêu chuẩn, nhánh \textbf{self-attention} xử lý tương quan toàn cục giữa token/patch,
+còn nhánh \textbf{feed-forward} (thường gọi là MLP/FFN) thực hiện biến đổi phi tuyến theo từng token.
+
+\begin{itemize}
+  \item Dạng điển hình:
+    \begin{equation}
+      \mathrm{FFN}(x)=W_2\,\sigma(W_1x+b_1)+b_2,
+    \end{equation}
+    với $\sigma$ là kích hoạt cố định (GELU/ReLU), $W_1,W_2$ là trọng số tuyến tính học được.
+
+  \item Vai trò của MLP: tăng năng lực biểu diễn (representation capacity) sau attention, trộn thông tin theo chiều kênh (channel mixing),
+    và tạo phi tuyến để mô hình hoá quan hệ phức tạp.
+
+  \item Điểm yếu theo hướng \textit{robust + interpretability}: phi tuyến cố định $\rightarrow$ độ mềm/cứng phụ thuộc chủ yếu vào việc học ma trận tuyến tính;
+    khi dữ liệu có cấu trúc phi tuyến mạnh (nhiễu biến thiên theo bối cảnh, biên độ thay đổi, artifacts), MLP có thể cần nhiều tham số/độ rộng để khớp tốt
+    và dễ overfit.
+\end{itemize}
+
+\paragraph{KAN (Kolmogorov--Arnold Networks): ``đảo trục'' từ học tuyến tính sang học phi tuyến.}
+KAN xuất phát từ định lý biểu diễn Kolmogorov--Arnold: hàm nhiều biến liên tục có thể biểu diễn bằng tổ hợp các hàm một biến.
+Ý tưởng kiến trúc KAN (ở mức ``khối'' dùng trong deep learning) là:
+
+\begin{itemize}
+  \item Thay vì ``\textbf{tuyến tính học được + kích hoạt cố định}'' (MLP), KAN dùng \textbf{kích hoạt có thể học} (learnable activation)
+    đặt trên \textbf{các cạnh} (edges) kết nối giữa các nút.
+
+  \item Có thể hiểu một lớp KAN như một ``ma trận hàm'' $\{\phi_{j,i}(\cdot)\}$ thay cho ma trận trọng số $W$:
+    \begin{equation}
+      y_j = \sum_i \phi_{j,i}(x_i),
+    \end{equation}
+    trong đó mỗi $\phi_{j,i}$ là một hàm 1D có tham số.
+
+  \item Thực thi phổ biến: tham số hoá bằng \textbf{spline (B-spline)} để học trực tiếp hình dạng phi tuyến.
+\end{itemize}
+
+\paragraph{Residual activation trong KAN và spline parameterization.}
+Một cách cài đặt thực tế thường dùng là \textit{residual activation}:
+\begin{equation}
+  \phi(x) = w\big(b(x)+s(x)\big),
+\end{equation}
+trong đó $b(x)$ là hàm nền (base function), và $s(x)$ là spline học được, thường là tổ hợp tuyến tính của các B-spline:
+\begin{equation}
+  s(x) = \sum_{t} c_t B_t(x).
+\end{equation}
+% Điểm then chốt: thay vì phụ thuộc vào $W_1,W_2$ để ``bẻ cong'' không gian, KAN học trực tiếp ``độ cong'' thông qua spline.
+
+\paragraph{Hệ quả khi so KAN với MLP.}
+\begin{enumerate}
+  \item \textbf{Biểu diễn:} KAN có xu hướng biểu diễn phi tuyến mạnh với ít nút hơn (mỗi cạnh mang phi tuyến giàu tham số).
+  \item \textbf{Tính diễn giải:} vì $\phi_{j,i}$ là hàm 1D có thể vẽ/quan sát, có thể đọc ``đóng góp'' của từng biến/đường nối.
+  \item \textbf{Độ phức tạp:} spline có nhiều tham số hơn một trọng số tuyến tính; nếu giữ cùng độ rộng $N$, KAN có thể nặng hơn MLP.
+    Tuy nhiên, KAN thường cần $N$ nhỏ hơn để đạt hiệu năng tương đương nên tổng tham số có thể giảm.
+  \item \textbf{Tối ưu hoá:} KAN thêm bậc tự do ở phi tuyến $\rightarrow$ khớp tốt hơn nhưng cần chiến lược huấn luyện/regularization hợp lý (grid, pruning).
+  \item \textbf{Grid refinement + sparsity/pruning:} tăng độ phân giải spline để cải thiện sai số mà không phải thiết kế lại toàn mô hình; đồng thời khuyến khích thưa hoá rồi pruning để tăng tính diễn giải.
+\end{enumerate}
+
+\subsubsection{KAN-ViT: thay MLP trong ViT bằng KAN}
+
+ViT chia input thành patch, chiếu tuyến tính thành embedding, cộng positional embedding, rồi qua $L$ encoder blocks.
+Encoder block chuẩn:
+\begin{equation}
+  z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},
+\end{equation}
+\begin{equation}
+  z_\ell = \mathrm{MLP}(\mathrm{LN}(z_\ell')) + z_\ell',
+\end{equation}
+trong đó MSA là multi-head self-attention, LN là layer norm.
+
+\paragraph{KAN-ViT: giữ MSA, thay MLP bằng KAN.}
+\cite{ye_elevating_2024}
+KAN-ViT giữ nguyên cơ chế attention và residual, nhưng thay FFN:
+\begin{equation}
+  z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},
+\end{equation}
+\begin{equation}
+  z_\ell = \mathrm{KAN}(\mathrm{LN}(z_\ell')) + z_\ell'.
+\end{equation}
+Ý nghĩa: attention vẫn học quan hệ token-to-token (toàn cục), còn nhánh phi tuyến ``theo token'' được tăng năng lực bằng KAN.
+
+Trong ViT/Transformer, MSA quyết định cơ chế ``gán trọng số'' để trộn thông tin giữa token, còn MLP quyết định mức độ phi tuyến hậu attention.
+Can thiệp vào MLP hợp lý vì:
+\begin{itemize}
+  \item MLP là nơi mô hình ``nắn'' đặc trưng phi tuyến theo kênh.
+  \item KAN cung cấp phi tuyến có thể học trực tiếp, tiềm năng tốt hơn với mẫu nhiễu/phi tuyến khó tuyến tính hoá bằng $W_2\sigma(W_1\cdot)$.
+\end{itemize}
+
+\paragraph{Hệ quả khi đem KAN-ViT sang 1D biosignal.}
+Dù KAN-ViT được đề xuất cho ảnh 2D, bản chất ``Transformer encoder + FFN'' là bất biến theo miền. Với tín hiệu 1D:
+\begin{itemize}
+  \item Token = patch theo trục thời gian.
+  \item Attention học phụ thuộc xa (long-range dependencies) giữa các đoạn thời gian.
+  \item KAN-FFN tăng năng lực biến đổi phi tuyến trên embedding của từng token, hữu ích khi:
+    (i) biên độ thay đổi theo đối tượng/lead,
+    (ii) tồn tại artifact cục bộ mạnh,
+    (iii) cần giữ hình thái (P/QRS/T) nhạy với phi tuyến và tỷ lệ.
+\end{itemize}
+
+\subsubsection{UNETR 1D và W-NETR: nền tảng kiến trúc cho tách fECG}
+
+\paragraph{UNETR: U-Net + Transformer encoder.}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Hinhve/image_44.png}
+  \caption{Cấu trúc model UNETR \cite{hatamizadeh_unetr_2021}.}
+  \label{fig:example_image}
+  
+\end{figure}
+
+UNETR thay encoder CNN của U-Net bằng Transformer encoder để lấy ngữ cảnh toàn cục; decoder vẫn dùng CNN (1D) để phục hồi chi tiết cục bộ. \cite{hatamizadeh_unetr_2021}
+Với bài toán tách fECG từ maECG (single-channel), input $x\in\mathbb{R}^{992\times 1\times C}$ được patchify không chồng lấp kích thước $N=16$,
+chiếu tuyến tính lên embedding $K$, cộng positional embedding:
+\begin{equation}
+  z_0 = [x_1E;\,x_2E;\,\ldots;\,x_NE] + E_{pos}.
+\end{equation}
+Transformer có $L$ lớp; các tầng $i\in\{3,6,9,12\}$ được lấy làm skip features để ghép với decoder ở các mức phân giải khác nhau.
+
+\paragraph{W-NETR: ghép 2 UNETR thành cấu trúc chữ W.}
+
+W-NETR dùng hai UNETR 1D chạy song song \cite{lee_end--end_2022}:
+\begin{itemize}
+  \item Nhánh phải: tái tạo/chiết xuất \textbf{fECG}.
+  \item Nhánh trái: tái tạo \textbf{mECG}.
+\end{itemize}
+Khác biệt cốt lõi là cơ chế \textbf{mECG feature elimination}:
+\begin{itemize}
+  \item Ở mỗi bước encoder, đặc trưng mECG từ nhánh trái được \textbf{trừ} khỏi đặc trưng tương ứng ở nhánh phải.
+  \item Sau phép trừ áp dụng $\tanh$ để chặn biên và ổn định.
+\end{itemize}
+Trực giác: mô hình học đồng thời hai biểu diễn; dùng đặc trưng mECG như ``mẫu nền'' để khử khỏi nhánh fECG trong feature space.
+
+\subsubsection{KAN-WNETR: tích hợp KAN-ViT vào W-NETR}
+
+\paragraph{Nguyên tắc tích hợp.}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{Hinhve/KAN_WNETR_Pipeline.png}
+  \caption{Mô hình KAN-WNETR đề xuất: Tín hiệu ECG bụng của mẹ (maECG) được xử lý qua kiến trúc hai nhánh: một nhánh tái tạo ECG mẹ (mECG), nhánh còn lại trích xuất ECG thai (fECG).
+Cả hai nhánh bắt đầu bằng trích xuất đặc trưng bằng tích chập, sau đó là chuỗi các khối giảm mẫu. Các đường màu đỏ biểu diễn phép trừ đặc trưng mECG khỏi nhánh UNETR fECG (bên phải) tại mỗi bước encoder của Transformer. Hàm kích hoạt \\textit{tanh} được áp dụng sau phép trừ.}
+  \label{fig:example_image}
+  
+\end{figure}
+
+KAN-WNETR giữ nguyên macro-architecture của W-NETR:
+patchify 1D + positional embedding; $L=12$ encoder layers; skip từ $\{3,6,9,12\}$ sang decoder CNN;
+hai nhánh (mECG và fECG) + feature elimination (trừ + $\tanh$).
+Điểm thay đổi duy nhất là \textbf{thay MLP trong mọi Transformer encoder block} bằng \textbf{KAN block} (theo KAN-ViT).
+
+\paragraph{Khối encoder sau thay thế.}
+Với mỗi encoder block $\ell$ ở từng nhánh:
+\begin{equation}
+  z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},
+\end{equation}
+\begin{equation}
+  z_\ell = \mathrm{KAN}(\mathrm{LN}(z_\ell')) + z_\ell'.
+\end{equation}
+Tại điểm ghép W (feature elimination), ở từng mức/step tương ứng:
+\begin{equation}
+  \tilde{z}_\ell^{(f)} = \tanh\big(z_\ell^{(f)} - z_\ell^{(m)}\big),
+\end{equation}
+trong đó $(f)$ là nhánh fetal và $(m)$ là nhánh maternal.
+
+Thay MLP bằng KAN là thay đúng bộ phận chịu trách nhiệm:
+(i) phi tuyến theo token (giàu năng lực biểu diễn), (ii) tinh chỉnh embedding sau attention,
+trong khi vẫn giữ attention để học phụ thuộc xa. Do đó, KAN-WNETR kỳ vọng:
+giữ hình thái fECG (P/QRS/T) tốt hơn khi nhiễu biến thiên; giảm nhầm lẫn khi mECG/fECG overlap ở thời điểm QRS;
+tăng ổn định khi biên độ/lead thay đổi (spline activation có thể tự thích nghi).
+
+% \paragraph{Các lựa chọn thiết kế quan trọng.}
+% \begin{enumerate}
+%   \item \textbf{KAN ở nhánh nào?} (A) cả hai nhánh; (B) chỉ nhánh fetal để giảm compute.
+%   \item \textbf{Độ rộng/hidden ratio:} nếu KAN đắt theo lưới spline, cân nhắc giảm width/ratio so với MLP-FFN truyền thống.
+%   \item \textbf{Grid resolution và refinement:} dùng lưới thưa để học thô, tăng grid để học tinh; kết hợp weight decay + sparsity/pruning.
+%   \item \textbf{Tương tác với feature elimination:} nếu KAN làm feature phi tuyến mạnh hơn, phép trừ nhạy hơn $\rightarrow$ cần LN ổn định, $\tanh$ giữ biên, và (nếu cần) hệ số scale trước khi trừ.
+%   \item \textbf{Decoder CNN vẫn cần thiết:} để phục hồi chi tiết cục bộ và giảm quá trơn khi tái tạo waveform.
+% \end{enumerate}
+
+\subsubsection{Đóng góp của KAN-WNETR}
+\begin{itemize}
+  \item W-NETR giải quyết bài toán tách nguồn theo hướng hai nhánh + khử đặc trưng mECG trong latent space.
+  \item ViT/Transformer encoder cung cấp ngữ cảnh toàn cục, khắc phục receptive field hạn chế của CNN.
+  \item KAN thay MLP trong encoder block để tăng năng lực phi tuyến token-wise, cải thiện mô hình hoá biến thiên phi tuyến trong maECG và bảo toàn hình thái fECG.
+  \item KAN-WNETR kết hợp: \textbf{global context (MSA) + learnable nonlinearity (KAN) + maternal feature subtraction (W) + local detail reconstruction (CNN decoder)}.
+\end{itemize}
+
+\section{Hàm Loss}
+\subsection{Hàm mất mát Huber (Huber Loss)}
+
+Trong bài toán hồi quy tín hiệu (ví dụ tái tạo fECG), hàm mất mát Huber thường được sử dụng để tăng tính \textit{robust} trước các điểm ngoại lai (outliers) hoặc các đoạn nhiễu đột biến. Huber loss kết hợp ưu điểm của MSE và MAE: với sai số nhỏ, hàm phạt theo bình phương (giúp tối ưu mượt và nhạy với sai số nhỏ), còn với sai số lớn, hàm phạt tuyến tính (giảm ảnh hưởng của outlier).
+
+Gọi residual (sai số) tại mẫu $i$ là
+\begin{equation}
+  r_i = y_i - \hat{y}_i,
+\end{equation}
+trong đó $y_i$ là giá trị mục tiêu (ground truth) và $\hat{y}_i$ là giá trị dự đoán của mô hình. Khi đó, Huber loss với ngưỡng $\delta>0$ được định nghĩa như sau:
+\begin{equation}
+  \mathcal{L}_\delta(r_i)=
+  \begin{cases}
+    \frac{1}{2}r_i^2, & |r_i|\le \delta,\\[4pt]
+    \delta\left(|r_i|-\frac{1}{2}\delta\right), & |r_i|>\delta.
+  \end{cases}
+\end{equation}
+
+Đạo hàm theo $r_i$ (gradient) có dạng:
+\begin{equation}
+  \frac{\partial \mathcal{L}_\delta}{\partial r_i}=
+  \begin{cases}
+    r_i, & |r_i|\le \delta,\\[4pt]
+    \delta\,\mathrm{sign}(r_i), & |r_i|>\delta,
+  \end{cases}
+\end{equation}
+cho thấy gradient bị chặn trong khoảng $\left[-\delta,\delta\right]$ khi sai số lớn, nhờ đó hạn chế việc một số ít điểm nhiễu mạnh chi phối quá trình cập nhật tham số.
+
+Với một cửa sổ tín hiệu có $T$ mẫu, loss tổng quát thường lấy trung bình:
+\begin{equation}
+  \mathcal{L}=\frac{1}{T}\sum_{i=1}^{T}\mathcal{L}_\delta(r_i).
+\end{equation}
+
+Tham số $\delta$ điều khiển mức độ gần MSE hoặc MAE: $\delta$ càng lớn thì loss gần MSE hơn; $\delta$ càng nhỏ thì loss gần MAE hơn.
+
+\section{Tham số điều chỉnh (Hyperparameters)}
+
+Để đánh giá hiệu quả của mô hình đề xuất, quá trình huấn luyện được thực hiện với cấu hình chi tiết như Bảng \ref{tab:hyper} dưới đây. Các tham số này được lựa chọn dựa trên thực nghiệm để tối ưu hóa hàm mất mát trên tập dữ liệu huấn luyện.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Các siêu tham số huấn luyện mô hình}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Hyperparameters} & \textbf{Giá trị}\\\hline
+    Số lượng Epochs & 80    \\\hline
+    Batch size & 64   \\\hline
+    Tốc độ học & 1e-4 \\\hline
+    Optimizer & Adam  \\\hline
+    Scheduler & CosineAnnealing \\\hline
+    Số workers & 4 \\\hline
+    Encoder & KAN-ViT \\\hline
+    Hàm mất mát & Huber  \\\hline
+
+  \end{tabular}
+  \label{tab:hyper}
+\end{table}
+
+\textbf{Cấu hình tối thiểu của training loop.}
+Mô hình được huấn luyện với optimizer Adam, sử dụng các tham số mặc định của Adam trong PyTorch
+($\beta_1=0.9$, $\beta_2=0.999$, $\epsilon=10^{-8}$, weight\_decay $=0$, amsgrad=False) và learning rate ban đầu
+$10^{-4}$ .
+Trong huấn luyện, learning rate được giữ cố định (không dùng scheduler) nhằm giảm số lượng siêu tham số cần tinh chỉnh
+và đảm bảo tái lập rõ ràng; theo hướng dẫn tái lập, cần công bố optimizer và learning-rate schedule (nếu có) cùng batch size.
+Mô hình được train trong $20$ epochs với batch size $B=32$, tương ứng số bước cập nhật mỗi epoch là
+$\left\lfloor N_{\text{train}}/32 \right\rfloor$ (do cơ chế chia batch), và tổng số bước cập nhật là
+$20\cdot\left\lfloor N_{\text{train}}/32 \right\rfloor$.
+Batch size được chọn ở mức vừa phải để cân bằng hiệu quả tính toán và độ nhiễu gradient; đồng thời cần lưu ý batch size
+tương tác mạnh với các hyperparameter của optimizer (đặc biệt learning rate), nên thay đổi batch size thường kéo theo
+retune learning rate và/hoặc regularization.
+
+\end{document}

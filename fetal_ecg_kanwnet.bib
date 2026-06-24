@@ -1,0 +1,588 @@
+
+@article{shokouhmand_fetal_2023,
+	title = {Fetal {Electrocardiogram} {Extraction} {Using} {Dual}-{Path} {Source} {Separation} of {Single}-{Channel} {Non}-{Invasive} {Abdominal} {Recordings}},
+	volume = {70},
+	issn = {1558-2531},
+	doi = {10.1109/TBME.2022.3189617},
+	abstract = {OBJECTIVE: The development of a method for non-invasive monitoring of fetal electrocardiogram (FECG) signals from single-channel abdominal recordings.
+METHODS: The dual-path source separation (DPSS) architecture is introduced for the simultaneous separation of fetal and maternal ECG signals from abdominal ECG recordings. DPSS initially denoises abdominal ECG (AECG) recordings using a generative dual-path long short-term memory (DP-LSTM) network. An inception module along with a series of DP-LSTM blocks is then employed to extract the masking maps associated with fetal and maternal components. Finally, these masking maps are weighted by the AECG recording to separate maternal and fetal ECG signals. The performance of this network is evaluated on 10 pregnancies from the fetal ECG synthetic database (FECGSYNDB), 22 cases of labor and pregnancy from the abdominal and direct fetal ECG database (ADFECGDB), and 69 pregnancies from set A of non-invasive FECG challenge (NIFECGC) datasets.
+RESULTS: F1-scores of 99.03\%, 97.7\%, and 95.3\% are reported for the detection of fetal QRS complexes in FECGSYNDB, ADFECGDB, and NIFECGC respectively. DPSS technique is also evaluated in terms of separability of fetal and maternal clusters. According to the clustering-based analyses, the average purity index of 0.9750, Jaccard index of 0.9705, and Davies-Bouldin index of 0.7429 demonstrate the high source separation capability of DPSS.
+CONCLUSION: The achieved performance suggests that DPSS enables accurate single-channel FECG extraction, and can replace state-of-the-art source separation techniques for this purpose.
+SIGNIFICANCE: This study signifies a fundamental step towards non-invasive fetal ECG monitoring systems, which favors at-home prenatal care.},
+	language = {eng},
+	number = {1},
+	journal = {IEEE transactions on bio-medical engineering},
+	author = {Shokouhmand, Arash and Tavassolian, Negar},
+	month = jan,
+	year = {2023},
+	keywords = {Abdomen, Algorithms, Electrocardiography, Female, Fetal Monitoring, Fetus, Humans, Pregnancy, Signal Processing, Computer-Assisted},
+	pages = {283--295},
+}
+
+@article{mohebbian_fetal_2022,
+	title = {Fetal {ECG} {Extraction} {From} {Maternal} {ECG} {Using} {Attention}-{Based} {CycleGAN}},
+	volume = {26},
+	copyright = {https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html},
+	issn = {2168-2194, 2168-2208},
+	url = {https://ieeexplore.ieee.org/document/9536378/},
+	doi = {10.1109/JBHI.2021.3111873},
+	abstract = {Non-invasive fetal electrocardiogram (FECG) is used to monitor the electrical pulse of the fetal heart. Decomposing the FECG signal from maternal ECG (MECG) is a blind source separation problem, which is hard due to the low amplitude of FECG, the overlap of R waves, and the potential exposure to noise from different sources. Traditional decomposition techniques, such as adaptive filters, require tuning, alignment, or preconfiguration, such as modeling the noise or desired signal. to map MECG to FECG efficiently. The high correlation between maternal and fetal ECG parts decreases the performance of convolution layers. Therefore, the masking region of interest using the attention mechanism is performed for improving signal generators' precision. The sine activation function is also used since it could retain more details when converting two signal domains. Three available datasets from the Physionet, including A\&D FECG, NI-FECG, and NI-FECG challenge, and one synthetic dataset using FECGSYN toolbox, are used to evaluate the performance. The proposed method could map abdominal MECG to scalp FECG with an average 98\% R-Square [CI 95\%: 97\%, 99\%] as the goodness of fit on A\&D FECG dataset. Moreover, it achieved 99.7 \% F1-score [CI 95\%: 97.8-99.9], 99.6\% F1-score [CI 95\%: 98.2\%, 99.9\%] and 99.3\% F1-score [CI 95\%: 95.3\%, 99.9\%] for fetal QRS detection on, A\&D FECG, NI-FECG and NI-FECG challenge datasets, respectively. These results are comparable to the state-of-the-art; thus, the proposed algorithm has the potential of being used for high-performance signal-tosignal conversion.},
+	language = {en},
+	number = {2},
+	urldate = {2026-02-28},
+	journal = {IEEE Journal of Biomedical and Health Informatics},
+	author = {Mohebbian, Mohammad Reza and Vedaei, Seyed Shahim and Wahid, Khan A. and Dinh, Anh and Marateb, Hamid Reza and Tavakolian, Kouhyar},
+	month = feb,
+	year = {2022},
+	pages = {515--526},
+}
+
+@inproceedings{zhu_unpaired_2017,
+	title = {Unpaired {Image}-{To}-{Image} {Translation} {Using} {Cycle}-{Consistent} {Adversarial} {Networks}},
+	url = {https://openaccess.thecvf.com/content_iccv_2017/html/Zhu_Unpaired_Image-To-Image_Translation_ICCV_2017_paper.html},
+	urldate = {2026-02-28},
+	author = {Zhu, Jun-Yan and Park, Taesung and Isola, Phillip and Efros, Alexei A.},
+	year = {2017},
+	pages = {2223--2232},
+}
+
+@inproceedings{goodfellow_generative_2014,
+	title = {Generative {Adversarial} {Nets}},
+	volume = {27},
+	url = {https://papers.nips.cc/paper_files/paper/2014/hash/f033ed80deb0234979a61f95710dbe25-Abstract.html},
+	urldate = {2026-02-28},
+	booktitle = {Advances in {Neural} {Information} {Processing} {Systems}},
+	publisher = {Curran Associates, Inc.},
+	author = {Goodfellow, Ian J. and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
+	year = {2014},
+}
+
+@inproceedings{darmawahyuni_deep_2023,
+	title = {Deep {Learning} for {Fetal} {QRS}-complex {Classification} in {Noninvasive} {Fetal} {Electrocardiogram}},
+	url = {https://ieeexplore.ieee.org/document/10277016},
+	doi = {10.1109/ICoDSA58501.2023.10277016},
+	abstract = {Fetal QRS-complex generated from an abdominal electrocardiogram (ECG) is an effective noninvasive tool for accurately measuring the fetus well-being during pregnancy. Classification of fetal QRS is significant to avoid fetal heart abnormalities, such as asphyxia, bradycardia, and hypoxia. However, accurately classifying the fetal QRS-complex is hard because the characteristic fetal ECG (fECG) has small amount of signal energy and it has undesired signal components, including recording devices, movement artifacts, and fetal brain activity. The sophisticated fECG signal processing for fetal QRS-complex classification has been used in the literature. However, they mostly use human intervention for feature extraction, leading to time-consume and raising the measurement error. Hence, this study investigates deep learning (DL) that performs automated feature extraction tasks excellently. DL has excellence amount of data scales, which is its ability to automatically learn and improve from data without the need for explicit programming. A sequence-to-sequence learning task was generated using a hybrid four convolution layers as a part of convolutional neural networks and bidirectional long short-term memory (ConvBiLSTM). As the results, the performance is outstanding; the accuracy, sensitivity, specificity, precision, and F1-score were 100\%. The observed results show the proposed ConvBiLSTM model is worth evaluating their effectiveness for fetal QRS-complex classification.},
+	urldate = {2026-02-28},
+	booktitle = {2023 {International} {Conference} on {Data} {Science} and {Its} {Applications} ({ICoDSA})},
+	author = {Darmawahyuni, Annisa and Tutuko, Bambang and Rachmatullah, Muhammad Naufal and Nurmaini, Siti and Firdaus, Firdaus and Ardiansyah, Muhammad and Sapitri, Ade Iriani and Islami, Anggun},
+	month = aug,
+	year = {2023},
+	keywords = {Convolution, Deep learning, Electrocardiography, Feature extraction, Programming, Sensitivity, Signal processing algorithms, convBiLSTM, deep learning, fetal electrocardiogram, qrs-complex},
+	pages = {215--218},
+}
+
+@inproceedings{ghonchi_common_2022,
+	address = {Rennes, France},
+	title = {Common {Spatial} {Pattern} with {Deep} {Learning} for {Fetal} {Heart} {Rate} {Monitoring}},
+	copyright = {https://doi.org/10.15223/policy-029},
+	isbn = {978-1-6654-8524-1},
+	url = {https://ieeexplore.ieee.org/document/9919257/},
+	doi = {10.1109/SiPS55645.2022.9919257},
+	abstract = {In this paper, the problem of monitoring the electrical pulse of the fetal heart using non-invasive electrocardiogram (ECG) signal is studied. To overcome challenges like the overlap between maternal and fetal heart components and noise in the mother’s abdomen signal, we propose a new single-channel signal processing technique to detect the fetal QRS (fQRS) events. We ﬁrst propose a modiﬁed sample entropy technique to ﬁlter out noisy and complex signal components. Then, common spatial pattern (CSP) technique is employed to ﬁnd a new sub-space with reduced overlap among maternal and fetal patterns. Then, a one-dimensional convolutional neural network is trained to detect the fQRS events from the abdominal ECG. The obtained results on several well-established datasets are promising and conﬁrm the effectiveness of the proposed approach.},
+	language = {en},
+	urldate = {2026-02-28},
+	booktitle = {2022 {IEEE} {Workshop} on {Signal} {Processing} {Systems} ({SiPS})},
+	publisher = {IEEE},
+	author = {Ghonchi, Hamidreza and Ferdowsi, Saideh and Abolghasemi, Vahid},
+	month = nov,
+	year = {2022},
+	pages = {1--6},
+}
+
+@article{darmawahyuni_accurate_2023,
+	title = {Accurate {Fetal} {QRS}-{Complex} {Classification} from {Abdominal} {Electrocardiogram} {Using} {Deep} {Learning}},
+	volume = {16},
+	issn = {1875-6883},
+	url = {https://doi.org/10.1007/s44196-023-00339-x},
+	doi = {10.1007/s44196-023-00339-x},
+	abstract = {Fetal heart monitoring during pregnancy plays a critical role in diagnosing congenital heart disease (CHD). A noninvasive fetal electrocardiogram (fECG) provides additional clinical information for fetal heart monitoring. To date, the analysis of noninvasive fECG is challenging due to the cancellation of maternal QRS-complexes, despite significant advances in electrocardiography. Fetal QRS-complex is highly considered to measure fetal heart rate to detect some fetal abnormalities such as arrhythmia. In this study, we proposed a deep learning (DL) framework that stacked a convolutional layer and bidirectional long short-term memory for fetal QRS-complexes classification. The fECG signals are first preprocessed using discrete wavelet transform (DWT) to remove the noise or inferences. The following step beats and QRS-complex segmentation. The last step is fetal QRS-complex classification based on DL. In the experiment of Physionet/Computing in Cardiology Challenge 2013, this study achieved 100\% accuracy, sensitivity, specificity, precision, and F1-score. A stacked DL model demonstrates an effective tool for fetal QRS-complex classification and contributes to clinical applications for long-term maternal and fetal monitoring.},
+	language = {en},
+	number = {1},
+	urldate = {2026-02-28},
+	journal = {International Journal of Computational Intelligence Systems},
+	author = {Darmawahyuni, Annisa and Tutuko, Bambang and Nurmaini, Siti and Rachmatullah, Muhammad Naufal and Ardiansyah, Muhammad and Firdaus, Firdaus and Sapitri, Ade Iriani and Islami, Anggun},
+	month = sep,
+	year = {2023},
+	keywords = {Deep learning, Fetal electrocardiogram, QRS-complex},
+	pages = {158},
+}
+
+@article{hochreiter_long_1997,
+	title = {Long short-term memory},
+	volume = {9},
+	issn = {0899-7667},
+	doi = {10.1162/neco.1997.9.8.1735},
+	abstract = {Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error backflow. We briefly review Hochreiter's (1991) analysis of this problem, then address it by introducing a novel, efficient, gradient-based method called long short-term memory (LSTM). Truncating the gradient where this does not do harm, LSTM can learn to bridge minimal time lags in excess of 1000 discrete-time steps by enforcing constant error flow through constant error carousels within special units. Multiplicative gate units learn to open and close access to the constant error flow. LSTM is local in space and time; its computational complexity per time step and weight is O(1). Our experiments with artificial data involve local, distributed, real-valued, and noisy pattern representations. In comparisons with real-time recurrent learning, back propagation through time, recurrent cascade correlation, Elman nets, and neural sequence chunking, LSTM leads to many more successful runs, and learns much faster. LSTM also solves complex, artificial long-time-lag tasks that have never been solved by previous recurrent network algorithms.},
+	language = {eng},
+	number = {8},
+	journal = {Neural Computation},
+	author = {Hochreiter, S. and Schmidhuber, J.},
+	month = nov,
+	year = {1997},
+	keywords = {Algorithms, Learning, Models, Neurological, Models, Psychological, Nerve Net, Neural Networks, Computer, Time Factors},
+	pages = {1735--1780},
+}
+
+@article{vo_efficient_2020,
+	title = {An {Efficient} and {Robust} {Deep} {Learning} {Method} with 1-{D} {Octave} {Convolution} to {Extract} {Fetal} {Electrocardiogram}},
+	volume = {20},
+	doi = {10.3390/s20133757},
+	abstract = {The invasive method of fetal electrocardiogram (fECG) monitoring is widely used with electrodes directly attached to the fetal scalp. There are potential risks such as infection and, thus, it is usually carried out during labor in rare cases. Recent advances in electronics and technologies have enabled fECG monitoring from the early stages of pregnancy through fECG extraction from the combined fetal/maternal ECG (f/mECG) signal recorded non-invasively in the abdominal area of the mother. However, cumbersome algorithms that require the reference maternal ECG as well as heavy feature crafting makes out-of-clinics fECG monitoring in daily life not yet feasible. To address these challenges, we proposed a pure end-to-end deep learning model to detect fetal QRS complexes (i.e., the main spikes observed on a fetal ECG waveform). Additionally, the model has the residual network (ResNet) architecture that adopts the novel 1-D octave convolution (OctConv) for learning multiple temporal frequency features, which in turn reduce memory and computational cost. Importantly, the model is capable of highlighting the contribution of regions that are more prominent for the detection. To evaluate our approach, data from the PhysioNet 2013 Challenge with labeled QRS complex annotations were used in the original form, and the data were then modified with Gaussian and motion noise, mimicking real-world scenarios. The model can achieve a F1 score of 91.1\% while being able to save more than 50\% computing cost with less than 2\% performance degradation, demonstrating the effectiveness of our method.},
+	journal = {Sensors},
+	author = {Vo, Khuong and Le, Tai and Rahmani, Amir M. and Dutt, Nikil and Cao, Hung},
+	month = jul,
+	year = {2020},
+	pages = {3757},
+}
+
+@article{cao_morphology_2022,
+	title = {Morphology extraction of fetal {ECG} using temporal {CNN}-based nonlinear adaptive noise cancelling},
+	volume = {17},
+	issn = {1932-6203},
+	url = {https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0278917},
+	doi = {10.1371/journal.pone.0278917},
+	abstract = {Objectives Noninvasive fetal electrocardiography (FECG) offers many advantages over alternative fetal monitoring techniques in evaluating fetal health conditions. However, it is difficult to extract a clean FECG signal with morphological features from an abdominal ECG recorded at the maternal abdomen; the signal is usually contaminated by the maternal ECG and various noises. The aim of the work is to extract an FECG signal that preserves the morphological features from the mother’s abdominal ECG recording, which allows for accurately estimating the fetal heart rate (FHR) and analyzing the waveforms of the fetal ECG. Methods We propose a novel nonlinear adaptive noise cancelling framework (ANC) based on a temporal convolutional neural network (CNN) to effectively extract fetal ECG signals from mothers’ abdominal ECG recordings. The proposed framework consists of a two-stage network, using the ANC architecture; one network is for the maternal ECG component elimination and the other is for the residual noise component removal of the extracted fetal ECG signal. Then, JADE (one of the blind source separation algorithms) is applied as a postprocessing step to produce a clean fetal ECG signal. Results Synthetic ECG data (FECGSYNDB) and clinical ECG data (NIFECGDB, PCDB) are used to evaluate the extraction performance of the proposed framework. The statistical and visual results demonstrate that our method outperforms the other state-of-the-art algorithms in the literature. Specifically, on the FECGSYNDB, the mean squared error (MSE), signal-to-noise ratio (SNR), correlation coefficient (R) and F1-score of our method are 0.16, 7.94, 0.95 and 98.89\%, respectively. The F1-score on the NIFECGDB reaches 98.62\%. The value of the F1-score on the PCDB is 98.62\%. Conclusion As opposed to the existing algorithms being restricted to fetal QRS complex detection, the proposed framework can preserve the morphological features of the extracted fetal ECG signal well, which could support medical diagnoses based on the morphology of the fetal ECG signal.},
+	language = {en},
+	number = {12},
+	urldate = {2026-02-28},
+	journal = {PLOS ONE},
+	publisher = {Public Library of Science},
+	author = {Cao, Shi and Xiao, Hui and Gong, Gao and Fang, Weiyang and Chen, Chaomin},
+	month = dec,
+	year = {2022},
+	keywords = {Antenatal care, Convolution, Electrocardiography, Heart rate, Network analysis, Signal filtering, Signaling networks, Statistical noise},
+	pages = {e0278917},
+}
+
+@article{zhong_deep_2018,
+	title = {A deep learning approach for fetal {QRS} complex detection},
+	volume = {39},
+	doi = {10.1088/1361-6579/aab297},
+	abstract = {Objective: 
+Non-Invasive foetal electrocardiography (NI-FECG) has the
+potential to provide more additional clinical information for detecting and diagnosing
+fetal diseases. We propose and demonstrate a deep learning approach for fetal QRS
+complex detection from raw NI-FECG signals by using Convolutional Neural Network
+(CNN) model. The main objective is to investigate whether reliable fetal QRS complex
+detection performance can still be obtained from features of single-channel NI-FECG
+signals, without canceling maternal ECG (MECG) signals.
+
+Approach:
+A deep learning
+method is proposed for recognizing fetal QRS complexes. Firstly, We collecte the data
+from set-a of PhysioNet/Computing in Cardiology Challenge Database (PCDB). The
+sample entropy (SampEn) method is used for signal quality assessment. Part of the bad
+quality signals are excluded in the further analysis. Secondly, in the proposed method,
+the features of raw NI-FECG signals are normalized before they are fed to a CNN
+classifier to perform fetal QRS complex detection. We use precision, recall, F-measure
+and accuracy as the evaluation metrics to assess the performance of fetal QRS complex
+detection.
+
+Main results:
+The proposed deep learning method can achieve relatively
+high precision (75.33\%), recall (80.54\%), and F-measure scores (77.85\%) compared with
+three other well-known pattern classification methods namely KNN, Naive Bayes (NB)
+and the SVM.
+
+Significance:
+The proposed deep learning method can attain reliable
+fetal QRS complex detection performance from the raw NI-FECG signals without
+canceling MECG signals. In addition, the influence of different activation functions
+and signal quality assessment on classification performance are evaluated, and results
+show that Relu outperforms the Sigmoid and Tanh on this particular task, and better
+classification performance is obtained with the signal quality assessment step in this
+study.},
+	journal = {Physiological Measurement},
+	author = {Zhong, Wei and Liao, Lijuan and Guo, Xuemei and Wang, Guoli},
+	month = feb,
+	year = {2018},
+}
+
+@article{lee_fetal_2018,
+	title = {Fetal {QRS} {Detection} {Based} on {Convolutional} {Neural} {Networks} in {Noninvasive} {Fetal} {Electrocardiogram}},
+	url = {https://sci-hub.vn/10.1109/icfsp.2018.8552074},
+	doi = {10.1109/icfsp.2018.8552074},
+	urldate = {2026-02-28},
+	journal = {2018 4th International Conference on Frontiers of Signal Processing (ICFSP)},
+	author = {Lee and Seo and Kim and Choi},
+	year = {2018},
+}
+
+@misc{dosovitskiy_image_2021,
+	title = {An {Image} is {Worth} 16x16 {Words}: {Transformers} for {Image} {Recognition} at {Scale}},
+	shorttitle = {An {Image} is {Worth} 16x16 {Words}},
+	url = {http://arxiv.org/abs/2010.11929},
+	doi = {10.48550/arXiv.2010.11929},
+	abstract = {While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks. When pre-trained on large amounts of data and transferred to multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.), Vision Transformer (ViT) attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train.},
+	language = {en},
+	urldate = {2026-02-28},
+	publisher = {arXiv},
+	author = {Dosovitskiy, Alexey and Beyer, Lucas and Kolesnikov, Alexander and Weissenborn, Dirk and Zhai, Xiaohua and Unterthiner, Thomas and Dehghani, Mostafa and Minderer, Matthias and Heigold, Georg and Gelly, Sylvain and Uszkoreit, Jakob and Houlsby, Neil},
+	month = jun,
+	year = {2021},
+	note = {arXiv:2010.11929 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+}
+
+@article{almadani_one-dimensional_2023,
+	title = {One-{Dimensional} {W}-{NETR} for {Non}-{Invasive} {Single} {Channel} {Fetal} {ECG} {Extraction}},
+	volume = {27},
+	issn = {2168-2208},
+	url = {https://ieeexplore.ieee.org/document/10100866},
+	doi = {10.1109/JBHI.2023.3266645},
+	abstract = {Fetal cardiac monitoring is very helpful in the early detection of the potential risk of fetal cardiac abnormalities, which enables prompt preventative care and ensures safe births. As a result, it is crucial to regularly check on the embryonic heart. Methods of non-invasively fetal ECG extraction from maternal abdominal ECG signal are thoroughly discussed. Although fetal signals are generally obscured by maternal ECG signals and noise, extracting a clean fetal ECG is a significant difficulty. The majority of techniques for fetal ECG extraction include many extraction steps. We describe a unique method for splitting a single-channel maternal abdominal ECG into maternal and fetus ECG employing two parallel U-nets with transformer encoding, which we refer to as W-NEt TRansformers (W-NETR). Due to its enhanced capacity to simulate remote interactions and capture global context, the suggested pipeline utilizes the self-attention mechanism of the transformer. We tested the proposed pipeline on synthetic and real datasets and outperformed the current state-of-the-art deep learning models. The proposed model achieved the best results on both datasets for QRS detection precision, recall, and F1 scores. More specifically, it achieved F1 score of 99.88\% and 98.9\% on the real ADFECGDB and PCDB datasets, respectively. These encouraging results highlight the suggested W-NETR's effectiveness in precisely extracting the fetal ECG, which was achieved with high SSIM and PSNR values in the results. This provides the bed set for long-term maternal and fetal monitoring via portable devices as the proposed system performs real-time execution.},
+	number = {7},
+	urldate = {2026-02-27},
+	journal = {IEEE Journal of Biomedical and Health Informatics},
+	author = {Almadani, Murad and Hadjileontiadis, Leontios and Khandoker, Ahsan},
+	month = jul,
+	year = {2023},
+	keywords = {Electrocardiography, Feature extraction, Fetal ECG, Fetal heart rate, Neural networks, PSNR, Pipelines, SSIM, Training, Transformers, W-NETR, deep learning, non-invasive ECG extraction, self-attention mechanism, transformers},
+	pages = {3198--3209},
+}
+
+@misc{hatamizadeh_unetr_2021,
+	title = {{UNETR}: {Transformers} for {3D} {Medical} {Image} {Segmentation}},
+	shorttitle = {{UNETR}},
+	url = {http://arxiv.org/abs/2103.10504},
+	doi = {10.48550/arXiv.2103.10504},
+	abstract = {Fully Convolutional Neural Networks (FCNNs) with contracting and expanding paths have shown prominence for the majority of medical image segmentation applications since the past decade. In FCNNs, the encoder plays an integral role by learning both global and local features and contextual representations which can be utilized for semantic output prediction by the decoder. Despite their success, the locality of convolutional layers in FCNNs, limits the capability of learning long-range spatial dependencies. Inspired by the recent success of transformers for Natural Language Processing (NLP) in long-range sequence learning, we reformulate the task of volumetric (3D) medical image segmentation as a sequence-to-sequence prediction problem. We introduce a novel architecture, dubbed as UNEt TRansformers (UNETR), that utilizes a transformer as the encoder to learn sequence representations of the input volume and effectively capture the global multi-scale information, while also following the successful “U-shaped” network design for the encoder and decoder. The transformer encoder is directly connected to a decoder via skip connections at different resolutions to compute the ﬁnal semantic segmentation output. We have validated the performance of our method on the Multi Atlas Labeling Beyond The Cranial Vault (BTCV) dataset for multiorgan segmentation and the Medical Segmentation Decathlon (MSD) dataset for brain tumor and spleen segmentation tasks. Our benchmarks demonstrate new state-of-the-art performance on the BTCV leaderboard.},
+	language = {en},
+	urldate = {2026-02-27},
+	publisher = {arXiv},
+	author = {Hatamizadeh, Ali and Tang, Yucheng and Nath, Vishwesh and Yang, Dong and Myronenko, Andriy and Landman, Bennett and Roth, Holger and Xu, Daguang},
+	month = oct,
+	year = {2021},
+	note = {arXiv:2103.10504 [eess]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning, Electrical Engineering and Systems Science - Image and Video Processing},
+}
+
+@inproceedings{ye_elevating_2024,
+	title = {Elevating {Vision} {Transformer} {Performance}: {The} {KAN}-{VIT} {Model} for {Image} {Recognition}},
+	issn = {2993-396X},
+	shorttitle = {Elevating {Vision} {Transformer} {Performance}},
+	url = {https://ieeexplore.ieee.org/document/10925129},
+	doi = {10.1109/SWC62898.2024.00353},
+	abstract = {In this paper, we propose an innovative image recognition model called KAN-VIT, which applies the Kolmogorov-Arnold Networks (KANs) architecture to the Vision Transformer (VIT), replacing the traditional multilayer perceptron (MLP) layers and the MLP head at the output. KANs are neural networks based on the Kolmogorov-Arnold representation theorem, which introduces learnable activation functions between nodes, parameterized by spline functions, thereby providing higher accuracy and interpretability. Based on this, the VIT model was improved by replacing the original MLP layers with KANs, and experiments were conducted on the CIFAR-10, Oxford Flowers, and MNIST datasets. The results show that the improved model has demonstrated superior performance on the test datasets. We also analyzed the interpretability of KANs, and the results show that the improved model not only has improved performance but also has advantages in the visualization and interpretability of the model.},
+	urldate = {2026-02-27},
+	booktitle = {2024 {IEEE} {Smart} {World} {Congress} ({SWC})},
+	author = {Ye, Lvzhou and Guo, Zhen},
+	month = dec,
+	year = {2024},
+	note = {ISSN: 2993-396X},
+	keywords = {Analytical models, Computer vision, Flowering plants, Head, Image recognition, KAN, MLP, Multilayer perceptrons, Neural networks, Spline Function, Splines (mathematics), Transformers, VisionTransformer, Visualization},
+	pages = {2321--2328},
+}
+
+@inproceedings{behar_non-invasive_2013,
+	title = {Non-invasive {FECG} extraction from a set of abdominal sensors},
+	issn = {2325-8853},
+	url = {https://ieeexplore.ieee.org/abstract/document/6712470},
+	abstract = {Introduction: Despite significant advances in adult clinical electrocardiography (ECG) signal processing techniques and the power of digital processors, the analysis of non-invasive foetal ECG (NI-FECG) is still in its infancy. The PhysioNet/Computing in Cardiology Challenge 2013 addresses some of these limitations by making publicly available a set of FECG data to the scientific community for evaluation of signal processing techniques. Methods: ECGs were first preprocessed by cascading a low pass and a high pass filter in order to remove higher frequency and baseline wander. A Notch filter to remove power interferences at 50Hz or 60Hz was applied if required. The signals were then normalised before applying various source separation techniques to cancel the maternal ECG. These techniques included: template subtraction, principal/independent component analysis, extended Kalman filter and a combination of a subset of these methods (FUSE method). FQRS detection was performed on all residuals using a Pan and Tompkins QRS detector and the channel with the smoothest FHR time series was selected. Results: The FUSE algorithm performed better than all the individual methods on the training set data. On the validation set, best Challenge scores obtained were E4=29.6. E5=4.67 for events 4-5 respectively using the FUSE method.},
+	urldate = {2026-02-16},
+	booktitle = {Computing in {Cardiology} 2013},
+	author = {Behar, Joachim and Oster, Julien and Clifford, Gari D},
+	month = sep,
+	year = {2013},
+	note = {ISSN: 2325-8853},
+	keywords = {Electrocardiography, Fetal heart rate, Fuses, Source separation, Time series analysis},
+	pages = {297--300},
+}
+
+@article{martens_robust_2007,
+	title = {A robust fetal {ECG} detection method for abdominal recordings},
+	volume = {28},
+	issn = {0967-3334},
+	url = {https://doi.org/10.1088/0967-3334/28/4/004},
+	doi = {10.1088/0967-3334/28/4/004},
+	abstract = {In this paper, we propose a new method for FECG detection in abdominal recordings. The method consists of a sequential analysis approach, in which the a priori information about the interference signals is used for the detection of the FECG. Our method is evaluated on a set of 20 abdominal recordings from pregnant women with different gestational ages. Its performance in terms of fetal heart rate (FHR) detection success is compared with that of independent component analysis (ICA). The results show that our sequential estimation method outperforms ICA with a FHR detection rate of 85\% versus 60\% of ICA. The superior performance of our method is especially evident in recordings with a low signal-to-noise ratio (SNR). This indicates that our method is more robust than ICA for FECG detection.},
+	language = {en},
+	number = {4},
+	urldate = {2026-02-16},
+	journal = {Physiological Measurement},
+	author = {Martens, Suzanna M M and Rabotti, Chiara and Mischi, Massimo and Sluijter, Rob J},
+	month = mar,
+	year = {2007},
+	pages = {373},
+}
+
+@article{zarzoso_robust_2010,
+	title = {Robust {Independent} {Component} {Analysis} by {Iterative} {Maximization} of the {Kurtosis} {Contrast} {With} {Algebraic} {Optimal} {Step} {Size}},
+	volume = {21},
+	issn = {1941-0093},
+	url = {https://ieeexplore.ieee.org/abstract/document/5356190},
+	doi = {10.1109/TNN.2009.2035920},
+	abstract = {Independent component analysis (ICA) aims at decomposing an observed random vector into statistically independent variables. Deflation-based implementations, such as the popular one-unit FastICA algorithm and its variants, extract the independent components one after another. A novel method for deflationary ICA, referred to as RobustICA, is put forward in this paper. This simple technique consists of performing exact line search optimization of the kurtosis contrast function. The step size leading to the global maximum of the contrast along the search direction is found among the roots of a fourth-degree polynomial. This polynomial rooting can be performed algebraically, and thus at low cost, at each iteration. Among other practical benefits, RobustICA can avoid prewhitening and deals with real- and complex-valued mixtures of possibly noncircular sources alike. The absence of prewhitening improves asymptotic performance. The algorithm is robust to local extrema and shows a very high convergence speed in terms of the computational cost required to reach a given source extraction quality, particularly for short data records. These features are demonstrated by a comparative numerical analysis on synthetic data. RobustICA's capabilities in processing real-world data involving noncircular complex strongly super-Gaussian sources are illustrated by the biomedical problem of atrial activity (AA) extraction in atrial fibrillation (AF) electrocardiograms (ECGs), where it outperforms an alternative ICA-based technique.},
+	number = {2},
+	urldate = {2026-02-16},
+	journal = {IEEE Transactions on Neural Networks},
+	author = {Zarzoso, Vicente and Comon, Pierre},
+	month = feb,
+	year = {2010},
+	keywords = {Atrial fibrillation, Atrial fibrillation (AF), Computational efficiency, Convergence, Costs, Data mining, Independent component analysis, Iterative algorithms, Numerical analysis, Polynomials, Robustness, blind source separation (BSS), independent component analysis (ICA), iterative optimization, kurtosis, optimal step size, performance analysis},
+	pages = {248--261},
+}
+
+@article{cardoso_blind_1993,
+	title = {Blind beamforming for non-gaussian signals},
+	volume = {140},
+	url = {https://digital-library.theiet.org/doi/abs/10.1049/ip-f-2.1993.0054},
+	doi = {10.1049/ip-f-2.1993.0054},
+	abstract = {The paper considers an application of blind identification to beamforming. The key point is to use estimates of directional vectors rather than resort to their hypothesised value. By using estimates of the directional vectors obtained via blind identification, i.e. without knowing the array manifold, beamforming is made robust with respect to array deformations, distortion of the wave front, pointing errors etc., so that neither array calibration nor physical modelling is necessary. Rather suprisingly, ‘blind beamformers’ may outperform ‘informed beamformers’ in a plausible range of parameters, even when the array is perfectly known to the informed beamformer. The key assumption on which blind identification relies is the statistical independence of the sources, which is exploited using fourth-order cumulants. A computationally efficient technique is presented for the blind estimation of directional vectors, based on joint diagonalisation of fourth-order cumulant matrices; its implementation is described, and its performance is investigated by numerical experiments.},
+	number = {6},
+	urldate = {2026-02-16},
+	journal = {IEE Proceedings F (Radar and Signal Processing)},
+	publisher = {The Institution of Engineering and Technology},
+	author = {Cardoso, J.F. and Souloumiac, A.},
+	month = dec,
+	year = {1993},
+	pages = {362--370},
+}
+
+@article{hyvarinen_independent_2000,
+	title = {Independent component analysis: algorithms and applications},
+	volume = {13},
+	issn = {0893-6080},
+	shorttitle = {Independent component analysis},
+	url = {https://www.sciencedirect.com/science/article/pii/S0893608000000265},
+	doi = {10.1016/S0893-6080(00)00026-5},
+	abstract = {A fundamental problem in neural network research, as well as in many other disciplines, is finding a suitable representation of multivariate data, i.e. random vectors. For reasons of computational and conceptual simplicity, the representation is often sought as a linear transformation of the original data. In other words, each component of the representation is a linear combination of the original variables. Well-known linear transformation methods include principal component analysis, factor analysis, and projection pursuit. Independent component analysis (ICA) is a recently developed method in which the goal is to find a linear representation of non-Gaussian data so that the components are statistically independent, or as independent as possible. Such a representation seems to capture the essential structure of the data in many applications, including feature extraction and signal separation. In this paper, we present the basic theory and applications of ICA, and our recent work on the subject.},
+	number = {4},
+	urldate = {2026-02-16},
+	journal = {Neural Networks},
+	author = {Hyvärinen, A. and Oja, E.},
+	month = jun,
+	year = {2000},
+	keywords = {Blind signal separation, Factor analysis, Independent component analysis, Projection pursuit, Representation, Source separation},
+	pages = {411--430},
+}
+
+@article{hyvarinen_independent_nodate,
+	title = {Independent {Component} {Analysis}: {Algorithms} and {Applications}},
+	abstract = {A fundamental problem in neural network research, as well as in many other disciplines, is ﬁnding a suitable representation of multivariate data, i.e. random vectors. For reasons of computational and conceptual simplicity, the representation is often sought as a linear transformation of the original data. In other words, each component of the representation is a linear combination of the original variables. Well-known linear transformation methods include principal component analysis, factor analysis, and projection pursuit. Independent component analysis (ICA) is a recently developed method in which the goal is to ﬁnd a linear representation of nongaussian data so that the components are statistically independent, or as independent as possible. Such a representation seems to capture the essential structure of the data in many applications, including feature extraction and signal separation. In this paper, we present the basic theory and applications of ICA, and our recent work on the subject.},
+	language = {en},
+	author = {Hyvärinen, Aapo and Oja, Erkki},
+}
+
+@article{suganthy_enhancement_2019,
+	title = {Enhancement of {SNR} in fetal {ECG} signal extraction using combined {SWT} and {WLSR} in parallel {EKF}},
+	volume = {22},
+	issn = {1573-7543},
+	url = {https://doi.org/10.1007/s10586-018-2477-4},
+	doi = {10.1007/s10586-018-2477-4},
+	abstract = {A Fetal Electrocardiogram (FECG) signal will contain some potential information which is precise for assisting the clinicians to make appropriate decisions that are timely at the time of pregnancy and labor. Extraction and detection of such FECG signals from their composite maternal signals of the abdomen using very powerful and advanced methodologies is a very critical need in case of fetal monitoring. The mining of pure FECG signals from the abdominal of the prenatal woman is focused in this paper. This FECG signal is very vulnerable to noise and is very difficult to process it accurately with no significant distortion that can imped its use. So, in order to be able to get some proper information on the status of the fetus or its condition it is important to be able to improve the abdominal signal and its SNR. Since the wavelet transform is well in providing information in time and frequency, the combination of Stationary Wavelet Transform (SWT), Weighted Least Square Regression (WLSR) and parallel Extended Kalman Filter (Par-EKF) are used for FECG extraction. The analysis for different values of Signal to Noise Ratio (SNR) between fetal and maternal ECG’s is implemented using MATLAB. As a Result, the highest SNR obtained is 33.5 which showed that the proposed method is efficient in extracting more information about FECG from Maternal ECG (MECG).},
+	language = {en},
+	number = {2},
+	urldate = {2026-02-16},
+	journal = {Cluster Computing},
+	author = {Suganthy, M. and Manjula, S.},
+	month = mar,
+	year = {2019},
+	keywords = {EKF, Fetal electrocardiogram (FECG) signals, Signal to noise ratio (SNR) and maternal ECG (MECG), Stationary wavelet transform (SWT), Weighted least square regression (WLSR)},
+	pages = {3875--3881},
+}
+
+@inproceedings{sarafan_novel_2022,
+	title = {A {Novel} {ECG} {Denoising} {Scheme} {Using} the {Ensemble} {Kalman} {Filter}},
+	issn = {2694-0604},
+	url = {https://ieeexplore.ieee.org/abstract/document/9871884},
+	doi = {10.1109/EMBC48229.2022.9871884},
+	abstract = {Monitoring of electrocardiogram (ECG) provides vital information as well as any cardiovascular anomalies. Recent advances in the technology of wearable electronics have enabled compact devices to acquire personal physiological signals in the home setting; however, signals are usually contaminated with high level noise. Thus, an efficient ECG filtering scheme is a dire need. In this paper, a novel method using Ensemble Kalman Filter (EnKF) is developed for denoising ECG signals. We also intensively explore various filtering algorithms, including Savitzky-Golay (SG) filter, Ensemble Empirical mode decomposition (EEMD), Normalized Least-Mean-Square (NLMS), Recursive least squares (RLS) filter, Total variation denoising (TVD), Wavelet and extended Kalman filter (EKF) for comparison. Data from the MIT-BIH Noise Stress Test database were used. The proposed methodology shows the average signal to noise ratio (SNR) of 10.96, the Percentage Root Difference of 150.45, and the correlation coefficient of 0.959 from the modified MIT-BIH database with added motion artifacts.},
+	urldate = {2026-02-16},
+	booktitle = {2022 44th {Annual} {International} {Conference} of the {IEEE} {Engineering} in {Medicine} \& {Biology} {Society} ({EMBC})},
+	author = {Sarafan, Sadaf and Vuong, Hoang and Jilani, Daniel and Malhotra, Samir and Lau, Michael P.H. and Vishwanath, Manoj and Ghirmai, Tadesse and Cao, Hung},
+	month = jul,
+	year = {2022},
+	note = {ISSN: 2694-0604},
+	keywords = {Adaptive filters, Correlation, Databases, Electrocardiography, Filtering, Filtering algorithms, Noise reduction},
+	pages = {2005--2008},
+}
+
+@article{fotiadou_enhancement_2018,
+	title = {Enhancement of low-quality fetal electrocardiogram based on time-sequenced adaptive filtering},
+	volume = {56},
+	issn = {1741-0444},
+	url = {https://doi.org/10.1007/s11517-018-1862-8},
+	doi = {10.1007/s11517-018-1862-8},
+	abstract = {Extraction of a clean fetal electrocardiogram (ECG) from non-invasive abdominal recordings is one of the biggest challenges in fetal monitoring. An ECG allows for the interpretation of the electrical heart activity beyond the heart rate and heart rate variability. However, the low signal quality of the fetal ECG hinders the morphological analysis of its waveform in clinical practice. The time-sequenced adaptive filter has been proposed for performing optimal time-varying filtering of non-stationary signals having a recurring statistical character. In our study, the time-sequenced adaptive filter is applied to enhance the quality of multichannel fetal ECG after the maternal ECG is removed. To improve the performance of the filter in cases of low signal-to-noise ratio (SNR), we enhance the ECG reference signals by averaging consecutive ECG complexes. The performance of the proposed augmented time-sequenced adaptive filter is evaluated in both synthetic and real data from PhysioNet. This evaluation shows that the suggested algorithm clearly outperforms other ECG enhancement methods, in terms of uncovering the ECG waveform, even in cases with very low SNR. With the presented method, quality of the fetal ECG morphology can be enhanced to the extent that the ECG might be fit for use in clinical diagnostics.},
+	language = {en},
+	number = {12},
+	urldate = {2026-02-16},
+	journal = {Medical \& Biological Engineering \& Computing},
+	author = {Fotiadou, E. and van Laar, J. O. E. H. and Oei, S. G. and Vullings, R.},
+	month = dec,
+	year = {2018},
+	keywords = {Electrocardiography, Fetal ECG de-noising, Fetal ECG enhancement, Time-sequenced adaptive filter},
+	pages = {2313--2323},
+}
+
+@article{cardoso_blind_1998,
+	title = {Blind signal separation: statistical principles},
+	volume = {86},
+	issn = {1558-2256},
+	shorttitle = {Blind signal separation},
+	url = {https://ieeexplore.ieee.org/abstract/document/720250},
+	doi = {10.1109/5.720250},
+	abstract = {Blind signal separation (BSS) and independent component analysis (ICA) are emerging techniques of array processing and data analysis that aim to recover unobserved signals or "sources" from observed mixtures (typically, the output of an array of sensors), exploiting only the assumption of mutual independence between the signals. The weakness of the assumptions makes it a powerful approach, but it requires us to venture beyond familiar second order statistics, The objectives of this paper are to review some of the approaches that have been developed to address this problem, to illustrate how they stem from basic principles, and to show how they relate to each other.},
+	number = {10},
+	urldate = {2026-02-16},
+	journal = {Proceedings of the IEEE},
+	author = {Cardoso, J.-F.},
+	month = oct,
+	year = {1998},
+	keywords = {Acoustic sensors, Adaptive arrays, Adaptive signal processing, Array signal processing, Blind source separation, Independent component analysis, Sensor arrays, Signal processing, Source separation, Statistics},
+	pages = {2009--2025},
+}
+
+@article{lee_end--end_2022,
+	title = {End-to-{End} {Deep} {Learning} {Architecture} for {Separating} {Maternal} and {Fetal} {ECGs} {Using} {W}-{Net}},
+	volume = {10},
+	issn = {2169-3536},
+	url = {https://ieeexplore.ieee.org/abstract/document/9755920},
+	doi = {10.1109/ACCESS.2022.3166925},
+	abstract = {Fetal cardiac monitoring and assessment during pregnancy play a critical role in the early detection of the potential risk of fetal cardiac problems, thus allowing for timely preventive measures and healthy births. It is necessary to continuously monitor the fetal heart for this purpose. Methods of fetal cardiac monitoring by extracting maternal and fetal electrocardiograms (ECGs) from maternal abdominal ECGs have been extensively investigated. However, the extraction of a clear fetal ECG is a major challenge because fetal signals are typically dominated by maternal ECG signals and noise. Most existing methods for fetal ECG extraction involve several steps, such as extracting and removing the maternal ECG and then extracting the fetal ECG. To address the complexity of this process, we propose a novel method for effectively decomposing a single-channel maternal abdominal ECG into a maternal ECG and fetal ECG without using multiple steps by employing an end-to-end deep learning network architecture using W-net. Model training is performed using a simulation dataset. Then, a fetal ECG is extracted from a real maternal abdominal ECG. The performance of the proposed architecture is compared with that of other state-of-the-art deep learning models on the basis of the detection of QRS complexes. The proposed model shows higher precision and recall values and F1 scores. This demonstrates that the proposed model can effectively extract a fetal ECG from a single-channel maternal abdominal ECG. The model is expected to contribute to commercial applications for long-term maternal and fetal monitoring.},
+	urldate = {2026-02-16},
+	journal = {IEEE Access},
+	author = {Lee, Kwang Jin and Lee, Boreom},
+	year = {2022},
+	keywords = {Data mining, Data models, Electrocardiography, Feature extraction, Fetal electrocardiogram, Lead, Monitoring, R-peak, Training, U-net, W-net, maternal electrocardiogram},
+	pages = {39782--39788},
+}
+
+@article{pan_real-time_1985,
+	title = {A {Real}-{Time} {QRS} {Detection} {Algorithm}},
+	volume = {BME-32},
+	issn = {1558-2531},
+	url = {https://ieeexplore.ieee.org/document/4122029},
+	doi = {10.1109/TBME.1985.325532},
+	abstract = {We have developed a real-time algorithm for detection of the QRS complexes of ECG signals. It reliably recognizes QRS complexes based upon digital analyses of slope, amplitude, and width. A special digital bandpass filter reduces false detections caused by the various types of interference present in ECG signals. This filtering permits use of low thresholds, thereby increasing detection sensitivity. The algorithm automatically adjusts thresholds and parameters periodically to adapt to such ECG changes as QRS morphology and heart rate. For the standard 24 h MIT/BIH arrhythmia database, this algorithm correctly detects 99.3 percent of the QRS complexes.},
+	number = {3},
+	urldate = {2026-02-16},
+	journal = {IEEE Transactions on Biomedical Engineering},
+	author = {Pan, Jiapu and Tompkins, Willis J.},
+	month = mar,
+	year = {1985},
+	keywords = {Band pass filters, Computer displays, Databases, Detection algorithms, Detectors, Digital filters, Electrocardiography, Filtering, Interference, Noise reduction},
+	pages = {230--236},
+}
+
+@article{andreotti_open-source_2016,
+	title = {An open-source framework for stress-testing non-invasive foetal {ECG} extraction algorithms},
+	volume = {37},
+	issn = {0967-3334, 1361-6579},
+	url = {https://iopscience.iop.org/article/10.1088/0967-3334/37/5/627},
+	doi = {10.1088/0967-3334/37/5/627},
+	number = {5},
+	urldate = {2026-02-16},
+	journal = {Physiological Measurement},
+	author = {Andreotti, Fernando and Behar, Joachim and Zaunseder, Sebastian and Oster, Julien and Clifford, Gari D},
+	month = may,
+	year = {2016},
+	pages = {627--648},
+}
+
+@article{karmakar_consumer_2025,
+	title = {Consumer insights from a feasibility study on remote and extended use of a novel non-invasive wearable fetal electrocardiogram monitor},
+	volume = {8},
+	copyright = {2025 The Author(s)},
+	issn = {2398-6352},
+	url = {https://www.nature.com/articles/s41746-025-01628-9},
+	doi = {10.1038/s41746-025-01628-9},
+	abstract = {The COVID-19 pandemic accelerated the adoption of telehealth and remote monitoring in obstetric care. This study assessed pregnant patients’ perceptions before and after using a novel non-invasive fetal electrocardiogram (NI-FECG) device. The trial is prospectively registered on the Australia New Zealand Clinical Trials Registry (ANZCTRN12621001260819; submitted June 9th, 2021; approved September 17th, 2021). Seventy participants from 36 weeks’ gestation completed pre- and post-use surveys. Interest in continuous and home fetal monitoring was high (79\% and 90\%, respectively). Post-use, 89\% reported satisfaction; over 90\% comfortable wearing and removing the sensor. Extended use was acceptable to 76\%, and only 3\% reported high skin irritation. Sentiment analysis highlighted themes of reassurance, convenience, and reduced anxiety. Some suggested smaller, wireless design. Analysis by natural language processing and clustering provided deeper insights. Findings support strong interest in at-home fetal monitoring; further refinement and education are needed to enhance acceptability. Future research should assess long-term effects on anxiety and clinical outcomes.},
+	language = {en},
+	number = {1},
+	urldate = {2026-02-16},
+	journal = {npj Digital Medicine},
+	publisher = {Nature Publishing Group},
+	author = {Karmakar, Debjyoti and Paul, Tarini and Keenan, Emerson and Palaniswami, Marimuthu and Constable, Kaitlin and Spessot, Erica and Brownfoot, Fiona},
+	month = apr,
+	year = {2025},
+	keywords = {Outcomes research, Translational research},
+	pages = {216},
+}
+
+@book{noauthor_trends_2025,
+	address = {Geneva},
+	title = {Trends in maternal mortality estimates 2000 to 2023: estimates by {WHO}, {UNICEF}, {UNFPA}, {World} {Bank} {Group} and {UNDESA}/{Population} {Division}},
+	isbn = {978-92-4-010846-2},
+	shorttitle = {Trends in maternal mortality estimates 2000 to 2023},
+	language = {en},
+	publisher = {World Health Organization},
+	year = {2025},
+	note = {OCLC: 1517019608},
+}
+
+@article{godfrey_functional_2012,
+	title = {Functional assessment of the fetal heart: a review},
+	volume = {39},
+	copyright = {Copyright © 2012 ISUOG. Published by John Wiley \& Sons, Ltd.},
+	issn = {1469-0705},
+	shorttitle = {Functional assessment of the fetal heart},
+	url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/uog.9064},
+	doi = {10.1002/uog.9064},
+	abstract = {The purpose of this review is to evaluate the current modalities available for the assessment of fetal cardiac function. The unique anatomy and physiology of the fetal circulation are described, with reference to the difference between @ in-utero and @ ex-utero life. M-mode, early/atrial ratio, myocardial performance index, three-dimensional and four-dimensional ultrasound, tissue Doppler including strain and strain rate, speckle tracking, magnetic resonance imaging and venous flow assessment are described. The modalities are analyzed from the perspective of the clinician and certain questions are posed. Does the modality assess systolic function, diastolic function or both? Is it applicable to both ventricles? Does it require extensive post-processing or additional hardware, or does it make use of technology already available to the average practitioner? The reproducibility and reliability of the techniques are evaluated, with reference to their utility in clinical decision-making. Finally, directions for future research are proposed. Copyright © 2012 ISUOG. Published by John Wiley \& Sons, Ltd.},
+	language = {en},
+	number = {2},
+	urldate = {2026-02-15},
+	journal = {Ultrasound in Obstetrics \& Gynecology},
+	author = {Godfrey, M. E. and Messing, B. and Cohen, S. M. and Valsky, D. V. and Yagel, S.},
+	year = {2012},
+	note = {\_eprint: https://obgyn.onlinelibrary.wiley.com/doi/pdf/10.1002/uog.9064},
+	keywords = {3DUS, 4DUS, E/A ratio, M-mode, MPI, MRI, fetal heart, four-dimensional ultrasound, magnetic resonance imaging, myocardial performance index, prenatal diagnosis, speckle tracking, strain rate, three-dimensional ultrasound, tissue Doppler},
+	pages = {131--144},
+}
+
+@article{attia_deep_2021,
+	title = {Deep {Neural} {Networks} {Learn} by {Using} {Human}-{Selected} {ECG} {Features} and {Novel} {Features}},
+	volume = {2},
+	doi = {10.1093/ehjdh/ztab060},
+	abstract = {Aims
+We sought to investigate whether artificial intelligence (AI) and specifically deep neural networks for electrocardiogram (ECG) signal analysis can be explained using human selected features. We also sought to quantify such explainability and test if the AI model learns features that are similar to a human expert.
+
+Methods
+We used a set of 100,000 ECGs that were annotated by human explainable features. We applied both linear and nonlinear models to predict published ECG AI models output for the detection of patients' age and sex. We further used canonical correlation analysis to quantify the amount of shared information between the features found in an unsupervised way. We reconstructed single human-selected ECG features from the unexplained neural network features using a simple linear model.
+
+Results
+We noticed a strong correlation between the simple models and the AI output (R2 of 0.49-0.57 for the linear models and R2 of 0.69-0.70 for the nonlinear models). We found that the correlation of the human explainable features with either 13 of the strongest age AI features or 15 of the strongest sex AI features was above 0.85 (for comparison, the first 14 principal components explain 90\% of the human feature variance). We linearly reconstructed single human-selected ECG features from the AI features with R2 up to 0.86.
+
+Conclusion
+This work shows that neural networks for ECG signals extract features in a similar manner to human experts and that they also generate additional novel features that help achieve superior performance.},
+	journal = {European Heart Journal - Digital Health},
+	author = {Attia, Zachi and Lerman, Gilad and Friedman, Paul},
+	month = jul,
+	year = {2021},
+}
+
+@article{einthoven_galvanometrische_1903,
+	title = {Die galvanometrische {Registrirung} des menschlichen {Elektrokardiogramms}, zugleich eine {Beurtheilung} der {Anwendung} des {Capillar}-{Elektrometers} in der {Physiologie}},
+	volume = {99},
+	issn = {1432-2013},
+	url = {https://doi.org/10.1007/BF01811855},
+	doi = {10.1007/BF01811855},
+	language = {de},
+	number = {9},
+	urldate = {2026-02-15},
+	journal = {Archiv für die gesamte Physiologie des Menschen und der Tiere},
+	author = {Einthoven, W.},
+	month = nov,
+	year = {1903},
+	pages = {472--480},
+}
+
+@article{department_of_general_medicine_amala_institute_of_medical_sciences_thrissur_kerala_indi_laboratory_2022,
+	title = {From a laboratory to the wearables: a review on history and evolution of electrocardiogram},
+	volume = {4},
+	issn = {26955075},
+	shorttitle = {From a laboratory to the wearables},
+	url = {https://www.iberoamjmed.com/article/doi/10.53986/ibjm.2022.0038},
+	doi = {10.53986/ibjm.2022.0038},
+	abstract = {The development of electrocardiography, one of the top scientific breakthroughs of the 20th century, occurred in the field of cardiology. The history of the ECG began long before its invention, with the advent of the study of electricity in the medical field. The idea of electrophysiology and Waller's initial recording of the ‘electrogram’ encouraged Willem Einthoven to develop new string galvanometers and turn this remarkable physiologic occurrence into a vital clinical recording tool. It has progressed from Einthoven's innovation to wearable technology. In the first part of the 20th century, a number of inventive people achieved a remarkable succession of discoveries and advancements that led to the development of the 12-lead ECG as we know it today. It went further than that. The evolution of science and technology over the years has allowed for continual development in terms of usefulness, ranging from five operators to one operator meant to record the ECG trace, and mobility, ranging from around 300 Kg to roughly around 1 Kg. Electrocardiographs in minimized form now exist thanks to the modern era of digitalization. We will go over the significant processes in the development of the ECG in this article.},
+	language = {en},
+	number = {4},
+	urldate = {2026-02-15},
+	journal = {Iberoamerican Journal of Medicine},
+	author = {{Department of General Medicine, Amala Institute of Medical Sciences, Thrissur, Kerala, Indi} and Vincent, Rony},
+	month = sep,
+	year = {2022},
+	pages = {248--255},
+}

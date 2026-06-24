@@ -1,0 +1,142 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+
+% =====================================================================
+% CHƯƠNG 7 — KẾT QUẢ THỰC NGHIỆM VÀ ĐÁNH GIÁ
+% "Results & Discussion" — nơi ăn điểm "hàm lượng khoa học".
+% =====================================================================
+
+\section{Giới thiệu chương}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
+\begin{itemize}
+  \item Bố cục: kết quả định tính (7.2), định lượng SSIM/PSNR (7.3), fQRS + FHR (7.4), so sánh SOTA (7.5), ablation (7.6), độ phức tạp (7.7), bàn luận (7.8).
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Kết quả định tính}
+
+Hình~\ref{fig:result} biểu diễn kết quả của mô hình đề xuất trên bộ dữ liệu FECGSYNDB. Tín hiệu được hiển thị là ở C3 của tín hiệu maECG trên 3 mức nhiễu SNR 0dB, 6dB và 12dB. Ta có thể thấy rằng bất cứ trường hợp nhiễu nào, KAN-WNETR vẫn có thể phân tách được tín hiệu fECG, cho thấy hiệu năng cao của mô hình này. Ngoài bắt được các phức hợp đỉnh QRS hoàn chỉnh, mô hình đồng thời cũng hiển thị lại được rõ các sóng P và T, là những sóng được đánh giá là khó để thu lại được \cite{lee_end--end_2022}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{Hinhve/image_46.png}
+  \caption{Kết quả trích xuất fECG của KAN-WNETR trên FECGSYNDB (case C3, SNR 0/6/12 dB).}
+  \label{fig:result}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\section{Chất lượng tín hiệu định lượng (SSIM/PSNR)}
+
+Để phân tích cụ thể hơn, kết quả tham số PSNR và SSIM đánh giá chất lượng tín hiệu dựng lại được thể hiện trong bảng \ref{tab:ssim_compare_wnetr}, đồng thời mô hình được so sánh với kiến trúc W-NETR \cite{almadani_one-dimensional_2023}, được cho là có kết quả tốt nhất vào thời điểm viết bài. W-NETR đạt SSIM tổng là $0.96$ (PSNR tổng $51.8$ dB) khi đánh giá trên tất cả các loại nhiễu C0–C5.
+
+\begin{table}[htbp]
+\centering
+\caption{So sánh SSIM theo từng loại nhiễu trên FECGSYNDB (C0--C5).}
+\label{tab:ssim_compare_wnetr}
+\begin{tabular}{lccccccc}
+\hline
+\textbf{Mô hình} & \textbf{C0} & \textbf{C1} & \textbf{C2} & \textbf{C3} & \textbf{C4} & \textbf{C5} & \textbf{Total} \\
+\hline
+W-NETR (paper)      & \textbf{0.990} & \textbf{0.990} & \textbf{0.990} & 0.910 & 0.930 & 0.970 & 0.960 \\
+Our KAN-WNETR & 0.976 & 0.972 & 0.973 & \textbf{0.933} & \textbf{0.976} & \textbf{0.975} & \textbf{0.966} \\
+\hline
+\end{tabular}
+\end{table}
+
+Kết quả SSIM của mô hình KAN-WNETR trên tập test cho từng case (c0–c5) được tổng hợp và đối sánh với W-NETR như Bảng~\ref{tab:ssim_compare_wnetr}. Nhìn chung, SSIM trung bình của mô hình đề xuất đạt xấp xỉ $0.963$, tương đương mức SSIM tổng $0.96$ mà W-NETR báo cáo. Tuy nhiên, phân rã theo từng loại nhiễu cho thấy xu hướng khác biệt: mô hình của chúng tôi thể hiện lợi thế rõ hơn ở các trường hợp nhiễu “khó” (đặc biệt C3–C4), trong khi các case (C0–C2) vẫn thấp hơn so với W-NETR.
+
+Các kết quả này gợi ý rằng cấu hình KAN-WNETR có thể mang lại lợi thế về “bảo toàn cấu trúc” trong điều kiện nhiễu/biến thiên khó, nhưng vẫn cần tối ưu thêm để tiệm cận trần hiệu năng ở các kịch bản đơn giản.
+
+% ---------------------------------------------------------------------
+\section{Phát hiện fQRS và ước lượng FHR}
+
+\begin{table}[htbp]
+\centering
+\caption{So sánh hiệu quả với các phương pháp SOTA (Recall, Precision, F1).}
+\label{tab:compare_recall_precision_f1}
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lccc}
+\hline
+\textbf{Method} & \textbf{Recall (\%)} & \textbf{Precision (\%)} & \textbf{F1 (\%)} \\
+\hline
+(EKF)                     & 85.58 & 89.53 & 86.96 \\
+(TS$_{\mathrm{PCA}}$)     & 90.91 & 93.55 & 92.17 \\
+RCED-Net                  & 92.69 & 95.67 & 93.73 \\
+Res-Unet                  & 91.88 & 94.36 & 93.10 \\
+AECG-DecomposeNet         & 93.52 & 97.04 & 95.42 \\
+Attention-based CycleGAN  & 96.70 & 95.90 & 96.30 \\
+STFT GANs                 & --    & --    & 96.83 \\
+W-net                     & 95.74 & 97.45 & 96.91 \\
+W-NETR           & 98.12 & 98.60 & 98.90 \\
+\hline
+\textbf{Proposed KAN-WNETR (Ours)}   & \textbf{97.53} & \textbf{97.94} & \textbf{97.73} \\
+\hline
+\end{tabular}
+\end{table}
+
+Kết quả của mô hình KAN-WNETR đạt Recall = 97.53\%, Precision = 97.94\% và F1 = 97.73\% trên tập đánh giá. Với mức recall cao, mô hình có khả năng phát hiện phần lớn các đỉnh R của fECG mục tiêu (giảm bỏ sót), trong khi precision cao cho thấy số lượng phát hiện sai (false positives) được kiểm soát tốt. Việc F1 đạt xấp xỉ 97.7\% phản ánh sự cân bằng ổn định giữa hai tiêu chí này, đặc biệt quan trọng trong bối cảnh fECG có SNR thấp và dễ bị nhiễu/mECG che lấp. So với các phương pháp cổ điển như EKF hay $TS_{PCA}$, kết quả của mô hình đề xuất cao hơn rõ rệt, cho thấy lợi thế của hướng tiếp cận học sâu end-to-end trong bài toán tách và phát hiện fQRS. Tuy nhiên, khi đặt cạnh các mô hình SOTA gần đây (W-net, W-NETR), hiệu năng của KAN-WNETR vẫn thấp hơn một mức nhất định.
+
+% TODO: bổ sung sai số FHR (bpm) — gạch đầu dòng
+\begin{itemize}
+  \item Báo cáo MAE của FHR (bpm) giữa ước lượng và tham chiếu; có thể kèm Bland--Altman.
+  \item Đối chiếu với hệ thống thời gian thực (Chương~\ref{chapter:System}) vốn lấy FHR làm đầu ra chính.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{So sánh với SOTA}
+% TODO: văn xuôi nhận xét tổng hợp (gạch đầu dòng) — bảng SOTA đã ở mục 7.4
+\begin{itemize}
+  \item Đối chiếu KAN-WNETR với EKF/TS$_{\mathrm{PCA}}$/RCED-Net/Res-UNet/CycleGAN/W-net/W-NETR (Bảng~\ref{tab:compare_recall_precision_f1}).
+  \item Nhận xét: dẫn trước nhóm cổ điển; còn khoảng cách so với W-NETR ở fQRS nhưng nhỉnh hơn ở SSIM case khó.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Nghiên cứu loại bỏ (ablation): MLP-FFN vs KAN-FFN}
+% TODO: ĐIỂM MẤU CHỐT — chỉ thay đúng khối FFN trong cùng cấu hình W-NETR để
+% định lượng riêng đóng góp của KAN. Nếu chưa chạy thì đây là ưu tiên số 1.
+\begin{itemize}
+  \item Thiết lập: giữ nguyên mọi cấu hình W-NETR, chỉ đổi FFN (MLP $\leftrightarrow$ KAN); huấn luyện cùng dữ liệu/seed.
+  \item Báo cáo: SSIM/PSNR/F1 của hai biến thể $\Rightarrow$ định lượng riêng đóng góp của KAN.
+  \item \textbf{[Cần điền số liệu thật khi đã chạy ablation.]}
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\caption{Ablation: MLP-FFN vs KAN-FFN trong cùng cấu hình W-NETR.}
+\label{tab:ablation}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Biến thể FFN} & \textbf{SSIM} & \textbf{PSNR (dB)} & \textbf{F1 (\%)} & \textbf{\#Params} \\
+\hline
+MLP-FFN (baseline) & TODO & TODO & TODO & TODO \\
+KAN-FFN (ours)     & TODO & TODO & TODO & TODO \\
+\hline
+\end{tabular}
+\end{table}
+
+% ---------------------------------------------------------------------
+\section{Phân tích độ phức tạp}
+% TODO: làm cầu nối sang Chương 8 (triển khai biên)
+\begin{itemize}
+  \item Số tham số, FLOPs, kích thước mô hình, thời gian suy luận (FP32 vs INT8).
+  \item Liên hệ benchmark trên Raspberry Pi 5 (Bảng~\ref{tab:benchmark_int8}, Chương~\ref{chapter:System}).
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Bàn luận}
+% TODO: văn xuôi (gạch đầu dòng)
+\begin{itemize}
+  \item Điểm mạnh: bảo toàn hình thái ở nhiễu khó (C3--C4); cân bằng Recall/Precision.
+  \item Hạn chế: còn khoảng cách fQRS so với W-NETR; chủ yếu trên dữ liệu mô phỏng.
+  \item \textbf{Đối chiếu FP32 $\leftrightarrow$ INT8:} chênh lệch SSIM giữa bản huấn luyện FP32 và bản triển khai INT8 (giải thích đánh đổi chất lượng/hiệu năng).
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Kết luận chương}
+% TODO: văn xuôi (gạch đầu dòng)
+\begin{itemize}
+  \item Tóm tắt kết quả chính; chuyển ý sang triển khai hệ thống (Chương~\ref{chapter:System}).
+\end{itemize}
+
+\end{document}

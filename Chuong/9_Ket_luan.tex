@@ -1,0 +1,49 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+
+% =====================================================================
+% CHƯƠNG 9 — KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+% =====================================================================
+
+\section{Kết luận}
+% Đối chiếu kết quả đạt được với 3 mục tiêu ở Chương 1.
+
+Trong đồ án này, chúng tôi nghiên cứu bài toán trích xuất điện tâm đồ thai nhi không xâm lấn (NI-fECG) từ tín hiệu ECG bụng của mẹ (maECG) trong điều kiện SNR thấp và có chồng lấp mạnh giữa mECG–fECG. Dựa trên nền tảng W-NETR (hai nhánh UNETR 1D và cơ chế loại bỏ đặc trưng mECG trong latent space), mô hình đề xuất \textbf{KAN-WNETR} được xây dựng bằng cách \textbf{thay thế khối MLP/FFN trong Transformer encoder bằng KAN gốc} (learnable activation theo spline), trong khi vẫn giữ nguyên cơ chế self-attention và kiến trúc chữ W.
+
+Thực nghiệm trên bộ dữ liệu tổng hợp FECGSYNDB với nhiều ngữ cảnh sinh lý/nhiễu (C0--C5) và các mức SNR khác nhau cho thấy mô hình có khả năng tái tạo tín hiệu fECG ổn định. Về chất lượng dạng sóng, KAN-WNETR đạt \textbf{SSIM tổng 0.966}, nhỉnh hơn kết quả báo cáo của W-NETR (0.960), đồng thời thể hiện mức cải thiện rõ ở các kịch bản nhiễu phức tạp. Về phát hiện đỉnh R của fECG, mô hình đạt \textbf{Recall 97.53\%}, \textbf{Precision 97.94\%} và \textbf{F1 97.73\%}, phản ánh sự cân bằng tốt giữa giảm bỏ sót và giảm báo sai trong môi trường nhiễu.
+
+% TODO: bổ sung 1-2 câu đối chiếu trực tiếp với 3 mục tiêu ở Chương 1 (gạch đầu dòng):
+\begin{itemize}
+  \item Mục tiêu 1 (mô hình KAN-WNETR): đã đạt — nêu kết quả SSIM/F1.
+  \item Mục tiêu 2 (triển khai biên thời gian thực): đã đạt — INT8 trên Pi 5, $\sim$8--12$\times$ thời gian thực.
+  \item Mục tiêu 3 (hệ thống theo dõi): đã đạt — thiết bị + server + dashboard lâm sàng (Chương~\ref{chapter:System}).
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Hạn chế}
+% TODO: viết thành văn xuôi (giữ nội dung cũ, gạch đầu dòng định hướng)
+\begin{itemize}
+  \item Kết quả chủ yếu kiểm chứng trên dữ liệu mô phỏng (chưa có dữ liệu lâm sàng thực).
+  \item Hiệu năng phát hiện fQRS còn khoảng cách so với trần SOTA (W-NETR) ở một số thiết lập.
+  \item Chất lượng tín hiệu tụt sau lượng tử hoá INT8 so với FP32.
+  \item Ablation MLP-FFN vs KAN-FFN cần được hoàn tất để định lượng riêng đóng góp của KAN.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Hướng phát triển}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
+\begin{itemize}
+  \item Thu \textbf{dữ liệu lâm sàng thực} (chính bộ thu ADS1293 của đề tài có thể đảm nhiệm).
+  \item Mở rộng đa kênh; ablation sâu hơn; quantization-aware training (QAT) để thu hẹp khoảng cách FP32$\leftrightarrow$INT8.
+  \item Tối ưu chiến lược huấn luyện/loss và hậu xử lý peak-picking.
+  \item Tiến tới chuẩn thiết bị y tế.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Bài học kinh nghiệm}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
+\begin{itemize}
+  \item Kinh nghiệm về quy trình nghiên cứu, thực nghiệm có đối chứng và triển khai biên.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,12 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+Chúng em đã nghiên cứu và triển khai thành công mô hình MiT-UNet cho bài toán phân vùng cấu trúc OD và OC trên dataset ORIGA. Qua quá trình thực nghiệm, nhóm rút ra các kết luận nhằm đánh giá và cải thiện.
+
+Về khả năng phân đoạn, mô hình đạt chỉ số Dice lần lượt là 0.843 (OC) và 0.833 (OD), cho thấy khả năng nhận diện tốt các cấu trúc chính, nhưng độ chính xác tại các đường biên vẫn bị ảnh hưởng bởi nhiễu từ hệ thống mạch máu.
+
+Về khả năng chẩn đoán, kết quả phân loại dựa trên vCDR chưa đạt kỳ vọng do sai số tích lũy từ bước phân đoạn và sự thiếu nhất quán giữa hình thái hình học với ground truth labels trong tập dữ liệu.
+
+Trong tương lai việc tái cấu trúc mô hình theo hướng multitask có khả năng cái thiện được khả năng chẩn đoán, xây dựng một hệ thống chẩn đoán y tế lâm sàng chính xác và ổn định trong tương lai.
+
+
+\end{document}

@@ -1,0 +1,193 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+
+% =====================================================================
+% CHƯƠNG 4 — CƠ SỞ LÝ THUYẾT HỌC SÂU
+% Chương "kiến thức nền đã có": CHỈ chứa lý thuyết chuẩn, KHÔNG chứa đóng góp.
+% Tách phần này ra giúp Chương 5 chỉ còn nói về cái mới.
+% =====================================================================
+
+\section{Giới thiệu chương}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng bên dưới)
+\begin{itemize}
+  \item Mục tiêu chương: trình bày nền tảng lý thuyết học sâu cần thiết để hiểu mô hình đề xuất ở Chương~\ref{chapter:ProposedModel}.
+  \item Phạm vi: chỉ lý thuyết chuẩn (MLP, CNN 1D, Attention/Transformer, U-Net/UNETR, KAN, hàm mất mát), không chứa đóng góp.
+  \item Liên kết: các khối được giới thiệu ở đây (Transformer encoder, UNETR, KAN) là các thành phần được ghép lại trong KAN-WNETR.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Mạng nơ-ron và khối MLP/FFN}
+% Nguồn: chuyển từ 5_Trien_khai.tex (phần "MLP (Feed-Forward Network)")
+
+Trong một Transformer encoder block tiêu chuẩn, nhánh \textbf{self-attention} xử lý tương quan toàn cục giữa token/patch,
+còn nhánh \textbf{feed-forward} (thường gọi là MLP/FFN) thực hiện biến đổi phi tuyến theo từng token.
+
+\begin{itemize}
+  \item Dạng điển hình:
+    \begin{equation}
+      \mathrm{FFN}(x)=W_2\,\sigma(W_1x+b_1)+b_2,
+    \end{equation}
+    với $\sigma$ là kích hoạt cố định (GELU/ReLU), $W_1,W_2$ là trọng số tuyến tính học được.
+
+  \item Vai trò của MLP: tăng năng lực biểu diễn (representation capacity) sau attention, trộn thông tin theo chiều kênh (channel mixing),
+    và tạo phi tuyến để mô hình hoá quan hệ phức tạp.
+
+  \item Điểm yếu theo hướng \textit{robust + interpretability}: phi tuyến cố định $\rightarrow$ độ mềm/cứng phụ thuộc chủ yếu vào việc học ma trận tuyến tính;
+    khi dữ liệu có cấu trúc phi tuyến mạnh (nhiễu biến thiên theo bối cảnh, biên độ thay đổi, artifacts), MLP có thể cần nhiều tham số/độ rộng để khớp tốt
+    và dễ overfit.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Tích chập 1D (CNN) cho tín hiệu thời gian}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng bên dưới)
+\begin{itemize}
+  \item Phép tích chập 1D: cửa sổ kernel trượt dọc trục thời gian, trích đặc trưng cục bộ (đỉnh, sườn dốc, cấu trúc QRS); nêu công thức $y[n]=\sum_k w[k]\,x[n-k]+b$.
+  \item Các khái niệm: stride, padding, số kênh (feature maps), pooling/upsampling; vai trò trong encoder--decoder (decoder CNN của UNETR dùng để phục hồi chi tiết cục bộ).
+  \item Receptive field: tăng theo độ sâu/kernel; \textbf{hạn chế}: receptive field hữu hạn $\Rightarrow$ khó nắm phụ thuộc dài hạn $\Rightarrow$ động lực dùng Attention (mục~\ref{sec:attention}).
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Cơ chế Attention và Transformer encoder}
+\label{sec:attention}
+% Nguồn: chuyển từ 5_Trien_khai.tex (phần ViT/encoder block) — phần lý thuyết chuẩn
+
+% TODO: bổ sung văn xuôi cho Self-Attention (gạch đầu dòng định hướng)
+\begin{itemize}
+  \item Scaled dot-product attention: $\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$; ý nghĩa $Q,K,V$ và trọng số chú ý.
+  \item Multi-Head Self-Attention (MSA): chạy nhiều head song song rồi ghép; cho phép học nhiều kiểu quan hệ token-to-token.
+  \item Thành phần khác của encoder block: LayerNorm (LN), positional encoding, kết nối residual.
+\end{itemize}
+
+ViT chia input thành patch, chiếu tuyến tính thành embedding, cộng positional embedding, rồi qua $L$ encoder blocks.
+Encoder block chuẩn:
+\begin{equation}
+  z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},
+\end{equation}
+\begin{equation}
+  z_\ell = \mathrm{MLP}(\mathrm{LN}(z_\ell')) + z_\ell',
+\end{equation}
+trong đó MSA là multi-head self-attention, LN là layer norm. Attention học quan hệ token-to-token (toàn cục),
+còn nhánh feed-forward (MLP) tạo phi tuyến theo từng token.
+
+% ---------------------------------------------------------------------
+\section{Kiến trúc U-Net và UNETR}
+% Nguồn: chuyển từ 5_Trien_khai.tex (phần "UNETR: U-Net + Transformer encoder")
+
+\paragraph{U-Net.}
+% TODO: bổ sung văn xuôi (gạch đầu dòng định hướng)
+\begin{itemize}
+  \item Kiến trúc encoder--decoder đối xứng; encoder giảm mẫu (downsample) trích đặc trưng đa tỉ lệ, decoder tăng mẫu (upsample) tái tạo.
+  \item Skip connection nối encoder--decoder cùng mức phân giải $\Rightarrow$ giữ chi tiết cục bộ, ổn định gradient.
+\end{itemize}
+
+\paragraph{UNETR: U-Net + Transformer encoder.}
+UNETR thay encoder CNN của U-Net bằng Transformer encoder để lấy ngữ cảnh toàn cục; decoder vẫn dùng CNN (1D) để phục hồi chi tiết cục bộ \cite{hatamizadeh_unetr_2021}.
+Với tín hiệu 1D, input $x\in\mathbb{R}^{992\times 1\times C}$ được patchify không chồng lấp kích thước $N=16$,
+chiếu tuyến tính lên embedding $K$, cộng positional embedding:
+\begin{equation}
+  z_0 = [x_1E;\,x_2E;\,\ldots;\,x_NE] + E_{pos}.
+\end{equation}
+Transformer có $L$ lớp; các tầng $i\in\{3,6,9,12\}$ được lấy làm skip features để ghép với decoder ở các mức phân giải khác nhau.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Hinhve/image_44.png}
+  \caption{Cấu trúc model UNETR \cite{hatamizadeh_unetr_2021}.}
+  \label{fig:unetr}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\section{Kolmogorov--Arnold Networks (KAN)}
+% Nguồn: chuyển từ 5_Trien_khai.tex (phần KAN và so sánh KAN vs MLP)
+
+\paragraph{KAN: ``đảo trục'' từ học tuyến tính sang học phi tuyến.}
+KAN xuất phát từ định lý biểu diễn Kolmogorov--Arnold: hàm nhiều biến liên tục có thể biểu diễn bằng tổ hợp các hàm một biến.
+Ý tưởng kiến trúc KAN (ở mức ``khối'' dùng trong deep learning) là:
+
+\begin{itemize}
+  \item Thay vì ``\textbf{tuyến tính học được + kích hoạt cố định}'' (MLP), KAN dùng \textbf{kích hoạt có thể học} (learnable activation)
+    đặt trên \textbf{các cạnh} (edges) kết nối giữa các nút.
+
+  \item Có thể hiểu một lớp KAN như một ``ma trận hàm'' $\{\phi_{j,i}(\cdot)\}$ thay cho ma trận trọng số $W$:
+    \begin{equation}
+      y_j = \sum_i \phi_{j,i}(x_i),
+    \end{equation}
+    trong đó mỗi $\phi_{j,i}$ là một hàm 1D có tham số.
+
+  \item Thực thi phổ biến: tham số hoá bằng \textbf{spline (B-spline)} để học trực tiếp hình dạng phi tuyến.
+\end{itemize}
+
+\paragraph{Residual activation trong KAN và spline parameterization.}
+Một cách cài đặt thực tế thường dùng là \textit{residual activation}:
+\begin{equation}
+  \phi(x) = w\big(b(x)+s(x)\big),
+\end{equation}
+trong đó $b(x)$ là hàm nền (base function), và $s(x)$ là spline học được, thường là tổ hợp tuyến tính của các B-spline:
+\begin{equation}
+  s(x) = \sum_{t} c_t B_t(x).
+\end{equation}
+
+\paragraph{Hệ quả khi so KAN với MLP.}
+\begin{enumerate}
+  \item \textbf{Biểu diễn:} KAN có xu hướng biểu diễn phi tuyến mạnh với ít nút hơn (mỗi cạnh mang phi tuyến giàu tham số).
+  \item \textbf{Tính diễn giải:} vì $\phi_{j,i}$ là hàm 1D có thể vẽ/quan sát, có thể đọc ``đóng góp'' của từng biến/đường nối.
+  \item \textbf{Độ phức tạp:} spline có nhiều tham số hơn một trọng số tuyến tính; nếu giữ cùng độ rộng $N$, KAN có thể nặng hơn MLP.
+    Tuy nhiên, KAN thường cần $N$ nhỏ hơn để đạt hiệu năng tương đương nên tổng tham số có thể giảm.
+  \item \textbf{Tối ưu hoá:} KAN thêm bậc tự do ở phi tuyến $\rightarrow$ khớp tốt hơn nhưng cần chiến lược huấn luyện/regularization hợp lý (grid, pruning).
+  \item \textbf{Grid refinement + sparsity/pruning:} tăng độ phân giải spline để cải thiện sai số mà không phải thiết kế lại toàn mô hình; đồng thời khuyến khích thưa hoá rồi pruning để tăng tính diễn giải.
+\end{enumerate}
+
+% ---------------------------------------------------------------------
+\section{Hàm mất mát cho hồi quy tín hiệu}
+% Nguồn: phần lý thuyết Huber chuyển từ 5_Trien_khai.tex; bổ sung MSE/MAE
+
+% TODO: bổ sung văn xuôi giới thiệu MSE/MAE và lý do chọn Huber (gạch đầu dòng)
+\begin{itemize}
+  \item MSE (L2): nhạy sai số nhỏ, tối ưu mượt, nhưng bị outlier chi phối mạnh.
+  \item MAE (L1): bền với outlier nhưng gradient không mượt quanh 0.
+  \item Huber: kết hợp ưu điểm hai loại $\Rightarrow$ lý do được chọn cho bài toán tái tạo fECG (nhiều đoạn nhiễu đột biến).
+\end{itemize}
+
+\subsection{Hàm mất mát Huber (Huber Loss)}
+
+Trong bài toán hồi quy tín hiệu (ví dụ tái tạo fECG), hàm mất mát Huber thường được sử dụng để tăng tính \textit{robust} trước các điểm ngoại lai (outliers) hoặc các đoạn nhiễu đột biến. Huber loss kết hợp ưu điểm của MSE và MAE: với sai số nhỏ, hàm phạt theo bình phương (giúp tối ưu mượt và nhạy với sai số nhỏ), còn với sai số lớn, hàm phạt tuyến tính (giảm ảnh hưởng của outlier).
+
+Gọi residual (sai số) tại mẫu $i$ là
+\begin{equation}
+  r_i = y_i - \hat{y}_i,
+\end{equation}
+trong đó $y_i$ là giá trị mục tiêu (ground truth) và $\hat{y}_i$ là giá trị dự đoán của mô hình. Khi đó, Huber loss với ngưỡng $\delta>0$ được định nghĩa như sau:
+\begin{equation}
+  \mathcal{L}_\delta(r_i)=
+  \begin{cases}
+    \frac{1}{2}r_i^2, & |r_i|\le \delta,\\[4pt]
+    \delta\left(|r_i|-\frac{1}{2}\delta\right), & |r_i|>\delta.
+  \end{cases}
+\end{equation}
+
+Đạo hàm theo $r_i$ (gradient) có dạng:
+\begin{equation}
+  \frac{\partial \mathcal{L}_\delta}{\partial r_i}=
+  \begin{cases}
+    r_i, & |r_i|\le \delta,\\[4pt]
+    \delta\,\mathrm{sign}(r_i), & |r_i|>\delta,
+  \end{cases}
+\end{equation}
+cho thấy gradient bị chặn trong khoảng $\left[-\delta,\delta\right]$ khi sai số lớn, nhờ đó hạn chế việc một số ít điểm nhiễu mạnh chi phối quá trình cập nhật tham số.
+
+Với một cửa sổ tín hiệu có $T$ mẫu, loss tổng quát thường lấy trung bình:
+\begin{equation}
+  \mathcal{L}=\frac{1}{T}\sum_{i=1}^{T}\mathcal{L}_\delta(r_i).
+\end{equation}
+
+Tham số $\delta$ điều khiển mức độ gần MSE hoặc MAE: $\delta$ càng lớn thì loss gần MSE hơn; $\delta$ càng nhỏ thì loss gần MAE hơn.
+
+% ---------------------------------------------------------------------
+\section{Kết luận chương}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
+\begin{itemize}
+  \item Tóm tắt các khối nền tảng: Transformer (ngữ cảnh toàn cục), UNETR (encoder Transformer + decoder CNN), KAN (phi tuyến học được), Huber loss.
+  \item Chuyển ý sang Chương~\ref{chapter:ProposedModel}: các khối này được ghép và cải tiến như thế nào trong mô hình đề xuất.
+\end{itemize}
+
+\end{document}

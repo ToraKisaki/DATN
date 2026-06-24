@@ -1,0 +1,122 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+
+% =====================================================================
+% CHƯƠNG 5 — MÔ HÌNH ĐỀ XUẤT KAN-WNETR
+% Chương "đóng góp thuật toán": CHỈ nói cái mới, dựa trên nền Chương 4.
+% =====================================================================
+
+\section{Giới thiệu chương và ý tưởng tổng thể}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
+\begin{itemize}
+  \item Nhắc lại bài toán: tách fECG khỏi maECG đơn kênh, SNR thấp, mECG--fECG chồng lấp.
+  \item Ý tưởng cốt lõi: giữ macro-architecture W-NETR (hai nhánh + khử đặc trưng mECG), thay khối MLP/FFN trong Transformer encoder bằng KAN.
+  \item Vì sao can thiệp đúng vào MLP/FFN: đây là bộ phận chịu trách nhiệm phi tuyến theo token; nâng cấp bằng KAN để tăng năng lực biểu diễn và bảo toàn hình thái.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Kiến trúc nền W-NETR}
+
+W-NETR dùng hai UNETR 1D chạy song song \cite{lee_end--end_2022}:
+\begin{itemize}
+  \item Nhánh phải: tái tạo/chiết xuất \textbf{fECG}.
+  \item Nhánh trái: tái tạo \textbf{mECG}.
+\end{itemize}
+Khác biệt cốt lõi là cơ chế \textbf{mECG feature elimination}:
+\begin{itemize}
+  \item Ở mỗi bước encoder, đặc trưng mECG từ nhánh trái được \textbf{trừ} khỏi đặc trưng tương ứng ở nhánh phải.
+  \item Sau phép trừ áp dụng $\tanh$ để chặn biên và ổn định.
+\end{itemize}
+Trực giác: mô hình học đồng thời hai biểu diễn; dùng đặc trưng mECG như ``mẫu nền'' để khử khỏi nhánh fECG trong feature space.
+
+% ---------------------------------------------------------------------
+\section{KAN-ViT: thay MLP/FFN bằng KAN trong encoder block}
+
+\paragraph{KAN-ViT: giữ MSA, thay MLP bằng KAN.}
+\cite{ye_elevating_2024}
+KAN-ViT giữ nguyên cơ chế attention và residual, nhưng thay FFN:
+\begin{equation}
+  z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},
+\end{equation}
+\begin{equation}
+  z_\ell = \mathrm{KAN}(\mathrm{LN}(z_\ell')) + z_\ell'.
+\end{equation}
+Ý nghĩa: attention vẫn học quan hệ token-to-token (toàn cục), còn nhánh phi tuyến ``theo token'' được tăng năng lực bằng KAN.
+
+Trong ViT/Transformer, MSA quyết định cơ chế ``gán trọng số'' để trộn thông tin giữa token, còn MLP quyết định mức độ phi tuyến hậu attention.
+Can thiệp vào MLP hợp lý vì:
+\begin{itemize}
+  \item MLP là nơi mô hình ``nắn'' đặc trưng phi tuyến theo kênh.
+  \item KAN cung cấp phi tuyến có thể học trực tiếp, tiềm năng tốt hơn với mẫu nhiễu/phi tuyến khó tuyến tính hoá bằng $W_2\sigma(W_1\cdot)$.
+\end{itemize}
+
+\paragraph{Hệ quả khi đem KAN-ViT sang 1D biosignal.}
+Dù KAN-ViT được đề xuất cho ảnh 2D, bản chất ``Transformer encoder + FFN'' là bất biến theo miền. Với tín hiệu 1D:
+\begin{itemize}
+  \item Token = patch theo trục thời gian.
+  \item Attention học phụ thuộc xa (long-range dependencies) giữa các đoạn thời gian.
+  \item KAN-FFN tăng năng lực biến đổi phi tuyến trên embedding của từng token, hữu ích khi:
+    (i) biên độ thay đổi theo đối tượng/lead,
+    (ii) tồn tại artifact cục bộ mạnh,
+    (iii) cần giữ hình thái (P/QRS/T) nhạy với phi tuyến và tỷ lệ.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Tích hợp KAN vào W-NETR: kiến trúc KAN-WNETR}
+
+\paragraph{Nguyên tắc tích hợp.}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{Hinhve/KAN_WNETR_Pipeline.png}
+  \caption{Mô hình KAN-WNETR đề xuất: Tín hiệu ECG bụng của mẹ (maECG) được xử lý qua kiến trúc hai nhánh: một nhánh tái tạo ECG mẹ (mECG), nhánh còn lại trích xuất ECG thai (fECG).
+Cả hai nhánh bắt đầu bằng trích xuất đặc trưng bằng tích chập, sau đó là chuỗi các khối giảm mẫu. Các đường màu đỏ biểu diễn phép trừ đặc trưng mECG khỏi nhánh UNETR fECG (bên phải) tại mỗi bước encoder của Transformer. Hàm kích hoạt \textit{tanh} được áp dụng sau phép trừ.}
+  \label{fig:kanwnetr}
+\end{figure}
+
+KAN-WNETR giữ nguyên macro-architecture của W-NETR:
+patchify 1D + positional embedding; $L=12$ encoder layers; skip từ $\{3,6,9,12\}$ sang decoder CNN;
+hai nhánh (mECG và fECG) + feature elimination (trừ + $\tanh$).
+Điểm thay đổi duy nhất là \textbf{thay MLP trong mọi Transformer encoder block} bằng \textbf{KAN block} (theo KAN-ViT).
+
+\paragraph{Khối encoder sau thay thế.}
+Với mỗi encoder block $\ell$ ở từng nhánh:
+\begin{equation}
+  z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},
+\end{equation}
+\begin{equation}
+  z_\ell = \mathrm{KAN}(\mathrm{LN}(z_\ell')) + z_\ell'.
+\end{equation}
+Tại điểm ghép W (feature elimination), ở từng mức/step tương ứng:
+\begin{equation}
+  \tilde{z}_\ell^{(f)} = \tanh\big(z_\ell^{(f)} - z_\ell^{(m)}\big),
+\end{equation}
+trong đó $(f)$ là nhánh fetal và $(m)$ là nhánh maternal.
+
+% ---------------------------------------------------------------------
+\section{Phân tích thiết kế và kỳ vọng}
+
+Thay MLP bằng KAN là thay đúng bộ phận chịu trách nhiệm:
+(i) phi tuyến theo token (giàu năng lực biểu diễn), (ii) tinh chỉnh embedding sau attention,
+trong khi vẫn giữ attention để học phụ thuộc xa. Do đó, KAN-WNETR kỳ vọng:
+giữ hình thái fECG (P/QRS/T) tốt hơn khi nhiễu biến thiên; giảm nhầm lẫn khi mECG/fECG overlap ở thời điểm QRS;
+tăng ổn định khi biên độ/lead thay đổi (spline activation có thể tự thích nghi).
+
+% ---------------------------------------------------------------------
+\section{Tổng hợp đóng góp kiến trúc}
+\begin{itemize}
+  \item W-NETR giải quyết bài toán tách nguồn theo hướng hai nhánh + khử đặc trưng mECG trong latent space.
+  \item ViT/Transformer encoder cung cấp ngữ cảnh toàn cục, khắc phục receptive field hạn chế của CNN.
+  \item KAN thay MLP trong encoder block để tăng năng lực phi tuyến token-wise, cải thiện mô hình hoá biến thiên phi tuyến trong maECG và bảo toàn hình thái fECG.
+  \item KAN-WNETR kết hợp: \textbf{global context (MSA) + learnable nonlinearity (KAN) + maternal feature subtraction (W) + local detail reconstruction (CNN decoder)}.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section{Kết luận chương}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
+\begin{itemize}
+  \item Tóm tắt: KAN-WNETR = W-NETR + KAN-ViT, chỉ thay khối FFN, giữ nguyên cơ chế chữ W.
+  \item Chuyển ý sang Chương~\ref{chapter:DataAndSetup}: dữ liệu, tiền xử lý và thiết lập thực nghiệm để kiểm chứng mô hình.
+\end{itemize}
+
+\end{document}

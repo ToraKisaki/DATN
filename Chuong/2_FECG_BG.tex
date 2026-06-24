@@ -1,0 +1,68 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+
+\section{Giới thiệu chương}
+
+Chương này trình bày các khái niệm sinh lý học, nền tảng kỹ thuật của điện tâm đồ thai nhi (Fetal ECG - fECG), và các phương pháp theo dõi thai nhi hiện đang được sử dụng. Trọng tâm đặc biệt được dành cho sự phát triển của phương thức fECG cũng như những thông tin có thể trích xuất từ tín hiệu sinh lý này. Chúng tôi sẽ tổng quan một số tài liệu nghiên cứu hiện có, tập trung vào các công trình quan trọng nhất, đặc biệt là những công trình được phát triển chuyên biệt cho bài toán quan tâm.
+
+\section{Nguyên lý và đặc tính tín hiệu ECG/fECG}
+
+Thiết bị theo dõi điện tim đầu tiên - máy điện kế sợi dây, được phát minh bởi William Einthoven vào năm 1901 \cite{einthoven_galvanometrische_1903}. Vào những năm 1960s, điện tâm đồ điện toán đã được sử dụng rộng rãi trong nhiều bệnh viện lớn \cite{department_of_general_medicine_amala_institute_of_medical_sciences_thrissur_kerala_indi_laboratory_2022}.
+
+Điện tâm đồ (Electrocardiogram – ECG) là biểu diễn đơn giản của hoạt động điện của cơ tim và sự biến đổi của nó theo thời gian; tín hiệu này thường được in ra giấy để thuận tiện cho việc phân tích. Giống như các cơ khác trong cơ thể, cơ tim co lại khi đáp ứng với quá trình khử cực điện của các tế bào cơ. Thực chất, ECG là tổng hợp các hoạt động điện này sau khi được khuếch đại và ghi lại trong vài giây. Tín hiệu ECG được ghi nhận bằng cách đặt các điện cực tại nhiều vị trí khác nhau trên bề mặt cơ thể. Hình \ref{fig:ecg_signal} mô phỏng sự dịch chuyển của tín hiệu điện trong tim và các đặc tính tương ứng của tín hiệu điện đó trên một tín hiệu ECG. Dù cho tồn tại nhiều đặc điểm khác biệt về chức năng giữa tim thai nhi và người trưởng thành, nhưng tín hiệu điện giữa 2 loại vẫn có những đặc điểm tương đồng nhất định \cite{godfrey_functional_2012}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Hinhve/image_38.png}
+  \caption{Hình minh họa tín hiệu ECG}
+  \label{fig:ecg_signal}
+\end{figure}
+
+Tín hiệu điện tìm gồm 5 thành phần chính: Sóng P, Q, R, S, T (Hình \ref{fig:ecg_components}). Sóng P biểu thị sự khởi phát xung điện và khử cực tâm nhĩ, cho biết nguồn phát nhịp và tính ổn định của nhịp tim. Phức bộ QRS thể hiện quá trình khử cực tâm thất, là giai đoạn hoạt động điện mạnh nhất do tâm thất đảm nhiệm chức năng bơm máu chính. Sóng T phản ánh quá trình tái cực tâm thất, liên quan đến sự phục hồi điện thế màng sau co bóp. Tín hiệu fECG bản chất vẫn giống với tín hiệu ECG người lớn, với đủ 5 thành phần tín hiệu (P, Q, R, S, T). Cấu trúc của ECG thai nhi gồm rất nhiều thông tin đáng giá để hỗ trợ trong chẩn đoán bệnh lý của thai nhi, nhưng nhiều những phương pháp phân tách tín hiệu ECG vẫn chú trọng hơn vào phân tách khoảng cách R-R dùng phương pháp phát hiện đỉnh R, hoặc là kết quả tổng thể của hình sóng ECG. Nguyên do chính là vì tỉ số tín hiệu trên nhiễu (SNR) của fECG tương đối thấp hơn so với mECG, dẫn đến khó khăn trong xác định cấu trúc và hình thái của fECG.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Hinhve/image_39.png}
+  \caption{Các thành phần chính của tín hiệu ECG trên người lớn}
+  \label{fig:ecg_components}
+\end{figure}
+
+\section{Ý nghĩa lâm sàng của theo dõi tim thai}
+
+Số liệu phản ánh cho tử vong sản khoa, dù đã có sự giảm theo thời gian, từ 83 ca tử vong mẹ trên 100,000 trẻ đẻ sống trong năm 2000 xuống 48 ca tử vong mẹ trên 100,000 trẻ đẻ sống trong năm 2023 \cite{noauthor_trends_2025}. Việc phát hiện sớm các dấu hiện bệnh lý sẽ góp phần lớn trong công cuộc cứu chữa và tăng khả năng sống sót. Vậy nên, việc theo dõi sức khỏe thai nhi đóng vai trò thiết yếu trong thai kỳ, phòng tránh các yếu tố có thể ảnh hưởng tính mạng của mẹ và thai nhi. Theo dõi tình trạng tim thai nhi cũng góp phần hỗ trợ trong chẩn đoán một số bệnh, không chỉ ảnh hưởng đến thai nhi mà còn với thai phụ.
+
+\section{Các phương thức theo dõi thai}
+% TODO: bổ sung văn xuôi so sánh ưu/nhược từng phương thức (gạch đầu dòng định hướng)
+\begin{itemize}
+  \item CTG (cardiotocography): ghi đồng thời nhịp tim thai + cơn co tử cung — trình bày bên dưới.
+  \item Siêu âm Doppler: đo fHR; lo ngại an toàn khi dùng kéo dài, mất tín hiệu ở mẹ BMI cao.
+  \item PCG (phonocardiography): ghi âm tim thai.
+  \item fECG xâm lấn (điện cực da đầu) vs không xâm lấn (điện cực bụng): đánh đổi chất lượng tín hiệu vs an toàn.
+\end{itemize}
+
+Cardiotocography (CTG) là phương pháp theo dõi thai nhi dựa trên việc ghi đồng thời nhịp tim thai (cardio) và cơn co tử cung (toco).
+
+CTG được sử dụng chủ yếu trong ba tháng cuối thai kỳ và trong chuyển dạ nhằm đánh giá tình trạng oxy hóa và sức khỏe của thai. Hệ thống CTG điển hình gồm hai cảm biến đặt trên thành bụng mẹ:
+
+\begin{itemize}
+  \item Cảm biến siêu âm Doppler để ghi nhịp tim thai.
+  \item Cảm biến áp lực (tocodynamometer) để ghi cường độ và tần suất co tử cung.
+\end{itemize}
+
+\section{Tổng quan thiết bị fECG thương mại}
+
+Theo nghiên cứu khảo sát \cite{karmakar_consumer_2025} cho thấy thiết bị fECG không xâm lấn dạng wearable cho theo dõi thai từ xa có mức độ chấp nhận cao từ thai phụ, mang lại cảm giác yên tâm và thuận tiện khi sử dụng kéo dài tại nhà. Trong thời gian gần đây, các thiết bị
+
+% copy thesis, viết lại
+Thiết bị HeraBEAT (HeraMED, Israel) sử dụng công nghệ Doppler chùm siêu rộng để đo nhịp tim thai, nhưng vẫn tồn tại hạn chế kỹ thuật như mất tín hiệu ở thai phụ có BMI cao và các lo ngại về an toàn khi sử dụng kéo dài. Ngoài ra, các hệ thống Doppler này chỉ cung cấp nhịp tim thai (fHR) mà không phản ánh các đặc điểm chức năng điện học khác của tim. Bên cạnh ứng dụng CTG trong bệnh viện, việc đánh giá fHR/fECG bằng cảm biến không xâm lấn đặt trên bụng mẹ mở ra khả năng theo dõi thai tại nhà, góp phần nâng cao giám sát sức khỏe thai trước và trong chuyển dạ.
+
+Đối với các hệ thống dựa trên fECG, hiện có bốn nhà cung cấp chính. MindChild Medical phát triển hệ MERIDIAN M110 giúp khắc phục một số hạn chế của CTG truyền thống, nhưng thiết bị cồng kềnh, có dây, chi phí cao và kém linh động. Hệ GE Monica Novii (trước đây là Monica Healthcare Novii) sử dụng miếng dán không dây nhỏ gọn hơn, song phạm vi di động chỉ giới hạn trong khu vực phòng sinh. Philips Avalon Beltless loại bỏ dây kết nối nhưng vẫn chỉ sử dụng trong môi trường bệnh viện. Hệ Nemo Fetal Monitoring (Hà Lan) là thiết bị không dây, có khả năng ghi thêm tín hiệu điện cơ tử cung (EMG), tuy nhiên hiệu suất phụ thuộc nhiều vào vị trí đặt cảm biến, thời điểm đo, mức độ vận động và tư thế của thai phụ. Nhìn chung, các hệ thống này có chi phí cao và chưa thực sự phù hợp cho người dùng phổ thông.
+
+\section{Kết luận chương}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
+\begin{itemize}
+  \item Tóm tắt: nền tảng sinh lý fECG, ý nghĩa lâm sàng, hạn chế của các phương thức hiện có và khoảng trống thiết bị thương mại.
+  \item Chuyển ý sang Chương~\ref{chapter:RelatedWorks}: các phương pháp kỹ thuật tách fECG không xâm lấn.
+\end{itemize}
+
+\end{document}

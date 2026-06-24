@@ -1,0 +1,312 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+
+% =====================================================================
+% CHƯƠNG 8 — THIẾT KẾ VÀ TRIỂN KHAI HỆ THỐNG THEO DÕI fECG THỜI GIAN THỰC
+% Chương "đóng góp hệ thống" — dựa trên repo raspi-deploy + raspi-fecg-server.
+% Trình bày theo phân hệ. Đây là chương dài nhất.
+% =====================================================================
+
+\section{Giới thiệu chương và yêu cầu hệ thống}
+% Gạch đầu dòng gốc:
+% - Mục tiêu: hiện thực hoá mô hình KAN-WNETR thành một hệ thống theo dõi fECG đầu giường, chạy thời gian thực.
+% - Yêu cầu chức năng: thu tín hiệu ECG bụng đơn kênh; trích xuất fECG thời gian thực; ước lượng FHR/MHR; hiển thị dạng sóng cuộn; cảnh báo lâm sàng; quản lý nhiều bệnh nhân.
+% - Yêu cầu phi chức năng: độ trễ thấp (~200 ms), chạy được trên thiết bị biên (Raspberry Pi 5), gọn nhẹ (mô hình INT8 ~29 MB), an toàn dữ liệu (xác thực token thiết bị, phiên đăng nhập).
+% - Lưu ý: đây là phần mềm nghiên cứu/giáo dục, không phải thiết bị y tế được chứng nhận.
+
+Chương này trình bày quá trình thiết kế, hiện thực và kiểm thử một hệ thống nguyên mẫu theo dõi điện tâm đồ thai nhi (fECG) theo thời gian thực, nhằm đưa mô hình KAN-WNETR đã huấn luyện ở các chương trước từ giai đoạn nghiên cứu sang ứng dụng thực tiễn tại đầu giường bệnh nhân.
+
+Về mặt chức năng, hệ thống cần đáp ứng các yêu cầu sau: (i)~thu nhận tín hiệu ECG bụng đơn kênh từ cảm biến phần cứng; (ii)~trích xuất tín hiệu fECG theo thời gian thực bằng mô hình học sâu; (iii)~ước lượng nhịp tim thai (FHR) và nhịp tim mẹ (MHR); (iv)~hiển thị dạng sóng cuộn liên tục trên màn hình đầu giường; (v)~đưa ra cảnh báo lâm sàng khi nhịp tim thai vượt ngưỡng bất thường; và (vi)~hỗ trợ quản lý đồng thời nhiều bệnh nhân thông qua giao diện web.
+
+Về mặt phi chức năng, hệ thống được thiết kế với các ràng buộc: độ trễ xử lý thấp (khoảng 200~ms mỗi chu kỳ suy luận), khả năng vận hành trên thiết bị biên với tài nguyên hạn chế (Raspberry Pi~5), kích thước mô hình gọn nhẹ sau lượng tử hóa (khoảng 29~MB ở định dạng INT8), và đảm bảo an toàn dữ liệu cơ bản thông qua cơ chế xác thực token thiết bị cùng phiên đăng nhập cho bác sĩ.
+
+\textit{Lưu ý:} Hệ thống được phát triển trong khuôn khổ nghiên cứu và giáo dục, \textbf{không phải thiết bị y tế được chứng nhận} theo các tiêu chuẩn quản lý hiện hành.
+
+% ---------------------------------------------------------------------
+\section{Kiến trúc tổng quan}
+% Gạch đầu dòng gốc:
+% - Sơ đồ 3 tầng: Thiết bị (Pi 5) <-> Server (PC) <-> Dashboard web.
+% - Ranh giới Pi/PC: monitor PyQt5 chạy cục bộ trên Pi; server FastAPI chạy trên PC; dashboard xem được trên LCD của Pi (kiosk browser) hoặc bất kỳ trình duyệt nào trong mạng LAN.
+% - Luồng dữ liệu: ADS1293 (250 Hz) -> acquisition -> infer.py (fECG) -> uploader WebSocket -> server (phân tích FHR/MHR + lưu) -> fan-out WebSocket tới dashboard.
+% - Khẳng định tái sử dụng: monitor dùng lại đúng phép toán của mô hình qua device/model_loader.py (import infer.py): band-pass [3–90 Hz], chuẩn hoá z-score, phiên ONNX INT8, fECG = output channel 1.
+
+Hệ thống được thiết kế theo mô hình ba tầng (three-tier), bao gồm: \textbf{tầng thiết bị} (Raspberry Pi~5), \textbf{tầng máy chủ} (FastAPI trên PC) và \textbf{tầng hiển thị} (dashboard web). Sơ đồ kiến trúc tổng quan được minh hoạ trong Hình~\ref{fig:system_arch}.
+
+Tầng thiết bị chịu trách nhiệm thu nhận tín hiệu ECG thô từ module analog front-end ADS1293 với tần số lấy mẫu 250~Hz, tiền xử lý và suy luận mô hình fECG ngay tại chỗ, đồng thời hiển thị dạng sóng cuộn trên màn hình LCD 3{,}5 inch (480$\times$320 pixel) thông qua ứng dụng PyQt5. Song song, thiết bị cũng đóng vai trò nguồn phát dữ liệu, truyền các bộ ba \texttt{(t, raw, fecg)} lên tầng máy chủ qua kênh WebSocket.
+
+Tầng máy chủ tiếp nhận luồng dữ liệu từ thiết bị, thực hiện phân tích lâm sàng (ước lượng FHR, MHR, chỉ số chất lượng tín hiệu, phát hiện cảnh báo), lưu trữ lịch sử mẫu vào cơ sở dữ liệu SQLite, và phân phối (fan-out) dữ liệu cùng các chỉ số phân tích tới tất cả các dashboard web đang đăng ký theo dõi.
+
+Tầng hiển thị là một ứng dụng web được thiết kế theo triết lý ``480$\times$320-first'' và ``touch-first'' --- nghĩa là giao diện tối ưu cho màn hình cảm ứng nhỏ của Pi, nhưng vẫn co giãn tốt khi mở trên trình duyệt máy tính hoặc thiết bị có kích thước lớn hơn trong cùng mạng LAN.
+
+Luồng dữ liệu chính của hệ thống diễn ra tuần tự như sau:
+
+\begin{center}
+\small
+ADS1293 (250\,Hz) $\rightarrow$ \texttt{acquisition} $\rightarrow$ \texttt{infer.py} (trích fECG) $\rightarrow$ \texttt{uploader} (WebSocket) $\rightarrow$ \texttt{server} (phân tích FHR/MHR + lưu trữ) $\rightarrow$ fan-out WebSocket $\rightarrow$ dashboard web
+\end{center}
+
+Điểm đáng lưu ý là module monitor trên thiết bị tái sử dụng chính xác cùng phép toán suy luận của mô hình thông qua \texttt{model\_loader.py} (import trực tiếp \texttt{infer.py}): bao gồm bộ lọc thông dải 3--90~Hz, chuẩn hoá z-score theo từng cửa sổ, phiên ONNX INT8, và lấy kênh fECG = channel index~1 từ đầu ra dual-branch. Không có bất kỳ sửa đổi nào đối với \texttt{infer.py} hay thư mục \texttt{models/} khi tích hợp vào hệ thống thời gian thực.
+
+% Gợi ý chèn sơ đồ kiến trúc (ASCII trong REALTIME_MONITOR.md / WEB_WORKFLOW.md):
+% ADS1293 ──soft-SPI──▶ Pi 5 monitor (PyQt5) ──WS──▶ FastAPI+SQLite ──WS──▶ dashboard web
+\begin{figure}[h]
+  \centering
+  % TODO: vẽ lại sơ đồ kiến trúc 3 tầng và chèn vào Hinhve/
+  % \includegraphics[width=\textwidth]{Hinhve/he_thong_3tang.png}
+  \caption{Kiến trúc tổng quan hệ thống theo dõi fECG thời gian thực (3 tầng: thiết bị Pi 5 -- server PC -- dashboard web).}
+  \label{fig:system_arch}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\section{Tối ưu mô hình cho thiết bị biên}
+
+\subsection{Xuất ONNX}
+% Gạch đầu dòng gốc:
+% - Chuyển mô hình PyTorch sang định dạng ONNX để suy luận độc lập framework qua ONNX Runtime (CPU) trên Pi 5.
+% - Input shape [B, 1, 992]; output [B, 2, 992] (dual-branch), trong đó fECG = kênh chỉ số 1.
+
+Để triển khai mô hình học sâu trên thiết bị biên có tài nguyên hạn chế, bước đầu tiên là chuyển đổi mô hình từ framework PyTorch sang định dạng Open Neural Network Exchange (ONNX). Việc sử dụng ONNX mang lại lợi thế quan trọng: mô hình có thể được suy luận bằng ONNX Runtime --- một engine tối ưu hỗ trợ nhiều nền tảng phần cứng mà không phụ thuộc vào PyTorch --- từ đó giảm đáng kể dung lượng bộ nhớ và các thư viện phụ thuộc trên Pi.
+
+Mô hình được xuất với kích thước đầu vào cố định \texttt{[B, 1, 992]}, tương ứng một cửa sổ tín hiệu đơn kênh dài 992 mẫu (xấp xỉ 3{,}97 giây ở tần số 250~Hz). Đầu ra có dạng \texttt{[B, 2, 992]} theo kiến trúc dual-branch, trong đó tín hiệu fECG được trích xuất từ kênh chỉ số~1 (\texttt{output[0, 1, :]}).
+
+\subsection{Lượng tử hóa INT8 động (MatMul/Gemm)}
+% Gạch đầu dòng gốc:
+% - Dynamic quantization INT8 áp cho các phép MatMul/Gemm => giảm kích thước mô hình còn ~29 MB, tăng tốc trên CPU ARM.
+% - Đánh đổi: chất lượng INT8 so với FP32 (đối chiếu định lượng SSIM/PSNR ở Chương Results, mục bàn luận FP32<->INT8).
+
+Sau khi xuất ONNX, mô hình được tiếp tục tối ưu bằng kỹ thuật lượng tử hóa động INT8 (dynamic quantization). Kỹ thuật này áp dụng biểu diễn số nguyên 8-bit cho các phép toán nhân ma trận (MatMul) và nhân ma trận tổng quát (Gemm) --- hai loại phép toán chiếm phần lớn chi phí tính toán trong mạng Transformer. Nhờ đó, kích thước mô hình giảm còn khoảng 29~MB so với phiên bản FP32 gốc, đồng thời tốc độ suy luận trên CPU ARM của Pi~5 được cải thiện đáng kể nhờ các phép toán số nguyên nhanh hơn phép toán dấu phẩy động.
+
+Đánh đổi chính của lượng tử hóa là sự suy giảm nhỏ về chất lượng tín hiệu đầu ra. Việc so sánh định lượng giữa phiên bản INT8 và FP32 thông qua các chỉ số SSIM và PSNR đã được trình bày chi tiết tại Chương~\ref{chapter:Results}.
+
+\subsection{ONNX Runtime trên Pi 5 và benchmark}
+% Gạch đầu dòng gốc:
+% - Cấu hình: CPUExecutionProvider, intra_op_num_threads = 4 (Pi 5 có 4 lõi).
+% - Latency: ~80–120 ms/cửa sổ (992 mẫu = 3.97 s) => hệ số thời gian thực ~8–12x.
+% - Pipeline benchmark (benchmark.py): đo đồng thời SSIM/PSNR và latency trên tập test.
+
+Trên Raspberry Pi~5, phiên ONNX Runtime được khởi tạo với provider \texttt{CPUExecutionProvider} và số luồng nội bộ (\texttt{intra\_op\_num\_threads}) bằng~4, tận dụng toàn bộ bốn lõi CPU Cortex-A76 của bo mạch.
+
+Kết quả benchmark trên Pi~5 cho thấy mỗi cửa sổ 992 mẫu (3{,}97 giây tín hiệu) được suy luận trong khoảng 80--120~ms, tương đương hệ số thời gian thực (real-time factor) từ 8 đến 12 lần --- nghĩa là mô hình xử lý nhanh hơn gấp 8--12 lần so với tốc độ thu nhận tín hiệu. Kịch bản benchmark (\texttt{benchmark.py}) đồng thời đo cả chất lượng trích xuất (SSIM, PSNR) và độ trễ trên toàn bộ tập kiểm thử. Bảng~\ref{tab:benchmark_int8} tổng hợp các chỉ số chính.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Benchmark mô hình INT8 trên Raspberry Pi 5.}
+  \label{tab:benchmark_int8}
+  \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Chỉ số} & \textbf{Giá trị} \\\hline
+    Kích thước mô hình (INT8) & 29 MB \\\hline
+    Latency / cửa sổ (992 mẫu) & $\sim$80--120 ms \\\hline
+    Hệ số thời gian thực & $\sim$8--12$\times$ \\\hline
+    Val SSIM & $\sim$0.796 \\\hline
+    Val PSNR & $\sim$26.82 dB \\\hline
+  \end{tabular}
+\end{table}
+
+% ---------------------------------------------------------------------
+\section{Phân hệ thu nhận và thiết bị (Raspberry Pi 5)}
+
+\subsection{Phần cứng}
+% Gạch đầu dòng gốc:
+% - Raspberry Pi 5 (4 GB RAM), Raspberry Pi OS 64-bit (Bookworm), Python 3.10+.
+% - AFE ECG: ADS1293 (24-bit, đa kênh); LCD cảm ứng 3.5" (480x320); nguồn/battery HAT.
+% - Hộp đựng bảo vệ phần cứng.
+
+Thiết bị đầu giường được xây dựng trên nền tảng Raspberry Pi~5 phiên bản 4~GB RAM, chạy hệ điều hành Raspberry Pi OS 64-bit (Bookworm) với Python~3.10 trở lên. Các thành phần phần cứng bổ sung bao gồm: module thu nhận tín hiệu ECG tương tự ADS1293 (24-bit, hỗ trợ đa kênh); màn hình LCD cảm ứng 3{,}5 inch có độ phân giải 480$\times$320 pixel; và nguồn cấp/battery HAT.
+
+Nhằm tối ưu hóa cho môi trường sử dụng thực tế tại đầu giường bệnh nhân, toàn bộ các thành phần trên được lắp ráp và đóng gói gọn gàng bên trong một hộp bảo vệ (case). Hộp đựng được thiết kế vừa khít để cố định chắc chắn màn hình LCD cùng các module mạch điện, đảm bảo tính cách điện, an toàn và chống va đập. Đồng thời, cấu trúc hộp cũng bố trí các khe thông gió phù hợp để hỗ trợ tản nhiệt hiệu quả, giữ cho Raspberry Pi~5 hoạt động ổn định khi phải chạy thuật toán suy luận học sâu liên tục trong thời gian dài.
+
+\subsection{Driver ADS1293}
+% Gạch đầu dòng gốc:
+% - SPI mềm (bit-banged) trên các chân header phía trên (vật lý >= pin 27) để tránh xung đột với LCD (chiếm pin 1–26, gồm SPI0 phần cứng).
+% - Pi 5 dùng thư viện lgpio (RPi.GPIO không hoạt động trên Pi 5).
+% - Cấu hình 3-lead: mux đầu vào CH1=IN1/IN2, CH2=IN3/IN4, CH3=IN5/IN6; RLD (right-leg drive) trên IN4; dùng dao động nội; ADC độ phân giải cao.
+% - Chuyển đổi 24-bit có dấu -> mV: mV = (counts/2^23) x Vref.
+% - Mô hình chỉ dùng kênh bụng (channel 0); driver vẫn đọc cả 3 kênh nếu được đấu nối.
+
+Một thách thức kỹ thuật đặc thù khi tích hợp phần cứng là màn hình LCD 3{,}5 inch sử dụng toàn bộ 26 chân đầu tiên của header GPIO (bao gồm bus SPI0 phần cứng, chân vật lý 1--26). Do đó, module ADS1293 không thể sử dụng SPI phần cứng mà phải được giao tiếp thông qua bus \textbf{SPI phần mềm} (bit-banged SPI) trên các chân ở phần trên của header (chân vật lý $\geq$ 27).
+
+Driver được viết bằng Python sử dụng thư viện \texttt{lgpio} --- thư viện GPIO cấp thấp chính thức trên Pi~5, thay thế cho \texttt{RPi.GPIO} vốn không tương thích với kiến trúc mới. Bảng~\ref{tab:ads1293_wiring} trình bày sơ đồ đấu nối chi tiết.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Bảng đấu nối ADS1293 $\leftrightarrow$ Raspberry Pi 5 (SPI mềm, chân phía trên).}
+  \label{tab:ads1293_wiring}
+  \begin{tabular}{|l|l|c|c|}
+    \hline
+    \textbf{ADS1293} & \textbf{Tín hiệu} & \textbf{BCM GPIO} & \textbf{Chân vật lý} \\\hline
+    SCLK  & clock                 & GPIO21 & 40 \\\hline
+    SDI   & MOSI                  & GPIO20 & 38 \\\hline
+    SDO   & MISO                  & GPIO19 & 35 \\\hline
+    CSB   & chip select           & GPIO26 & 37 \\\hline
+    DRDYB & data ready (active-low) & GPIO16 & 36 \\\hline
+    VDD   & 3V3                   & ---    & 17 \\\hline
+    GND   & ground                & ---    & 39 \\\hline
+  \end{tabular}
+\end{table}
+
+ADS1293 được cấu hình ở chế độ 3-lead với cách đấu nối đầu vào: kênh CH1 nối IN1(+)/IN2($-$), kênh CH2 nối IN3(+)/IN4($-$), kênh CH3 nối IN5(+)/IN6($-$). Mạch right-leg drive (RLD) để giảm nhiễu chế độ chung được kết nối trên chân IN4. Bộ ADC sử dụng dao động nội (internal oscillator) với độ phân giải cao. Giá trị đầu ra 24-bit có dấu được chuyển đổi sang đơn vị mV theo công thức:
+
+\begin{equation}
+  V_{\mathrm{mV}} = \frac{\text{counts}}{2^{23}} \times V_{\mathrm{ref}}
+\end{equation}
+
+\noindent trong đó $V_{\mathrm{ref}} = 2400$~mV là điện áp tham chiếu. Mô hình AI chỉ sử dụng kênh bụng (channel~0), tuy nhiên driver vẫn đọc đầy đủ cả ba kênh nếu các đầu vào được đấu nối.
+
+\subsection{Xử lý thời gian thực}
+% Gạch đầu dòng gốc:
+% - Ring buffer 992 mẫu; tái suy luận mỗi HOP = 200 ms (~5 Hz), tức floor(0.2 x 250) = 50 mẫu/lần.
+% - Sau mỗi lần suy luận, "replay" 50 mẫu fECG mới nhất => đường fECG cuộn mượt, trễ ~ một hop (~200 ms).
+% - Wrapper: FecgProcessor.push(raw) -> trả về mẫu fECG đã căn chỉnh thời gian.
+
+Mô hình hoạt động theo kiểu batch: mỗi lần suy luận cần một cửa sổ đầy đủ 992 mẫu. Để chuyển đổi sang chế độ hoạt động liên tục theo thời gian thực, hệ thống sử dụng lớp \texttt{FecgProcessor} với chiến lược \textbf{bộ đệm vòng kết hợp phát lại} (ring buffer with replay).
+
+Cụ thể, một bộ đệm vòng có kích thước 992 mẫu được duy trì liên tục. Mỗi khi có đủ $\text{HOP} = 50$ mẫu mới (tương ứng 200~ms ở 250~Hz, tức chu kỳ tái suy luận khoảng 5~Hz), toàn bộ cửa sổ 992 mẫu được đưa vào mô hình. Sau mỗi lần suy luận, hệ thống ``phát lại'' 50 mẫu fECG mới nhất từ đầu ra của mô hình, mỗi mẫu thô đầu vào tương ứng với một mẫu fECG đầu ra. Nhờ cơ chế này, đường fECG trên màn hình cuộn mượt mà và giữ đồng bộ với đường tín hiệu thô, với độ trễ xấp xỉ bằng một chu kỳ hop (khoảng 200~ms).
+
+Giao diện sử dụng đơn giản: \texttt{proc = FecgProcessor(); fe = proc.push(raw\_sample)}, trong đó mỗi lệnh \texttt{push()} nhận vào một mẫu thô và trả về mẫu fECG đã căn chỉnh thời gian tương ứng.
+
+\subsection{Giao diện monitor đầu giường}
+% Gạch đầu dòng gốc:
+% - PyQt5 + pyqtgraph, toàn màn hình LCD 480x320 (Esc để thoát).
+% - Hai đường cuộn: trên = tín hiệu bụng thô (raw), dưới = fECG trích xuất bằng AI.
+
+Ứng dụng monitor được xây dựng bằng PyQt5 kết hợp pyqtgraph, hiển thị toàn màn hình trên LCD 480$\times$320 với nền đen kiểu máy theo dõi y tế. Giao diện gồm hai đường tín hiệu cuộn theo thời gian: phía trên là tín hiệu bụng thô (raw abdominal signal, màu xanh cyan) và phía dưới là tín hiệu fECG đã được mô hình AI trích xuất (màu hồng). Tốc độ làm mới đồ thị là khoảng 30 khung hình/giây (timer 33~ms). Thanh tiêu đề hiển thị mã bệnh nhân, nguồn tín hiệu (ADS1293 hoặc simulator) và trạng thái mô hình. Người dùng nhấn phím \texttt{Esc} để thoát.
+
+Bộ thu thập tín hiệu (\texttt{Acquirer}) chạy trong luồng nền (background thread), liên tục đọc mẫu từ nguồn tín hiệu, đẩy qua \texttt{FecgProcessor} để suy luận, lưu vào bộ đệm vòng chia sẻ, và đồng thời gửi dữ liệu lên server thông qua \texttt{Uploader}. Luồng GUI chính chỉ việc đọc snapshot từ bộ đệm chia sẻ trên mỗi chu kỳ timer và cập nhật đồ thị, đảm bảo giao diện luôn phản hồi mượt mà.
+
+\subsection{Cơ chế dự phòng}
+% Gạch đầu dòng gốc:
+% - Không có ADS1293/lgpio: tự động chuyển sang simulator ECG mô phỏng (main.py --sim --windowed).
+% - Không có onnxruntime/scipy: dùng bộ lọc placeholder thay cho mô hình để UI vẫn chạy.
+% - stream_sim.py: stream dữ liệu mô phỏng tới server giống hệt thiết bị thật (kiểm thử toàn chuỗi không cần Pi).
+
+Hệ thống được thiết kế với nhiều tầng dự phòng nhằm đảm bảo khả năng phát triển và kiểm thử linh hoạt. Nếu phần cứng ADS1293 hoặc thư viện \texttt{lgpio} không khả dụng (ví dụ khi chạy trên máy tính phát triển), ứng dụng tự động chuyển sang chế độ \textbf{mô phỏng} (\texttt{SimulatedSource}), tạo ra tín hiệu ECG tổng hợp gồm QRS của mẹ (75~bpm, biên độ 1{,}0) cộng QRS thai nhi (140~bpm, biên độ 0{,}18) cùng dao động đường cơ sở và nhiễu Gaussian. Ngoài ra, nếu \texttt{onnxruntime} hoặc \texttt{scipy} không được cài đặt, hệ thống sử dụng bộ lọc placeholder thay thế cho mô hình để giao diện vẫn hoạt động bình thường.
+
+Một công cụ bổ sung là \texttt{stream\_sim.py}: kịch bản này chạy headless (không cần GUI hay phần cứng) và stream dữ liệu mô phỏng tới server qua WebSocket y hệt như một thiết bị thật, cho phép kiểm thử toàn bộ chuỗi xử lý từ server đến dashboard mà không cần Pi vật lý.
+
+% ---------------------------------------------------------------------
+\section{Phân hệ server và phân tích lâm sàng (FastAPI + SQLite)}
+
+\subsection{Giao tiếp WebSocket và xác thực token thiết bị}
+% Gạch đầu dòng gốc:
+% - /ws/device (thiết bị nạp dữ liệu): handshake hello {patient_id, token, sample_rate} -> kiểm tra token với DEVICE_TOKEN; token sai => đóng kết nối; đúng => trả ack {session_id}, rồi nhận samples {data:[[t,raw,fecg],...]}.
+% - /ws/live/{id} (dashboard đăng ký): nhận {samples, metrics:{fhr,mhr,sq,alarm,label}}; gửi ngay metrics mới nhất khi vừa kết nối.
+% - Bảo mật: đổi DEVICE_TOKEN/FECG_DEVICE_TOKEN và đặt server sau HTTPS/wss trước khi dùng thật.
+
+Tầng máy chủ được xây dựng trên framework FastAPI (Python), sử dụng hai kênh WebSocket chính:
+
+Kênh \texttt{/ws/device} dành cho thiết bị nạp dữ liệu. Quy trình bắt tay (handshake) diễn ra như sau: thiết bị gửi thông điệp \texttt{hello} chứa \texttt{patient\_id}, \texttt{token} và \texttt{sample\_rate}. Server kiểm tra token với giá trị bí mật \texttt{DEVICE\_TOKEN} --- nếu sai, kết nối bị đóng ngay lập tức; nếu đúng, server trả về thông điệp \texttt{ack} kèm \texttt{session\_id} và bắt đầu nhận các batch mẫu dạng \texttt{samples \{data:[[t, raw, fecg], ...]\}}.
+
+Kênh \texttt{/ws/live/\{patient\_id\}} dành cho dashboard đăng ký theo dõi một bệnh nhân cụ thể. Mỗi khi có batch mới từ thiết bị, server phân phối (fan-out) tới tất cả các WebSocket dashboard đang đăng ký, kèm theo các chỉ số phân tích mới nhất \texttt{\{fhr, mhr, sq, alarm, label\}}. Khi dashboard vừa kết nối, server gửi ngay metrics gần nhất để tránh giao diện bị trống.
+
+Về bảo mật, đối với môi trường triển khai thực tế, cần thay đổi giá trị mặc định của \texttt{DEVICE\_TOKEN} / \texttt{FECG\_DEVICE\_TOKEN} và đặt server sau proxy HTTPS/\texttt{wss}.
+
+\subsection{Ước lượng FHR / MHR / chỉ số chất lượng tín hiệu}
+% Gạch đầu dòng gốc:
+% - Tính server-side (server thấy mọi mẫu => nguồn sự thật duy nhất, không lặp toán trên trình duyệt).
+% - FHR từ kênh fECG (AI); MHR từ QRS trội trong tín hiệu raw.
+% - Pipeline phát hiện kiểu Pan–Tompkins thuần numpy (khử nền -> đạo hàm -> bình phương -> tích phân cửa sổ trượt -> ngưỡng thích nghi + thời gian trơ sinh lý) trên cửa sổ trượt 6 s; BPM báo cáo là median R–R làm trơn EMA.
+% - Chất lượng tín hiệu (0–100): kết hợp độ đều R–R và độ phủ nhịp.
+
+Các chỉ số lâm sàng được tính toán hoàn toàn \textbf{phía server} (server-side) --- do server nhận mọi mẫu từ thiết bị nên đóng vai trò nguồn sự thật duy nhất (single source of truth), tránh việc lặp lại phép toán trên trình duyệt. Mỗi bệnh nhân đang phát dữ liệu được gán một thể hiện \texttt{PatientAnalyzer} riêng biệt.
+
+\textbf{Nhịp tim thai (FHR)} được ước lượng từ kênh \texttt{fecg} (tín hiệu đã qua mô hình AI), còn \textbf{nhịp tim mẹ (MHR)} được ước lượng từ phức bộ QRS trội trong tín hiệu \texttt{raw}. Thuật toán phát hiện QRS là một pipeline kiểu Pan--Tompkins được hiện thực thuần bằng NumPy (không phụ thuộc thư viện chuyên dụng), bao gồm các bước:
+
+\begin{enumerate}
+  \item Khử đường cơ sở (baseline removal) bằng trung bình trượt 0{,}2 giây.
+  \item Tính đạo hàm (derivative) để nhấn mạnh sườn dốc của phức bộ QRS.
+  \item Bình phương (squaring) để khuếch đại thành phần tần số cao.
+  \item Tích phân cửa sổ trượt (moving-window integration) khoảng 40~ms.
+  \item Xác định ngưỡng thích nghi dựa trên phân vị 99 của tín hiệu đã tích phân, kết hợp thời gian trơ sinh lý (physiologic refractory period) --- khoảng 250~ms cho fECG và 350~ms cho mECG --- để loại bỏ các đỉnh giả.
+\end{enumerate}
+
+Cửa sổ phân tích cuộn có độ dài 6 giây, yêu cầu tối thiểu 2{,}5 giây tín hiệu trước khi bắt đầu ước lượng. Nhịp tim báo cáo là giá trị BPM tính từ trung vị (median) của các khoảng R--R hợp lệ, được làm trơn bằng bộ lọc trung bình mũ (EMA, $\alpha = 0{,}45$).
+
+\textbf{Chỉ số chất lượng tín hiệu (Signal Quality, SQ)} nằm trong khoảng 0--100 và được tổng hợp từ hai thành phần: \textit{độ đều R--R} (R-R regularity, trọng số 70\%) --- đo qua hệ số biến thiên (CV) của các khoảng R--R, và \textit{độ phủ nhịp} (beat coverage, trọng số 30\%) --- tỷ lệ số nhịp phát hiện được so với mức kỳ vọng (khoảng 6 nhịp trong cửa sổ 6 giây). Khi mất hoàn toàn tín hiệu fECG, chỉ số SQ suy giảm theo hệ số 0{,}5 mỗi chu kỳ.
+
+\subsection{Cảnh báo lâm sàng}
+% Gạch đầu dòng gốc:
+% - Ngưỡng theo NICHD/ACOG/FIGO: fECG bình thường 110–160 bpm.
+% - < 110 -> chậm nhịp (bradycardia, low); > 160 -> nhanh nhịp (tachycardia, high); chất lượng < ~30 -> mất tín hiệu (signal).
+
+Hệ thống cảnh báo sử dụng ngưỡng nhịp tim thai theo khuyến cáo NICHD/ACOG và FIGO cho thai kỳ đơn thai, đủ tháng. Nhịp tim thai bình thường nằm trong khoảng \textbf{110--160 bpm}. Các trạng thái cảnh báo bao gồm:
+
+\begin{itemize}
+  \item \textbf{Chậm nhịp (bradycardia):} FHR $< 110$ bpm --- mã cảnh báo \texttt{low}.
+  \item \textbf{Nhanh nhịp (tachycardia):} FHR $> 160$ bpm --- mã cảnh báo \texttt{high}.
+  \item \textbf{Mất tín hiệu (signal loss):} chỉ số chất lượng SQ $< 30$ hoặc không thể ước lượng FHR --- mã cảnh báo \texttt{signal}.
+  \item \textbf{Bình thường:} FHR trong khoảng 110--160 bpm và SQ $\geq 30$ --- mã trạng thái \texttt{ok}.
+\end{itemize}
+
+\subsection{Lưu trữ và mô hình dữ liệu}
+% Gạch đầu dòng gốc:
+% - SQLite (chế độ WAL); lưu 1/4 mẫu (downsample lịch sử) để tiết kiệm dung lượng.
+% - Lược đồ: doctors, patients, sessions, samples, doctor_login.
+% - Mật khẩu băm PBKDF2-HMAC-SHA256 (có salt); thiết bị kết nối lại sẽ bỏ lưu trữ (un-archive) bệnh nhân tương ứng.
+
+Dữ liệu được lưu trữ trong cơ sở dữ liệu SQLite ở chế độ WAL (Write-Ahead Logging) để tối ưu hiệu năng ghi đồng thời. Nhằm tiết kiệm dung lượng lưu trữ, hệ thống chỉ ghi lại 1 trong mỗi 4 mẫu (downsample tỷ lệ 1:4) vào cơ sở dữ liệu, trong khi toàn bộ mẫu vẫn được phân phối live qua WebSocket.
+
+Lược đồ cơ sở dữ liệu gồm năm bảng chính:
+\begin{itemize}
+  \item \texttt{doctors}: thông tin bác sĩ (id, username, password\_hash, name, created\_at).
+  \item \texttt{patients}: thông tin bệnh nhân (id, name, mrn, sex, dob, notes, created\_at, archived).
+  \item \texttt{sessions}: phiên thu nhận (id, patient\_id, started\_at, ended\_at, sample\_rate).
+  \item \texttt{samples}: dữ liệu mẫu đã downsample (id, session\_id, t, raw, fecg).
+  \item \texttt{doctor\_login}: phiên đăng nhập web (token, doctor\_id, created\_at).
+\end{itemize}
+
+Mật khẩu bác sĩ được mã hóa bằng thuật toán PBKDF2-HMAC-SHA256 với salt ngẫu nhiên 8 byte và 100.000 vòng lặp. Trường \texttt{archived} cho phép lưu trữ (ẩn) bệnh nhân không còn theo dõi; khi thiết bị kết nối lại cho bệnh nhân đã lưu trữ, hệ thống tự động bỏ lưu trữ (un-archive).
+
+% ---------------------------------------------------------------------
+\section{Phân hệ giao diện web cho bác sĩ}
+% Gạch đầu dòng gốc:
+% - Đăng nhập (/login): phiên cookie httponly (demo: doctor/password).
+% - Dashboard (/): danh sách bệnh nhân dạng thẻ cảm ứng — trạng thái live, FHR, sparkline fECG, MHR; bệnh nhân có cảnh báo nổi lên đầu và tô đỏ; làm mới mỗi 2 s; tìm kiếm theo tên/ID/MRN; nút + thêm bệnh nhân.
+% - Màn hình bệnh nhân (/patient/{id}): tab Monitor (ô FHR/MHR lớn, thanh chất lượng tín hiệu, banner cảnh báo, hai đường cuộn raw+fECG có lưới, nút freeze) và tab Info (thông tin, thống kê mẫu/phiên, lịch sử, Edit/Archive).
+% - Cập nhật live qua WebSocket riêng cho từng bệnh nhân; tự kết nối lại; ping mỗi 25 s giữ socket sống.
+% - Thiết kế 480x320-first, cảm ứng; vẫn co giãn khi mở trên trình duyệt LAN khác.
+
+Giao diện web được thiết kế tối ưu cho màn hình cảm ứng 480$\times$320 của Pi nhưng vẫn co giãn tốt trên các kích thước màn hình khác. Hệ thống gồm ba màn hình chính:
+
+\textbf{Màn hình đăng nhập} (\texttt{/login}) trình bày một thẻ form ở giữa màn hình với các ô nhập liệu kích thước lớn phù hợp thao tác cảm ứng, nút ``Sign in'' chiếm toàn bộ chiều rộng, thông báo lỗi inline và hỗ trợ phím Enter. Phiên đăng nhập được quản lý bằng cookie \texttt{httponly} với \texttt{samesite=lax}.
+
+\textbf{Bảng điều khiển} (dashboard, \texttt{/}) hiển thị danh sách bệnh nhân dưới dạng các thẻ cảm ứng. Mỗi thẻ bệnh nhân bao gồm: chấm trạng thái (live/idle), tên bệnh nhân, mã ID/MRN, nhịp tim mẹ (MHR), đường sparkline fECG thu nhỏ, và con số FHR lớn nổi bật. Bệnh nhân đang có cảnh báo bất thường được tự động sắp xếp lên đầu danh sách và tô nền đỏ (FHR ngoài khoảng bình thường) hoặc hiển thị biểu tượng cảnh báo (mất tín hiệu). Danh sách tự động làm mới mỗi 2 giây. Hệ thống hỗ trợ tìm kiếm bệnh nhân theo tên, ID hoặc MRN, cùng nút ``+'' để thêm bệnh nhân mới thông qua biểu mẫu dạng bottom sheet.
+
+\textbf{Màn hình bệnh nhân} (\texttt{/patient/\{id\}}) chia thành hai tab:
+\begin{itemize}
+  \item Tab \textit{Monitor}: hiển thị ô FHR và MHR kích thước lớn với nhãn ``normal 110--160'', thanh hiển thị chất lượng tín hiệu, banner cảnh báo (bradycardia/tachycardia/signal loss), hai đường tín hiệu cuộn (raw --- màu cyan, fECG --- màu hồng) có lưới chia và tự động co giãn trục Y, cùng nút ``freeze'' cho phép đóng băng dạng sóng để kiểm tra chi tiết.
+  \item Tab \textit{Info}: thông tin chi tiết bệnh nhân, thống kê số mẫu và số phiên đã ghi, bảng lịch sử phiên, và các thao tác Edit/Archive.
+\end{itemize}
+
+Dữ liệu live được cập nhật qua kênh WebSocket riêng cho từng bệnh nhân (\texttt{/ws/live/\{id\}}), với cơ chế tự động kết nối lại khi mất kết nối và gửi ping mỗi 25 giây để duy trì socket.
+
+% ---------------------------------------------------------------------
+\section{Kiểm thử và đánh giá hệ thống}
+% Gạch đầu dòng gốc:
+% - Kịch bản end-to-end: thiết bị (hoặc stream_sim.py) -> server -> dashboard hiển thị live.
+% - Đã kiểm thử (sandbox): gating xác thực (401/200), handshake thiết bị + từ chối token sai, broadcast WebSocket tới dashboard, phép toán lưu mẫu, bộ xử lý thời gian thực (đầu ra mượt qua infer.py), đường dự phòng không-mô-hình.
+% - Đề xuất bổ sung: đo độ trễ chuỗi (end-to-end latency), độ ổn định dài hạn, kiểm thử ngắt/khôi phục kết nối.
+% - Validate phân tích: tín hiệu tổng hợp mẹ-75/thai-140 => FHR~140, MHR~75, SQ~97, alarm ok.
+
+Hệ thống đã được kiểm thử end-to-end theo kịch bản: thiết bị Pi (hoặc \texttt{stream\_sim.py} chạy từ máy bất kỳ) phát dữ liệu qua WebSocket tới server, server xử lý phân tích và phân phối tới dashboard, dashboard hiển thị tín hiệu cuộn và các chỉ số lâm sàng live.
+
+Các hạng mục kiểm thử đã thực hiện trong môi trường sandbox bao gồm:
+\begin{itemize}
+  \item Kiểm thử xác thực: gating quyền truy cập (mã trả về 401 khi chưa đăng nhập, 200 khi đã xác thực), handshake thiết bị thành công và từ chối token sai.
+  \item Kiểm thử luồng dữ liệu: broadcast WebSocket tới dashboard subscriber hoạt động đúng, phép toán lưu mẫu (downsample 1:4) chính xác.
+  \item Kiểm thử bộ xử lý thời gian thực: \texttt{FecgProcessor} cho đầu ra fECG mượt mà qua cơ chế ring buffer + replay.
+  \item Kiểm thử đường dự phòng: chế độ simulator và placeholder filter hoạt động đúng khi không có phần cứng/mô hình.
+  \item Xác thực phân tích lâm sàng: tín hiệu tổng hợp với nhịp mẹ 75~bpm và nhịp thai 140~bpm cho kết quả FHR~$\approx$~140, MHR~$\approx$~75, SQ~$\approx$~97, alarm =~\texttt{ok} --- khớp với kỳ vọng.
+\end{itemize}
+
+Trong các bước tiếp theo, hệ thống cần được bổ sung kiểm thử: đo độ trễ chuỗi end-to-end (từ ADS1293 đến hiển thị trên dashboard), đánh giá độ ổn định vận hành dài hạn (chạy liên tục nhiều giờ), và kiểm thử kịch bản ngắt/khôi phục kết nối mạng.
+
+% ---------------------------------------------------------------------
+\section{Kết luận chương}
+% Gạch đầu dòng gốc:
+% - Tóm tắt: đã hiện thực hệ thống 3 tầng chạy thời gian thực trên thiết bị biên, từ thu nhận đến dashboard lâm sàng.
+% - Liên hệ đóng góp số 2 và 3 (tối ưu/triển khai biên + hệ thống theo dõi) đã nêu ở Chương Introduction.
+
+Chương này đã trình bày việc thiết kế và hiện thực thành công một hệ thống theo dõi fECG ba tầng hoạt động theo thời gian thực trên thiết bị biên Raspberry Pi~5. Hệ thống bao gồm đầy đủ các phân hệ từ thu nhận tín hiệu phần cứng (ADS1293 qua SPI phần mềm), xử lý và suy luận AI tại chỗ (ONNX INT8 với bộ đệm vòng), truyền dữ liệu qua WebSocket, phân tích lâm sàng phía server (FHR/MHR/SQ/cảnh báo theo ngưỡng NICHD/ACOG), lưu trữ SQLite, cho đến giao diện dashboard web tối ưu cho cảm ứng. Kết quả này hiện thực hóa hai đóng góp chính đã nêu ở Chương~\ref{chapter:Introduction}: tối ưu và triển khai mô hình trên thiết bị biên (đóng góp số 2) và xây dựng hệ thống theo dõi lâm sàng hoàn chỉnh (đóng góp số 3).
+
+\end{document}

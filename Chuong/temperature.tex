@@ -1,0 +1,229 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+\section{CẢM BIẾN ĐO NHIỆT ĐỘ}
+\vspace{1cm}
+\subsection{CẢM BIẾN NHIỆT ĐỘ LÀ GÌ ?}
+Cảm biến nhiệt độ dùng để đo lường hoặc cảm nhận nhiệt độ của một vật thể và môi trường. Nó hoạt động dựa trên nguyên lý chuyển đổi thông tin nhiệt độ thành tín hiệu điện để dễ dàng đo lường và xử lý trong các hệ thống điện tử. Cụ thể, nhiệt độ tác động lên các vật liệu cảm biến, làm thay đổi các thuộc tính vật lý của nó (như điện trở, điện dung, hoặc điện áp). Tín hiệu thay đổi này sau đó được chuyển đổi thành tín hiệu điện, thường là điện áp hay dòng điện, giúp đo lường nhiệt độ một cách chính xác.
+
+Độ chính xác của cảm biến nhiệt độ có thể bị ảnh hưởng bởi 2 yếu tố chính, bao gồm:
+
+\begin{itemize}
+    \item Nhiệt độ môi trường cần đo: Đây là nhiệt độ thực tế muốn cảm biến ghi nhận. Để đo được chính xác, cảm biến phải cảm nhận được đúng nhiệt độ của môi trường xung quanh.
+    \item Nhiệt độ cảm nhận của cảm biến: Đây là nhiệt độ mà cảm biến thực tế ghi nhận được sau khi tiếp xúc với môi trường. Tuy nhiên, nhiệt độ cảm nhận của cảm biến có thể không hoàn toàn giống với nhiệt độ thực tế của môi trường, vì trong quá trình truyền nhiệt từ môi trường vào cảm biến, có thể xảy ra sự mất mát nhiệt.
+\end{itemize}
+\subsection{CÁC LOẠI CẢM BIẾN NHIỆT ĐỘ PHỔ BIẾN}
+Có 5 loại cảm biến nhiệt độ phổ biến, cho phép theo dõi và điều khiển nhiệt độ một cách hiệu quả, bao gồm:
+\subsubsection{Cảm biến nhiệt điện trở (Thermistor)}
+Cảm biến nhiệt điện trở (Thermistor) là một loại cảm biến được làm từ hỗn hợp các oxit kim loại như mangan, niken, coban, hay các chất oxit kim loại khác. Các chất này được trộn với tỉ lệ nhất định, nén chặt trong vỏ gốm cách điện, và sau đó được nung ở nhiệt độ cao.
+
+Nguyên lý hoạt động của cảm biến này dựa trên sự thay đổi điện trở của hỗn hợp vật liệu khi nhiệt độ thay đổi. Cảm biến sẽ ghi nhận sự thay đổi này và chuyển nó thành tín hiệu đo được.
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Hinhve/image.png}
+\captionof{figure}{Cảm biến nhiệt điện trở (Thermistor) là một loại cảm biến được làm từ hỗn hợp các oxit kim loại}
+\end{center}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Ưu điểm} &
+  Độ nhạy cao và có thể phát hiện những thay đổi nhiệt độ nhỏ.
+  Chi phí thấp và dễ sản xuất.
+\\ \hline
+
+\textbf{Nhược điểm} &
+  Dải đo nhiệt độ khá hẹp, chỉ dao động trong khoảng từ $-50^\circ$C đến $150^\circ$C.
+  Độ ổn định không cao, dễ bị ảnh hưởng bởi môi trường xung quanh.
+\\ \hline
+
+\textbf{Ứng dụng} &
+Nhiệt kế điện tử, hệ thống kiểm soát nhiệt độ trong các thiết bị điện tử và y tế.
+\\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Cặp nhiệt điện (Thermocouple)}
+Cặp nhiệt điện (Thermocouple) là một loại cảm biến nhiệt độ được cấu tạo từ hai dây dẫn kim loại khác nhau, được hàn nối tại một đầu gọi là đầu nóng, còn đầu kia gọi là đầu lạnh.
+
+Nguyên lý hoạt động của cặp nhiệt điện dựa trên hiệu ứng Seebeck, khi có sự chênh lệch nhiệt độ giữa hai đầu, sẽ tạo ra một suất điện động (EMF) tỷ lệ với sự khác biệt nhiệt độ giữa chúng.
+
+Tùy vào chất liệu kim loại sử dụng, suất điện động tạo ra có thể khác nhau, vì vậy các loại cặp nhiệt điện được phân loại theo các ký hiệu như J, E, K, R, S, T, mỗi loại có đặc tính và phạm vi đo nhiệt độ riêng.
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Hinhve/image_2.png}
+\captionof{figure}{Cảm biến nhiệt độ thermocouple}
+\end{center}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Ưu điểm} &
+  Dải đo rộng, từ rất thấp đến rất cao, lên tới $1400^\circ$C.
+  Độ bền cao, có thể hoạt động trong môi trường khắc nghiệt.
+\\ \hline
+
+\textbf{Nhược điểm} &
+  Độ chính xác không cao, cần phải hiệu chỉnh thường xuyên.
+  Cảm biến cần được kết hợp với bộ chuyển đổi tín hiệu để đo nhiệt độ.
+\\ \hline
+
+\textbf{Ứng dụng} &
+Lò nung, môi trường công nghiệp khắc nghiệt, nhà máy điện, và các ứng dụng yêu cầu dải nhiệt độ rộng.
+\\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Điện trở nhiệt (RTD – Resistance Temperature Detector)}
+Điện trở nhiệt (RTD – Resistance Temperature Detector) là một loại cảm biến nhiệt độ sử dụng các dây kim loại, thường là platinum, được quấn quanh đầu đo. Khi nhiệt độ thay đổi, điện trở của các dây kim loại cũng thay đổi theo.
+
+Để đo nhiệt độ, người ta dựa vào sự thay đổi điện trở giữa hai đầu dây kim loại. RTD được phân loại theo số lượng dây như 2 dây, 3 dây hoặc 4 dây, tùy vào ứng dụng và yêu cầu về độ chính xác.
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Hinhve/image_3.png}
+\captionof{figure}{RTD (resistance temperature detector)}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Hinhve/image_7.png}
+\end{center}
+
+Các dây dẫn được sử dụng được đánh số 1, 2, 3 và 4 như trong hình. Thiết bị đo kết nối cả bốn dây dẫn. Hai dây dẫn ngoài 1 và 2 được dùng để dẫn dòng điện không đổi qua phần tử RTD, trong khi hai dây dẫn trong 2 và 3 được dùng để đo điện áp đặt vào phần tử. Các giá trị điện áp đo được được sử dụng để tính toán điện trở của phần tử bằng định luật Ohm V = IR.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Ưu điểm} &
+  Độ chính xác cao và độ ổn định tốt.
+  Đo nhiệt độ với dải nhiệt rộng từ $-200^\circ$C đến $700^\circ$C và rất phổ biến trong các ứng dụng yêu cầu độ chính xác cao.
+\\ \hline
+
+\textbf{Nhược điểm} &
+  Chi phí cao hơn so với các loại cảm biến khác như Thermistor hay Thermocouple.
+  Kích thước thường lớn hơn và dễ bị hỏng trong môi trường khắc nghiệt.
+\\ \hline
+
+\textbf{Ứng dụng} &
+Công nghiệp hóa chất, thực phẩm và các ứng dụng yêu cầu độ chính xác cao như trong y tế và phòng thí nghiệm.
+\\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Cảm biến nhiệt bán dẫn (Semiconductor Temperature Sensor)}
+
+Cảm biến nhiệt bán dẫn (Semiconductor Temperature Sensor) là loại cảm biến sử dụng các vật liệu bán dẫn như silicon để đo nhiệt độ.
+
+Nguyên lý hoạt động của cảm biến này dựa trên sự thay đổi tính chất điện từ của vật liệu bán dẫn khi nhiệt độ thay đổi. Khi nhiệt độ tăng, điện trở của vật liệu bán dẫn sẽ giảm hoặc dòng điện sẽ thay đổi, từ đó có thể đo được nhiệt độ.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Ưu điểm} &
+  Nhỏ gọn, dễ sử dụng và dễ dàng tích hợp vào các thiết bị điện tử.
+  Chi phí thấp và dễ sản xuất.
+\\ \hline
+
+\textbf{Nhược điểm} &
+  Độ chính xác không cao bằng các loại cảm biến khác như RTD.
+  Phạm vi nhiệt độ đo khá hạn chế (thường từ $-50^\circ$C đến $150^\circ$C).
+\\ \hline
+
+\textbf{Ứng dụng} &
+Các thiết bị điện tử như máy tính, điện thoại và hệ thống HVAC (điều hòa không khí, thông gió và sưởi ấm).
+\\ \hline
+\end{tabular}
+\end{table}
+\subsubsection{Cảm biến nhiệt hồng ngoại (Infrared Temperature Sensor)}
+Cảm biến nhiệt hồng ngoại (Infrared Temperature Sensor) là loại cảm biến đo nhiệt độ mà không cần tiếp xúc trực tiếp với vật thể.
+
+Loại cảm biến này hoạt động dựa trên việc đo lường bức xạ hồng ngoại phát ra từ bề mặt vật thể. Mỗi vật thể có một mức độ phát bức xạ hồng ngoại khác nhau, và lượng bức xạ này tỷ lệ thuận với nhiệt độ của vật thể. Cảm biến hồng ngoại thu nhận bức xạ này, chuyển đổi nó thành tín hiệu điện và từ đó tính toán được nhiệt độ của vật thể.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Ưu điểm} &
+  Đo nhiệt độ từ xa, không cần tiếp xúc trực tiếp với vật thể.
+  Thích hợp cho các vật thể di chuyển hoặc khó tiếp cận.
+\\ \hline
+
+\textbf{Nhược điểm} &
+  Độ chính xác có thể bị ảnh hưởng bởi nhiễu từ môi trường.
+  Chi phí cao hơn so với các loại cảm biến nhiệt độ khác.
+\\ \hline
+
+\textbf{Ứng dụng} &
+Đo nhiệt độ của máy móc, cơ thể con người (trong y tế) và các ứng dụng đo không tiếp xúc trong công nghiệp.
+\\ \hline
+\end{tabular}
+\end{table}
+\subsection{MAX30205}
+\subsubsection{Nguyên lý hoạt động}
+MAX30205 là cảm biến nhiệt độ kỹ thuật số được thiết kế chuyên biệt để đo nhiệt độ cơ thể người. Nguyên lý hoạt động cốt lõi của nó dựa trên các yếu tố sau:
+
+\begin{itemize}
+
+\item Đo nhiệt độ và chuyển đổi số: Cảm biến đo nhiệt độ thực tế của chính khuôn (die) silicon bên trong nó. Tín hiệu nhiệt độ tương tự này sau đó được chuyển đổi sang dạng kỹ thuật số thông qua một bộ chuyển đổi tương tự sang số (ADC) loại Sigma-Delta có độ phân giải cao.
+
+
+\item Dẫn nhiệt: Nhiệt độ bên ngoài được truyền đến khuôn cảm biến chủ yếu thông qua các chân dẫn (leads) và phần đệm tản nhiệt lộ ra (exposed pad) ở mặt dưới. Do đó, khi hàn lên mạch, thiết bị này đo nhiệt độ của PCB hoặc đối tượng tiếp xúc nhiệt với PCB.
+
+
+\item Độ chính xác lâm sàng: Cảm biến đạt độ chính xác tuân thủ tiêu chuẩn nhiệt kế lâm sàng ASTM E1112, với sai số chỉ 0.1°C trong khoảng nhiệt độ cơ thể người từ 37°C đến 39°C.
+\end{itemize}
+\subsubsection{Cách thức hoạt động}
+MAX30205 hoạt động trong giải điện áp từ 2,7V đến 3,3V với dòng điện tiêu thụ thấp chỉ từ 1,6 $\mu$A khi ở chế độ shutdown và 600 $\mu$A khi hoạt động và có ngõ ra OS để cảnh báo khi quá nhiệt (Overtemperature Shutdown). MAX30205 hoạt động thông qua giao tiếp I2C và các chế độ cấu hình nội bộ để quản lý việc đo lường và cảnh báo nhiệt độ. Cảm biến không đo liên tục theo thời gian thực mà hoạt động dựa trên các chu kỳ biến đổi.
+
+MAX30205 đo nhiệt độ của chính chip (die temperature), sau đó suy ra nhiệt độ môi trường/da tiếp xúc thông qua truyền nhiệt từ đó làm thay đổi nhiệt độ bên trong IC và những sự thay đổi đó được đo lại và chuyển tới bộ biến đổi từ tương tự sang số (ADC) loại Sigma-Delta để lấy mẫu nhiệt độ từ cảm biến silicon tích hợp. Mỗi lần đo nhiệt độ mất khoảng 44ms đến 50ms để hoàn thành. Dựa trên cơ chế "While reading the temperature register, any changes in temperature are ignored until the read is completed."Khi thiết bị chủ (Master) bắt đầu đọc thanh ghi nhiệt độ, mọi thay đổi về nhiệt độ sẽ bị bỏ qua cho đến khi quá trình đọc hoàn tất, đảm bảo dữ liệu không bị lỗi. Sau khi đọc xong, thanh ghi mới được cập nhật giá trị mới nhất.
+
+MAX30205 được điều khiển thông qua Thanh ghi con trỏ (Pointer Register). Thanh ghi này xác định dữ liệu nào sẽ được đọc hoặc ghi trong 4 thanh ghi dữ liệu chính:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{3cm}|p{7cm}|}
+\hline
+\textbf{Tên thanh ghi} & \textbf{Địa chỉ (Hex)} & \textbf{Chức năng} \\ \hline
+
+Temperature & 00h &
+Chứa dữ liệu nhiệt độ đo được (chỉ đọc).
+\\ \hline
+
+Configuration & 01h &
+Cấu hình chế độ hoạt động (Shutdown, OS mode, định dạng dữ liệu, \ldots).
+\\ \hline
+
+THYST & 02h &
+Ngưỡng dưới để tắt cảnh báo nhiệt độ (Hysteresis).
+\\ \hline
+
+TOS & 03h &
+Ngưỡng trên để bật cảnh báo nhiệt độ (Overtemperature Shutdown).
+\\ \hline
+
+\end{tabular}
+\end{table}
+Thanh ghi con trỏ sẽ tự động tăng sau mỗi lần đọc/ghi 2 byte, giúp đọc liên tiếp nhiều thanh ghi mà không cần đặt lại địa chỉ.
+Dữ liệu nhiệt độ là số 16-bit, định dạng Mã bù hai (Two's complement).
+\begin{center}
+\includegraphics[width=1\textwidth]{Hinhve/image_8.png}
+\captionof{figure}{Temperature, THYST, and TOS Register Definition}
+\end{center}
+\begin{itemize}
+\item Độ phân giải (LSB): Mỗi bit tương ứng với $0.00390625^{\circ}C$.
+\item Bit dấu (MSB): Bit cao nhất (D15) là bit dấu.Hai định dạng (chọn qua bit D5 trong thanh ghi Configuration):
+  \begin{itemize}
+    \item Normal Format (D5=0): Dải đo chuẩn từ $0^{\circ}C$ đến $+50^{\circ}C$. Giá trị nhị phân 0000 0000 0000 0000 tương ứng $0^{\circ}C$.
+    \item Extended Format (D5=1): Dùng để đo nhiệt độ cao hơn $50^{\circ}C$. Giá trị thực tế = (Giá trị bù hai) + $64^{\circ}C$
+  \end{itemize}
+\end{itemize}
+Để chuyển đổi từ giá trị đo được từ cảm biến (RawData) sang nhiệt độ (${\circ}\text{C}$) được tính bằng công thức:
+\begin{align}
+\text{Temperature } (^\circ\text{C}) = \text{RawData} \times 0.00390625
+\end{align}
+MAX30205 gồm có 2 chế độ đo chính gồm có: Continuous mode (mặc định) là chế độ đo nhiệt độ liên tục phù hợp theo dõi thời gian thực và chế độ thứ hai là One-Shot mode chỉ đo 1 lần, sau đó quay về shutdown từ đó làm giảm tiêu thụ năng lượng và cơ chế để kích hoạt chế độ One-Shot là bằng bit D7 trong thanh ghi cấu hình.
+
+\begin{center}
+  \includegraphics[width=1\textwidth]{Hinhve/image11.png}
+  \captionof{figure}{Thanh ghi cấu hình}
+\end{center}
+
+\end{document}

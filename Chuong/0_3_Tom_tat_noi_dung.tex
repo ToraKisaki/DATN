@@ -1,0 +1,24 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+
+\begin{center}
+    \Large{\textbf{TÓM TẮT NỘI DUNG BÁO CÁO}}\\
+\end{center}
+Hằng năm, có khoảng 2 triệu ca thai chết lưu xảy ra trên toàn thế giới. Bên cạnh đó, các bất thường bẩm sinh, đặc biệt là các khiếm khuyết liên quan đến tim và não, cũng là những thách thức phổ biến ảnh hưởng nghiêm trọng đến sức khỏe trẻ sơ sinh. Vì vậy, việc theo dõi sức khỏe thai nhi trong suốt thai kỳ đóng vai trò then chốt trong phát hiện sớm các dấu hiệu bất thường, từ đó góp phần giảm tỷ lệ bệnh tật và tử vong liên quan đến các dị tật tim bẩm sinh.
+
+Trong thực hành lâm sàng, nhiều phương pháp không xâm lấn đã được sử dụng để theo dõi tình trạng thai nhi, tiêu biểu như đo tim thai (CTG), siêu âm Doppler, điện tâm đồ tim thai (PCG) và điện tâm đồ thai nhi (fetal ECG). Tuy nhiên, các phương pháp này vẫn tồn tại những hạn chế đáng kể: CTG có thể dễ bị mất tín hiệu và cho ước lượng nhịp tim kém chính xác; trong khi đó, CTG và siêu âm Doppler đều đặt ra các lo ngại nhất định về độ an toàn do sử dụng sóng siêu âm tần số cao trong thời gian dài.
+
+Mặt khác, tuy có thể thu nhận ECG thai nhi chất lượng cao hơn thông qua các kỹ thuật xâm lấn (ví dụ đặt điện cực lên da đầu thai nhi), các phương án này tiềm ẩn nhiều rủi ro và không phù hợp để triển khai rộng rãi. Do đó, cần có một giải pháp tối ưu hơn nhằm thu thập và trích xuất tín hiệu ECG thai nhi một cách hiệu quả, rõ ràng và an toàn. Một hướng tiếp cận phổ biến là khai thác tín hiệu điện tâm đồ thai nhi (fetal ECG) từ tín hiệu ECG của mẹ; tuy nhiên, bài toán này gặp nhiều thách thức do sự chồng lấn giữa tín hiệu mẹ--thai và nhiễu từ môi trường.
+
+Trước sự phát triển mạnh mẽ của trí tuệ nhân tạo, đặc biệt là học sâu (deep learning), các phương pháp phân tích tín hiệu y sinh đã đạt nhiều tiến bộ quan trọng. Học sâu không chỉ nâng cao khả năng trích xuất đặc trưng một cách chính xác mà còn giảm nhu cầu tiền xử lý so với các phương pháp truyền thống. Vì vậy, việc ứng dụng học sâu trong trích xuất ECG thai nhi mở ra một hướng đi tiềm năng, góp phần nâng cao chất lượng chăm sóc và theo dõi thai kỳ.
+
+Đề tài ``Ứng dụng Kolmogorov–Arnold Networks trong Transformer W-NET cho bài toán trích xuất điện tim thai nhi không xâm lấn'' tập trung nghiên cứu và phát triển các kỹ thuật học sâu kết hợp với mô hình Kolmogorov--Arnold Networks (KAN) nhằm giải quyết bài toán trích xuất tín hiệu ECG của thai nhi từ tín hiệu ECG của mẹ. Bên cạnh việc đề xuất và tối ưu kiến trúc mô hình, đề tài cũng thiết kế và triển khai một hệ thống nguyên mẫu theo thời gian thực sử dụng bo mạch Raspberry Pi, module thu nhận tín hiệu ADS1293 cùng phần mềm máy chủ FastAPI để xử lý tín hiệu và phân tích nhịp tim trực tuyến. Các kết quả thực nghiệm cho thấy mô hình có hiệu năng cao, hệ thống triển khai thực tế đáp ứng tốt các yêu cầu về tốc độ xử lý cũng như khả năng giám sát trực quan. Thông qua đó, đề tài hướng tới việc tạo ra giá trị khoa học và ý nghĩa thực tiễn trong hỗ trợ y học lâm sàng.
+
+\begin{flushright}
+Sinh viên thực hiện\\
+\begin{tabular}{@{}c@{}}
+\textit{(Ký và ghi rõ họ tên)}
+\end{tabular}
+\end{flushright}
+
+\end{document}

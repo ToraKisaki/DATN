@@ -1,0 +1,9 @@
+Initial Win CP for (console input, console output, system): (CP437, CP437, CP1252)
+I changed them all to CP1252
+Rc files read (in order):
+  NONE
+Latexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.
+Latexmk: Nothing to do for 'DoAn.tex'.
+Latexmk: All targets (DoAn.pdf) are up-to-date
+
+Reverting Windows console CPs to (in,out) = (437,437)
