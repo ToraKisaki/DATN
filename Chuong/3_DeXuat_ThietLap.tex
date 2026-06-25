@@ -1,0 +1,377 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+
+% =====================================================================
+% CHƯƠNG 3 — PHƯƠNG PHÁP ĐỀ XUẤT VÀ THIẾT LẬP THỰC NGHIỆM
+% Gộp từ: Ch5 (mô hình đề xuất) + Ch6 (dữ liệu, tiền xử lý, đánh giá, cấu hình)
+%         + phần Huber từ Ch4.
+%   3.1 Giới thiệu chương
+%   3.2 Bộ dữ liệu FECGSYNDB (gồm chiến lược chia dữ liệu)
+%   3.3 Tiền xử lý
+%   3.4 Mô hình đề xuất KAN-WNETR                 (nguồn: Ch5 cũ)
+%   3.5 Hàm mất mát và cấu hình huấn luyện         (nguồn: Huber Ch4 + cấu hình Ch6)
+%   3.6 Phương pháp đánh giá (phát hiện QRS + chỉ số)
+%   3.7 Kết luận chương
+% =====================================================================
+
+\section{Giới thiệu chương}
+
+Chương này trình bày chi tiết phương pháp đề xuất cùng toàn bộ thiết lập thực nghiệm dùng để kiểm chứng. Trước hết, mục~\ref{sec:dataset} mô tả bộ dữ liệu FECGSYNDB và chiến lược chia tập theo hướng độc lập đối tượng; mục~\ref{sec:preprocessing} trình bày quy trình tiền xử lý tín hiệu. Tiếp theo, mục~\ref{sec:kanwnetr} trình bày kiến trúc mô hình đề xuất KAN-WNETR. Mục~\ref{sec:loss_training} trình bày hàm mất mát và cấu hình huấn luyện, còn mục~\ref{sec:evaluation} trình bày phương pháp đánh giá gồm thuật toán phát hiện QRS và các nhóm chỉ số định lượng. Kết quả thực nghiệm tương ứng được trình bày ở Chương~\ref{chapter:Results}.
+
+% =====================================================================
+\section{Bộ dữ liệu FECGSYNDB}
+\label{sec:dataset}
+Dữ liệu huấn luyện mô hình được lấy từ PhysioNet - Fetal ECG Synthetic Database (FECGSYNDB) \cite{andreottiOpensourceFrameworkStresstesting2016}. Đây là một cơ sở dữ liệu mô phỏng tín hiệu điện tâm đồ thai và mẹ (NI-FECG/MECG) sử dụng mô phỏng từ công cụ FECGSYN, được xây dựng để phục vụ nghiên cứu phân tách và trích xuất fECG một cách có thể tái lập (reproducible research). Dữ liệu này được cung cấp công khai và thường dùng làm benchmark trong các nghiên cứu về thuật toán lọc và học máy cho fECG.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.85\textwidth]{Hinhve/image_43.png}
+  \caption{Hình chiếu bên (a) và nhìn từ trên (b). Vị trí tim thai (cầu nhỏ, màu xanh) và tim mẹ (cầu lớn, màu đỏ) được thể hiện.}
+  \label{fig:fecgsyndb_geometry}
+\end{figure}
+
+Dữ liệu mô phỏng được tạo ra cho 10 thai kỳ khác nhau với các điều kiện sinh lý đa dạng. Mỗi lần mô phỏng tạo ra hỗn hợp tín hiệu bao gồm thành phần fECG, MECG và các tín hiệu nhiễu khác. Mỗi tín hiệu trong dataset có độ dài 5 phút, tần số lấy mẫu 250 Hz và độ phân giải 16 bit, và được mô phỏng trên 34 kênh tín hiệu (32 kênh maECG và 2 kênh mECG chuẩn).
+
+Dataset được tổ chức thành nhiều ngữ cảnh sinh lý khác nhau, bao gồm:
+\begin{itemize}
+  \item \textbf{Baseline:} tín hiệu bụng hỗn hợp không nhiễu và không biến cố.
+  \item \textbf{C0:} baseline kèm nhiễu.
+  \item \textbf{C1:} chuyển động thai + nhiễu.
+  \item \textbf{C2:} thay đổi nhịp tim mẹ/nhịp tim thai (tăng hoặc giảm) + nhiễu.
+  \item \textbf{C3:} co tử cung + nhiễu.
+  \item \textbf{C4:} nhịp ngoại tâm thu ở mẹ hoặc thai + nhiễu.
+  \item \textbf{C5:} song thai (tín hiệu NI-FECG bổ sung) + nhiễu.
+\end{itemize}
+
+Sự đa dạng này đặc biệt quan trọng vì nó mô phỏng các tình huống sinh lý và bệnh lý có thể gây biến dạng hoặc che lấp fECG trong thực tế, từ đó tạo điều kiện để mô hình học được các đặc trưng mạnh (robust features). Mỗi trường hợp được mô phỏng ở 5 mức SNR khác nhau (0, 3, 6, 9 và 12 dB) và 5 lần lặp lại để tăng tính đa dạng và khả năng kiểm định thuật toán. Việc thay đổi SNR đóng vai trò quan trọng trong huấn luyện mô hình deep learning vì nó giúp tăng khả năng tổng quát hóa (generalization) khi xử lý tín hiệu fECG biên độ thấp.
+
+\subsection{Chiến lược chia dữ liệu}
+Về chiến lược chia dữ liệu, tín hiệu từ đối tượng thứ 10 được dùng làm tập kiểm tra (test set), nhằm đảm bảo đánh giá khả năng tổng quát hóa theo subject-independent setting — tức là mô hình chưa từng thấy dữ liệu của đối tượng này trong quá trình huấn luyện. Đây là cách chia phù hợp khi so sánh với các phương pháp tiên tiến khác. Trong huấn luyện, chỉ sử dụng các kênh maECG số 11, 19, 22 và 25 từ các đối tượng.
+
+% =====================================================================
+\section{Tiền xử lý}
+\label{sec:preprocessing}
+
+Tín hiệu maECG được lấy mẫu ở tần số $f_s = 250$ Hz. Để loại bỏ các thành phần không thuộc dải tần sinh lý của ECG, một bộ lọc thông dải (bandpass filter) trong khoảng $3$--$90$ Hz được áp dụng. Giới hạn dưới 3 Hz giúp loại bỏ trôi nền (baseline wander) và nhiễu chuyển động chậm, trong khi giới hạn trên 90 Hz loại bỏ nhiễu tần số cao như nhiễu cơ (EMG) và nhiễu điện tử, đồng thời vẫn bảo toàn các thành phần hình thái quan trọng của ECG, đặc biệt là phức bộ QRS.
+
+Sau bước lọc, tín hiệu được chia thành các cửa sổ có độ dài 992 mẫu (tương đương khoảng 3.97 giây). Việc phân đoạn này nhằm chuẩn hóa kích thước đầu vào của mạng và giúp mô hình học được đặc trưng theo thời gian cục bộ.
+
+\subsection{Chuẩn hóa tín hiệu}
+
+Để tăng tính ổn định trong quá trình huấn luyện và đảm bảo khả năng thích nghi với nhiều mức biên độ khác nhau, tín hiệu được chuẩn hóa dựa trên độ lệch chuẩn của tín hiệu nhiễu. Gọi $y$ là tín hiệu maECG nhiễu (đầu vào), $x$ là tín hiệu fECG sạch (ground truth), và $\sigma_y$ là độ lệch chuẩn của $y$, khi đó:
+
+\begin{equation}
+  \hat{x} = \frac{x}{\sigma_y}, \quad
+  \hat{y} = \frac{y}{\sigma_y}
+\end{equation}
+
+Trong đó $\hat{y}$ là tín hiệu đầu vào đã chuẩn hóa được đưa vào mạng và $\hat{x}$ là tín hiệu mục tiêu tương ứng.
+
+Sau khi dự đoán, biên độ tín hiệu được khôi phục bằng cách nhân lại với $\sigma_y$:
+
+\begin{equation}
+  x_{\text{denoised}} = \tilde{x} \cdot \sigma_y
+\end{equation}
+
+Quy trình tiền xử lý tổng thể bao gồm: lấy mẫu ở 250 Hz, lọc thông dải 3--90 Hz, phân đoạn cửa sổ 992 mẫu và chuẩn hóa theo độ lệch chuẩn của tín hiệu nhiễu. Quy trình này giúp cải thiện độ ổn định số, tăng khả năng hội tụ và nâng cao hiệu năng của mô hình trong bài toán trích xuất fECG.
+
+% =====================================================================
+\section{Mô hình đề xuất KAN-WNETR}
+\label{sec:kanwnetr}
+
+\subsection{Ý tưởng tổng thể}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
+\begin{itemize}
+  \item Nhắc lại bài toán: tách fECG khỏi maECG đơn kênh, SNR thấp, mECG--fECG chồng lấp.
+  \item Ý tưởng cốt lõi: giữ macro-architecture W-NETR (hai nhánh + khử đặc trưng mECG), thay khối MLP/FFN trong Transformer encoder bằng KAN.
+  \item Vì sao can thiệp đúng vào MLP/FFN: đây là bộ phận chịu trách nhiệm phi tuyến theo token; nâng cấp bằng KAN để tăng năng lực biểu diễn và bảo toàn hình thái.
+\end{itemize}
+
+\subsection{Kiến trúc nền W-NETR}
+
+W-NETR dùng hai UNETR 1D chạy song song \cite{leeEndtoEndDeepLearning2022}:
+\begin{itemize}
+  \item Nhánh phải: tái tạo/chiết xuất \textbf{fECG}.
+  \item Nhánh trái: tái tạo \textbf{mECG}.
+\end{itemize}
+Khác biệt cốt lõi là cơ chế \textbf{mECG feature elimination}:
+\begin{itemize}
+  \item Ở mỗi bước encoder, đặc trưng mECG từ nhánh trái được \textbf{trừ} khỏi đặc trưng tương ứng ở nhánh phải.
+  \item Sau phép trừ áp dụng $\tanh$ để chặn biên và ổn định.
+\end{itemize}
+Trực giác: mô hình học đồng thời hai biểu diễn; dùng đặc trưng mECG như ``mẫu nền'' để khử khỏi nhánh fECG trong feature space.
+
+\subsection{KAN-ViT: thay MLP/FFN bằng KAN trong encoder block}
+
+\paragraph{KAN-ViT: giữ MSA, thay MLP bằng KAN.}
+\cite{yeElevatingVisionTransformer2024}
+KAN-ViT giữ nguyên cơ chế attention và residual, nhưng thay FFN:
+\begin{equation}
+  z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},
+\end{equation}
+\begin{equation}
+  z_\ell = \mathrm{KAN}(\mathrm{LN}(z_\ell')) + z_\ell'.
+\end{equation}
+Ý nghĩa: attention vẫn học quan hệ token-to-token (toàn cục), còn nhánh phi tuyến ``theo token'' được tăng năng lực bằng KAN.
+
+Trong ViT/Transformer, MSA quyết định cơ chế ``gán trọng số'' để trộn thông tin giữa token, còn MLP quyết định mức độ phi tuyến hậu attention.
+Can thiệp vào MLP hợp lý vì:
+\begin{itemize}
+  \item MLP là nơi mô hình ``nắn'' đặc trưng phi tuyến theo kênh.
+  \item KAN cung cấp phi tuyến có thể học trực tiếp, tiềm năng tốt hơn với mẫu nhiễu/phi tuyến khó tuyến tính hoá bằng $W_2\sigma(W_1\cdot)$.
+\end{itemize}
+
+\paragraph{Hệ quả khi đem KAN-ViT sang 1D biosignal.}
+Dù KAN-ViT được đề xuất cho ảnh 2D, bản chất ``Transformer encoder + FFN'' là bất biến theo miền. Với tín hiệu 1D:
+\begin{itemize}
+  \item Token = patch theo trục thời gian.
+  \item Attention học phụ thuộc xa (long-range dependencies) giữa các đoạn thời gian.
+  \item KAN-FFN tăng năng lực biến đổi phi tuyến trên embedding của từng token, hữu ích khi:
+    (i) biên độ thay đổi theo đối tượng/lead,
+    (ii) tồn tại artifact cục bộ mạnh,
+    (iii) cần giữ hình thái (P/QRS/T) nhạy với phi tuyến và tỷ lệ.
+\end{itemize}
+
+\subsection{Tích hợp KAN vào W-NETR: kiến trúc KAN-WNETR}
+
+\paragraph{Nguyên tắc tích hợp.}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{Hinhve/KAN_WNETR_Pipeline.png}
+  \caption{Mô hình KAN-WNETR đề xuất: Tín hiệu ECG bụng của mẹ (maECG) được xử lý qua kiến trúc hai nhánh: một nhánh tái tạo ECG mẹ (mECG), nhánh còn lại trích xuất ECG thai (fECG).
+Cả hai nhánh bắt đầu bằng trích xuất đặc trưng bằng tích chập, sau đó là chuỗi các khối giảm mẫu. Các đường màu đỏ biểu diễn phép trừ đặc trưng mECG khỏi nhánh UNETR fECG (bên phải) tại mỗi bước encoder của Transformer. Hàm kích hoạt \textit{tanh} được áp dụng sau phép trừ.}
+  \label{fig:kanwnetr}
+\end{figure}
+
+KAN-WNETR giữ nguyên macro-architecture của W-NETR:
+patchify 1D + positional embedding; $L=12$ encoder layers; skip từ $\{3,6,9,12\}$ sang decoder CNN;
+hai nhánh (mECG và fECG) + feature elimination (trừ + $\tanh$).
+Điểm thay đổi duy nhất là \textbf{thay MLP trong mọi Transformer encoder block} bằng \textbf{KAN block} (theo KAN-ViT).
+
+\paragraph{Khối encoder sau thay thế.}
+Với mỗi encoder block $\ell$ ở từng nhánh:
+\begin{equation}
+  z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},
+\end{equation}
+\begin{equation}
+  z_\ell = \mathrm{KAN}(\mathrm{LN}(z_\ell')) + z_\ell'.
+\end{equation}
+Tại điểm ghép W (feature elimination), ở từng mức/step tương ứng:
+\begin{equation}
+  \tilde{z}_\ell^{(f)} = \tanh\big(z_\ell^{(f)} - z_\ell^{(m)}\big),
+\end{equation}
+trong đó $(f)$ là nhánh fetal và $(m)$ là nhánh maternal.
+
+\subsection{Phân tích thiết kế và kỳ vọng}
+
+Thay MLP bằng KAN là thay đúng bộ phận chịu trách nhiệm:
+(i) phi tuyến theo token (giàu năng lực biểu diễn), (ii) tinh chỉnh embedding sau attention,
+trong khi vẫn giữ attention để học phụ thuộc xa. Do đó, KAN-WNETR kỳ vọng:
+giữ hình thái fECG (P/QRS/T) tốt hơn khi nhiễu biến thiên; giảm nhầm lẫn khi mECG/fECG overlap ở thời điểm QRS;
+tăng ổn định khi biên độ/lead thay đổi (spline activation có thể tự thích nghi).
+
+\subsection{Tổng hợp đóng góp kiến trúc}
+\begin{itemize}
+  \item W-NETR giải quyết bài toán tách nguồn theo hướng hai nhánh + khử đặc trưng mECG trong latent space.
+  \item ViT/Transformer encoder cung cấp ngữ cảnh toàn cục, khắc phục receptive field hạn chế của CNN.
+  \item KAN thay MLP trong encoder block để tăng năng lực phi tuyến token-wise, cải thiện mô hình hoá biến thiên phi tuyến trong maECG và bảo toàn hình thái fECG.
+  \item KAN-WNETR kết hợp: \textbf{global context (MSA) + learnable nonlinearity (KAN) + maternal feature subtraction (W) + local detail reconstruction (CNN decoder)}.
+\end{itemize}
+
+% =====================================================================
+\section{Hàm mất mát và cấu hình huấn luyện}
+\label{sec:loss_training}
+
+\subsection{Hàm mất mát Huber (Huber Loss)}
+
+Trong bài toán hồi quy tín hiệu (ví dụ tái tạo fECG), việc lựa chọn hàm mất mát ảnh hưởng trực tiếp đến độ vững của quá trình huấn luyện:
+\begin{itemize}
+  \item MSE (L2): nhạy sai số nhỏ, tối ưu mượt, nhưng bị outlier chi phối mạnh.
+  \item MAE (L1): bền với outlier nhưng gradient không mượt quanh 0.
+  \item Huber: kết hợp ưu điểm hai loại $\Rightarrow$ lý do được chọn cho bài toán tái tạo fECG (nhiều đoạn nhiễu đột biến).
+\end{itemize}
+
+Hàm mất mát Huber thường được sử dụng để tăng tính \textit{robust} trước các điểm ngoại lai (outliers) hoặc các đoạn nhiễu đột biến. Huber loss kết hợp ưu điểm của MSE và MAE: với sai số nhỏ, hàm phạt theo bình phương (giúp tối ưu mượt và nhạy với sai số nhỏ), còn với sai số lớn, hàm phạt tuyến tính (giảm ảnh hưởng của outlier).
+
+Gọi residual (sai số) tại mẫu $i$ là
+\begin{equation}
+  r_i = y_i - \hat{y}_i,
+\end{equation}
+trong đó $y_i$ là giá trị mục tiêu (ground truth) và $\hat{y}_i$ là giá trị dự đoán của mô hình. Khi đó, Huber loss với ngưỡng $\delta>0$ được định nghĩa như sau:
+\begin{equation}
+  \mathcal{L}_\delta(r_i)=
+  \begin{cases}
+    \frac{1}{2}r_i^2, & |r_i|\le \delta,\\[4pt]
+    \delta\left(|r_i|-\frac{1}{2}\delta\right), & |r_i|>\delta.
+  \end{cases}
+\end{equation}
+
+Đạo hàm theo $r_i$ (gradient) có dạng:
+\begin{equation}
+  \frac{\partial \mathcal{L}_\delta}{\partial r_i}=
+  \begin{cases}
+    r_i, & |r_i|\le \delta,\\[4pt]
+    \delta\,\mathrm{sign}(r_i), & |r_i|>\delta,
+  \end{cases}
+\end{equation}
+cho thấy gradient bị chặn trong khoảng $\left[-\delta,\delta\right]$ khi sai số lớn, nhờ đó hạn chế việc một số ít điểm nhiễu mạnh chi phối quá trình cập nhật tham số.
+
+Với một cửa sổ tín hiệu có $T$ mẫu, loss tổng quát thường lấy trung bình:
+\begin{equation}
+  \mathcal{L}=\frac{1}{T}\sum_{i=1}^{T}\mathcal{L}_\delta(r_i).
+\end{equation}
+
+Tham số $\delta$ điều khiển mức độ gần MSE hoặc MAE: $\delta$ càng lớn thì loss gần MSE hơn; $\delta$ càng nhỏ thì loss gần MAE hơn.
+
+\subsection{Cấu hình huấn luyện}
+% Nguồn: bảng hyperparameter chuyển từ 5_Trien_khai.tex
+
+Để đánh giá hiệu quả của mô hình đề xuất, quá trình huấn luyện được thực hiện với cấu hình chi tiết như Bảng \ref{tab:hyper} dưới đây. Các tham số này được lựa chọn dựa trên thực nghiệm để tối ưu hóa hàm mất mát trên tập dữ liệu huấn luyện.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Các siêu tham số huấn luyện mô hình}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Hyperparameters} & \textbf{Giá trị}\\\hline
+    Số lượng Epochs & 80    \\\hline
+    Batch size & 64   \\\hline
+    Tốc độ học & 1e-4 \\\hline
+    Optimizer & Adam  \\\hline
+    Scheduler & CosineAnnealing \\\hline
+    Số workers & 4 \\\hline
+    Encoder & KAN-ViT \\\hline
+    Hàm mất mát & Huber  \\\hline
+  \end{tabular}
+  \label{tab:hyper}
+\end{table}
+
+% TODO: chốt MỘT bộ số nhất quán — đoạn dưới (20 epochs/batch 32) mâu thuẫn với bảng (80 epochs/batch 64).
+\textbf{Cấu hình tối thiểu của training loop.}
+Mô hình được huấn luyện với optimizer Adam, sử dụng các tham số mặc định của Adam trong PyTorch
+($\beta_1=0.9$, $\beta_2=0.999$, $\epsilon=10^{-8}$, weight\_decay $=0$, amsgrad=False) và learning rate ban đầu
+$10^{-4}$. Cần công bố optimizer và learning-rate schedule (nếu có) cùng batch size để đảm bảo tái lập.
+Batch size được chọn ở mức vừa phải để cân bằng hiệu quả tính toán và độ nhiễu gradient; đồng thời cần lưu ý batch size
+tương tác mạnh với các hyperparameter của optimizer (đặc biệt learning rate), nên thay đổi batch size thường kéo theo
+retune learning rate và/hoặc regularization.
+
+% TODO: bổ sung môi trường phần cứng/thư viện (GPU, PyTorch, MONAI, ...) — gạch đầu dòng
+\begin{itemize}
+  \item Phần cứng huấn luyện: GPU (ví dụ RTX 3060 12GB), RAM, CPU.
+  \item Thư viện: PyTorch, MONAI (UnetrPrUpBlock/UnetrUpBlock), wfdb, scipy, numpy.
+\end{itemize}
+
+% =====================================================================
+\section{Phương pháp đánh giá}
+\label{sec:evaluation}
+
+\subsection{Phát hiện QRS}
+
+Thuật toán Pan-Thompkins là một trong những thuật toán phổ biến nhất để phát hiện phức hệ QRS và đỉnh R của tín hiệu ECG \cite{panRealTimeQRSDetection1985}. Thuật toán này sử dụng các đặc trưng tín hiệu như biên độ, độ dốc và độ rộng của cửa sổ tích phân đẻ xác định phức bộ QRS. Về tổng thể, thuật toán chia ra gồm 2 bước chính: (1) tiền xử lý tín hiệu và (2) đưa ra quyết định phát hiện. Chi tiết các bước của thuật toán được tóm tắt như sau:
+
+\subsubsection{Lọc thông dải (Band-pass)}
+
+Gọi tín hiệu ECG rời rạc là $x[n]$, với tần số lấy mẫu $f_s$.
+Mục tiêu là giữ dải tần chứa QRS (thường khoảng $5$--$15$ Hz), khử trôi nền và nhiễu cao tần:
+\begin{equation}
+  y_{\mathrm{bp}}[n] = x[n] * h_{\mathrm{lp}}[n] * h_{\mathrm{hp}}[n].
+\end{equation}
+
+\subsubsection{Đạo hàm}
+
+Nhằm nhấn mạnh sườn dốc lớn của QRS, phép đạo hàm được áp dụng lên tín hiệu, Sóng T và P sẽ bị yếu đi do độ dốc nhỏ.
+\begin{equation}
+  y_d[n] = \frac{1}{8T}\left(2y_{\mathrm{bp}}[n] + y_{\mathrm{bp}}[n-1] - y_{\mathrm{bp}}[n-3] - 2y_{\mathrm{bp}}[n-4]\right),
+\end{equation}
+trong đó $T=1/f_s$.
+
+\subsubsection{Bình phương}
+
+Làm mọi giá trị dương và tăng trọng số cho biên độ lớn:
+\begin{equation}
+  y_s[n] = \left(y_d[n]\right)^2.
+\end{equation}
+
+\subsubsection{Tích phân cửa sổ trượt}
+
+Lấy đặc trưng năng lượng theo bề rộng QRS:
+\begin{equation}
+  y_{\mathrm{mwi}}[n] = \frac{1}{N}\sum_{i=0}^{N-1} y_s[n-i], \qquad N \approx 0.15\,f_s.
+\end{equation}
+
+\subsubsection{Phát hiện đỉnh bằng ngưỡng thích nghi}
+
+Tại mỗi đỉnh ứng viên $P$ trên $y_{\mathrm{mwi}}$, cập nhật ước lượng đỉnh tín hiệu và nhiễu:
+\begin{align}
+  \mathrm{SPKI} &\leftarrow 0.125\,P + 0.875\,\mathrm{SPKI},\\
+  \mathrm{NPKI} &\leftarrow 0.125\,P + 0.875\,\mathrm{NPKI},
+\end{align}
+(tùy theo $P$ được phân loại là tín hiệu hay nhiễu), rồi đặt ngưỡng:
+\begin{equation}
+  \mathrm{THR}_I = \mathrm{NPKI} + 0.25\left(\mathrm{SPKI}-\mathrm{NPKI}\right).
+\end{equation}
+Nếu khoảng RR hiện tại quá dài (thường $>1.66\,RR_{\mathrm{avg}}$), thuật toán \textit{search-back} sẽ tìm lại đỉnh bị bỏ sót.
+
+Sau khi xác nhận một QRS, vị trí đỉnh $R$ được lấy là cực đại cục bộ của tín hiệu đã lọc (hoặc ECG gốc) trong một cửa sổ lân cận quanh vị trí QRS (ví dụ $\pm 75$ ms).
+
+\subsection{Chỉ số đánh giá}
+\subsubsection{Nhóm chỉ số phát hiện fECG (Precision/Recall/F1/Accuracy)}
+Xét bài toán phát hiện (ví dụ phát hiện đỉnh R của fECG) như một bài toán phân loại nhị phân. Gọi:
+$\mathrm{TP}$ (true positives), $\mathrm{FP}$ (false positives),
+$\mathrm{FN}$ (false negatives), $\mathrm{TN}$ (true negatives).
+Khi đó các chỉ số được định nghĩa:
+
+\begin{equation}
+\mathrm{Precision} = \frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FP}},
+\qquad
+\mathrm{Recall} = \frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FN}}.
+\end{equation}
+
+\begin{equation}
+\mathrm{F1} = \frac{2\,\mathrm{Precision}\cdot \mathrm{Recall}}{\mathrm{Precision}+\mathrm{Recall}}
+           = \frac{2\,\mathrm{TP}}{2\,\mathrm{TP}+\mathrm{FP}+\mathrm{FN}}.
+\end{equation}
+
+\begin{equation}
+\mathrm{Accuracy} = \frac{\mathrm{TP}+\mathrm{TN}}{\mathrm{TP}+\mathrm{TN}+\mathrm{FP}+\mathrm{FN}}.
+\end{equation}
+
+\subsubsection{Nhóm chỉ số chất lượng tín hiệu (PSNR/SSIM/MSE)}
+Gọi $x[n]$ là fECG tham chiếu (ground truth) và $\hat{x}[n]$ là fECG được trích xuất, với $n=1,\dots,N$.
+Sai số bình phương trung bình (MSE) được định nghĩa:
+
+\begin{equation}
+\mathrm{MSE}(x,\hat{x})=\frac{1}{N}\sum_{n=1}^{N}\big(x[n]-\hat{x}[n]\big)^2 .
+\end{equation}
+
+Tỷ số đỉnh-tạp (PSNR, đơn vị dB) được tính từ MSE:
+\begin{equation}
+\mathrm{PSNR}(x,\hat{x}) = 10\log_{10}\left(\frac{\mathrm{MAX}_x^2}{\mathrm{MSE}(x,\hat{x})}\right)
+=20\log_{10}\left(\frac{\mathrm{MAX}_x}{\sqrt{\mathrm{MSE}(x,\hat{x})}}\right),
+\end{equation}
+trong đó $\mathrm{MAX}_x$ là biên độ cực đại theo dải động đã chọn (ví dụ $\mathrm{MAX}_x=1$ nếu tín hiệu đã chuẩn hoá về $[-1,1]$).
+
+Chỉ số tương đồng cấu trúc (SSIM) giữa hai tín hiệu (tính trên một cửa sổ, hoặc trung bình trên các cửa sổ trượt) được cho bởi:
+\begin{equation}
+\mathrm{SSIM}(x,\hat{x})=
+\frac{(2\mu_x\mu_{\hat{x}}+C_1)(2\sigma_{x\hat{x}}+C_2)}
+{(\mu_x^2+\mu_{\hat{x}}^2+C_1)(\sigma_x^2+\sigma_{\hat{x}}^2+C_2)},
+\end{equation}
+với $\mu_x,\mu_{\hat{x}}$ là trung bình; $\sigma_x^2,\sigma_{\hat{x}}^2$ là phương sai; $\sigma_{x\hat{x}}$ là hiệp phương sai.
+Các hằng số ổn định thường đặt $C_1=(K_1L)^2$, $C_2=(K_2L)^2$, trong đó $L$ là dải động và $K_1,K_2\ll 1$.
+
+\subsubsection{Sai số ước lượng nhịp tim thai (FHR error)}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng) — hệ thống ở Chương System đã tính được FHR
+\begin{itemize}
+  \item Từ chuỗi đỉnh R của fECG, tính khoảng R--R rồi suy ra FHR (bpm): $\mathrm{FHR}=60/\overline{RR}$.
+  \item Sai số FHR: trung bình sai số tuyệt đối (MAE, đơn vị bpm) giữa FHR ước lượng và FHR tham chiếu; có thể bổ sung Bland--Altman.
+  \item Lý do bổ sung chỉ số này: hệ thống theo dõi (Chương~\ref{chapter:System}) lấy FHR làm đầu ra lâm sàng chính.
+\end{itemize}
+
+% =====================================================================
+\section{Kết luận chương}
+
+Chương này đã trình bày mô hình đề xuất KAN-WNETR cùng toàn bộ vật liệu và phương pháp thực nghiệm. Về mô hình, KAN-WNETR giữ nguyên macro-architecture chữ W của W-NETR (hai nhánh + khử đặc trưng mECG) và chỉ thay khối MLP/FFN trong mọi Transformer encoder block bằng KAN-ViT, nhằm tăng năng lực phi tuyến token-wise và bảo toàn hình thái fECG. Về thiết lập thực nghiệm, dữ liệu được lấy từ FECGSYNDB với chiến lược chia độc lập đối tượng, qua tiền xử lý (lọc thông dải 3--90 Hz, phân đoạn cửa sổ 992 mẫu, chuẩn hóa theo độ lệch chuẩn). Mô hình được huấn luyện với hàm mất mát Huber và cấu hình siêu tham số đã nêu; việc đánh giá dựa trên thuật toán phát hiện QRS Pan--Tompkins cùng các nhóm chỉ số phát hiện (Precision/Recall/F1/Accuracy), chất lượng tín hiệu (PSNR/SSIM/MSE) và sai số ước lượng FHR. Kết quả định lượng tương ứng được trình bày và phân tích ở Chương~\ref{chapter:Results}.
+
+\end{document}

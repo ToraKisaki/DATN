@@ -1,0 +1,276 @@
+\documentclass[../DoAn.tex]{subfiles}
+\begin{document}
+
+% =====================================================================
+% CHƯƠNG 2 — CƠ SỞ LÝ THUYẾT VÀ TỔNG QUAN NGHIÊN CỨU
+% Gộp từ: Ch2 (cơ sở fECG) + Ch4 (cơ sở học sâu) + Ch3 (tổng quan phương pháp).
+%   2.1 Giới thiệu chương
+%   2.2 Cơ sở điện tim thai và theo dõi thai nhi      (nguồn: Ch2 cũ)
+%   2.3 Cơ sở học sâu                                  (nguồn: Ch4 cũ, trừ Huber)
+%   2.4 Tổng quan phương pháp tách NI-fECG             (nguồn: Ch3 cũ 3.2/3.3)
+%   2.5 Nhận xét, khoảng trống & định vị đề tài        (nguồn: Ch3 cũ 3.4)
+%   2.6 Kết luận chương
+% =====================================================================
+
+\section{Giới thiệu chương}
+
+Chương này thiết lập nền tảng lý thuyết và bức tranh nghiên cứu cho đề tài. Trước hết, mục~\ref{sec:fecg_background} trình bày cơ sở điện sinh lý của tín hiệu điện tim thai (fECG), ý nghĩa lâm sàng của việc theo dõi tim thai cùng các phương thức theo dõi hiện hành và thiết bị thương mại. Tiếp theo, mục~\ref{sec:dl_background} hệ thống hóa các khối học sâu nền tảng---mạng nơ-ron và khối MLP/FFN, tích chập 1D, cơ chế Attention và Transformer encoder, kiến trúc U-Net/UNETR, cùng Kolmogorov--Arnold Networks (KAN)---là các thành phần được ghép lại trong mô hình đề xuất. Mục~\ref{sec:related_methods} khảo sát một cách hệ thống các phương pháp tách fECG không xâm lấn, từ nhóm cổ điển dựa trên xử lý tín hiệu truyền thống đến nhóm học sâu hiện đại. Cuối cùng, mục~\ref{sec:gap_positioning} tổng hợp ưu/nhược điểm của các hướng tiếp cận, chỉ ra khoảng trống nghiên cứu cốt lõi và định vị đóng góp của đề tài.
+
+% =====================================================================
+\section{Cơ sở điện tim thai và theo dõi thai nhi}
+\label{sec:fecg_background}
+
+Mục này trình bày các khái niệm sinh lý học và nền tảng kỹ thuật của điện tâm đồ thai nhi (Fetal ECG - fECG), cùng các phương pháp theo dõi thai nhi hiện đang được sử dụng. Trọng tâm đặc biệt được dành cho phương thức fECG và những thông tin có thể trích xuất từ tín hiệu sinh lý này.
+
+\subsection{Nguyên lý và đặc tính tín hiệu ECG/fECG}
+
+Thiết bị theo dõi điện tim đầu tiên - máy điện kế sợi dây, được phát minh bởi William Einthoven vào năm 1901 \cite{einthovenGalvanometrischeRegistrirungMenschlichen1903}. Vào những năm 1960s, điện tâm đồ điện toán đã được sử dụng rộng rãi trong nhiều bệnh viện lớn \cite{departmentofgeneralmedicineamalainstituteofmedicalsciencesthrissurkeralaindiLaboratoryWearablesReview2022}.
+
+Điện tâm đồ (Electrocardiogram – ECG) là biểu diễn đơn giản của hoạt động điện của cơ tim và sự biến đổi của nó theo thời gian; tín hiệu này thường được in ra giấy để thuận tiện cho việc phân tích. Giống như các cơ khác trong cơ thể, cơ tim co lại khi đáp ứng với quá trình khử cực điện của các tế bào cơ. Thực chất, ECG là tổng hợp các hoạt động điện này sau khi được khuếch đại và ghi lại trong vài giây. Tín hiệu ECG được ghi nhận bằng cách đặt các điện cực tại nhiều vị trí khác nhau trên bề mặt cơ thể. Hình \ref{fig:ecg_signal} mô phỏng sự dịch chuyển của tín hiệu điện trong tim và các đặc tính tương ứng của tín hiệu điện đó trên một tín hiệu ECG. Dù cho tồn tại nhiều đặc điểm khác biệt về chức năng giữa tim thai nhi và người trưởng thành, nhưng tín hiệu điện giữa 2 loại vẫn có những đặc điểm tương đồng nhất định \cite{godfreyFunctionalAssessmentFetal2012}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Hinhve/image_38.png}
+  \caption{Hình minh họa tín hiệu ECG}
+  \label{fig:ecg_signal}
+\end{figure}
+
+Tín hiệu điện tìm gồm 5 thành phần chính: Sóng P, Q, R, S, T (Hình \ref{fig:ecg_components}). Sóng P biểu thị sự khởi phát xung điện và khử cực tâm nhĩ, cho biết nguồn phát nhịp và tính ổn định của nhịp tim. Phức bộ QRS thể hiện quá trình khử cực tâm thất, là giai đoạn hoạt động điện mạnh nhất do tâm thất đảm nhiệm chức năng bơm máu chính. Sóng T phản ánh quá trình tái cực tâm thất, liên quan đến sự phục hồi điện thế màng sau co bóp. Tín hiệu fECG bản chất vẫn giống với tín hiệu ECG người lớn, với đủ 5 thành phần tín hiệu (P, Q, R, S, T). Cấu trúc của ECG thai nhi gồm rất nhiều thông tin đáng giá để hỗ trợ trong chẩn đoán bệnh lý của thai nhi, nhưng nhiều những phương pháp phân tách tín hiệu ECG vẫn chú trọng hơn vào phân tách khoảng cách R-R dùng phương pháp phát hiện đỉnh R, hoặc là kết quả tổng thể của hình sóng ECG. Nguyên do chính là vì tỉ số tín hiệu trên nhiễu (SNR) của fECG tương đối thấp hơn so với mECG, dẫn đến khó khăn trong xác định cấu trúc và hình thái của fECG.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Hinhve/image_39.png}
+  \caption{Các thành phần chính của tín hiệu ECG trên người lớn}
+  \label{fig:ecg_components}
+\end{figure}
+
+\subsection{Ý nghĩa lâm sàng của theo dõi tim thai}
+
+Số liệu phản ánh cho tử vong sản khoa, dù đã có sự giảm theo thời gian, từ 83 ca tử vong mẹ trên 100,000 trẻ đẻ sống trong năm 2000 xuống 48 ca tử vong mẹ trên 100,000 trẻ đẻ sống trong năm 2023 \cite{TrendsMaternalMortality2025}. Việc phát hiện sớm các dấu hiện bệnh lý sẽ góp phần lớn trong công cuộc cứu chữa và tăng khả năng sống sót. Vậy nên, việc theo dõi sức khỏe thai nhi đóng vai trò thiết yếu trong thai kỳ, phòng tránh các yếu tố có thể ảnh hưởng tính mạng của mẹ và thai nhi. Theo dõi tình trạng tim thai nhi cũng góp phần hỗ trợ trong chẩn đoán một số bệnh, không chỉ ảnh hưởng đến thai nhi mà còn với thai phụ.
+
+\subsection{Các phương thức theo dõi thai}
+
+Trong thực hành sản khoa, việc đánh giá tình trạng sức khỏe thai nhi được thực hiện qua nhiều phương pháp kỹ thuật khác nhau, trong đó Cardiotocography (CTG) là phương pháp giám sát tiêu chuẩn và phổ biến nhất hiện nay. CTG hoạt động dựa trên nguyên lý ghi nhận đồng thời nhịp tim thai (cardio) và cơn co tử cung (toco). Phương pháp này được sử dụng chủ yếu trong ba tháng cuối thai kỳ và đóng vai trò đặc biệt quan trọng trong quá trình chuyển dạ nhằm đánh giá tình trạng oxy hóa cũng như sức khỏe tổng thể của thai nhi \cite{ayres-de-camposFIGOConsensusGuidelines2015}. Một hệ thống CTG điển hình bao gồm hai cảm biến đặt trên thành bụng mẹ: một cảm biến siêu âm Doppler để ghi nhận sự biến thiên của nhịp tim thai, và một cảm biến áp lực (tocodynamometer) để đo lường cường độ cùng tần suất của các cơn co tử cung \cite{freemanFetalHeartRate2012}.
+
+Mặc dù siêu âm Doppler là công cụ đắc lực để tính toán tần số tim thai (fHR), việc ứng dụng phương pháp này vấp phải những lo ngại lớn về mặt an toàn y tế nếu sử dụng kéo dài liên tục, do các tác động nhiệt và cơ học tiềm tàng của sóng siêu âm lên mô thai nhi \cite{abramowiczFetalThermalEffects2008}. Hơn thế nữa, tín hiệu Doppler rất dễ bị suy hao hoặc mất kết nối hoàn toàn đối với những sản phụ có chỉ số khối cơ thể (BMI) cao, lớp mỡ bụng dày, hoặc khi thai nhi cử động mạnh làm lệch chùm tia siêu âm. Một phương pháp theo dõi thụ động khác cũng được nhắc đến là cơ tâm thanh đồ (Phonocardiography - PCG), hoạt động bằng cách ghi âm lại các tiếng động cơ học sinh ra từ chu kỳ đóng mở van tim của thai nhi. Dù hoàn toàn an toàn, PCG lại bộc lộ nhược điểm lớn khi cực kỳ nhạy cảm với tạp âm sinh lý từ cơ thể mẹ (tiếng nhu động ruột) và tiếng ồn môi trường \cite{kovacsRulebasedPhonocardiographicMethod2000}.
+
+Nhằm khắc phục những hạn chế về thông tin hình thái của các phương pháp trên, kỹ thuật đo điện tâm đồ thai nhi (fECG) được phát triển, song việc lựa chọn hình thức đo lại là một sự đánh đổi gay gắt giữa chất lượng tín hiệu và mức độ an toàn. Phương pháp fECG xâm lấn sử dụng một điện cực xoắn ghim trực tiếp vào da đầu thai nhi, mang lại tín hiệu điện sinh lý có độ chính xác tuyệt đối; tuy nhiên, kỹ thuật này chỉ có thể thực hiện khi màng ối đã vỡ trong giai đoạn chuyển dạ và tiềm ẩn nguy cơ nhiễm trùng ngược dòng rất cao \cite{neilsonFetalElectrocardiogramECG2015}. Trái ngược lại, phương pháp fECG không xâm lấn (sử dụng các điện cực dán trên thành bụng mẹ) đảm bảo tính an toàn tuyệt đối và cho phép theo dõi xuyên suốt thai kỳ. Mặc dù vậy, phương pháp này lại đối mặt với rào cản kỹ thuật lớn do tín hiệu thai nhi có biên độ rất nhỏ, liên tục bị lấn át bởi nhiễu môi trường và tín hiệu điện tim mẹ, qua đó bắt buộc hệ thống phải tích hợp các thuật toán học sâu bóc tách tín hiệu phức tạp \cite{sameniReviewFetalECG2010}.
+
+\subsection{Tổng quan thiết bị fECG thương mại}
+
+Theo nghiên cứu khảo sát \cite{karmakarConsumerInsightsFeasibility2025} cho thấy thiết bị fECG không xâm lấn dạng wearable cho theo dõi thai từ xa có mức độ chấp nhận cao từ thai phụ, mang lại cảm giác yên tâm và thuận tiện khi sử dụng kéo dài tại nhà.
+
+% copy thesis, viết lại
+Thiết bị HeraBEAT (HeraMED, Israel) sử dụng công nghệ Doppler chùm siêu rộng để đo nhịp tim thai, nhưng vẫn tồn tại hạn chế kỹ thuật như mất tín hiệu ở thai phụ có BMI cao và các lo ngại về an toàn khi sử dụng kéo dài. Ngoài ra, các hệ thống Doppler này chỉ cung cấp nhịp tim thai (fHR) mà không phản ánh các đặc điểm chức năng điện học khác của tim. Bên cạnh ứng dụng CTG trong bệnh viện, việc đánh giá fHR/fECG bằng cảm biến không xâm lấn đặt trên bụng mẹ mở ra khả năng theo dõi thai tại nhà, góp phần nâng cao giám sát sức khỏe thai trước và trong chuyển dạ.
+
+Đối với các hệ thống dựa trên fECG, hiện có bốn nhà cung cấp chính. MindChild Medical phát triển hệ MERIDIAN M110 giúp khắc phục một số hạn chế của CTG truyền thống, nhưng thiết bị cồng kềnh, có dây, chi phí cao và kém linh động. Hệ GE Monica Novii (trước đây là Monica Healthcare Novii) sử dụng miếng dán không dây nhỏ gọn hơn, song phạm vi di động chỉ giới hạn trong khu vực phòng sinh. Philips Avalon Beltless loại bỏ dây kết nối nhưng vẫn chỉ sử dụng trong môi trường bệnh viện. Hệ Nemo Fetal Monitoring (Hà Lan) là thiết bị không dây, có khả năng ghi thêm tín hiệu điện cơ tử cung (EMG), tuy nhiên hiệu suất phụ thuộc nhiều vào vị trí đặt cảm biến, thời điểm đo, mức độ vận động và tư thế của thai phụ. Nhìn chung, các hệ thống này có chi phí cao và chưa thực sự phù hợp cho người dùng phổ thông.
+
+% =====================================================================
+\section{Cơ sở học sâu}
+\label{sec:dl_background}
+
+Mục này trình bày các khối học sâu nền tảng (lý thuyết chuẩn) cần thiết để hiểu mô hình đề xuất ở Chương~\ref{chapter:Proposed}: mạng nơ-ron và khối MLP/FFN, tích chập 1D, cơ chế Attention và Transformer encoder, kiến trúc U-Net/UNETR, và Kolmogorov--Arnold Networks (KAN). Các khối Transformer encoder, UNETR và KAN chính là những thành phần được ghép lại và cải tiến trong kiến trúc KAN-WNETR.
+
+\subsection{Mạng nơ-ron và khối MLP/FFN}
+
+Trong một Transformer encoder block tiêu chuẩn, nhánh \textbf{self-attention} xử lý tương quan toàn cục giữa token/patch,
+còn nhánh \textbf{feed-forward} (thường gọi là MLP/FFN) thực hiện biến đổi phi tuyến theo từng token.
+
+\begin{itemize}
+  \item Dạng điển hình:
+    \begin{equation}
+      \mathrm{FFN}(x)=W_2\,\sigma(W_1x+b_1)+b_2,
+    \end{equation}
+    với $\sigma$ là kích hoạt cố định (GELU/ReLU), $W_1,W_2$ là trọng số tuyến tính học được.
+
+  \item Vai trò của MLP: tăng năng lực biểu diễn (representation capacity) sau attention, trộn thông tin theo chiều kênh (channel mixing),
+    và tạo phi tuyến để mô hình hoá quan hệ phức tạp.
+
+  \item Điểm yếu theo hướng \textit{robust + interpretability}: phi tuyến cố định $\rightarrow$ độ mềm/cứng phụ thuộc chủ yếu vào việc học ma trận tuyến tính;
+    khi dữ liệu có cấu trúc phi tuyến mạnh (nhiễu biến thiên theo bối cảnh, biên độ thay đổi, artifacts), MLP có thể cần nhiều tham số/độ rộng để khớp tốt
+    và dễ overfit.
+\end{itemize}
+
+\subsection{Tích chập 1D (CNN) cho tín hiệu thời gian}
+\begin{itemize}
+  \item Phép tích chập 1D: cửa sổ kernel trượt dọc trục thời gian, trích đặc trưng cục bộ (đỉnh, sườn dốc, cấu trúc QRS); nêu công thức $y[n]=\sum_k w[k]\,x[n-k]+b$.
+  \item Các khái niệm: stride, padding, số kênh (feature maps), pooling/upsampling; vai trò trong encoder--decoder (decoder CNN của UNETR dùng để phục hồi chi tiết cục bộ).
+  \item Receptive field: tăng theo độ sâu/kernel; \textbf{hạn chế}: receptive field hữu hạn $\Rightarrow$ khó nắm phụ thuộc dài hạn $\Rightarrow$ động lực dùng Attention (mục~\ref{sec:attention}).
+\end{itemize}
+
+\subsection{Cơ chế Attention và Transformer encoder}
+\label{sec:attention}
+\begin{itemize}
+  \item Scaled dot-product attention: $\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$; ý nghĩa $Q,K,V$ và trọng số chú ý.
+  \item Multi-Head Self-Attention (MSA): chạy nhiều head song song rồi ghép; cho phép học nhiều kiểu quan hệ token-to-token.
+  \item Thành phần khác của encoder block: LayerNorm (LN), positional encoding, kết nối residual.
+\end{itemize}
+
+ViT chia input thành patch, chiếu tuyến tính thành embedding, cộng positional embedding, rồi qua $L$ encoder blocks.
+Encoder block chuẩn:
+\begin{equation}
+  z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},
+\end{equation}
+\begin{equation}
+  z_\ell = \mathrm{MLP}(\mathrm{LN}(z_\ell')) + z_\ell',
+\end{equation}
+trong đó MSA là multi-head self-attention, LN là layer norm. Attention học quan hệ token-to-token (toàn cục),
+còn nhánh feed-forward (MLP) tạo phi tuyến theo từng token.
+
+\subsection{Kiến trúc U-Net và UNETR}
+
+\subsubsection{U-Net}
+\begin{itemize}
+  \item Kiến trúc encoder--decoder đối xứng; encoder giảm mẫu (downsample) trích đặc trưng đa tỉ lệ, decoder tăng mẫu (upsample) tái tạo.
+  \item Skip connection nối encoder--decoder cùng mức phân giải $\Rightarrow$ giữ chi tiết cục bộ, ổn định gradient.
+\end{itemize}
+
+\subsubsection{UNETR: U-Net + Transformer encoder}
+UNETR thay encoder CNN của U-Net bằng Transformer encoder để lấy ngữ cảnh toàn cục; decoder vẫn dùng CNN (1D) để phục hồi chi tiết cục bộ \cite{hatamizadehUNETRTransformers3D2021}.
+Với tín hiệu 1D, input $x\in\mathbb{R}^{992\times 1\times C}$ được patchify không chồng lấp kích thước $N=16$,
+chiếu tuyến tính lên embedding $K$, cộng positional embedding:
+\begin{equation}
+  z_0 = [x_1E;\,x_2E;\,\ldots;\,x_NE] + E_{pos}.
+\end{equation}
+Transformer có $L$ lớp; các tầng $i\in\{3,6,9,12\}$ được lấy làm skip features để ghép với decoder ở các mức phân giải khác nhau.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Hinhve/image_44.png}
+  \caption{Cấu trúc model UNETR \cite{hatamizadehUNETRTransformers3D2021}.}
+  \label{fig:unetr}
+\end{figure}
+
+\subsection{Kolmogorov--Arnold Networks (KAN)}
+
+\subsubsection{KAN: ``đảo trục'' từ học tuyến tính sang học phi tuyến}
+KAN xuất phát từ định lý biểu diễn Kolmogorov--Arnold: hàm nhiều biến liên tục có thể biểu diễn bằng tổ hợp các hàm một biến.
+Ý tưởng kiến trúc KAN (ở mức ``khối'' dùng trong deep learning) là:
+
+\begin{itemize}
+  \item Thay vì ``\textbf{tuyến tính học được + kích hoạt cố định}'' (MLP), KAN dùng \textbf{kích hoạt có thể học} (learnable activation)
+    đặt trên \textbf{các cạnh} (edges) kết nối giữa các nút.
+
+  \item Có thể hiểu một lớp KAN như một ``ma trận hàm'' $\{\phi_{j,i}(\cdot)\}$ thay cho ma trận trọng số $W$:
+    \begin{equation}
+      y_j = \sum_i \phi_{j,i}(x_i),
+    \end{equation}
+    trong đó mỗi $\phi_{j,i}$ là một hàm 1D có tham số.
+
+  \item Thực thi phổ biến: tham số hoá bằng \textbf{spline (B-spline)} để học trực tiếp hình dạng phi tuyến.
+\end{itemize}
+
+\subsubsection{Residual activation trong KAN và spline parameterization}
+Một cách cài đặt thực tế thường dùng là \textit{residual activation}:
+\begin{equation}
+  \phi(x) = w\big(b(x)+s(x)\big),
+\end{equation}
+trong đó $b(x)$ là hàm nền (base function), và $s(x)$ là spline học được, thường là tổ hợp tuyến tính của các B-spline:
+\begin{equation}
+  s(x) = \sum_{t} c_t B_t(x).
+\end{equation}
+
+\subsubsection{Hệ quả khi so KAN với MLP}
+\begin{enumerate}
+  \item \textbf{Biểu diễn:} KAN có xu hướng biểu diễn phi tuyến mạnh với ít nút hơn (mỗi cạnh mang phi tuyến giàu tham số).
+  \item \textbf{Tính diễn giải:} vì $\phi_{j,i}$ là hàm 1D có thể vẽ/quan sát, có thể đọc ``đóng góp'' của từng biến/đường nối.
+  \item \textbf{Độ phức tạp:} spline có nhiều tham số hơn một trọng số tuyến tính; nếu giữ cùng độ rộng $N$, KAN có thể nặng hơn MLP.
+    Tuy nhiên, KAN thường cần $N$ nhỏ hơn để đạt hiệu năng tương đương nên tổng tham số có thể giảm.
+  \item \textbf{Tối ưu hoá:} KAN thêm bậc tự do ở phi tuyến $\rightarrow$ khớp tốt hơn nhưng cần chiến lược huấn luyện/regularization hợp lý (grid, pruning).
+  \item \textbf{Grid refinement + sparsity/pruning:} tăng độ phân giải spline để cải thiện sai số mà không phải thiết kế lại toàn mô hình; đồng thời khuyến khích thưa hoá rồi pruning để tăng tính diễn giải.
+\end{enumerate}
+
+% =====================================================================
+\section{Tổng quan phương pháp tách NI-fECG}
+\label{sec:related_methods}
+
+Tách chiết tín hiệu điện tâm đồ thai nhi (fECG) từ các ghi nhận điện tâm đồ bụng mẹ (aECG) là một trong những bài toán cốt lõi và đầy thách thức trong lĩnh vực xử lý tín hiệu y sinh. Thách thức lớn nhất đến từ việc tín hiệu fECG thường có biên độ rất nhỏ, đồng thời bị chìm lấp hoàn toàn bởi tín hiệu điện tâm đồ của mẹ (mECG) --- vốn có biên độ lớn hơn nhiều lần --- cùng với hàng loạt các tạp nhiễu sinh lý và môi trường khác. Do đó, để quá trình trích xuất đạt hiệu quả cao, khâu tiền xử lý tín hiệu đóng một vai trò nền tảng và mang tính quyết định trước khi áp dụng bất kỳ thuật toán phân tách nào. Mục này cung cấp một bức tranh toàn cảnh về các phương pháp đã được nghiên cứu, lần lượt theo nhóm cổ điển (dựa trên kỹ thuật xử lý tín hiệu truyền thống) và nhóm học sâu (xu hướng đang thống trị những năm gần đây).
+
+\subsection{Nhóm phương pháp cổ điển}
+
+\textbf{Bối cảnh và vai trò của tiền xử lý.}
+Trong đo ECG bụng (aECG), tín hiệu thu được luôn là hỗn hợp gồm mECG, fECG và nhiều nguồn gây nhiễu/hoạt động sinh học khác (như hoạt động cơ của mẹ, cử động thai, nhiễu môi trường). Do đó, \textit{tiền xử lý} là bước gần như bắt buộc trước khi áp dụng các thuật toán tách fECG. Tuy nhiên, tiền xử lý cũng có mặt trái: nếu lọc/khử nhiễu quá mạnh có thể làm mất các thành phần biên độ nhỏ nhưng có giá trị sinh lý (đặc biệt là sóng P và T), khiến tín hiệu sau tách bị “mượt” nhưng mất đặc trưng hình thái.
+
+Trong các quy trình cổ điển, tiền xử lý thường nhằm loại (i) trôi đường nền (baseline wander), (ii) nhiễu lưới điện (power-line), và (iii) nhiễu tần cao. Một cấu hình điển hình là notch 50\,Hz để triệt nhiễu lưới, kết hợp lọc thông cao để xử lý trôi nền và lọc thông thấp để giảm nhiễu tần cao.
+
+\textbf{Nhóm phương pháp lọc (Filtering-based)} sử dụng các bộ lọc được thiết kế hoặc học thích nghi để khử thành phần mECG và nhiễu khỏi aECG; ba hướng tiêu biểu gồm lọc thích nghi, lọc Kalman và các kỹ thuật khử nhiễu thời--tần.
+
+\subsubsection{Lọc thích nghi (Adaptive filtering)}
+Lọc thích nghi là hướng tiếp cận cổ điển, tiêu biểu như LMS/NLMS và RLS \cite{fotiadouEnhancementLowqualityFetal2018}. Trực giác của nhóm này là “học” bộ lọc để khử thành phần mECG/nhiễu dựa trên tiêu chuẩn tối ưu sai số. Điểm yếu quan trọng là thường cần \textit{tín hiệu tham chiếu} bổ sung để tách các thành phần trong aECG; đồng thời tính ổn định/phụ thuộc hội tụ khiến hiệu năng nhạy với lựa chọn tham số (ví dụ bước học của LMS).
+
+\subsubsection{Kalman Filter (KF) và Extended Kalman Filter (EKF)}
+KF thuộc họ lọc Bayes theo mô hình không gian trạng thái: dùng phép đo quan sát và mô hình động lực để ước lượng tuần tự trạng thái ẩn theo thời gian \cite{suganthyEnhancementSNRFetal2019}. KF chuẩn giả định hệ tuyến tính; trong thực tế ECG và nhiễu thường phi tuyến/phi Gauss, nên EKF được dùng như một mở rộng: tuyến tính hóa (xấp xỉ) mô hình phi tuyến quanh kỳ vọng để vẫn áp dụng khung Kalman \cite{sarafanNovelECGDenoising2022}. Ý nghĩa thực hành của KF/EKF trong bài toán fECG là: nếu mô hình hóa được động lực mECG hoặc ECG “sạch”, ta có thể ước lượng mECG rồi trừ khỏi aECG để lộ fECG (tương tự tinh thần của template subtraction nhưng “thích nghi theo thời gian”).
+
+\subsubsection{Các kỹ thuật khử nhiễu thời--tần và phân rã tín hiệu}
+Ngoài KF/EKF, nhiều kỹ thuật khử nhiễu cổ điển khác cũng thường xuất hiện trong hệ sinh thái ECG như làm trơn (Savitzky--Golay), khử nhiễu Wavelet, EMD/EEMD, Total Variation Denoising (TVD), và các biến thể dựa trên tính thưa (sparsity). Các nhóm này chủ yếu phục vụ mục tiêu tăng SNR trước khi bước vào tách nguồn hoặc phát hiện QRS.
+
+\textbf{Nhóm phương pháp tách nguồn mù (Blind Source Separation -- BSS)} xem aECG quan sát được là tổng tuyến tính của nhiều nguồn độc lập (fECG, mECG và nhiễu) và tìm cách phân tách chúng mà không cần biết trước quá trình trộn \cite{cardosoBlindSignalSeparation1998}.
+
+\subsubsection{Independent Component Analysis (ICA)}
+ICA mô hình hóa hỗn hợp quan sát $X$ như $X = AS$ và tìm ma trận “giải trộn” $W$ để $Y = WX \approx S$. Thực tế triển khai ICA thường gồm các bước chuẩn hóa như \textit{centering} (đưa về trung bình 0), \textit{whitening} (làm trắng để các thành phần không tương quan và có phương sai chuẩn hóa), sau đó là bước lặp tối ưu dựa trên tiêu chuẩn phi-Gauss (ví dụ cực đại độ phi-Gauss, hợp lý cực đại, hoặc cực tiểu thông tin tương hỗ).
+
+Các biến thể ICA hay dùng gồm JADE \cite{cardosoBlindBeamformingNongaussian1993}, FastICA \cite{hyvarinenIndependentComponentAnalysis2000} và RobustICA \cite{zarzosoRobustIndependentComponent2010}. FastICA phổ biến vì đơn giản và hội tụ nhanh, phù hợp hướng “real-time” nhờ khả năng song song hóa và tìm từng thành phần độc lập. RobustICA sử dụng hàm tương phản kurtosis tổng quát và cơ chế bước học thích nghi; nhờ đó có thể giảm rủi ro kẹt tại nghiệm xấu và (theo mô tả cổ điển) bớt phụ thuộc một số tiền xử lý.
+
+\textbf{Nhóm phương pháp khử mECG theo mẫu (Template Subtraction -- TS)} tái tạo dạng sóng mECG từ các nhịp của mẹ rồi trừ khỏi aECG để làm lộ thành phần fECG.
+
+\subsubsection{Template Subtraction cơ bản}
+Quy trình điển hình của TS gồm: (i) phát hiện mQRS, (ii) cắt các chu kỳ mECG quanh đỉnh R của mẹ theo một cửa sổ thời gian xác định, (iii) lấy trung bình để tạo template mECG, (iv) lặp lại template theo thời gian để tái tạo mECG, và (v) trừ khỏi aECG để thu tín hiệu dư (residual) giàu thành phần fECG hơn. Nút thắt của TS là độ tin cậy của mQRS detection; khi fQRS chồng lấp thời gian với mQRS, việc phát hiện mQRS trở nên khó và kéo theo sai lệch lớn trong template, làm suy giảm hiệu quả tách fECG.
+
+\subsubsection{Template Subtraction có hiệu chỉnh biên độ (TSc)}
+Do hình thái mECG thay đổi theo thời gian, template trung bình có thể lệch so với nhịp thực tại từng thời điểm. Biến thể TSc khắc phục bằng cách nhân template với một hệ số tỉ lệ $\alpha$ để giảm sai khác giữa chu kỳ mECG thực và template; hệ số này có thể được chọn theo tiêu chuẩn tối thiểu hóa sai số bình phương (LMS) giữa nhịp và template đã co giãn \cite{martensRobustFetalECG2007}.
+
+\subsubsection{Kết hợp TS và ICA (Hybrid TS--ICA)}
+Sự kết hợp của các phương pháp có thể dẫn đến hiệu năng tốt hơn \cite{beharNoninvasiveFECGExtraction2013}. Do mỗi phương pháp có điểm mạnh/điểm yếu khác nhau, các tổ hợp TS và ICA thường được dùng để tăng độ vững. Ba cấu hình tổ hợp thường gặp:
+(1) TS--ICA: dùng TS để giảm thành phần mECG trội biên độ trước, rồi ICA tách phần còn lại;
+(2) ICA--TS: ICA tách tương đối các thành phần, sau đó TS “dọn” phần mECG còn rò trong kênh fECG;
+(3) ICA--TS--ICA: thêm một lượt ICA sau khi đã loại mECG nhằm làm sạch hơn các nguồn còn lại.
+
+Một pipeline đánh giá điển hình cho tổ hợp TS/ICA thường đi qua: tiền xử lý (notch 50\,Hz, high-pass và low-pass), phát hiện mQRS bằng Pan--Tompkins để tạo template hoặc hỗ trợ chọn kênh mECG trong đầu ra ICA, sau đó phát hiện fQRS bằng Pan--Tompkins trên residual/đầu ra đã tách. Với ICA, việc chọn “kênh fECG” có thể dựa trên chỉ báo độ trơn nhịp (ví dụ đếm số lần biến thiên nhịp tức thời vượt ngưỡng trong các đoạn 1 phút), nhằm loại các kênh nhiễu có biến thiên nhịp bất thường.
+
+\subsubsection{Nhận xét chung về giới hạn của các phương pháp cổ điển}
+Nhìn tổng thể, các phương pháp cổ điển phụ thuộc mạnh vào (i) chất lượng tiền xử lý, (ii) độ đúng của mQRS/fQRS detection, và (iii) giả định mô hình (tuyến tính/phi tuyến, độc lập nguồn, phân bố Gauss). Trong bối cảnh fECG có SNR thấp và hay chồng lấp với mECG, các giả định này dễ bị vi phạm, dẫn tới kết quả kém vững và khó tổng quát khi triển khai ngoài môi trường kiểm soát.
+
+\subsection{Nhóm phương pháp học sâu}
+\subsubsection{Nhóm mô hình CNN cho fQRS detection và/hoặc trích dạng sóng fECG}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Hinhve/image_41.png}
+  \caption{Sơ đồ khối kiến trúc của mạng CNN.}
+  \label{fig:cnn_arch}
+\end{figure}
+
+CNN được sử dụng rộng rãi nhờ khả năng bắt các mẫu cục bộ (đỉnh, sườn dốc, cấu trúc QRS) và xử lý chuỗi thời gian thô hoặc đã tiền xử lý tương đối hiệu quả. Các hướng triển khai tiêu biểu gồm: (i) dùng STFT để tạo biểu diễn thời--tần rồi đưa vào CNN phục vụ phát hiện fQRS; (ii) CNN 1D sâu hơn kết hợp phân đoạn cửa sổ và gán nhãn vùng chứa fQRS; (iii) tăng bền vững với nhiễu bằng cách đưa đặc trưng đánh giá nhiễu như SampEn vào pipeline; (iv) các biến thể ResNet/Octave Convolution nhằm giảm dư thừa và tăng hiệu quả tính toán; (v) các thiết kế kết hợp miền phổ--wavelet và CNN, hoặc cơ chế nhất quán miền (cross-domain consistency) để cải thiện khả năng tổng quát hoá. Nhìn chung, CNN có ưu thế về hiệu quả và tiềm năng thời gian thực, nhưng hạn chế thường gặp là “cửa sổ tiếp nhận” (receptive field) hữu hạn và phụ thuộc cấu hình, khiến việc nắm quan hệ dài hạn hoặc biến thiên nhịp--hình thái theo thời gian có thể chưa tối ưu nếu chỉ dùng CNN thuần
+\cite{leeFetalQRSDetection2018, caoMorphologyExtractionFetal2022, zhongDeepLearningApproach2018, voEfficientRobustDeep2020}.
+
+\subsubsection{Nhóm mô hình RNN (LSTM/GRU) cho phụ thuộc thời gian}
+RNN được thiết kế cho dữ liệu chuỗi nên phù hợp để mô hình hoá phụ thuộc theo thời gian và biến thiên nhịp giữa các chu kỳ tim. LSTM/GRU giúp khắc phục vấn đề tiêu biến gradient của RNN truyền thống và có thể khai thác ngữ cảnh dài hơn để ổn định phát hiện nhịp hoặc tinh chỉnh đầu ra theo chuỗi. Khi áp dụng trực tiếp lên tín hiệu bụng thô, trạng thái ẩn có thể bị chi phối bởi mQRS do biên độ mECG lớn, làm giảm nhạy với các spike fQRS yếu trong điều kiện SNR thấp; vì vậy nhiều công trình dùng RNN như một tầng tinh chỉnh sau khi đã có đặc trưng cục bộ tốt
+\cite{hochreiterLongShorttermMemory1997, darmawahyuniAccurateFetalQRSComplex2023, darmawahyuniDeepLearningFetal2023}.
+
+\subsubsection{Nhóm mô hình lai CNN--RNN}
+Hybrid CNN--RNN tận dụng ưu điểm bổ sung: CNN trích đặc trưng cục bộ liên quan đến hình thái (đặc biệt QRS), còn RNN học phụ thuộc thời gian và tính không dừng của tín hiệu. Một cấu trúc điển hình là CNN ở các tầng đầu để làm sạch/nhấn mạnh đặc trưng fQRS, sau đó GRU/LSTM/BiLSTM để khai thác sự liên tục theo thời gian và giảm nhiễu quyết định. Một số công trình còn kết hợp DWT nhằm khử nhiễu trước khi vào mạng. Nhóm hybrid thường đạt hiệu năng tốt hơn trong môi trường nhiễu hoặc dữ liệu khác miền, nhưng đổi lại chi phí tính toán và độ phức tạp huấn luyện tăng \cite{ghonchiCommonSpatialPattern2022,darmawahyuniAccurateFetalQRSComplex2023, darmawahyuniDeepLearningFetal2023}.
+
+\subsubsection{Nhóm mô hình sinh (GAN/CycleGAN) hướng tới khôi phục dạng sóng và bảo toàn morphology}
+Các kiến trúc sinh như GAN/CycleGAN được quan tâm vì mục tiêu không chỉ “bắt đỉnh fQRS” mà còn khôi phục toàn bộ dạng sóng fECG với hình thái P--QRS--T (phục vụ phân tích khoảng PR/ST/QT và các bất thường hình thái). CycleGAN cho phép huấn luyện trong bối cảnh không ghép cặp (unpaired) bằng cơ chế cycle-consistency, giúp mô hình học ánh xạ giữa miền tín hiệu bụng và miền fECG đồng thời hạn chế mất chi tiết hình thái. Các biến thể đưa attention hoặc ràng buộc tương quan nhằm tăng khả năng “nhìn thấy” các thành phần fECG bị che bởi mECG và nhiễu. Nhìn chung, nhóm sinh có lợi thế về chất lượng tái tạo và bảo toàn chi tiết, nhưng huấn luyện khó hơn, nhạy hyperparameter và thường nặng hơn về tài nguyên.
+\cite{goodfellowGenerativeAdversarialNets2014, zhuUnpairedImageToImageTranslation2017, mohebbianFetalECGExtraction2022, shokouhmandFetalElectrocardiogramExtraction2023}.
+
+\subsubsection{Nhóm Autoencoder và họ U-Net/UNet++/UNet3+ cho bài toán trích dạng sóng fECG}
+Autoencoder (AE) và các biến thể encoder--decoder là lựa chọn tự nhiên cho bài toán “tách/khôi phục” tín hiệu: encoder nén và học biểu diễn, decoder tái tạo đầu ra; skip connection giúp giữ thông tin cục bộ và ổn định gradient, từ đó cải thiện bảo toàn hình thái theo nhịp. Survey cho thấy nhiều hướng phát triển dựa trên U-Net và các biến thể (UNet++, UNet3+) để tăng hợp nhất đa tỉ lệ và thu hẹp “semantic gap” giữa encoder--decoder. Ngoài ra, có các hướng tách thành phần mẹ--thai bằng kiến trúc kép (ví dụ dual Res-UNet) hoặc tích hợp nhiều module để tiến tới một lần suy luận (single-pass) thay vì pipeline nhiều bước. Một nhánh thực dụng khác là LinkNet/LinkNet++ với residual/dense blocks và cơ chế merge đặc trưng hiệu quả, nhằm cân bằng giữa chất lượng tái tạo và chi phí tính toán.
+
+% =====================================================================
+\section{Nhận xét, khoảng trống nghiên cứu và định vị đề tài}
+\label{sec:gap_positioning}
+% TODO: viết thành văn xuôi (gạch đầu dòng định hướng) — phần "ăn điểm" định vị đóng góp
+\begin{itemize}
+  \item Tổng kết ưu/nhược: cổ điển phụ thuộc tiền xử lý + giả định mô hình; học sâu mạnh hơn nhưng nặng/khó huấn luyện.
+  \item \textbf{W-NETR là SOTA hiện tại} cho tách fECG dạng sóng (hai nhánh UNETR + khử đặc trưng mECG).
+  \item \textbf{Khoảng trống:} khối MLP-FFN trong Transformer dùng kích hoạt phi tuyến cố định $\Rightarrow$ hạn chế biểu diễn/bảo toàn hình thái.
+  \item \textbf{Định vị đề tài:} thay MLP-FFN bằng KAN (kích hoạt học được theo spline) $\Rightarrow$ động lực cho mô hình đề xuất ở Chương~\ref{chapter:Proposed}.
+\end{itemize}
+
+% =====================================================================
+\section{Kết luận chương}
+
+Chương này đã thiết lập toàn bộ nền tảng cần thiết cho đề tài. Về cơ sở điện sinh lý, tín hiệu fECG mang đầy đủ các thành phần P/QRS/T nhưng có biên độ rất nhỏ và SNR thấp, trong khi các phương thức theo dõi hiện hành (CTG/Doppler, PCG, fECG xâm lấn) đều tồn tại đánh đổi giữa an toàn, tính khả dụng và lượng thông tin hình thái khai thác được. Về cơ sở học sâu, các khối nền tảng đã được trình bày---Transformer encoder (ngữ cảnh toàn cục), UNETR (encoder Transformer + decoder CNN), và KAN (phi tuyến học được)---là những thành phần sẽ được ghép lại trong mô hình đề xuất. Về tổng quan phương pháp, các hướng cổ điển phụ thuộc mạnh vào tiền xử lý và giả định mô hình, còn các hướng học sâu mạnh hơn nhưng nặng và khó huấn luyện; trong đó W-NETR nổi lên là hướng tiên tiến nhất cho tách dạng sóng fECG. Khoảng trống cốt lõi---khối MLP-FFN với kích hoạt cố định hạn chế năng lực biểu diễn và bảo toàn hình thái---chính là động lực để thay bằng KAN. Chương~\ref{chapter:Proposed} sẽ trình bày chi tiết mô hình đề xuất KAN-WNETR cùng dữ liệu và thiết lập thực nghiệm.
+
+\end{document}

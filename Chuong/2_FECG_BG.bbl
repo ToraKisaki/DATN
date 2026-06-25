@@ -1,0 +1,621 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{einthovenGalvanometrischeRegistrirungMenschlichen1903}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=929002a07a2d725f97f54cd3bfa1ca09}{%
+           family={Einthoven},
+           familyi={E\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{fullhash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{fullhashraw}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{bibnamehash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{authorbibnamehash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{authornamehash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{authorfullhash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{authorfullhashraw}{929002a07a2d725f97f54cd3bfa1ca09}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1432-2013}
+      \field{journaltitle}{Archiv für die gesamte Physiologie des Menschen und der Tiere}
+      \field{langid}{ngerman}
+      \field{month}{11}
+      \field{number}{9}
+      \field{title}{Die galvanometrische Registrirung des menschlichen Elektrokardiogramms, zugleich eine Beurtheilung der Anwendung des Capillar-Elektrometers in der Physiologie}
+      \field{urlday}{15}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{99}
+      \field{year}{1903}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{472\bibrangedash 480}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/BF01811855
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/BF01811855
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/BF01811855
+      \endverb
+    \endentry
+    \entry{departmentofgeneralmedicineamalainstituteofmedicalsciencesthrissurkeralaindiLaboratoryWearablesReview2022}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4a001abbe4614a638364861eeb1eed9d}{%
+           family={{Department of General Medicine, Amala Institute of Medical Sciences, Thrissur, Kerala, Indi}},
+           familyi={D\bibinitperiod}}}%
+        {{hash=5d92d52c99b78f534144d82b2129088c}{%
+           family={Vincent},
+           familyi={V\bibinitperiod},
+           given={Rony},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{fullhash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{fullhashraw}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{bibnamehash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{authorbibnamehash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{authornamehash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{authorfullhash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{authorfullhashraw}{befadcc27ba5b145c74a0f9d8504c35c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The development of electrocardiography, one of the top scientific breakthroughs of the 20th century, occurred in the field of cardiology. The history of the ECG began long before its invention, with the advent of the study of electricity in the medical field. The idea of electrophysiology and Waller's initial recording of the ‘electrogram’ encouraged Willem Einthoven to develop new string galvanometers and turn this remarkable physiologic occurrence into a vital clinical recording tool. It has progressed from Einthoven's innovation to wearable technology. In the first part of the 20th century, a number of inventive people achieved a remarkable succession of discoveries and advancements that led to the development of the 12-lead ECG as we know it today. It went further than that. The evolution of science and technology over the years has allowed for continual development in terms of usefulness, ranging from five operators to one operator meant to record the ECG trace, and mobility, ranging from around 300 Kg to roughly around 1 Kg. Electrocardiographs in minimized form now exist thanks to the modern era of digitalization. We will go over the significant processes in the development of the ECG in this article.}
+      \field{issn}{26955075}
+      \field{journaltitle}{Iberoamerican Journal of Medicine}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{4}
+      \field{shorttitle}{From a Laboratory to the Wearables}
+      \field{title}{From a Laboratory to the Wearables: A Review on History and Evolution of Electrocardiogram}
+      \field{urlday}{15}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{4}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{248\bibrangedash 255}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.53986/ibjm.2022.0038
+      \endverb
+      \verb{urlraw}
+      \verb https://www.iberoamjmed.com/article/doi/10.53986/ibjm.2022.0038
+      \endverb
+      \verb{url}
+      \verb https://www.iberoamjmed.com/article/doi/10.53986/ibjm.2022.0038
+      \endverb
+    \endentry
+    \entry{godfreyFunctionalAssessmentFetal2012}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=087698c10ba05012d4b7fa34efa6e7de}{%
+           family={Godfrey},
+           familyi={G\bibinitperiod},
+           given={M.\bibnamedelimi E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=b03a0867b9ced84c72d120e7c56984c2}{%
+           family={Messing},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=ea853abba13da7d17e18c811aa44491d}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={S.\bibnamedelimi M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=134ad7d6be79b0c82a4c36a0d858df60}{%
+           family={Valsky},
+           familyi={V\bibinitperiod},
+           given={D.\bibnamedelimi V.},
+           giveni={D\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=ae4a48c8ee0dd1d39aa28b2f8be54ed8}{%
+           family={Yagel},
+           familyi={Y\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{769fb45d2f94d4a7132464a71cd0117e}
+      \strng{fullhash}{e4c29e1b18479a22d634fa9b9bac868d}
+      \strng{fullhashraw}{e4c29e1b18479a22d634fa9b9bac868d}
+      \strng{bibnamehash}{e4c29e1b18479a22d634fa9b9bac868d}
+      \strng{authorbibnamehash}{e4c29e1b18479a22d634fa9b9bac868d}
+      \strng{authornamehash}{769fb45d2f94d4a7132464a71cd0117e}
+      \strng{authorfullhash}{e4c29e1b18479a22d634fa9b9bac868d}
+      \strng{authorfullhashraw}{e4c29e1b18479a22d634fa9b9bac868d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The purpose of this review is to evaluate the current modalities available for the assessment of fetal cardiac function. The unique anatomy and physiology of the fetal circulation are described, with reference to the difference between @ in-utero and @ ex-utero life. M-mode, early/atrial ratio, myocardial performance index, three-dimensional and four-dimensional ultrasound, tissue Doppler including strain and strain rate, speckle tracking, magnetic resonance imaging and venous flow assessment are described. The modalities are analyzed from the perspective of the clinician and certain questions are posed. Does the modality assess systolic function, diastolic function or both? Is it applicable to both ventricles? Does it require extensive post-processing or additional hardware, or does it make use of technology already available to the average practitioner? The reproducibility and reliability of the techniques are evaluated, with reference to their utility in clinical decision-making. Finally, directions for future research are proposed. Copyright © 2012 ISUOG. Published by John Wiley \& Sons, Ltd.}
+      \field{issn}{1469-0705}
+      \field{journaltitle}{Ultrasound in Obstetrics \& Gynecology}
+      \field{langid}{english}
+      \field{number}{2}
+      \field{shorttitle}{Functional Assessment of the Fetal Heart}
+      \field{title}{Functional Assessment of the Fetal Heart: A Review}
+      \field{urlday}{15}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{39}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{131\bibrangedash 144}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1002/uog.9064
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/uog.9064
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/uog.9064
+      \endverb
+      \keyw{3DUS,4DUS,E/A ratio,fetal heart,four-dimensional ultrasound,M-mode,magnetic resonance imaging,MPI,MRI,myocardial performance index,prenatal diagnosis,speckle tracking,strain rate,three-dimensional ultrasound,tissue Doppler}
+    \endentry
+    \entry{TrendsMaternalMortality2025}{book}{}{}
+      \list{location}{1}{%
+        {Geneva}%
+      }
+      \list{publisher}{1}{%
+        {World Health Organization}%
+      }
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{shorttitle}
+      \field{isbn}{978-92-4-010846-2}
+      \field{langid}{english}
+      \field{shorttitle}{Trends in Maternal Mortality Estimates 2000 to 2023}
+      \field{title}{Trends in Maternal Mortality Estimates 2000 to 2023: Estimates by {{WHO}}, {{UNICEF}}, {{UNFPA}}, {{World Bank Group}} and {{UNDESA}}/{{Population Division}}}
+      \field{year}{2025}
+      \field{dateera}{ce}
+    \endentry
+    \entry{ayres-de-camposFIGOConsensusGuidelines2015}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=880f8b1fc5b587454cb11db3c7a8fb1b}{%
+           family={Ayres-de-Campos},
+           familyi={A\bibinithyphendelim C\bibinitperiod},
+           given={Diogo},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d31e9a15baff6f8524db8c268db7abd8}{%
+           family={Spong},
+           familyi={S\bibinitperiod},
+           given={Catherine\bibnamedelima Y.},
+           giveni={C\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=3beff6875815cc6fb90e0278d432b0d6}{%
+           family={Chandraharan},
+           familyi={C\bibinitperiod},
+           given={Edwin},
+           giveni={E\bibinitperiod}}}%
+        {{hash=675ef04faa0b429f1fe84eef91a70d60}{%
+           family={Panel},
+           familyi={P\bibinitperiod},
+           given={FIGO\bibnamedelimb Intrapartum\bibnamedelimb Fetal\bibnamedelimb Monitoring\bibnamedelimb Expert\bibnamedelima Consensus},
+           giveni={F\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{0a3855527de26dfc44456622fb71de07}
+      \strng{fullhash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{fullhashraw}{85e116495c6e5352b7773e460c4cc108}
+      \strng{bibnamehash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{authorbibnamehash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{authornamehash}{0a3855527de26dfc44456622fb71de07}
+      \strng{authorfullhash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{authorfullhashraw}{85e116495c6e5352b7773e460c4cc108}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1879-3479}
+      \field{journaltitle}{International Journal of Gynecology \& Obstetrics}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{shorttitle}{{{FIGO}} Consensus Guidelines on Intrapartum Fetal Monitoring}
+      \field{title}{{{FIGO}} Consensus Guidelines on Intrapartum Fetal Monitoring: {{Cardiotocography}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{131}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{13\bibrangedash 24}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.ijgo.2015.06.020
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\DV23BFFZ\\Ayres-de-Campos et al. - 2015 - FIGO consensus guidelines on intrapartum fetal monitoring Cardiotocography.pdf;C\:\\Users\\Minh\\Zotero\\storage\\LZHW8ZEC\\j.ijgo.2015.06.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1016/j.ijgo.2015.06.020
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1016/j.ijgo.2015.06.020
+      \endverb
+    \endentry
+    \entry{freemanFetalHeartRate2012}{book}{}{}
+      \name{author}{4}{}{%
+        {{hash=4be16f9df789bd07c63c5bb399d9aa28}{%
+           family={Freeman},
+           familyi={F\bibinitperiod},
+           given={Roger\bibnamedelima K.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=b905970f0d1eafaf30b48648880ad626}{%
+           family={Garite},
+           familyi={G\bibinitperiod},
+           given={Thomas\bibnamedelima J.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=981c13505cd665b826d7a0c2c727d9e2}{%
+           family={Nageotte},
+           familyi={N\bibinitperiod},
+           given={Michael\bibnamedelima P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=e3571b89af71052eded6b8fb6c7d29a6}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Lisa\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Lippincott Williams \& Wilkins, a Wolters Kluwer bu}%
+      }
+      \strng{namehash}{2c511d0653b4ff987dfe4bdf44d3f545}
+      \strng{fullhash}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \strng{fullhashraw}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \strng{bibnamehash}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \strng{authorbibnamehash}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \strng{authornamehash}{2c511d0653b4ff987dfe4bdf44d3f545}
+      \strng{authorfullhash}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \strng{authorfullhashraw}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{isbn}{978-1-4511-1663-2}
+      \field{month}{1}
+      \field{title}{Fetal {{Heart Rate Monitoring}}, 4e}
+      \field{year}{2012}
+      \field{dateera}{ce}
+    \endentry
+    \entry{abramowiczFetalThermalEffects2008}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=093b2e5d29e3a1747e4611208b2075e7}{%
+           family={Abramowicz},
+           familyi={A\bibinitperiod},
+           given={Jacques\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=570ad5e397208ce60b68b0b846ca31fd}{%
+           family={Barnett},
+           familyi={B\bibinitperiod},
+           given={Stanley\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=48b0f56576e6a3209dd9809b0abc49f8}{%
+           family={Duck},
+           familyi={D\bibinitperiod},
+           given={Francis\bibnamedelima A.},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=c6fe71431c3cd4c952a526a17fbd371b}{%
+           family={Edmonds},
+           familyi={E\bibinitperiod},
+           given={Peter\bibnamedelima D.},
+           giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=249debd442d462a6c54db41f09d5bcd8}{%
+           family={Hynynen},
+           familyi={H\bibinitperiod},
+           given={Kullervo\bibnamedelima H.},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=cc51c8ecb6c2f36f2d8d881ed5dc346e}{%
+           family={Ziskin},
+           familyi={Z\bibinitperiod},
+           given={Marvin\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{91e0fe154bd3b43db1411b209885fa34}
+      \strng{fullhash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{fullhashraw}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{bibnamehash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{authorbibnamehash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{authornamehash}{91e0fe154bd3b43db1411b209885fa34}
+      \strng{authorfullhash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{authorfullhashraw}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Processes that can produce a biological effect with some degree of heating (ie, about 1°C above the physiologic temperature) act via a thermal mechanism. Investigations with laboratory animals have documented that pulsed ultrasound can produce elevations of temperature and damage in biological tissues in vivo, particularly in the presence of bone (intracranial temperature elevation). Acoustic outputs used to induce these adverse bioeffects are within the diagnostic range, although exposure times are usually considerably longer than in clinical practice. Conditions present in early pregnancy, such as lack of perfusion, may favor bioeffects. Thermally induced teratogenesis has been shown in many animal studies, as well as several controlled human studies; however, human studies have not shown a causal relationship between diagnostic ultrasound exposure during pregnancy and adverse biological effects to the fetus. All human epidemiologic studies, however, were conducted with commercially available devices predating 1992, that is, with acoustic outputs not exceeding a spatial-peak temporal-average intensity of 94 mW/cm2. Current limits in the United States allow a spatial-peak temporal-average intensity of 720 mW/cm2 for fetal applications. The synergistic effect of a raised body temperature (febrile status) and ultrasound insonation has not been examined in depth. Available evidence, experimental or epidemiologic, is insufficient to conclude that there is a causal relationship between obstetric diagnostic ultrasound exposure and obvious adverse thermal effects to the fetus. However, very subtle effects cannot be ruled out and indicate a need for further research, although research in humans may be extremely difficult to realize. This article analyzes thermal effects of fetal ultrasound exposure. The normal core human body temperature is generally accepted to be 37°C with a diurnal variation of ±0.5°C to 1°C,1,2 although 36.8°C ± 0.4°C (95\% confidence interval) may be closer to the actual mean for large populations.3 During the entire gestation, the temperature of the human embryo/fetus is higher than the maternal core body temperature4 and gradually rises until, in the final trimester (near term), it exceeds that of the mother by 0.5°C.5 Thermally induced teratogenesis has been shown in many animal studies, as well as several controlled human studies.6 Edwards7 and others have shown that hyperthermia is teratogenic for numerous animal species, including the human, and suggested a 1.5°C temperature elevation above the normal value as a universal threshold.8 An elevated maternal temperature in early gestation has been associated with an increased incidence of congenital anomalies.9 Tolerance to increased temperature (thermotolerance) is an important aspect of thermal teratogenesis. Thermotolerance is induced by the production of heat shock proteins (HSPs), which occurs (up to a limit) during a relatively slow (10- to 15-minute) temperature increase of the whole body.10 Diagnostic ultrasound exposures of mammalian embryos or fetuses in vivo and in vitro do not cause a whole-body temperature increase in the mother but can potentially do so in the embryo. In principle, heating with ultrasound could occur so rapidly that the protective effects of HSPs might not come into play. There are data on effects of hyperthermia and measurements of in vivo temperature induced by pulsed ultrasound but not in the human.11–14 These data have been widely reviewed.15–20 However, there is a serious lack of data on the effects of ultrasound while rigorously excluding other confounding factors. A number of epidemiologic studies of possible developmental effects of obstetric ultrasound were performed before 1992, when exposures of the fetus, if anything, were lower on average than they are today. The results overall were negative. Around 1992, the maximum permitted acoustic output of clinical ultrasound instruments operating in the obstetric mode was allowed to increase by a factor of almost 8.21 Potentially of even greater significance, no report clearly defines the duration of actual exposure. Epidemiology, of course, cannot be expected to reveal subtle effects. Today, ultrasound is so much a part of obstetric care that it would be very difficult to design an ethically acceptable epidemiologic study. The material in this article will be presented in the following manner: “Definitions,” “Mechanisms of Tissue Heating,” “Measured Temperature Rise in Human Fetal Tissue,” “Intracranial Temperature Elevation,” “Epidemiologic Data,” “Clinical Studies,” “Discussion Regarding Obstetric Issues in the Human,” and “Conclusions and Recommendations.”}
+      \field{issn}{1550-9613}
+      \field{journaltitle}{Journal of Ultrasound in Medicine}
+      \field{langid}{english}
+      \field{number}{4}
+      \field{title}{Fetal {{Thermal Effects}} of {{Diagnostic Ultrasound}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{27}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{541\bibrangedash 559}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.7863/jum.2008.27.4.541
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\XFMCK9CC\jum.2008.27.4.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.7863/jum.2008.27.4.541
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.7863/jum.2008.27.4.541
+      \endverb
+      \keyw{bioeffects,fetus,obstetrics,safety,thermal effects,ultrasound}
+    \endentry
+    \entry{kovacsRulebasedPhonocardiographicMethod2000}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=26806740aefeee6546cfac3e259cb42f}{%
+           family={Kovacs},
+           familyi={K\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c58a346fd5ef6ec77f9c26d37e680548}{%
+           family={Torok},
+           familyi={T\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=105f48575955fbc841cc827ab377bc17}{%
+           family={Habermajer},
+           familyi={H\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{d89c26cf22b3ee91eb7448ebb7986d9e}
+      \strng{fullhash}{28d72c01bfcebd36e943c45266d43742}
+      \strng{fullhashraw}{28d72c01bfcebd36e943c45266d43742}
+      \strng{bibnamehash}{28d72c01bfcebd36e943c45266d43742}
+      \strng{authorbibnamehash}{28d72c01bfcebd36e943c45266d43742}
+      \strng{authornamehash}{d89c26cf22b3ee91eb7448ebb7986d9e}
+      \strng{authorfullhash}{28d72c01bfcebd36e943c45266d43742}
+      \strng{authorfullhashraw}{28d72c01bfcebd36e943c45266d43742}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A real-time method for fetal heart rate (FHR) monitoring based on signal processing of the fetal heart sounds is presented. The acoustic method, which utilizes an adaptive time pattern analysis to select and analyze those heartbeats that can be recorded without artefact, is guided by a number of rules involving an introduced confidence factor on the timing prediction. The algorithm was implemented in a low-power portable electronic instrument to enable long-term fetal surveillance. A large number of clinical tests have shown the very good performance of the phonocardiographic method in comparison with FHR curves simultaneously recorded with ultrasound cardiotocography. Indeed, approximately 90\% of the time, the acoustic FHR curve remained inside a /spl plusmn/3 beats/min tolerance limit of the reference ultrasound method. The confidence was typically CF{$>$}0.85. The acoustic method exceeded a /spl plusmn/5 beats/min limit relative to the ultrasound method approximately 5\% of the time. Finally, no relevant FHR data was measured approximately 5\% of the time.}
+      \field{issn}{1558-2531}
+      \field{journaltitle}{IEEE Transactions on Biomedical Engineering}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{A Rule-Based Phonocardiographic Method for Long-Term Fetal Heart Rate Monitoring}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{47}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{124\bibrangedash 130}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/10.817627
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\CJUI87IY\817627.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/817627
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/817627
+      \endverb
+      \keyw{Acoustic signal processing,Adaptive signal processing,Fetal heart,Fetal heart rate,Heart rate measurement,Pattern analysis,Prediction algorithms,Signal processing algorithms,Timing,Ultrasonic imaging}
+    \endentry
+    \entry{neilsonFetalElectrocardiogramECG2015}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=219c9e98b3551df1377ffb4efb4a0c93}{%
+           family={Neilson},
+           familyi={N\bibinitperiod},
+           given={James\bibnamedelima P},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=18957a10358c77cd30291f8b815e916f}{%
+           family={{Cochrane Pregnancy and Childbirth Group}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{fullhash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{fullhashraw}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{bibnamehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authorbibnamehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authornamehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authorfullhash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authorfullhashraw}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{editorbibnamehash}{18957a10358c77cd30291f8b815e916f}
+      \strng{editornamehash}{18957a10358c77cd30291f8b815e916f}
+      \strng{editorfullhash}{18957a10358c77cd30291f8b815e916f}
+      \strng{editorfullhashraw}{18957a10358c77cd30291f8b815e916f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{21}
+      \field{issn}{14651858}
+      \field{journaltitle}{Cochrane Database of Systematic Reviews}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{Fetal Electrocardiogram ({{ECG}}) for Fetal Monitoring during Labour}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{2015}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1002/14651858.CD000116.pub5
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.wiley.com/10.1002/14651858.CD000116.pub5
+      \endverb
+      \verb{url}
+      \verb http://doi.wiley.com/10.1002/14651858.CD000116.pub5
+      \endverb
+    \endentry
+    \entry{sameniReviewFetalECG2010}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=eeb4dba2d3aa3bc3a2c2da93c402d140}{%
+           family={{Sameni}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{fullhash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{fullhashraw}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{bibnamehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authorbibnamehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authornamehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authorfullhash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authorfullhashraw}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The eld of electrocardiography has been in existence for over a century, yet despite signi cant advances in adult clinical electrocardiography, signal processing techniques and fast digital processors, the analysis of fetal ECGs is still in its infancy. This is, partly due to a lack of availability of gold standard databases, partly due to the relatively low signal-to-noise ratio of the fetal ECG compared to the maternal ECG (caused by the various media between the fetal heart and the measuring electrodes, and the fact that the fetal heart is simply smaller), and in part, due to the less complete clinical knowledge concerning fetal cardiac function and development. In this paper we review a range of promising recording and signal processing techniques for fetal ECG analysis that have been developed over the last forty years, and discuss both their shortcomings and advantages. Before doing so, however, we review fetal cardiac development, and the etiology of the fetal ECG. A selection of relevant models for the fetal/maternal ECG mixture is also discussed. In light of current understanding of the fetal ECG, we then attempt to justify recommendations for promising future directions in signal processing, and database creation.}
+      \field{issn}{1876536X}
+      \field{journaltitle}{The Open Pacing, Electrophysiology \& Therapy Journal}
+      \field{langid}{english}
+      \field{shortjournal}{opetj}
+      \field{title}{A {{Review}} of {{Fetal ECG Signal Processing Issues}} and {{Promising Directions}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.2174/1876536X01003010004
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\GYHJI832\Sameni - 2010 - A Review of Fetal ECG Signal Processing Issues and Promising Directions.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://benthamopen.com/ABSTRACT/TOPETJ-3-4
+      \endverb
+      \verb{url}
+      \verb http://benthamopen.com/ABSTRACT/TOPETJ-3-4
+      \endverb
+    \endentry
+    \entry{karmakarConsumerInsightsFeasibility2025}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=876c958205c1a947fb2b657ee36869e8}{%
+           family={Karmakar},
+           familyi={K\bibinitperiod},
+           given={Debjyoti},
+           giveni={D\bibinitperiod}}}%
+        {{hash=01346aced7c3926bb45c9b259d23778f}{%
+           family={Paul},
+           familyi={P\bibinitperiod},
+           given={Tarini},
+           giveni={T\bibinitperiod}}}%
+        {{hash=122187fc3d469d9fe7982b8f77156468}{%
+           family={Keenan},
+           familyi={K\bibinitperiod},
+           given={Emerson},
+           giveni={E\bibinitperiod}}}%
+        {{hash=68cd0238b84a14d073e3f210dba5b591}{%
+           family={Palaniswami},
+           familyi={P\bibinitperiod},
+           given={Marimuthu},
+           giveni={M\bibinitperiod}}}%
+        {{hash=93ed0e2e66ccd0c8b3e076b50511a6da}{%
+           family={Constable},
+           familyi={C\bibinitperiod},
+           given={Kaitlin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=99108dfb2b7acad4dda7c85e20ae2880}{%
+           family={Spessot},
+           familyi={S\bibinitperiod},
+           given={Erica},
+           giveni={E\bibinitperiod}}}%
+        {{hash=5b0ea8cd7c7eb4b84dab9e1ebf6aaa3f}{%
+           family={Brownfoot},
+           familyi={B\bibinitperiod},
+           given={Fiona},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{68e791376bd46985f149d873584d4d69}
+      \strng{fullhash}{55ac75d86e62b6bee7c16e1445966652}
+      \strng{fullhashraw}{55ac75d86e62b6bee7c16e1445966652}
+      \strng{bibnamehash}{68e791376bd46985f149d873584d4d69}
+      \strng{authorbibnamehash}{68e791376bd46985f149d873584d4d69}
+      \strng{authornamehash}{68e791376bd46985f149d873584d4d69}
+      \strng{authorfullhash}{55ac75d86e62b6bee7c16e1445966652}
+      \strng{authorfullhashraw}{55ac75d86e62b6bee7c16e1445966652}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The COVID-19 pandemic accelerated the adoption of telehealth and remote monitoring in obstetric care. This study assessed pregnant patients’ perceptions before and after using a novel non-invasive fetal electrocardiogram (NI-FECG) device. The trial is prospectively registered on the Australia New Zealand Clinical Trials Registry (ANZCTRN12621001260819; submitted June 9th, 2021; approved September 17th, 2021). Seventy participants from 36 weeks’ gestation completed pre- and post-use surveys. Interest in continuous and home fetal monitoring was high (79\% and 90\%, respectively). Post-use, 89\% reported satisfaction; over 90\% comfortable wearing and removing the sensor. Extended use was acceptable to 76\%, and only 3\% reported high skin irritation. Sentiment analysis highlighted themes of reassurance, convenience, and reduced anxiety. Some suggested smaller, wireless design. Analysis by natural language processing and clustering provided deeper insights. Findings support strong interest in at-home fetal monitoring; further refinement and education are needed to enhance acceptability. Future research should assess long-term effects on anxiety and clinical outcomes.}
+      \field{issn}{2398-6352}
+      \field{journaltitle}{npj Digital Medicine}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{1}
+      \field{title}{Consumer Insights from a Feasibility Study on Remote and Extended Use of a Novel Non-Invasive Wearable Fetal Electrocardiogram Monitor}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{8}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{216}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41746-025-01628-9
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41746-025-01628-9
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41746-025-01628-9
+      \endverb
+      \keyw{Outcomes research,Translational research}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
