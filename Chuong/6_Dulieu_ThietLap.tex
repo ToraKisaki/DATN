@@ -14,7 +14,7 @@
 
 % ---------------------------------------------------------------------
 \section{Bộ dữ liệu FECGSYNDB}
-Dữ liệu huấn luyện mô hình được lấy từ PhysioNet - Fetal ECG Synthetic Database (FECGSYNDB) \cite{andreotti_open-source_2016}. Đây là một cơ sở dữ liệu mô phỏng tín hiệu điện tâm đồ thai và mẹ (NI-FECG/MECG) sử dụng mô phỏng từ công cụ FECGSYN, được xây dựng để phục vụ nghiên cứu phân tách và trích xuất fECG một cách có thể tái lập (reproducible research). Dữ liệu này được cung cấp công khai và thường dùng làm benchmark trong các nghiên cứu về thuật toán lọc và học máy cho fECG.
+Dữ liệu huấn luyện mô hình được lấy từ PhysioNet - Fetal ECG Synthetic Database (FECGSYNDB) \cite{andreottiOpensourceFrameworkStresstesting2016}. Đây là một cơ sở dữ liệu mô phỏng tín hiệu điện tâm đồ thai và mẹ (NI-FECG/MECG) sử dụng mô phỏng từ công cụ FECGSYN, được xây dựng để phục vụ nghiên cứu phân tách và trích xuất fECG một cách có thể tái lập (reproducible research). Dữ liệu này được cung cấp công khai và thường dùng làm benchmark trong các nghiên cứu về thuật toán lọc và học máy cho fECG.
 
 \begin{figure}[h]
   \centering
@@ -72,7 +72,7 @@ Quy trình tiền xử lý tổng thể bao gồm: lấy mẫu ở 250 Hz, lọc
 % ---------------------------------------------------------------------
 \section{Phát hiện QRS}
 
-Thuật toán Pan-Thompkins là một trong những thuật toán phổ biến nhất để phát hiện phức hệ QRS và đỉnh R của tín hiệu ECG \cite{pan_real-time_1985}. Thuật toán này sử dụng các đặc trưng tín hiệu như biên độ, độ dốc và độ rộng của cửa sổ tích phân đẻ xác định phức bộ QRS. Về tổng thể, thuật toán chia ra gồm 2 bước chính: (1) tiền xử lý tín hiệu và (2) đưa ra quyết định phát hiện. Chi tiết các bước của thuật toán được tóm tắt như sau:
+Thuật toán Pan-Thompkins là một trong những thuật toán phổ biến nhất để phát hiện phức hệ QRS và đỉnh R của tín hiệu ECG \cite{panRealTimeQRSDetection1985}. Thuật toán này sử dụng các đặc trưng tín hiệu như biên độ, độ dốc và độ rộng của cửa sổ tích phân đẻ xác định phức bộ QRS. Về tổng thể, thuật toán chia ra gồm 2 bước chính: (1) tiền xử lý tín hiệu và (2) đưa ra quyết định phát hiện. Chi tiết các bước của thuật toán được tóm tắt như sau:
 
 \paragraph{Lọc thông dải (Band-pass)}
 

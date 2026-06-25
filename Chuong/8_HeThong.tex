@@ -281,6 +281,31 @@ Giao diện web được thiết kế tối ưu cho màn hình cảm ứng 480$\
 Dữ liệu live được cập nhật qua kênh WebSocket riêng cho từng bệnh nhân (\texttt{/ws/live/\{id\}}), với cơ chế tự động kết nối lại khi mất kết nối và gửi ping mỗi 25 giây để duy trì socket.
 
 % ---------------------------------------------------------------------
+\section{Thiết kế cơ khí và vỏ hộp thiết bị}
+
+Để đảm bảo an toàn điện, tính cơ động và thẩm mỹ khi sử dụng tại môi trường lâm sàng, toàn bộ phần cứng của thiết bị đầu giường (bao gồm Raspberry Pi 5, mạch thu nhận tín hiệu ADS1293, màn hình LCD và bộ cấp nguồn) được tích hợp gọn gàng bên trong một vỏ hộp bảo vệ. 
+
+Bản vẽ 3D của vỏ hộp được thực hiện trên phần mềm Autodesk Fusion 360. Cấu trúc hộp được tính toán chi tiết để vừa khít với các linh kiện phần cứng, tối ưu hóa không gian lắp ráp. Quá trình thiết kế cũng chú trọng đến khả năng tản nhiệt bằng cách bố trí các khe thoáng khí hợp lý, giúp duy trì nhiệt độ ổn định cho Raspberry Pi 5 khi hệ thống vận hành mô hình học sâu liên tục. Hình~\ref{fig:fusion360_design} minh họa bản vẽ thiết kế 3D của vỏ hộp thiết bị.
+
+% TODO: Chèn ảnh chụp màn hình thiết kế Fusion 360 vào thư mục Hinhve/ với tên 'fusion360_design.png' và bỏ comment dòng \includegraphics.
+\begin{figure}[h]
+  \centering
+  % \includegraphics[width=0.8\textwidth]{Hinhve/fusion360_design.png}
+  \caption{Thiết kế 3D vỏ hộp thiết bị trên phần mềm Autodesk Fusion 360.}
+  \label{fig:fusion360_design}
+\end{figure}
+
+Sau khi hoàn thiện bản thiết kế, vỏ hộp được chế tạo thực tế thông qua công nghệ in 3D và tiến hành ráp nối với các linh kiện điện tử. Thiết bị cuối cùng có hình dáng nhỏ gọn, chắc chắn, phù hợp để đặt cạnh giường bệnh nhân và cung cấp khả năng theo dõi liên tục. Hình~\ref{fig:real_device} thể hiện hình ảnh thực tế của nguyên mẫu phần cứng sau khi đã được lắp ráp hoàn chỉnh.
+
+% TODO: Chèn ảnh chụp thực tế của thiết bị vào thư mục Hinhve/ với tên 'real_device.png' và bỏ comment dòng \includegraphics.
+\begin{figure}[h]
+  \centering
+  % \includegraphics[width=0.8\textwidth]{Hinhve/real_device.png}
+  \caption{Hình ảnh thực tế của thiết bị đầu giường sau khi được lắp ráp hoàn chỉnh.}
+  \label{fig:real_device}
+\end{figure}
+
+% ---------------------------------------------------------------------
 \section{Kiểm thử và đánh giá hệ thống}
 % Gạch đầu dòng gốc:
 % - Kịch bản end-to-end: thiết bị (hoặc stream_sim.py) -> server -> dashboard hiển thị live.

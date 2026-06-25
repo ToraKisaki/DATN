@@ -6,78 +6,97 @@
 % Định vị vấn đề, mục tiêu, phạm vi, đóng góp. Chương hội đồng đọc kỹ nhất.
 % =====================================================================
 
+Chương này đặt vấn đề nghiên cứu, trình bày bối cảnh y tế cùng các hạn chế của công nghệ theo dõi thai nhi hiện tại, từ đó xác định mục tiêu, phạm vi và đóng góp cụ thể của đề tài. Các chương tiếp theo sẽ lần lượt trình bày cơ sở lý thuyết, kiến trúc mô hình đề xuất, kết quả thực nghiệm và hệ thống triển khai.
+
+% ---------------------------------------------------------------------
 \section{Đặt vấn đề và bối cảnh}
 \label{section:1.1}
 
-Tình trạng sức khỏe của thai nhi cần được theo dõi cẩn thận trong suốt thai kỳ và cả trong quá trình chuyển dạ [Meathrel và cs., 1995]. Việc theo dõi này cho phép các bác sĩ lâm sàng đánh giá tình trạng của thai nhi, phát hiện sớm các vấn đề bất thường và đưa ra can thiệp điều trị phù hợp [Patterns, 1999; Meathrel và cs., 1995]. Theo dõi hiệu quả đòi hỏi đánh giá liên tục và hiện nay thường được thực hiện bằng các công nghệ điện tử.
+Theo dõi sức khỏe thai nhi trong suốt thai kỳ và trong quá trình chuyển dạ là một trong những nhiệm vụ trọng tâm của chăm sóc sản khoa hiện đại. Bất chấp những tiến bộ y tế, thế giới vẫn đối mặt với gánh nặng tử vong chu sinh đáng lo ngại: năm 2022, khoảng 2,3 triệu trẻ sơ sinh tử vong---tương đương xấp xỉ 6.500 ca mỗi ngày---trong đó dị tật bẩm sinh là một trong bốn nguyên nhân hàng đầu, bên cạnh sinh non, ngạt/chấn thương khi sinh và nhiễm trùng sơ sinh~\cite{NewbornMortality}. Ở cấp độ toàn cầu, dị tật tim bẩm sinh (congenital heart disease---CHD) chiếm tỷ lệ khoảng 8 trên 1.000 trẻ sinh sống, tương đương hơn 1,35 triệu trẻ mắc CHD mỗi năm~\cite{devriesFetalElectrocardiographyArtificial2023}. Tại Việt Nam, tình trạng này thậm chí còn nghiêm trọng hơn mức trung bình khu vực: một nghiên cứu tại Đà Nẵng ghi nhận tỷ lệ CHD bẩm sinh là 14,71 trên 1.000 trẻ sinh sống (KTC~95\%: 12,74--16,69), cao hơn đáng kể so với mức trung bình các nước đang phát triển châu Á là 9,34 trên 1.000 ($p{<}0{,}0001$)~\cite{giangElevatedCongenitalHeart2022}. Những con số này nhấn mạnh sự cần thiết của các công cụ theo dõi và phát hiện sớm bất thường tim thai trước sinh.
 
-Tuy nhiên, số lượng trẻ sinh ra với dị tật tim bẩm sinh đã đặt ra nghi vấn về độ tin cậy của các kỹ thuật theo dõi hiện tại trong việc xác định thai nhi có nguy cơ. Một trong những mục tiêu chính của chăm sóc y tế là giảm số trẻ sinh ra mắc bệnh, và công nghệ có thể đóng vai trò quan trọng bằng cách phát triển các công cụ theo dõi hiệu quả hơn. Hiện nay, điều mà các bác sĩ quan tâm là theo dõi chính xác nhịp tim thai (fHR).
+Kỹ thuật phổ biến nhất hiện nay để theo dõi tim thai là ghi tim thai điện tử (cardiotocography---CTG), sử dụng siêu âm Doppler để ước lượng nhịp tim thai (fHR). CTG đã được sử dụng rộng rãi trong lâm sàng nhiều thập kỷ qua và vẫn là tiêu chuẩn chăm sóc trong chuyển dạ tại hầu hết các cơ sở y tế~\cite{ayres-de-camposFIGOConsensusGuidelines2015}. Tuy nhiên, CTG có những hạn chế đáng kể. Về chất lượng tín hiệu, tín hiệu Doppler dễ bị mất khi sản phụ cử động, khi thai nhi thay đổi tư thế, hoặc khi chỉ số BMI của mẹ cao, dẫn đến tỷ lệ mất tín hiệu lớn trong các nghiên cứu lâm sàng~\cite{loversAdvancementsFetalHeart2025}. Về an toàn, siêu âm Doppler phát ra mức năng lượng âm học cao hơn nhiều so với siêu âm B-mode; các nghiên cứu trên mô hình động vật đã ghi nhận hiện tượng tăng apoptosis khi tiếp xúc in utero với siêu âm Doppler, và nguyên tắc ALARA (``as low as reasonably achievable'') khuyến cáo hạn chế tối đa thời gian và cường độ phơi nhiễm---đặc biệt trong ba tháng đầu thai kỳ~\cite{abramowiczFetalThermalEffects2008}. Hạn chế căn bản nhất là CTG chỉ cung cấp thông tin về nhịp tim thai mà không khai thác được hình thái điện tim (P/QRS/T)---chỉ số lâm sàng có giá trị để phát hiện tình trạng thiếu oxy, rối loạn nhịp và một số dị tật tim bẩm sinh~\cite{loversAdvancementsFetalHeart2025}.
 
-Công nghệ đã được phát triển để hỗ trợ các công cụ lâm sàng hiện có như phương pháp ghi tim thai bằng máy (cardiotocography – CTG). CTG là một kỹ thuật theo dõi ngoài (không xâm lấn), được sử dụng rộng rãi tại các bệnh viện để đo nhịp tim thai và được cho là cho kết quả đáng tin cậy. Tuy nhiên, phương pháp này không phù hợp cho theo dõi dài hạn, và có thể gây sai sót trong việc phát hiện nhịp tim thai hoặc làm mất tín hiệu. Ví dụ, theo [Bakker và cs., 2004], công nghệ siêu âm có tỷ lệ thất bại trung bình khoảng 40\% trong việc phát hiện nhịp tim thai ở giai đoạn 30–40 tuần thai. Ở những trường hợp thai nhi có nguy cơ cao, việc mất tín hiệu này có thể gây nguy hiểm.
+Trong trường hợp CTG không đủ tin cậy, lựa chọn thay thế là điện cực da đầu thai nhi (fetal scalp electrode---FSE)---một phương pháp xâm lấn chỉ áp dụng được sau khi vỡ ối, tức là chỉ trong giai đoạn chuyển dạ tích cực. Ngoài giới hạn về thời điểm sử dụng, FSE đi kèm với nguy cơ nhiễm trùng và tổn thương da đầu thai nhi, cũng như một số rủi ro cho mẹ~\cite{neilsonFetalElectrocardiogramECG2015}. Điều này khiến FSE hoàn toàn không thể áp dụng cho theo dõi thai kỳ dài hạn hay theo dõi tại nhà.
 
-Ngoài ra, việc theo dõi tim thai bằng CTG có thể gặp khó khăn ở một số nhóm bệnh nhân, chẳng hạn như mẹ béo phì nặng hoặc thai nhi có rối loạn nhịp tim [Ross và Beall, 2014]. Trong các trường hợp CTG không đáp ứng yêu cầu ở sản phụ đang chuyển dạ, bác sĩ có thể phải sử dụng phương pháp theo dõi nội (xâm lấn). Theo dõi ECG nội thai sử dụng điện cực gắn vào da đầu thai nhi, cho phép đo nhịp tim thai cũng như một số đặc điểm hình thái của điện tâm đồ thai (fECG). Tuy nhiên, việc sử dụng các thiết bị theo dõi xâm lấn có thể làm tăng nguy cơ cho mẹ [Ross và Beall, 2014] cũng như cho thai nhi [Miyashiro và Mintz-Hittner, 1999], ví dụ như gây trầy xước da đầu thai nhi.
-
-Theo dõi thai nhi bằng fECG không xâm lấn hoàn toàn an toàn, và nhằm mục đích ước lượng cả nhịp tim thai (fHR) lẫn hình thái điện tâm đồ thai (fECG) trong suốt thai kỳ và khi chuyển dạ. Việc xử lý tín hiệu ECG không xâm lấn, được ghi từ bề mặt bụng mẹ, đã được nhiều nghiên cứu quan tâm.
-
-Vấn đề chính là tín hiệu điện thu được từ các điện cực đặt trên bụng không chỉ chứa thành phần fECG; nói cách khác, tỷ số tín hiệu trên nhiễu (Signal-to-Noise Ratio – SNR) của tín hiệu thai ghi trên bụng thường rất thấp. Bài toán cốt lõi của đề tài là \textbf{tách fECG khỏi maECG đơn kênh trong điều kiện SNR thấp và mECG--fECG chồng lấp}.
+Trước những hạn chế đó, theo dõi điện tim thai không xâm lấn (non-invasive fetal ECG---NI-fECG) thu hút sự quan tâm ngày càng tăng như một giải pháp an toàn, có thể sử dụng xuyên suốt thai kỳ lẫn trong chuyển dạ. Các điện cực đặt trên bụng mẹ thu nhận tín hiệu ECG bụng mẹ (maternal abdominal ECG---maECG)---một hỗn hợp phức tạp gồm tín hiệu điện tim thai (fECG), điện tim mẹ (mECG) và nhiều thành phần nhiễu. Bài toán cốt lõi là \textbf{tách fECG khỏi maECG đơn kênh trong điều kiện SNR thấp và mECG--fECG chồng lấp}: biên độ fECG chỉ từ $10\,\mu\text{V}$ đến $60\,\mu\text{V}$---nhỏ hơn nhiều lần so với mECG trên cùng kênh đo---trong khi nhiễu từ cơ bụng mẹ, hô hấp, chuyển động và thiết bị điện tử làm suy giảm thêm SNR~\cite{sameniReviewFetalECG2010}. Các phương pháp phân tách nguồn mù kinh điển như ICA cũng gặp khó khăn khi chu kỳ tim mẹ và thai trùng nhau về mặt thống kê, tạo ra các nguồn không độc lập~\cite{zarzosoRobustIndependentComponent2010}.
 
 % ---------------------------------------------------------------------
 \section{Tính cấp thiết của đề tài}
-% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
-\begin{itemize}
-  \item Nhu cầu giải pháp an toàn, chi phí thấp, theo dõi dài hạn/tại nhà.
-  \item Khoảng trống của thiết bị thương mại (chủ yếu chỉ cho fHR, chi phí cao, chỉ dùng trong bệnh viện) — chi tiết ở Chương~\ref{chapter:FECGBackground}.
-\end{itemize}
+\label{section:1.2}
+
+Nhu cầu về giải pháp theo dõi thai nhi an toàn, chi phí thấp và có thể sử dụng lâu dài tại nhà ngày càng trở nên cấp thiết. Một nghiên cứu khả thi về thiết bị NI-fECG đeo được cho thấy tới 90\% người tham gia bày tỏ mong muốn được theo dõi thai nhi tại nhà, và 79\% quan tâm đến theo dõi liên tục trong nhiều ngày hoặc nhiều tuần~\cite{karmakarConsumerInsightsFeasibility2025}. Theo dõi từ xa gắn liền với tính tự chủ của bệnh nhân và có tiềm năng cải thiện kết cục chu sinh so với chăm sóc định kỳ tại bệnh viện~\cite{karmakarConsumerInsightsFeasibility2025}.
+
+Tuy nhiên, khoảng trống giữa nhu cầu và thiết bị thương mại hiện tại vẫn còn rất lớn. Các thiết bị NI-fECG thương mại hiện có---như Monica AN24, GE Novii hay Nemo---yêu cầu kỹ năng và kiến thức chuyên môn để vận hành, khiến chúng không phù hợp cho sử dụng tại nhà~\cite{karmakarConsumerInsightsFeasibility2025}. Quan trọng hơn, các thiết bị này chỉ trích xuất được nhịp tim thai (fHR) dựa trên thuật toán AI, mà không cung cấp thông tin hình thái sóng fECG đầy đủ~\cite{karmakarConsumerInsightsFeasibility2025}---một hạn chế làm giảm đáng kể giá trị lâm sàng so với tiềm năng của phương pháp. Hệ quả là hiện chỉ có rất ít giải pháp điện sinh lý học thương mại tồn tại, và mức độ ứng dụng trong thực hành lâm sàng vẫn rất thấp~\cite{loversAdvancementsFetalHeart2025}.
+
+Về mặt nghiên cứu học thuật, kiến trúc W-NETR~\cite{almadaniOneDimensionalWNETRNonInvasive2023} là phương pháp deep learning tiên tiến nhất cho bài toán NI-fECG trích xuất đơn kênh, đạt F1 đến 99,88\% trên tập dữ liệu thực ADFECGDB. Tuy nhiên, W-NETR sử dụng khối Transformer encoder với lớp MLP/FFN có hàm kích hoạt cố định, vốn bị giới hạn về khả năng biểu diễn thích nghi với đặc trưng hình thái tín hiệu ECG. Trong khi đó, Kolmogorov-Arnold Networks (KAN)~\cite{liuKANKolmogorovArnoldNetworks2025}---kiến trúc mạng nơ-ron mới được đề xuất dựa trên định lý biểu diễn Kolmogorov-Arnold---thay thế các hàm kích hoạt cố định trên nút bằng \textit{hàm học được} đặt trên cạnh, được tham số hóa bằng B-spline. KAN đã cho thấy lợi thế về khả năng biểu diễn trong các bài toán hồi quy và xử lý tín hiệu, và đã được tích hợp thành công vào các kiến trúc Vision Transformer~\cite{yeElevatingVisionTransformer2024}. Việc tích hợp KAN vào W-NETR do đó là hướng tiếp cận có cơ sở để cải thiện chất lượng trích xuất fECG, đặc biệt là khả năng bảo toàn hình thái P/QRS/T---điều kiện tiên quyết cho ứng dụng lâm sàng đầy đủ.
 
 % ---------------------------------------------------------------------
 \section{Mục tiêu nghiên cứu}
-Mục tiêu của đề tài là phát triển một mô hình deep learning dựa trên kiến trúc Kolmogorov-Arnold kết hợp W-NETR nhằm trích xuất và tái tạo chính xác tín hiệu fECG từ tín hiệu ECG bụng không xâm lấn (aECG) trong điều kiện SNR thấp. Cụ thể, đề tài đặt ra \textbf{ba mục tiêu}:
+\label{section:1.3}
+
+Mục tiêu tổng thể của đề tài là phát triển và triển khai một hệ thống trích xuất điện tim thai không xâm lấn dựa trên kiến trúc deep learning mới, vừa đạt độ chính xác cao vừa có khả năng vận hành thời gian thực trên thiết bị nhúng chi phí thấp. Đề tài đặt ra \textbf{ba mục tiêu cụ thể}:
 
 \begin{enumerate}
-  \item \textbf{Đề xuất mô hình KAN-WNETR} nâng độ chính xác trích xuất fECG và bảo toàn hình thái điện tim (P/QRS/T).
-  \item \textbf{Tối ưu mô hình để chạy thời gian thực trên thiết bị biên} (Raspberry Pi 5) thông qua ONNX và lượng tử hoá INT8.
-  \item \textbf{Xây dựng hệ thống theo dõi} đầu giường + dashboard lâm sàng (FHR/MHR, cảnh báo).
+  \item \textbf{Đề xuất mô hình KAN-WNETR:} thay thế khối MLP/FFN trong Transformer encoder của W-NETR bằng KAN, nhằm nâng độ chính xác trích xuất fECG và bảo toàn hình thái điện tim (sóng P, phức hợp QRS, sóng T).
+  \item \textbf{Tối ưu mô hình để chạy thời gian thực trên thiết bị biên:} xuất mô hình sang định dạng ONNX và áp dụng lượng tử hóa INT8 động, triển khai trên Raspberry Pi 5 và đánh giá đánh đổi giữa tốc độ suy luận và chất lượng tín hiệu.
+  \item \textbf{Xây dựng hệ thống theo dõi lâm sàng hoàn chỉnh:} gồm thiết bị thu nhận tín hiệu đầu giường (Raspberry Pi 5 + ADS1293 + giao diện PyQt5), máy chủ phân tích (FastAPI + SQLite) ước lượng fHR/MHR và phát cảnh báo lâm sàng, cùng dashboard web theo dõi đa bệnh nhân theo tiêu chuẩn NICHD/FIGO.
 \end{enumerate}
 
 % ---------------------------------------------------------------------
 \section{Đối tượng và phạm vi nghiên cứu}
-% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
+\label{section:1.4}
+
+\textbf{Đối tượng nghiên cứu} là tín hiệu ECG bụng mẹ (maECG) đơn kênh ghi từ điện cực đặt trên bề mặt bụng sản phụ, trong đó thành phần điện tim thai (fECG) bị che khuất bởi ECG mẹ (mECG) có biên độ lớn hơn và các thành phần nhiễu sinh lý đa dạng.
+
+\textbf{Phạm vi nghiên cứu} được xác định cụ thể như sau:
 \begin{itemize}
-  \item \textbf{Đối tượng:} tín hiệu maECG (ECG bụng mẹ) đơn kênh.
-  \item \textbf{Phạm vi:} huấn luyện/đánh giá trên dữ liệu mô phỏng FECGSYNDB; triển khai trên Raspberry Pi 5; kiểm thử bằng mô phỏng/playback.
-  \item \textbf{Giới hạn (nêu thẳng):} chưa dùng dữ liệu lâm sàng thực.
+  \item \textit{Dữ liệu huấn luyện và đánh giá:} bộ dữ liệu mô phỏng FECGSYNDB (10 đối tượng, 34 kênh, 5 mức SNR, 250~Hz)~\cite{andreottiOpensourceFrameworkStresstesting2016}. Khả năng thích nghi dữ liệu thực được kiểm tra qua fine-tuning trên ADFECGDB và đánh giá tổng quát hóa trên PCDB~\cite{beharNoninvasiveFECGExtraction2013}.
+  \item \textit{Phần cứng triển khai:} Raspberry Pi 5 (4~GB RAM), vi mạch thu nhận ADS1293 qua SPI mềm, màn hình LCD 3,5~inch 480$\times$320.
+  \item \textit{Kiểm thử hệ thống:} sử dụng phát lại (playback) tín hiệu đã ghi; chưa thu thập dữ liệu lâm sàng thực trực tiếp từ sản phụ.
 \end{itemize}
+
+Giới hạn về dữ liệu được nêu thẳng nhằm tránh nhầm lẫn giữa kết quả trên dữ liệu mô phỏng và dữ liệu lâm sàng thực tế: toàn bộ số liệu định lượng trong báo cáo dựa trên FECGSYNDB và ADFECGDB, chưa qua thử nghiệm lâm sàng kiểm soát.
 
 % ---------------------------------------------------------------------
 \section{Phương pháp nghiên cứu}
-% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
-\begin{itemize}
-  \item Quy trình: nghiên cứu lý thuyết $\rightarrow$ đề xuất kiến trúc $\rightarrow$ thực nghiệm có đối chứng $\rightarrow$ tối ưu/triển khai $\rightarrow$ kiểm thử hệ thống.
-\end{itemize}
+\label{section:1.5}
+
+Đề tài được thực hiện theo quy trình nghiên cứu kỹ thuật năm giai đoạn liên tiếp:
+
+\begin{enumerate}
+  \item \textbf{Nghiên cứu lý thuyết:} hệ thống hóa các phương pháp tách fECG không xâm lấn hiện đại (lọc thích nghi, ICA, mạng học sâu) và nghiên cứu cơ sở lý thuyết của UNETR~\cite{hatamizadehUNETRTransformers3D2021}, W-NETR~\cite{almadaniOneDimensionalWNETRNonInvasive2023} và KAN~\cite{liuKANKolmogorovArnoldNetworks2025}.
+  \item \textbf{Đề xuất kiến trúc:} thiết kế mô hình KAN-WNETR bằng cách thay thế có chọn lọc khối MLP/FFN trong Transformer encoder bằng FasterKAN (KAN lai RBF + SiLU residual); phân tích kỳ vọng lý thuyết về cải tiến biểu diễn.
+  \item \textbf{Thực nghiệm có đối chứng:} huấn luyện và so sánh KAN-WNETR với các baseline (W-NETR, UNETR) trên cùng điều kiện dữ liệu và siêu tham số; thực hiện ablation study để định lượng riêng đóng góp của khối KAN.
+  \item \textbf{Tối ưu và triển khai:} xuất ONNX, lượng tử hóa INT8 động, đo thời gian suy luận và đánh giá đánh đổi SSIM/PSNR giữa FP32 và INT8 trên Raspberry Pi 5.
+  \item \textbf{Kiểm thử hệ thống:} kiểm thử đầu cuối toàn hệ thống (thiết bị--máy chủ--dashboard) theo kịch bản lâm sàng mô phỏng, đánh giá độ trễ chuỗi và độ ổn định kết nối.
+\end{enumerate}
 
 % ---------------------------------------------------------------------
 \section{Những đóng góp chính của báo cáo}
-% TODO: viết thành văn xuôi (gạch đầu dòng định hướng) — làm nổi "tính mới"
+\label{section:1.6}
+
+Đề tài có ba đóng góp chính:
+
 \begin{enumerate}
-  \item Thuật toán \textbf{KAN-WNETR}: thay khối MLP/FFN trong Transformer encoder của W-NETR bằng KAN.
-  \item \textbf{Tối ưu \& triển khai biên thời gian thực}: ONNX + INT8 trên Raspberry Pi 5.
-  \item \textbf{Hệ thống theo dõi lâm sàng}: thiết bị đầu giường + server + dashboard web.
+  \item \textbf{Thuật toán KAN-WNETR:} kiến trúc deep learning mới cho NI-fECG trích xuất đơn kênh, thay thế khối MLP/FFN trong Transformer encoder của W-NETR bằng FasterKAN (hàm kích hoạt lai RBF + SiLU residual, không có trọng số suy giảm trên tham số spline). Đây là đề xuất đầu tiên ứng dụng KAN vào bài toán NI-fECG.
+  \item \textbf{Tối ưu và triển khai biên thời gian thực:} pipeline đầy đủ từ PyTorch sang ONNX với lượng tử hóa INT8 động, đạt độ trễ 80--120~ms/cửa sổ trên Raspberry Pi 5 (gấp 8--12 lần thời gian thực), kèm phân tích đánh đổi chất lượng FP32$\leftrightarrow$INT8.
+  \item \textbf{Hệ thống theo dõi lâm sàng ba tầng:} thiết bị đầu giường (Pi~5 + ADS1293 + màn hình PyQt5 480$\times$320), máy chủ phân tích lâm sàng (FastAPI + SQLite, ước lượng fHR/MHR qua Pan-Tompkins, cảnh báo NICHD/FIGO), và dashboard web theo dõi đa bệnh nhân.
 \end{enumerate}
 
 % ---------------------------------------------------------------------
 \section{Bố cục báo cáo}
+\label{section:1.7}
 
 Phần còn lại của báo cáo được tổ chức như sau:
 
 \begin{itemize}
-  \item \textit{Chương~\ref{chapter:FECGBackground}} trình bày cơ sở về điện tim thai và các phương pháp theo dõi thai nhi.
-  \item \textit{Chương~\ref{chapter:RelatedWorks}} tổng quan các phương pháp tách fECG không xâm lấn (cổ điển và học sâu), định vị đề tài.
-  \item \textit{Chương~\ref{chapter:DLBackground}} trình bày cơ sở lý thuyết học sâu làm nền cho mô hình đề xuất.
-  \item \textit{Chương~\ref{chapter:ProposedModel}} trình bày mô hình đề xuất KAN-WNETR.
-  \item \textit{Chương~\ref{chapter:DataAndSetup}} mô tả dữ liệu, tiền xử lý và thiết lập thực nghiệm.
-  \item \textit{Chương~\ref{chapter:Results}} trình bày kết quả thực nghiệm và đánh giá.
-  \item \textit{Chương~\ref{chapter:System}} thiết kế và triển khai hệ thống theo dõi fECG thời gian thực.
-  \item \textit{Chương~\ref{chapter:Conclusion}} kết luận và hướng phát triển.
+  \item \textit{Chương~\ref{chapter:Background}} trình bày cơ sở lý thuyết và tổng quan nghiên cứu: cơ sở điện tim thai và các phương thức theo dõi thai nhi, các khối học sâu nền tảng (MLP/FFN, Attention, Transformer encoder, UNETR và KAN), tổng quan các phương pháp tách fECG không xâm lấn (lọc thích nghi, ICA, học sâu) và định vị đề tài trong bức tranh SOTA.
+  \item \textit{Chương~\ref{chapter:Proposed}} trình bày phương pháp đề xuất và thiết lập thực nghiệm: kiến trúc mô hình KAN-WNETR, bộ dữ liệu FECGSYNDB, chiến lược chia tập, tiền xử lý, hàm mất mát, cấu hình huấn luyện và phương pháp đánh giá.
+  \item \textit{Chương~\ref{chapter:Results}} trình bày kết quả định tính và định lượng, so sánh SOTA và ablation study.
+  \item \textit{Chương~\ref{chapter:System}} trình bày thiết kế và triển khai hệ thống theo dõi fECG thời gian thực trên thiết bị biên.
+  \item \textit{Chương~\ref{chapter:Conclusion}} tổng kết kết quả đạt được, chỉ ra hạn chế và đề xuất hướng phát triển.
 \end{itemize}
+
+Chương này đã xác lập bối cảnh y tế, chỉ ra khoảng trống của công nghệ hiện tại và phát biểu rõ ba mục tiêu cùng ba đóng góp chính của đề tài. Các chương tiếp theo sẽ đi sâu vào từng khía cạnh: nền tảng lý thuyết và tổng quan nghiên cứu (Chương~\ref{chapter:Background}), đề xuất và thực nghiệm (Chương~\ref{chapter:Proposed}--\ref{chapter:Results}), và hệ thống thực tế (Chương~\ref{chapter:System}).
 
 \end{document}

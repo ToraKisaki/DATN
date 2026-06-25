@@ -17,7 +17,7 @@
 % ---------------------------------------------------------------------
 \section{Kiến trúc nền W-NETR}
 
-W-NETR dùng hai UNETR 1D chạy song song \cite{lee_end--end_2022}:
+W-NETR dùng hai UNETR 1D chạy song song \cite{leeEndtoEndDeepLearning2022}:
 \begin{itemize}
   \item Nhánh phải: tái tạo/chiết xuất \textbf{fECG}.
   \item Nhánh trái: tái tạo \textbf{mECG}.
@@ -33,7 +33,7 @@ Trực giác: mô hình học đồng thời hai biểu diễn; dùng đặc tr�
 \section{KAN-ViT: thay MLP/FFN bằng KAN trong encoder block}
 
 \paragraph{KAN-ViT: giữ MSA, thay MLP bằng KAN.}
-\cite{ye_elevating_2024}
+\cite{yeElevatingVisionTransformer2024}
 KAN-ViT giữ nguyên cơ chế attention và residual, nhưng thay FFN:
 \begin{equation}
   z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},

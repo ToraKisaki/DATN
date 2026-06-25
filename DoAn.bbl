@@ -19,190 +19,595 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
-    \entry{einthoven_galvanometrische_1903}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=929002a07a2d725f97f54cd3bfa1ca09}{%
-           family={Einthoven},
-           familyi={E\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {de}%
-      }
-      \strng{namehash}{929002a07a2d725f97f54cd3bfa1ca09}
-      \strng{fullhash}{929002a07a2d725f97f54cd3bfa1ca09}
-      \strng{fullhashraw}{929002a07a2d725f97f54cd3bfa1ca09}
-      \strng{bibnamehash}{929002a07a2d725f97f54cd3bfa1ca09}
-      \strng{authorbibnamehash}{929002a07a2d725f97f54cd3bfa1ca09}
-      \strng{authornamehash}{929002a07a2d725f97f54cd3bfa1ca09}
-      \strng{authorfullhash}{929002a07a2d725f97f54cd3bfa1ca09}
-      \strng{authorfullhashraw}{929002a07a2d725f97f54cd3bfa1ca09}
+    \entry{NewbornMortality}{online}{}{}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{1432-2013}
-      \field{journaltitle}{Archiv für die gesamte Physiologie des Menschen und der Tiere}
-      \field{month}{11}
-      \field{number}{9}
-      \field{title}{Die galvanometrische {Registrirung} des menschlichen {Elektrokardiogramms}, zugleich eine {Beurtheilung} der {Anwendung} des {Capillar}-{Elektrometers} in der {Physiologie}}
-      \field{urlday}{15}
-      \field{urlmonth}{2}
+      \field{abstract}{WHO fact sheet on newborn mortality, including key facts, causes, priority strategies, newborn care and WHO response.}
+      \field{langid}{english}
+      \field{title}{Newborn Mortality}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
       \field{urlyear}{2026}
-      \field{volume}{99}
-      \field{year}{1903}
       \field{urldateera}{ce}
-      \field{pages}{472\bibrangedash 480}
-      \range{pages}{9}
-      \verb{doi}
-      \verb 10.1007/BF01811855
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\VM8F4M2U\newborn-mortality.html
       \endverb
       \verb{urlraw}
-      \verb https://doi.org/10.1007/BF01811855
+      \verb https://www.who.int/news-room/fact-sheets/detail/newborn-mortality
       \endverb
       \verb{url}
-      \verb https://doi.org/10.1007/BF01811855
+      \verb https://www.who.int/news-room/fact-sheets/detail/newborn-mortality
       \endverb
     \endentry
-    \entry{department_of_general_medicine_amala_institute_of_medical_sciences_thrissur_kerala_indi_laboratory_2022}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=4a001abbe4614a638364861eeb1eed9d}{%
-           family={{Department of General Medicine, Amala Institute of Medical Sciences, Thrissur, Kerala, Indi}},
-           familyi={D\bibinitperiod}}}%
-        {{hash=5d92d52c99b78f534144d82b2129088c}{%
-           family={Vincent},
+    \entry{devriesFetalElectrocardiographyArtificial2023}{article}{}{}
+      \name{author}{5}{}{%
+        {{useprefix=true,hash=3c361e500f0b53e2ddd115426ac0070a}{%
+           family={Vries},
            familyi={V\bibinitperiod},
-           given={Rony},
+           given={Ivar\bibnamedelima R.},
+           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{useprefix=true,hash=042cecf0ff0a5597b259ea65d4e466cb}{%
+           family={Laar},
+           familyi={L\bibinitperiod},
+           given={Judith\bibnamedelimb O.\bibnamedelimi E.\bibnamedelimi H.},
+           giveni={J\bibinitperiod\bibinitdelim O\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim H\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{useprefix=true,hash=0de198dd9f0870dbb8798da681c21ddf}{%
+           family={Hout-van\bibnamedelimb der\bibnamedelima Jagt},
+           familyi={H\bibinithyphendelim v\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Marieke\bibnamedelima B.},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=a6626698681242983f371af294b06e32}{%
+           family={Clur},
+           familyi={C\bibinitperiod},
+           given={Sally-Ann\bibnamedelima B.},
+           giveni={S\bibinithyphendelim A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=3386c44802404745cfc9960716015b87}{%
+           family={Vullings},
+           familyi={V\bibinitperiod},
+           given={Rik},
            giveni={R\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
-      \strng{namehash}{befadcc27ba5b145c74a0f9d8504c35c}
-      \strng{fullhash}{befadcc27ba5b145c74a0f9d8504c35c}
-      \strng{fullhashraw}{befadcc27ba5b145c74a0f9d8504c35c}
-      \strng{bibnamehash}{befadcc27ba5b145c74a0f9d8504c35c}
-      \strng{authorbibnamehash}{befadcc27ba5b145c74a0f9d8504c35c}
-      \strng{authornamehash}{befadcc27ba5b145c74a0f9d8504c35c}
-      \strng{authorfullhash}{befadcc27ba5b145c74a0f9d8504c35c}
-      \strng{authorfullhashraw}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{namehash}{f5f478dea45a565383e4c3d26879478e}
+      \strng{fullhash}{8ff84c6db986afab043e35ed120815cb}
+      \strng{fullhashraw}{8ff84c6db986afab043e35ed120815cb}
+      \strng{bibnamehash}{8ff84c6db986afab043e35ed120815cb}
+      \strng{authorbibnamehash}{8ff84c6db986afab043e35ed120815cb}
+      \strng{authornamehash}{f5f478dea45a565383e4c3d26879478e}
+      \strng{authorfullhash}{8ff84c6db986afab043e35ed120815cb}
+      \strng{authorfullhashraw}{8ff84c6db986afab043e35ed120815cb}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{The development of electrocardiography, one of the top scientific breakthroughs of the 20th century, occurred in the field of cardiology. The history of the ECG began long before its invention, with the advent of the study of electricity in the medical field. The idea of electrophysiology and Waller's initial recording of the ‘electrogram’ encouraged Willem Einthoven to develop new string galvanometers and turn this remarkable physiologic occurrence into a vital clinical recording tool. It has progressed from Einthoven's innovation to wearable technology. In the first part of the 20th century, a number of inventive people achieved a remarkable succession of discoveries and advancements that led to the development of the 12-lead ECG as we know it today. It went further than that. The evolution of science and technology over the years has allowed for continual development in terms of usefulness, ranging from five operators to one operator meant to record the ECG trace, and mobility, ranging from around 300 Kg to roughly around 1 Kg. Electrocardiographs in minimized form now exist thanks to the modern era of digitalization. We will go over the significant processes in the development of the ECG in this article.}
-      \field{issn}{26955075}
-      \field{journaltitle}{Iberoamerican Journal of Medicine}
-      \field{month}{9}
-      \field{number}{4}
-      \field{shorttitle}{From a laboratory to the wearables}
-      \field{title}{From a laboratory to the wearables: a review on history and evolution of electrocardiogram}
-      \field{urlday}{15}
-      \field{urlmonth}{2}
-      \field{urlyear}{2026}
-      \field{volume}{4}
-      \field{year}{2022}
-      \field{urldateera}{ce}
-      \field{pages}{248\bibrangedash 255}
-      \range{pages}{8}
+      \field{labeltitlesource}{title}
+      \field{abstract}{INTRODUCTION: This study aims to investigate non-invasive electrocardiography as a method for the detection of congenital heart disease (CHD) with the help of artificial intelligence. MATERIAL AND METHODS: An artificial neural network was trained for the identification of CHD using non-invasively obtained fetal electrocardiograms. With the help of a Bayesian updating rule, multiple electrocardiographs were used to increase the algorithm's performance. RESULTS: Using 122 measurements containing 65 healthy and 57 CHD cases, the accuracy, sensitivity, and specificity were found to be 71\%, 63\%, and 77\%, respectively. The sensitivity was however 75\% and 69\% for CHD cases requiring an intervention in the neonatal period and first year of life, respectively. Furthermore, a positive effect of measurement length on the detection performance was observed, reaching optimal performance when using 14 electrocardiography segments (37.5\,min) or more. A small negative trend between gestational age and accuracy was found. CONCLUSIONS: The proposed method combining recent advances in obtaining non-invasive fetal electrocardiography with artificial intelligence for the automatic detection of CHD achieved a detection rate of 63\% for all CHD and 75\% for critical CHD. This feasibility study shows that detection rates of CHD might improve by using electrocardiography-based screening complementary to the standard ultrasound-based screening. More research is required to improve performance and determine the benefits to clinical practice.}
+      \field{eprinttype}{pubmed}
+      \field{issn}{1600-0412}
+      \field{journaltitle}{Acta Obstetricia Et Gynecologica Scandinavica}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{11}
+      \field{shortjournal}{Acta Obstet Gynecol Scand}
+      \field{title}{Fetal Electrocardiography and Artificial Intelligence for Prenatal Detection of Congenital Heart Disease}
+      \field{volume}{102}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{pages}{1511\bibrangedash 1520}
+      \range{pages}{10}
       \verb{doi}
-      \verb 10.53986/ibjm.2022.0038
+      \verb 10.1111/aogs.14623
       \endverb
-      \verb{urlraw}
-      \verb https://www.iberoamjmed.com/article/doi/10.53986/ibjm.2022.0038
+      \verb{eprint}
+      \verb 37563851
       \endverb
-      \verb{url}
-      \verb https://www.iberoamjmed.com/article/doi/10.53986/ibjm.2022.0038
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\QVF4C47W\de Vries et al. - 2023 - Fetal electrocardiography and artificial intelligence for prenatal detection of congenital heart dis.pdf
       \endverb
+      \keyw{artificial intelligence,Artificial Intelligence,Bayes Theorem,congenital heart disease,Electrocardiography,Female,fetal electrocardiography,fetal heart,Fetal Heart,Heart Defects Congenital,Humans,Infant Newborn,Pregnancy,prenatal diagnosis,Ultrasonography Prenatal}
     \endentry
-    \entry{godfrey_functional_2012}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=087698c10ba05012d4b7fa34efa6e7de}{%
-           family={Godfrey},
+    \entry{giangElevatedCongenitalHeart2022}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=5982a49ad6d6b892b532634bffd7d300}{%
+           family={Giang},
            familyi={G\bibinitperiod},
-           given={M.\bibnamedelimi E.},
-           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-        {{hash=b03a0867b9ced84c72d120e7c56984c2}{%
-           family={Messing},
-           familyi={M\bibinitperiod},
-           given={B.},
-           giveni={B\bibinitperiod}}}%
-        {{hash=ea853abba13da7d17e18c811aa44491d}{%
-           family={Cohen},
-           familyi={C\bibinitperiod},
-           given={S.\bibnamedelimi M.},
-           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=134ad7d6be79b0c82a4c36a0d858df60}{%
-           family={Valsky},
+           given={Hoang\bibnamedelimb Thi\bibnamedelima Nam},
+           giveni={H\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=84eccc48711a8777dded0dcc73cf05ec}{%
+           family={Hai},
+           familyi={H\bibinitperiod},
+           given={Tran\bibnamedelima Thanh},
+           giveni={T\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=79fd72f4be71e0422b856f41096749d3}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Hoang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b93f36d8534613a82430a72478f9f783}{%
+           family={Vuong},
            familyi={V\bibinitperiod},
-           given={D.\bibnamedelimi V.},
-           giveni={D\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
-        {{hash=ae4a48c8ee0dd1d39aa28b2f8be54ed8}{%
-           family={Yagel},
-           familyi={Y\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
+           given={Thanh\bibnamedelima K.},
+           giveni={T\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=7ab96308863bcb2aa2daaf95aa5543e6}{%
+           family={Morton},
+           familyi={M\bibinitperiod},
+           given={Lois\bibnamedelima Wright},
+           giveni={L\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=5484f21a2cd55026a0460c32681430e3}{%
+           family={Culbertson},
+           familyi={C\bibinitperiod},
+           given={Casey\bibnamedelima B.},
+           giveni={C\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en}%
+      \list{publisher}{1}{%
+        {Public Library of Science}%
       }
-      \strng{namehash}{769fb45d2f94d4a7132464a71cd0117e}
-      \strng{fullhash}{e4c29e1b18479a22d634fa9b9bac868d}
-      \strng{fullhashraw}{e4c29e1b18479a22d634fa9b9bac868d}
-      \strng{bibnamehash}{e4c29e1b18479a22d634fa9b9bac868d}
-      \strng{authorbibnamehash}{e4c29e1b18479a22d634fa9b9bac868d}
-      \strng{authornamehash}{769fb45d2f94d4a7132464a71cd0117e}
-      \strng{authorfullhash}{e4c29e1b18479a22d634fa9b9bac868d}
-      \strng{authorfullhashraw}{e4c29e1b18479a22d634fa9b9bac868d}
+      \strng{namehash}{006907af319e0ffc0cf6a6ff21b62c72}
+      \strng{fullhash}{338c980e4eae2bb7dbf7416b63d4def8}
+      \strng{fullhashraw}{338c980e4eae2bb7dbf7416b63d4def8}
+      \strng{bibnamehash}{338c980e4eae2bb7dbf7416b63d4def8}
+      \strng{authorbibnamehash}{338c980e4eae2bb7dbf7416b63d4def8}
+      \strng{authornamehash}{006907af319e0ffc0cf6a6ff21b62c72}
+      \strng{authorfullhash}{338c980e4eae2bb7dbf7416b63d4def8}
+      \strng{authorfullhashraw}{338c980e4eae2bb7dbf7416b63d4def8}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{The purpose of this review is to evaluate the current modalities available for the assessment of fetal cardiac function. The unique anatomy and physiology of the fetal circulation are described, with reference to the difference between @ in-utero and @ ex-utero life. M-mode, early/atrial ratio, myocardial performance index, three-dimensional and four-dimensional ultrasound, tissue Doppler including strain and strain rate, speckle tracking, magnetic resonance imaging and venous flow assessment are described. The modalities are analyzed from the perspective of the clinician and certain questions are posed. Does the modality assess systolic function, diastolic function or both? Is it applicable to both ventricles? Does it require extensive post-processing or additional hardware, or does it make use of technology already available to the average practitioner? The reproducibility and reliability of the techniques are evaluated, with reference to their utility in clinical decision-making. Finally, directions for future research are proposed. Copyright © 2012 ISUOG. Published by John Wiley \& Sons, Ltd.}
-      \field{issn}{1469-0705}
-      \field{journaltitle}{Ultrasound in Obstetrics \& Gynecology}
-      \field{number}{2}
-      \field{shorttitle}{Functional assessment of the fetal heart}
-      \field{title}{Functional assessment of the fetal heart: a review}
-      \field{urlday}{15}
-      \field{urlmonth}{2}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Congenital heart disease (CHD) birth prevalence rate in Da Nang City and two adjacent provinces in Central Vietnam reported by Giang et al. in 2019 was 20.09/1000 births, much higher than any CHD birth rates previously reported. In this current study, three physicians trained in pediatric cardiology reanalyzed and reclassified the Giang et al 2019 cardiac anomalies data, eliminating singular small PDAs and separating cardiac defects into 27 contemporary CHD subgroups. These CHD subgroups were then statistically compared with Liu et al. 2019 Global CHD birth prevalence study of Asian Low-Middle Income Countries (LMIC) CHD subgroup rate of 9.34/1000 births (95\% CI 8.07–10.70). Despite applying newer diagnostic criteria and refining the cardiac anomalies data, the Da Nang region continued to show significantly (p{$<$}0.0001) elevated total CHD birth prevalence rates at 14.71/1000 births (95\% CI 12.74–16.69) compared to the Asian LMIC CHD birth prevalence rate 9.34/1000 births. This finding raises the question of whether environmental persistence of the contaminant dioxin TCDD from 2,4,5-T herbicides (Agent Orange) used during the Vietnam War (1961–1971) in the Da Nang region might be a factor associated with elevated CHD birth prevalence, as it is not present in other LMIC surrounding Vietnam. We recommend testing of soils and sediments in rural and agricultural areas in Central Vietnam that received high volume applications of contaminated herbicides to assess the relationship of the higher CHD birth prevalence rate and the presence of residual dioxin TCDD. Enhanced fetal cardiac echocardiograpy in the region to screen for CHD would enable early interventions and could improve outcomes for infants and children.}
+      \field{day}{12}
+      \field{issn}{2767-3375}
+      \field{journaltitle}{PLOS Global Public Health}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{10}
+      \field{shortjournal}{PLOS Global Public Health}
+      \field{title}{Elevated Congenital Heart Disease Birth Prevalence Rates Found in {{Central Vietnam}} and Dioxin {{TCDD}} Residuals from the Use of 2, 4, 5-{{T}} Herbicides ({{Agent Orange}}) in the {{Da Nang}} Region}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
       \field{urlyear}{2026}
-      \field{volume}{39}
-      \field{year}{2012}
+      \field{volume}{2}
+      \field{year}{2022}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{131\bibrangedash 144}
-      \range{pages}{14}
+      \field{pages}{e0001050}
+      \range{pages}{-1}
       \verb{doi}
-      \verb 10.1002/uog.9064
+      \verb 10.1371/journal.pgph.0001050
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\SNA8S3ZU\Giang et al. - 2022 - Elevated congenital heart disease birth prevalence rates found in Central Vietnam and dioxin TCDD re.pdf
       \endverb
       \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/uog.9064
+      \verb https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0001050
       \endverb
       \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/uog.9064
+      \verb https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0001050
       \endverb
-      \keyw{3DUS,4DUS,E/A ratio,M-mode,MPI,MRI,fetal heart,four-dimensional ultrasound,magnetic resonance imaging,myocardial performance index,prenatal diagnosis,speckle tracking,strain rate,three-dimensional ultrasound,tissue Doppler}
+      \keyw{Birth,Birth rates,Congenital anomalies,Congenital heart defects,Herbicides,Infants,Sediment,Vietnam}
     \endentry
-    \entry{noauthor_trends_2025}{book}{}{}
-      \list{language}{1}{%
-        {en}%
+    \entry{ayres-de-camposFIGOConsensusGuidelines2015}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=880f8b1fc5b587454cb11db3c7a8fb1b}{%
+           family={Ayres-de-Campos},
+           familyi={A\bibinithyphendelim C\bibinitperiod},
+           given={Diogo},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d31e9a15baff6f8524db8c268db7abd8}{%
+           family={Spong},
+           familyi={S\bibinitperiod},
+           given={Catherine\bibnamedelima Y.},
+           giveni={C\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=3beff6875815cc6fb90e0278d432b0d6}{%
+           family={Chandraharan},
+           familyi={C\bibinitperiod},
+           given={Edwin},
+           giveni={E\bibinitperiod}}}%
+        {{hash=675ef04faa0b429f1fe84eef91a70d60}{%
+           family={Panel},
+           familyi={P\bibinitperiod},
+           given={FIGO\bibnamedelimb Intrapartum\bibnamedelimb Fetal\bibnamedelimb Monitoring\bibnamedelimb Expert\bibnamedelima Consensus},
+           giveni={F\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Geneva}%
-      }
-      \list{publisher}{1}{%
-        {World Health Organization}%
-      }
+      \strng{namehash}{0a3855527de26dfc44456622fb71de07}
+      \strng{fullhash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{fullhashraw}{85e116495c6e5352b7773e460c4cc108}
+      \strng{bibnamehash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{authorbibnamehash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{authornamehash}{0a3855527de26dfc44456622fb71de07}
+      \strng{authorfullhash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{authorfullhashraw}{85e116495c6e5352b7773e460c4cc108}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
-      \field{isbn}{978-92-4-010846-2}
-      \field{shorttitle}{Trends in maternal mortality estimates 2000 to 2023}
-      \field{title}{Trends in maternal mortality estimates 2000 to 2023: estimates by {WHO}, {UNICEF}, {UNFPA}, {World} {Bank} {Group} and {UNDESA}/{Population} {Division}}
-      \field{year}{2025}
+      \field{issn}{1879-3479}
+      \field{journaltitle}{International Journal of Gynecology \& Obstetrics}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{shorttitle}{{{FIGO}} Consensus Guidelines on Intrapartum Fetal Monitoring}
+      \field{title}{{{FIGO}} Consensus Guidelines on Intrapartum Fetal Monitoring: {{Cardiotocography}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{131}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{13\bibrangedash 24}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.ijgo.2015.06.020
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\DV23BFFZ\\Ayres-de-Campos et al. - 2015 - FIGO consensus guidelines on intrapartum fetal monitoring Cardiotocography.pdf;C\:\\Users\\Minh\\Zotero\\storage\\LZHW8ZEC\\j.ijgo.2015.06.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1016/j.ijgo.2015.06.020
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1016/j.ijgo.2015.06.020
+      \endverb
     \endentry
-    \entry{karmakar_consumer_2025}{article}{}{}
+    \entry{loversAdvancementsFetalHeart2025}{article}{}{}
+      \name{author}{17}{}{%
+        {{hash=d4573a9142bc3a7136d20cf911fceac8}{%
+           family={Lovers},
+           familyi={L\bibinitperiod},
+           given={Aimée},
+           giveni={A\bibinitperiod}}}%
+        {{hash=783bf837436315fd979d7f1e66f94ef9}{%
+           family={Daumer},
+           familyi={D\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e38052ff39e0beef24762eaab18c9c16}{%
+           family={Frasch},
+           familyi={F\bibinitperiod},
+           given={Martin\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=9f097b51a0e45262767de4c02268c569}{%
+           family={Ugwumadu},
+           familyi={U\bibinitperiod},
+           given={Austin},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d6692d5ead19ab562bdb064e70746cf2}{%
+           family={Warrick},
+           familyi={W\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3386c44802404745cfc9960716015b87}{%
+           family={Vullings},
+           familyi={V\bibinitperiod},
+           given={Rik},
+           giveni={R\bibinitperiod}}}%
+        {{hash=781472d98fd5a83de22320eea9b05772}{%
+           family={Pini},
+           familyi={P\bibinitperiod},
+           given={Nicolò},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a280b31ccbcf0270a1e8acb029f42195}{%
+           family={Tolladay},
+           familyi={T\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a7aab7996e9cb8b3f33515ed779a0c4f}{%
+           family={Petersen},
+           familyi={P\bibinitperiod},
+           given={Olav\bibnamedelima Bjørn},
+           giveni={O\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=164260e082584e6fead5074ee2e036e1}{%
+           family={Lederer},
+           familyi={L\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=13b67d4d83b1d3002d9480fa84cdc9ee}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Liu},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a7b1e96cf3fd673d46050d53e9bcc553}{%
+           family={Djurić},
+           familyi={D\bibinitperiod},
+           given={Petar\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=215d112cc02f80ee9efa6eed8fc9e849}{%
+           family={Abtahi},
+           familyi={A\bibinitperiod},
+           given={Farhad},
+           giveni={F\bibinitperiod}}}%
+        {{hash=ad7afc4c5f2f19e6533106d5f8e86bcb}{%
+           family={Holzmann},
+           familyi={H\bibinitperiod},
+           given={Malin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=71b2271c6e11e5ded063aba0e737726e}{%
+           family={Boudet},
+           familyi={B\bibinitperiod},
+           given={Samuel},
+           giveni={S\bibinitperiod}}}%
+        {{useprefix=true,hash=1b00976d59ea56e810bbf949d67de0ef}{%
+           family={Aulnoit},
+           familyi={A\bibinitperiod},
+           given={Agathe\bibnamedelima Houzé},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod},
+           prefix={de\bibnamedelima l'},
+           prefixi={d\bibinitperiod\bibinitdelim l\bibinitperiod}}}%
+        {{hash=d7d3da6a448aa6386462a4a9e3e404f0}{%
+           family={Georgieva},
+           familyi={G\bibinitperiod},
+           given={Antoniya},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{4302c15b2c17faa4619e8acc10b5b82a}
+      \strng{fullhash}{35be5f7b562723408d318e85a440992b}
+      \strng{fullhashraw}{35be5f7b562723408d318e85a440992b}
+      \strng{bibnamehash}{4302c15b2c17faa4619e8acc10b5b82a}
+      \strng{authorbibnamehash}{4302c15b2c17faa4619e8acc10b5b82a}
+      \strng{authornamehash}{4302c15b2c17faa4619e8acc10b5b82a}
+      \strng{authorfullhash}{35be5f7b562723408d318e85a440992b}
+      \strng{authorfullhashraw}{35be5f7b562723408d318e85a440992b}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Cardiotocography (CTG), introduced in the 1960s, was initially expected to prevent hypoxia-related deaths and neurological injuries. However, more than five decades later, evidence supporting the evidence of intrapartum CTG in preventing neonatal and long-term childhood morbidity and mortality remains inconclusive. At the same time, shortcomings in CTG interpretation have been recognised as important contributory factors to rising caesarean section rates and missed opportunities for timely interventions. An important limitation is its high false-positive rate and poor specificity, which undermines reliably identifying foetuses at risk of hypoxia-related injuries. These shortcomings are compounded by the technology's significant intra- and interobserver variability, as well as the subjective and complex nature of fetal heart rate interpretation. However, human factors and other environmental factors are equally significant. Advancements in fetal heart rate monitoring are crucial to support clinicians in improving health outcomes for newborns and their mothers, while at the same time avoiding unnecessary operative deliveries. These limitations highlight the clinical need to enhance neonatal outcomes while minimising unnecessary interventions, such as instrumental deliveries or caesarean sections. We believe that achieving this requires a paradigm shift from subjective interpretation of complex and nonspecific fetal heart rate patterns to evidence-based, quantifiable solutions that integrate hardware, engineering and clinical perspectives. Such transformation necessitates an international, multidisciplinary effort encompassing the entire continuum of pregnancy care and the broader healthcare ecosystem, with emphasis on well-defined, actionable health outcomes. Achieving this will depend on collaborations between researchers, clinicians, medical device manufacturers and other relevant stakeholders. This expert review paper outlines the most relevant and promising directions for research and strategic initiatives to address current challenges in fetal heart rate monitoring. Key themes include advancements in computerised fetal heart rate monitoring, the application of big data and artificial intelligence, innovations in home and remote monitoring and consideration of human factors.}
+      \field{issn}{1471-0528}
+      \field{journaltitle}{BJOG: An International Journal of Obstetrics \& Gynaecology}
+      \field{langid}{english}
+      \field{number}{7}
+      \field{shorttitle}{Advancements in {{Fetal Heart Rate Monitoring}}}
+      \field{title}{Advancements in {{Fetal Heart Rate Monitoring}}: {{A Report}} on {{Opportunities}} and {{Strategic Initiatives}} for {{Better Intrapartum Care}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{132}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{853\bibrangedash 866}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1111/1471-0528.18097
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\RDW5MZ3X\\Lovers et al. - 2025 - Advancements in Fetal Heart Rate Monitoring A Report on Opportunities and Strategic Initiatives for.pdf;C\:\\Users\\Minh\\Zotero\\storage\\ZJWME2PA\\1471-0528.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1471-0528.18097
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1471-0528.18097
+      \endverb
+      \keyw{big data,cardiotocography,deep learning,electronic fetal monitoring,fetal (patho)physiology,human factors,hypoxic-ischaemic encephalopathy,intrapartum,remote monitoring,signal processing}
+    \endentry
+    \entry{abramowiczFetalThermalEffects2008}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=093b2e5d29e3a1747e4611208b2075e7}{%
+           family={Abramowicz},
+           familyi={A\bibinitperiod},
+           given={Jacques\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=570ad5e397208ce60b68b0b846ca31fd}{%
+           family={Barnett},
+           familyi={B\bibinitperiod},
+           given={Stanley\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=48b0f56576e6a3209dd9809b0abc49f8}{%
+           family={Duck},
+           familyi={D\bibinitperiod},
+           given={Francis\bibnamedelima A.},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=c6fe71431c3cd4c952a526a17fbd371b}{%
+           family={Edmonds},
+           familyi={E\bibinitperiod},
+           given={Peter\bibnamedelima D.},
+           giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=249debd442d462a6c54db41f09d5bcd8}{%
+           family={Hynynen},
+           familyi={H\bibinitperiod},
+           given={Kullervo\bibnamedelima H.},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=cc51c8ecb6c2f36f2d8d881ed5dc346e}{%
+           family={Ziskin},
+           familyi={Z\bibinitperiod},
+           given={Marvin\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{91e0fe154bd3b43db1411b209885fa34}
+      \strng{fullhash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{fullhashraw}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{bibnamehash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{authorbibnamehash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{authornamehash}{91e0fe154bd3b43db1411b209885fa34}
+      \strng{authorfullhash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{authorfullhashraw}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Processes that can produce a biological effect with some degree of heating (ie, about 1°C above the physiologic temperature) act via a thermal mechanism. Investigations with laboratory animals have documented that pulsed ultrasound can produce elevations of temperature and damage in biological tissues in vivo, particularly in the presence of bone (intracranial temperature elevation). Acoustic outputs used to induce these adverse bioeffects are within the diagnostic range, although exposure times are usually considerably longer than in clinical practice. Conditions present in early pregnancy, such as lack of perfusion, may favor bioeffects. Thermally induced teratogenesis has been shown in many animal studies, as well as several controlled human studies; however, human studies have not shown a causal relationship between diagnostic ultrasound exposure during pregnancy and adverse biological effects to the fetus. All human epidemiologic studies, however, were conducted with commercially available devices predating 1992, that is, with acoustic outputs not exceeding a spatial-peak temporal-average intensity of 94 mW/cm2. Current limits in the United States allow a spatial-peak temporal-average intensity of 720 mW/cm2 for fetal applications. The synergistic effect of a raised body temperature (febrile status) and ultrasound insonation has not been examined in depth. Available evidence, experimental or epidemiologic, is insufficient to conclude that there is a causal relationship between obstetric diagnostic ultrasound exposure and obvious adverse thermal effects to the fetus. However, very subtle effects cannot be ruled out and indicate a need for further research, although research in humans may be extremely difficult to realize. This article analyzes thermal effects of fetal ultrasound exposure. The normal core human body temperature is generally accepted to be 37°C with a diurnal variation of ±0.5°C to 1°C,1,2 although 36.8°C ± 0.4°C (95\% confidence interval) may be closer to the actual mean for large populations.3 During the entire gestation, the temperature of the human embryo/fetus is higher than the maternal core body temperature4 and gradually rises until, in the final trimester (near term), it exceeds that of the mother by 0.5°C.5 Thermally induced teratogenesis has been shown in many animal studies, as well as several controlled human studies.6 Edwards7 and others have shown that hyperthermia is teratogenic for numerous animal species, including the human, and suggested a 1.5°C temperature elevation above the normal value as a universal threshold.8 An elevated maternal temperature in early gestation has been associated with an increased incidence of congenital anomalies.9 Tolerance to increased temperature (thermotolerance) is an important aspect of thermal teratogenesis. Thermotolerance is induced by the production of heat shock proteins (HSPs), which occurs (up to a limit) during a relatively slow (10- to 15-minute) temperature increase of the whole body.10 Diagnostic ultrasound exposures of mammalian embryos or fetuses in vivo and in vitro do not cause a whole-body temperature increase in the mother but can potentially do so in the embryo. In principle, heating with ultrasound could occur so rapidly that the protective effects of HSPs might not come into play. There are data on effects of hyperthermia and measurements of in vivo temperature induced by pulsed ultrasound but not in the human.11–14 These data have been widely reviewed.15–20 However, there is a serious lack of data on the effects of ultrasound while rigorously excluding other confounding factors. A number of epidemiologic studies of possible developmental effects of obstetric ultrasound were performed before 1992, when exposures of the fetus, if anything, were lower on average than they are today. The results overall were negative. Around 1992, the maximum permitted acoustic output of clinical ultrasound instruments operating in the obstetric mode was allowed to increase by a factor of almost 8.21 Potentially of even greater significance, no report clearly defines the duration of actual exposure. Epidemiology, of course, cannot be expected to reveal subtle effects. Today, ultrasound is so much a part of obstetric care that it would be very difficult to design an ethically acceptable epidemiologic study. The material in this article will be presented in the following manner: “Definitions,” “Mechanisms of Tissue Heating,” “Measured Temperature Rise in Human Fetal Tissue,” “Intracranial Temperature Elevation,” “Epidemiologic Data,” “Clinical Studies,” “Discussion Regarding Obstetric Issues in the Human,” and “Conclusions and Recommendations.”}
+      \field{issn}{1550-9613}
+      \field{journaltitle}{Journal of Ultrasound in Medicine}
+      \field{langid}{english}
+      \field{number}{4}
+      \field{title}{Fetal {{Thermal Effects}} of {{Diagnostic Ultrasound}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{27}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{541\bibrangedash 559}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.7863/jum.2008.27.4.541
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\XFMCK9CC\jum.2008.27.4.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.7863/jum.2008.27.4.541
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.7863/jum.2008.27.4.541
+      \endverb
+      \keyw{bioeffects,fetus,obstetrics,safety,thermal effects,ultrasound}
+    \endentry
+    \entry{neilsonFetalElectrocardiogramECG2015}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=219c9e98b3551df1377ffb4efb4a0c93}{%
+           family={Neilson},
+           familyi={N\bibinitperiod},
+           given={James\bibnamedelima P},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=18957a10358c77cd30291f8b815e916f}{%
+           family={{Cochrane Pregnancy and Childbirth Group}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{fullhash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{fullhashraw}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{bibnamehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authorbibnamehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authornamehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authorfullhash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authorfullhashraw}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{editorbibnamehash}{18957a10358c77cd30291f8b815e916f}
+      \strng{editornamehash}{18957a10358c77cd30291f8b815e916f}
+      \strng{editorfullhash}{18957a10358c77cd30291f8b815e916f}
+      \strng{editorfullhashraw}{18957a10358c77cd30291f8b815e916f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{21}
+      \field{issn}{14651858}
+      \field{journaltitle}{Cochrane Database of Systematic Reviews}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{Fetal Electrocardiogram ({{ECG}}) for Fetal Monitoring during Labour}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{2015}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1002/14651858.CD000116.pub5
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.wiley.com/10.1002/14651858.CD000116.pub5
+      \endverb
+      \verb{url}
+      \verb http://doi.wiley.com/10.1002/14651858.CD000116.pub5
+      \endverb
+    \endentry
+    \entry{sameniReviewFetalECG2010}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=eeb4dba2d3aa3bc3a2c2da93c402d140}{%
+           family={{Sameni}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{fullhash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{fullhashraw}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{bibnamehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authorbibnamehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authornamehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authorfullhash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authorfullhashraw}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The eld of electrocardiography has been in existence for over a century, yet despite signi cant advances in adult clinical electrocardiography, signal processing techniques and fast digital processors, the analysis of fetal ECGs is still in its infancy. This is, partly due to a lack of availability of gold standard databases, partly due to the relatively low signal-to-noise ratio of the fetal ECG compared to the maternal ECG (caused by the various media between the fetal heart and the measuring electrodes, and the fact that the fetal heart is simply smaller), and in part, due to the less complete clinical knowledge concerning fetal cardiac function and development. In this paper we review a range of promising recording and signal processing techniques for fetal ECG analysis that have been developed over the last forty years, and discuss both their shortcomings and advantages. Before doing so, however, we review fetal cardiac development, and the etiology of the fetal ECG. A selection of relevant models for the fetal/maternal ECG mixture is also discussed. In light of current understanding of the fetal ECG, we then attempt to justify recommendations for promising future directions in signal processing, and database creation.}
+      \field{issn}{1876536X}
+      \field{journaltitle}{The Open Pacing, Electrophysiology \& Therapy Journal}
+      \field{langid}{english}
+      \field{shortjournal}{opetj}
+      \field{title}{A {{Review}} of {{Fetal ECG Signal Processing Issues}} and {{Promising Directions}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.2174/1876536X01003010004
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\GYHJI832\Sameni - 2010 - A Review of Fetal ECG Signal Processing Issues and Promising Directions.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://benthamopen.com/ABSTRACT/TOPETJ-3-4
+      \endverb
+      \verb{url}
+      \verb http://benthamopen.com/ABSTRACT/TOPETJ-3-4
+      \endverb
+    \endentry
+    \entry{zarzosoRobustIndependentComponent2010}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=68a402d734ab80fdce6b01101e71f7f9}{%
+           family={Zarzoso},
+           familyi={Z\bibinitperiod},
+           given={Vicente},
+           giveni={V\bibinitperiod}}}%
+        {{hash=73bf39ece81b49202cadbf8c4752dec9}{%
+           family={Comon},
+           familyi={C\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{fullhash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{fullhashraw}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{bibnamehash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{authorbibnamehash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{authornamehash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{authorfullhash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{authorfullhashraw}{4d9df11944d0c0666579c53e6fd84080}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Independent component analysis (ICA) aims at decomposing an observed random vector into statistically independent variables. Deflation-based implementations, such as the popular one-unit FastICA algorithm and its variants, extract the independent components one after another. A novel method for deflationary ICA, referred to as RobustICA, is put forward in this paper. This simple technique consists of performing exact line search optimization of the kurtosis contrast function. The step size leading to the global maximum of the contrast along the search direction is found among the roots of a fourth-degree polynomial. This polynomial rooting can be performed algebraically, and thus at low cost, at each iteration. Among other practical benefits, RobustICA can avoid prewhitening and deals with real- and complex-valued mixtures of possibly noncircular sources alike. The absence of prewhitening improves asymptotic performance. The algorithm is robust to local extrema and shows a very high convergence speed in terms of the computational cost required to reach a given source extraction quality, particularly for short data records. These features are demonstrated by a comparative numerical analysis on synthetic data. RobustICA's capabilities in processing real-world data involving noncircular complex strongly super-Gaussian sources are illustrated by the biomedical problem of atrial activity (AA) extraction in atrial fibrillation (AF) electrocardiograms (ECGs), where it outperforms an alternative ICA-based technique.}
+      \field{issn}{1941-0093}
+      \field{journaltitle}{IEEE Transactions on Neural Networks}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{Robust {{Independent Component Analysis}} by {{Iterative Maximization}} of the {{Kurtosis Contrast With Algebraic Optimal Step Size}}}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{21}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{248\bibrangedash 261}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/TNN.2009.2035920
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/abstract/document/5356190
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/abstract/document/5356190
+      \endverb
+      \keyw{Atrial fibrillation,Atrial fibrillation (AF),blind source separation (BSS),Computational efficiency,Convergence,Costs,Data mining,Independent component analysis,independent component analysis (ICA),Iterative algorithms,iterative optimization,kurtosis,Numerical analysis,optimal step size,performance analysis,Polynomials,Robustness}
+    \endentry
+    \entry{karmakarConsumerInsightsFeasibility2025}{article}{}{}
       \name{author}{7}{}{%
         {{hash=876c958205c1a947fb2b657ee36869e8}{%
            family={Karmakar},
@@ -240,9 +645,6 @@
            given={Fiona},
            giveni={F\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
       \list{publisher}{1}{%
         {Nature Publishing Group}%
       }
@@ -254,21 +656,23 @@
       \strng{authornamehash}{68e791376bd46985f149d873584d4d69}
       \strng{authorfullhash}{55ac75d86e62b6bee7c16e1445966652}
       \strng{authorfullhashraw}{55ac75d86e62b6bee7c16e1445966652}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The COVID-19 pandemic accelerated the adoption of telehealth and remote monitoring in obstetric care. This study assessed pregnant patients’ perceptions before and after using a novel non-invasive fetal electrocardiogram (NI-FECG) device. The trial is prospectively registered on the Australia New Zealand Clinical Trials Registry (ANZCTRN12621001260819; submitted June 9th, 2021; approved September 17th, 2021). Seventy participants from 36 weeks’ gestation completed pre- and post-use surveys. Interest in continuous and home fetal monitoring was high (79\% and 90\%, respectively). Post-use, 89\% reported satisfaction; over 90\% comfortable wearing and removing the sensor. Extended use was acceptable to 76\%, and only 3\% reported high skin irritation. Sentiment analysis highlighted themes of reassurance, convenience, and reduced anxiety. Some suggested smaller, wireless design. Analysis by natural language processing and clustering provided deeper insights. Findings support strong interest in at-home fetal monitoring; further refinement and education are needed to enhance acceptability. Future research should assess long-term effects on anxiety and clinical outcomes.}
       \field{issn}{2398-6352}
       \field{journaltitle}{npj Digital Medicine}
+      \field{langid}{english}
       \field{month}{4}
       \field{number}{1}
-      \field{title}{Consumer insights from a feasibility study on remote and extended use of a novel non-invasive wearable fetal electrocardiogram monitor}
+      \field{title}{Consumer Insights from a Feasibility Study on Remote and Extended Use of a Novel Non-Invasive Wearable Fetal Electrocardiogram Monitor}
       \field{urlday}{16}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{8}
       \field{year}{2025}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{216}
       \range{pages}{1}
@@ -283,14 +687,684 @@
       \endverb
       \keyw{Outcomes research,Translational research}
     \endentry
-    \entry{fotiadou_enhancement_2018}{article}{}{}
+    \entry{almadaniOneDimensionalWNETRNonInvasive2023}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=7d372afcdfb4e49cc73b91f8888cad9b}{%
+           family={Almadani},
+           familyi={A\bibinitperiod},
+           given={Murad},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1a0fa6906a4f7a2bcbfde3508eac14db}{%
+           family={Hadjileontiadis},
+           familyi={H\bibinitperiod},
+           given={Leontios},
+           giveni={L\bibinitperiod}}}%
+        {{hash=d2871cc9d63fd112c044434c1d9d4b04}{%
+           family={Khandoker},
+           familyi={K\bibinitperiod},
+           given={Ahsan},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f68a93880c3e952a91b326948e155ed3}
+      \strng{fullhash}{44a6a2e9de6e78831ba8132acff06ace}
+      \strng{fullhashraw}{44a6a2e9de6e78831ba8132acff06ace}
+      \strng{bibnamehash}{44a6a2e9de6e78831ba8132acff06ace}
+      \strng{authorbibnamehash}{44a6a2e9de6e78831ba8132acff06ace}
+      \strng{authornamehash}{f68a93880c3e952a91b326948e155ed3}
+      \strng{authorfullhash}{44a6a2e9de6e78831ba8132acff06ace}
+      \strng{authorfullhashraw}{44a6a2e9de6e78831ba8132acff06ace}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Fetal cardiac monitoring is very helpful in the early detection of the potential risk of fetal cardiac abnormalities, which enables prompt preventative care and ensures safe births. As a result, it is crucial to regularly check on the embryonic heart. Methods of non-invasively fetal ECG extraction from maternal abdominal ECG signal are thoroughly discussed. Although fetal signals are generally obscured by maternal ECG signals and noise, extracting a clean fetal ECG is a significant difficulty. The majority of techniques for fetal ECG extraction include many extraction steps. We describe a unique method for splitting a single-channel maternal abdominal ECG into maternal and fetus ECG employing two parallel U-nets with transformer encoding, which we refer to as W-NEt TRansformers (W-NETR). Due to its enhanced capacity to simulate remote interactions and capture global context, the suggested pipeline utilizes the self-attention mechanism of the transformer. We tested the proposed pipeline on synthetic and real datasets and outperformed the current state-of-the-art deep learning models. The proposed model achieved the best results on both datasets for QRS detection precision, recall, and F1 scores. More specifically, it achieved F1 score of 99.88\% and 98.9\% on the real ADFECGDB and PCDB datasets, respectively. These encouraging results highlight the suggested W-NETR's effectiveness in precisely extracting the fetal ECG, which was achieved with high SSIM and PSNR values in the results. This provides the bed set for long-term maternal and fetal monitoring via portable devices as the proposed system performs real-time execution.}
+      \field{issn}{2168-2208}
+      \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{One-{{Dimensional W-NETR}} for {{Non-Invasive Single Channel Fetal ECG Extraction}}}
+      \field{urlday}{27}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{27}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{3198\bibrangedash 3209}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/JBHI.2023.3266645
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/10100866
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/10100866
+      \endverb
+      \keyw{deep learning,Electrocardiography,Feature extraction,Fetal ECG,Fetal heart rate,Neural networks,non-invasive ECG extraction,Pipelines,PSNR,self-attention mechanism,SSIM,Training,transformers,Transformers,W-NETR}
+    \endentry
+    \entry{liuKANKolmogorovArnoldNetworks2025}{online}{}{}
+      \name{author}{8}{}{%
+        {{hash=1c58afd2046daf734847b96dab2bf564}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ziming},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=45f61f91eed498475eb6258bbca165c2}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yixuan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0ab10eff5de236f1519d767e744e5cf0}{%
+           family={Vaidya},
+           familyi={V\bibinitperiod},
+           given={Sachin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0875ba21d3e8d07361aecb3962665cff}{%
+           family={Ruehle},
+           familyi={R\bibinitperiod},
+           given={Fabian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=1a8ee0d401768d2087f11aa88386ce6f}{%
+           family={Halverson},
+           familyi={H\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d4bb6bd2724f026f198fb2fddbe7a5f7}{%
+           family={Soljačić},
+           familyi={S\bibinitperiod},
+           given={Marin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=627dcbbcdb723ced5f9dc3a51fde769d}{%
+           family={Hou},
+           familyi={H\bibinitperiod},
+           given={Thomas\bibnamedelima Y.},
+           giveni={T\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=b9b3c445e1013a97fc6318e06799b37b}{%
+           family={Tegmark},
+           familyi={T\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e02a2c1409094c9140c4b77dd060333}
+      \strng{fullhash}{fe2782c5c026601c4d592a079123770f}
+      \strng{fullhashraw}{fe2782c5c026601c4d592a079123770f}
+      \strng{bibnamehash}{4e02a2c1409094c9140c4b77dd060333}
+      \strng{authorbibnamehash}{4e02a2c1409094c9140c4b77dd060333}
+      \strng{authornamehash}{4e02a2c1409094c9140c4b77dd060333}
+      \strng{authorfullhash}{fe2782c5c026601c4d592a079123770f}
+      \strng{authorfullhashraw}{fe2782c5c026601c4d592a079123770f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Inspired by the Kolmogorov-Arnold representation theorem, we propose Kolmogorov-Arnold Networks (KANs) as promising alternatives to Multi-Layer Perceptrons (MLPs). While MLPs have fixed activation functions on nodes ("neurons"), KANs have learnable activation functions on edges ("weights"). KANs have no linear weights at all -- every weight parameter is replaced by a univariate function parametrized as a spline. We show that this seemingly simple change makes KANs outperform MLPs in terms of accuracy and interpretability. For accuracy, much smaller KANs can achieve comparable or better accuracy than much larger MLPs in data fitting and PDE solving. Theoretically and empirically, KANs possess faster neural scaling laws than MLPs. For interpretability, KANs can be intuitively visualized and can easily interact with human users. Through two examples in mathematics and physics, KANs are shown to be useful collaborators helping scientists (re)discover mathematical and physical laws. In summary, KANs are promising alternatives for MLPs, opening opportunities for further improving today's deep learning models which rely heavily on MLPs.}
+      \field{day}{9}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{month}{2}
+      \field{pubstate}{prepublished}
+      \field{shorttitle}{{{KAN}}}
+      \field{title}{{{KAN}}: {{Kolmogorov-Arnold Networks}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2404.19756
+      \endverb
+      \verb{eprint}
+      \verb 2404.19756
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\8SRQJAZ2\\Liu et al. - 2025 - KAN Kolmogorov-Arnold Networks.pdf;C\:\\Users\\Minh\\Zotero\\storage\\7XAWDFVF\\2404.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2404.19756
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2404.19756
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Condensed Matter - Disordered Systems and Neural Networks,Statistics - Machine Learning}
+    \endentry
+    \entry{yeElevatingVisionTransformer2024}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=802c4eb1745883b347d8250617fc640e}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Lvzhou},
+           giveni={L\bibinitperiod}}}%
+        {{hash=593cddc5c4c6c06f101db9ec3eaf35f3}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zhen},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{fullhash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{fullhashraw}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{bibnamehash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{authorbibnamehash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{authornamehash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{authorfullhash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{authorfullhashraw}{91f598e6cf085081b4c92aa4689f26f0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{In this paper, we propose an innovative image recognition model called KAN-VIT, which applies the Kolmogorov-Arnold Networks (KANs) architecture to the Vision Transformer (VIT), replacing the traditional multilayer perceptron (MLP) layers and the MLP head at the output. KANs are neural networks based on the Kolmogorov-Arnold representation theorem, which introduces learnable activation functions between nodes, parameterized by spline functions, thereby providing higher accuracy and interpretability. Based on this, the VIT model was improved by replacing the original MLP layers with KANs, and experiments were conducted on the CIFAR-10, Oxford Flowers, and MNIST datasets. The results show that the improved model has demonstrated superior performance on the test datasets. We also analyzed the interpretability of KANs, and the results show that the improved model not only has improved performance but also has advantages in the visualization and interpretability of the model.}
+      \field{booktitle}{2024 {{IEEE Smart World Congress}} ({{SWC}})}
+      \field{issn}{2993-396X}
+      \field{month}{12}
+      \field{shorttitle}{Elevating {{Vision Transformer Performance}}}
+      \field{title}{Elevating {{Vision Transformer Performance}}: {{The KAN-VIT Model}} for {{Image Recognition}}}
+      \field{urlday}{27}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2321\bibrangedash 2328}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/SWC62898.2024.00353
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/10925129
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/10925129
+      \endverb
+      \keyw{Analytical models,Computer vision,Flowering plants,Head,Image recognition,KAN,MLP,Multilayer perceptrons,Neural networks,Spline Function,Splines (mathematics),Transformers,VisionTransformer,Visualization}
+    \endentry
+    \entry{andreottiOpensourceFrameworkStresstesting2016}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=dbf7d97872a14e030d8e7b808dd416ea}{%
+           family={Andreotti},
+           familyi={A\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b200b53b12615f3cfbf1428bc37deb8b}{%
+           family={Behar},
+           familyi={B\bibinitperiod},
+           given={Joachim},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5d3c139f97526054ffc04c8846300c3b}{%
+           family={Zaunseder},
+           familyi={Z\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ca66474b5e2a51218e84c06cca1609aa}{%
+           family={Oster},
+           familyi={O\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b927e667e291a47a7437a9a8d631ed0e}{%
+           family={Clifford},
+           familyi={C\bibinitperiod},
+           given={Gari\bibnamedelima D},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{eff1fcc3135226e7b5ac4d12381004f3}
+      \strng{fullhash}{d3563884150829328bac2154f2ee740e}
+      \strng{fullhashraw}{d3563884150829328bac2154f2ee740e}
+      \strng{bibnamehash}{d3563884150829328bac2154f2ee740e}
+      \strng{authorbibnamehash}{d3563884150829328bac2154f2ee740e}
+      \strng{authornamehash}{eff1fcc3135226e7b5ac4d12381004f3}
+      \strng{authorfullhash}{d3563884150829328bac2154f2ee740e}
+      \strng{authorfullhashraw}{d3563884150829328bac2154f2ee740e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0967-3334, 1361-6579}
+      \field{journaltitle}{Physiological Measurement}
+      \field{month}{5}
+      \field{number}{5}
+      \field{title}{An Open-Source Framework for Stress-Testing Non-Invasive Foetal {{ECG}} Extraction Algorithms}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{37}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{627\bibrangedash 648}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1088/0967-3334/37/5/627
+      \endverb
+      \verb{urlraw}
+      \verb https://iopscience.iop.org/article/10.1088/0967-3334/37/5/627
+      \endverb
+      \verb{url}
+      \verb https://iopscience.iop.org/article/10.1088/0967-3334/37/5/627
+      \endverb
+    \endentry
+    \entry{beharNoninvasiveFECGExtraction2013}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=b200b53b12615f3cfbf1428bc37deb8b}{%
+           family={Behar},
+           familyi={B\bibinitperiod},
+           given={Joachim},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ca66474b5e2a51218e84c06cca1609aa}{%
+           family={Oster},
+           familyi={O\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b927e667e291a47a7437a9a8d631ed0e}{%
+           family={Clifford},
+           familyi={C\bibinitperiod},
+           given={Gari\bibnamedelima D},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f357aa373c1bf74cd782985c4a66132a}
+      \strng{fullhash}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \strng{fullhashraw}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \strng{bibnamehash}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \strng{authorbibnamehash}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \strng{authornamehash}{f357aa373c1bf74cd782985c4a66132a}
+      \strng{authorfullhash}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \strng{authorfullhashraw}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Introduction: Despite significant advances in adult clinical electrocardiography (ECG) signal processing techniques and the power of digital processors, the analysis of non-invasive foetal ECG (NI-FECG) is still in its infancy. The PhysioNet/Computing in Cardiology Challenge 2013 addresses some of these limitations by making publicly available a set of FECG data to the scientific community for evaluation of signal processing techniques. Methods: ECGs were first preprocessed by cascading a low pass and a high pass filter in order to remove higher frequency and baseline wander. A Notch filter to remove power interferences at 50Hz or 60Hz was applied if required. The signals were then normalised before applying various source separation techniques to cancel the maternal ECG. These techniques included: template subtraction, principal/independent component analysis, extended Kalman filter and a combination of a subset of these methods (FUSE method). FQRS detection was performed on all residuals using a Pan and Tompkins QRS detector and the channel with the smoothest FHR time series was selected. Results: The FUSE algorithm performed better than all the individual methods on the training set data. On the validation set, best Challenge scores obtained were E4=29.6. E5=4.67 for events 4-5 respectively using the FUSE method.}
+      \field{booktitle}{Computing in {{Cardiology}} 2013}
+      \field{issn}{2325-8853}
+      \field{month}{9}
+      \field{title}{Non-Invasive {{FECG}} Extraction from a Set of Abdominal Sensors}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{297\bibrangedash 300}
+      \range{pages}{4}
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/abstract/document/6712470
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/abstract/document/6712470
+      \endverb
+      \keyw{Electrocardiography,Fetal heart rate,Fuses,Source separation,Time series analysis}
+    \endentry
+    \entry{hatamizadehUNETRTransformers3D2021}{misc}{}{}
+      \name{author}{8}{}{%
+        {{hash=4a8b0d75ef5dd9aff244bd459eb56921}{%
+           family={Hatamizadeh},
+           familyi={H\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+        {{hash=caeb0e5523b56ad22085585d7f65afa4}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Yucheng},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d0968ce3719368d26817f02301e44c29}{%
+           family={Nath},
+           familyi={N\bibinitperiod},
+           given={Vishwesh},
+           giveni={V\bibinitperiod}}}%
+        {{hash=43bfecf0db835905ffe98dadaa0b057f}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Dong},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c4dd0f2ee007b795cefdfd28a46af79f}{%
+           family={Myronenko},
+           familyi={M\bibinitperiod},
+           given={Andriy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d074e703f5720bb6657ce078797d7f0d}{%
+           family={Landman},
+           familyi={L\bibinitperiod},
+           given={Bennett},
+           giveni={B\bibinitperiod}}}%
+        {{hash=930b2a18b29ddf8edf110e14b3428bfc}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={Holger},
+           giveni={H\bibinitperiod}}}%
+        {{hash=40c221ac11c898cb10013b2468fc229b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Daguang},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
+      \strng{fullhash}{9d62965442e88de4d80c68fbcb73bced}
+      \strng{fullhashraw}{9d62965442e88de4d80c68fbcb73bced}
+      \strng{bibnamehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
+      \strng{authorbibnamehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
+      \strng{authornamehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
+      \strng{authorfullhash}{9d62965442e88de4d80c68fbcb73bced}
+      \strng{authorfullhashraw}{9d62965442e88de4d80c68fbcb73bced}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Fully Convolutional Neural Networks (FCNNs) with contracting and expanding paths have shown prominence for the majority of medical image segmentation applications since the past decade. In FCNNs, the encoder plays an integral role by learning both global and local features and contextual representations which can be utilized for semantic output prediction by the decoder. Despite their success, the locality of convolutional layers in FCNNs, limits the capability of learning long-range spatial dependencies. Inspired by the recent success of transformers for Natural Language Processing (NLP) in long-range sequence learning, we reformulate the task of volumetric (3D) medical image segmentation as a sequence-to-sequence prediction problem. We introduce a novel architecture, dubbed as UNEt TRansformers (UNETR), that utilizes a transformer as the encoder to learn sequence representations of the input volume and effectively capture the global multi-scale information, while also following the successful “U-shaped” network design for the encoder and decoder. The transformer encoder is directly connected to a decoder via skip connections at different resolutions to compute the final semantic segmentation output. We have validated the performance of our method on the Multi Atlas Labeling Beyond The Cranial Vault (BTCV) dataset for multiorgan segmentation and the Medical Segmentation Decathlon (MSD) dataset for brain tumor and spleen segmentation tasks. Our benchmarks demonstrate new state-of-the-art performance on the BTCV leaderboard.}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{shorttitle}{{{UNETR}}}
+      \field{title}{{{UNETR}}: {{Transformers}} for {{3D Medical Image Segmentation}}}
+      \field{urlday}{27}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2103.10504
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2103.10504
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2103.10504
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Electrical Engineering and Systems Science - Image and Video Processing}
+    \endentry
+    \entry{einthovenGalvanometrischeRegistrirungMenschlichen1903}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=929002a07a2d725f97f54cd3bfa1ca09}{%
+           family={Einthoven},
+           familyi={E\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{fullhash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{fullhashraw}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{bibnamehash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{authorbibnamehash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{authornamehash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{authorfullhash}{929002a07a2d725f97f54cd3bfa1ca09}
+      \strng{authorfullhashraw}{929002a07a2d725f97f54cd3bfa1ca09}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1432-2013}
+      \field{journaltitle}{Archiv für die gesamte Physiologie des Menschen und der Tiere}
+      \field{langid}{ngerman}
+      \field{month}{11}
+      \field{number}{9}
+      \field{title}{Die galvanometrische Registrirung des menschlichen Elektrokardiogramms, zugleich eine Beurtheilung der Anwendung des Capillar-Elektrometers in der Physiologie}
+      \field{urlday}{15}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{99}
+      \field{year}{1903}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{472\bibrangedash 480}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/BF01811855
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/BF01811855
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/BF01811855
+      \endverb
+    \endentry
+    \entry{departmentofgeneralmedicineamalainstituteofmedicalsciencesthrissurkeralaindiLaboratoryWearablesReview2022}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4a001abbe4614a638364861eeb1eed9d}{%
+           family={{Department of General Medicine, Amala Institute of Medical Sciences, Thrissur, Kerala, Indi}},
+           familyi={D\bibinitperiod}}}%
+        {{hash=5d92d52c99b78f534144d82b2129088c}{%
+           family={Vincent},
+           familyi={V\bibinitperiod},
+           given={Rony},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{fullhash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{fullhashraw}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{bibnamehash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{authorbibnamehash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{authornamehash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{authorfullhash}{befadcc27ba5b145c74a0f9d8504c35c}
+      \strng{authorfullhashraw}{befadcc27ba5b145c74a0f9d8504c35c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The development of electrocardiography, one of the top scientific breakthroughs of the 20th century, occurred in the field of cardiology. The history of the ECG began long before its invention, with the advent of the study of electricity in the medical field. The idea of electrophysiology and Waller's initial recording of the ‘electrogram’ encouraged Willem Einthoven to develop new string galvanometers and turn this remarkable physiologic occurrence into a vital clinical recording tool. It has progressed from Einthoven's innovation to wearable technology. In the first part of the 20th century, a number of inventive people achieved a remarkable succession of discoveries and advancements that led to the development of the 12-lead ECG as we know it today. It went further than that. The evolution of science and technology over the years has allowed for continual development in terms of usefulness, ranging from five operators to one operator meant to record the ECG trace, and mobility, ranging from around 300 Kg to roughly around 1 Kg. Electrocardiographs in minimized form now exist thanks to the modern era of digitalization. We will go over the significant processes in the development of the ECG in this article.}
+      \field{issn}{26955075}
+      \field{journaltitle}{Iberoamerican Journal of Medicine}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{4}
+      \field{shorttitle}{From a Laboratory to the Wearables}
+      \field{title}{From a Laboratory to the Wearables: A Review on History and Evolution of Electrocardiogram}
+      \field{urlday}{15}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{4}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{248\bibrangedash 255}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.53986/ibjm.2022.0038
+      \endverb
+      \verb{urlraw}
+      \verb https://www.iberoamjmed.com/article/doi/10.53986/ibjm.2022.0038
+      \endverb
+      \verb{url}
+      \verb https://www.iberoamjmed.com/article/doi/10.53986/ibjm.2022.0038
+      \endverb
+    \endentry
+    \entry{godfreyFunctionalAssessmentFetal2012}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=087698c10ba05012d4b7fa34efa6e7de}{%
+           family={Godfrey},
+           familyi={G\bibinitperiod},
+           given={M.\bibnamedelimi E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=b03a0867b9ced84c72d120e7c56984c2}{%
+           family={Messing},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=ea853abba13da7d17e18c811aa44491d}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={S.\bibnamedelimi M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=134ad7d6be79b0c82a4c36a0d858df60}{%
+           family={Valsky},
+           familyi={V\bibinitperiod},
+           given={D.\bibnamedelimi V.},
+           giveni={D\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=ae4a48c8ee0dd1d39aa28b2f8be54ed8}{%
+           family={Yagel},
+           familyi={Y\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{769fb45d2f94d4a7132464a71cd0117e}
+      \strng{fullhash}{e4c29e1b18479a22d634fa9b9bac868d}
+      \strng{fullhashraw}{e4c29e1b18479a22d634fa9b9bac868d}
+      \strng{bibnamehash}{e4c29e1b18479a22d634fa9b9bac868d}
+      \strng{authorbibnamehash}{e4c29e1b18479a22d634fa9b9bac868d}
+      \strng{authornamehash}{769fb45d2f94d4a7132464a71cd0117e}
+      \strng{authorfullhash}{e4c29e1b18479a22d634fa9b9bac868d}
+      \strng{authorfullhashraw}{e4c29e1b18479a22d634fa9b9bac868d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The purpose of this review is to evaluate the current modalities available for the assessment of fetal cardiac function. The unique anatomy and physiology of the fetal circulation are described, with reference to the difference between @ in-utero and @ ex-utero life. M-mode, early/atrial ratio, myocardial performance index, three-dimensional and four-dimensional ultrasound, tissue Doppler including strain and strain rate, speckle tracking, magnetic resonance imaging and venous flow assessment are described. The modalities are analyzed from the perspective of the clinician and certain questions are posed. Does the modality assess systolic function, diastolic function or both? Is it applicable to both ventricles? Does it require extensive post-processing or additional hardware, or does it make use of technology already available to the average practitioner? The reproducibility and reliability of the techniques are evaluated, with reference to their utility in clinical decision-making. Finally, directions for future research are proposed. Copyright © 2012 ISUOG. Published by John Wiley \& Sons, Ltd.}
+      \field{issn}{1469-0705}
+      \field{journaltitle}{Ultrasound in Obstetrics \& Gynecology}
+      \field{langid}{english}
+      \field{number}{2}
+      \field{shorttitle}{Functional Assessment of the Fetal Heart}
+      \field{title}{Functional Assessment of the Fetal Heart: A Review}
+      \field{urlday}{15}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{39}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{131\bibrangedash 144}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1002/uog.9064
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/uog.9064
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/uog.9064
+      \endverb
+      \keyw{3DUS,4DUS,E/A ratio,fetal heart,four-dimensional ultrasound,M-mode,magnetic resonance imaging,MPI,MRI,myocardial performance index,prenatal diagnosis,speckle tracking,strain rate,three-dimensional ultrasound,tissue Doppler}
+    \endentry
+    \entry{TrendsMaternalMortality2025}{book}{}{}
+      \list{location}{1}{%
+        {Geneva}%
+      }
+      \list{publisher}{1}{%
+        {World Health Organization}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{shorttitle}
+      \field{isbn}{978-92-4-010846-2}
+      \field{langid}{english}
+      \field{shorttitle}{Trends in Maternal Mortality Estimates 2000 to 2023}
+      \field{title}{Trends in Maternal Mortality Estimates 2000 to 2023: Estimates by {{WHO}}, {{UNICEF}}, {{UNFPA}}, {{World Bank Group}} and {{UNDESA}}/{{Population Division}}}
+      \field{year}{2025}
+      \field{dateera}{ce}
+    \endentry
+    \entry{freemanFetalHeartRate2012}{book}{}{}
+      \name{author}{4}{}{%
+        {{hash=4be16f9df789bd07c63c5bb399d9aa28}{%
+           family={Freeman},
+           familyi={F\bibinitperiod},
+           given={Roger\bibnamedelima K.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=b905970f0d1eafaf30b48648880ad626}{%
+           family={Garite},
+           familyi={G\bibinitperiod},
+           given={Thomas\bibnamedelima J.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=981c13505cd665b826d7a0c2c727d9e2}{%
+           family={Nageotte},
+           familyi={N\bibinitperiod},
+           given={Michael\bibnamedelima P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=e3571b89af71052eded6b8fb6c7d29a6}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Lisa\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Lippincott Williams \& Wilkins, a Wolters Kluwer bu}%
+      }
+      \strng{namehash}{2c511d0653b4ff987dfe4bdf44d3f545}
+      \strng{fullhash}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \strng{fullhashraw}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \strng{bibnamehash}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \strng{authorbibnamehash}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \strng{authornamehash}{2c511d0653b4ff987dfe4bdf44d3f545}
+      \strng{authorfullhash}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \strng{authorfullhashraw}{b4c5c3bd017d75ad6ee9e4113a11dd56}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{isbn}{978-1-4511-1663-2}
+      \field{month}{1}
+      \field{title}{Fetal {{Heart Rate Monitoring}}, 4e}
+      \field{year}{2012}
+      \field{dateera}{ce}
+    \endentry
+    \entry{kovacsRulebasedPhonocardiographicMethod2000}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=26806740aefeee6546cfac3e259cb42f}{%
+           family={Kovacs},
+           familyi={K\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c58a346fd5ef6ec77f9c26d37e680548}{%
+           family={Torok},
+           familyi={T\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=105f48575955fbc841cc827ab377bc17}{%
+           family={Habermajer},
+           familyi={H\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{d89c26cf22b3ee91eb7448ebb7986d9e}
+      \strng{fullhash}{28d72c01bfcebd36e943c45266d43742}
+      \strng{fullhashraw}{28d72c01bfcebd36e943c45266d43742}
+      \strng{bibnamehash}{28d72c01bfcebd36e943c45266d43742}
+      \strng{authorbibnamehash}{28d72c01bfcebd36e943c45266d43742}
+      \strng{authornamehash}{d89c26cf22b3ee91eb7448ebb7986d9e}
+      \strng{authorfullhash}{28d72c01bfcebd36e943c45266d43742}
+      \strng{authorfullhashraw}{28d72c01bfcebd36e943c45266d43742}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A real-time method for fetal heart rate (FHR) monitoring based on signal processing of the fetal heart sounds is presented. The acoustic method, which utilizes an adaptive time pattern analysis to select and analyze those heartbeats that can be recorded without artefact, is guided by a number of rules involving an introduced confidence factor on the timing prediction. The algorithm was implemented in a low-power portable electronic instrument to enable long-term fetal surveillance. A large number of clinical tests have shown the very good performance of the phonocardiographic method in comparison with FHR curves simultaneously recorded with ultrasound cardiotocography. Indeed, approximately 90\% of the time, the acoustic FHR curve remained inside a /spl plusmn/3 beats/min tolerance limit of the reference ultrasound method. The confidence was typically CF{$>$}0.85. The acoustic method exceeded a /spl plusmn/5 beats/min limit relative to the ultrasound method approximately 5\% of the time. Finally, no relevant FHR data was measured approximately 5\% of the time.}
+      \field{issn}{1558-2531}
+      \field{journaltitle}{IEEE Transactions on Biomedical Engineering}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{A Rule-Based Phonocardiographic Method for Long-Term Fetal Heart Rate Monitoring}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{47}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{124\bibrangedash 130}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/10.817627
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\CJUI87IY\817627.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/817627
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/817627
+      \endverb
+      \keyw{Acoustic signal processing,Adaptive signal processing,Fetal heart,Fetal heart rate,Heart rate measurement,Pattern analysis,Prediction algorithms,Signal processing algorithms,Timing,Ultrasonic imaging}
+    \endentry
+    \entry{fotiadouEnhancementLowqualityFetal2018}{article}{}{}
       \name{author}{4}{}{%
         {{hash=547cad90077ea1b62d3bb8838e5290b8}{%
            family={Fotiadou},
            familyi={F\bibinitperiod},
            given={E.},
            giveni={E\bibinitperiod}}}%
-        {{hash=820d42bf1c8e86246f231684d19642cb}{%
+        {{useprefix=true,hash=820d42bf1c8e86246f231684d19642cb}{%
            family={Laar},
            familyi={L\bibinitperiod},
            given={J.\bibnamedelimi O.\bibnamedelimi E.\bibnamedelimi H.},
@@ -308,9 +1382,6 @@
            given={R.},
            giveni={R\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
       \strng{namehash}{22bebab109c81072a2be56d8d3060399}
       \strng{fullhash}{e2f72d707346c41bc60ce2d556da0c69}
       \strng{fullhashraw}{e2f72d707346c41bc60ce2d556da0c69}
@@ -319,21 +1390,23 @@
       \strng{authornamehash}{22bebab109c81072a2be56d8d3060399}
       \strng{authorfullhash}{e2f72d707346c41bc60ce2d556da0c69}
       \strng{authorfullhashraw}{e2f72d707346c41bc60ce2d556da0c69}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Extraction of a clean fetal electrocardiogram (ECG) from non-invasive abdominal recordings is one of the biggest challenges in fetal monitoring. An ECG allows for the interpretation of the electrical heart activity beyond the heart rate and heart rate variability. However, the low signal quality of the fetal ECG hinders the morphological analysis of its waveform in clinical practice. The time-sequenced adaptive filter has been proposed for performing optimal time-varying filtering of non-stationary signals having a recurring statistical character. In our study, the time-sequenced adaptive filter is applied to enhance the quality of multichannel fetal ECG after the maternal ECG is removed. To improve the performance of the filter in cases of low signal-to-noise ratio (SNR), we enhance the ECG reference signals by averaging consecutive ECG complexes. The performance of the proposed augmented time-sequenced adaptive filter is evaluated in both synthetic and real data from PhysioNet. This evaluation shows that the suggested algorithm clearly outperforms other ECG enhancement methods, in terms of uncovering the ECG waveform, even in cases with very low SNR. With the presented method, quality of the fetal ECG morphology can be enhanced to the extent that the ECG might be fit for use in clinical diagnostics.}
       \field{issn}{1741-0444}
       \field{journaltitle}{Medical \& Biological Engineering \& Computing}
+      \field{langid}{english}
       \field{month}{12}
       \field{number}{12}
-      \field{title}{Enhancement of low-quality fetal electrocardiogram based on time-sequenced adaptive filtering}
+      \field{title}{Enhancement of Low-Quality Fetal Electrocardiogram Based on Time-Sequenced Adaptive Filtering}
       \field{urlday}{16}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{56}
       \field{year}{2018}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{2313\bibrangedash 2323}
       \range{pages}{11}
@@ -348,7 +1421,7 @@
       \endverb
       \keyw{Electrocardiography,Fetal ECG de-noising,Fetal ECG enhancement,Time-sequenced adaptive filter}
     \endentry
-    \entry{suganthy_enhancement_2019}{article}{}{}
+    \entry{suganthyEnhancementSNRFetal2019}{article}{}{}
       \name{author}{2}{}{%
         {{hash=1921d9e907685f6fefd6c7a1d7fa77f3}{%
            family={Suganthy},
@@ -361,9 +1434,6 @@
            given={S.},
            giveni={S\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
       \strng{namehash}{5b0fc00e0d10b4d53cd5bc04bf17e5ba}
       \strng{fullhash}{5b0fc00e0d10b4d53cd5bc04bf17e5ba}
       \strng{fullhashraw}{5b0fc00e0d10b4d53cd5bc04bf17e5ba}
@@ -372,21 +1442,23 @@
       \strng{authornamehash}{5b0fc00e0d10b4d53cd5bc04bf17e5ba}
       \strng{authorfullhash}{5b0fc00e0d10b4d53cd5bc04bf17e5ba}
       \strng{authorfullhashraw}{5b0fc00e0d10b4d53cd5bc04bf17e5ba}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A Fetal Electrocardiogram (FECG) signal will contain some potential information which is precise for assisting the clinicians to make appropriate decisions that are timely at the time of pregnancy and labor. Extraction and detection of such FECG signals from their composite maternal signals of the abdomen using very powerful and advanced methodologies is a very critical need in case of fetal monitoring. The mining of pure FECG signals from the abdominal of the prenatal woman is focused in this paper. This FECG signal is very vulnerable to noise and is very difficult to process it accurately with no significant distortion that can imped its use. So, in order to be able to get some proper information on the status of the fetus or its condition it is important to be able to improve the abdominal signal and its SNR. Since the wavelet transform is well in providing information in time and frequency, the combination of Stationary Wavelet Transform (SWT), Weighted Least Square Regression (WLSR) and parallel Extended Kalman Filter (Par-EKF) are used for FECG extraction. The analysis for different values of Signal to Noise Ratio (SNR) between fetal and maternal ECG’s is implemented using MATLAB. As a Result, the highest SNR obtained is 33.5 which showed that the proposed method is efficient in extracting more information about FECG from Maternal ECG (MECG).}
       \field{issn}{1573-7543}
       \field{journaltitle}{Cluster Computing}
+      \field{langid}{english}
       \field{month}{3}
       \field{number}{2}
-      \field{title}{Enhancement of {SNR} in fetal {ECG} signal extraction using combined {SWT} and {WLSR} in parallel {EKF}}
+      \field{title}{Enhancement of {{SNR}} in Fetal {{ECG}} Signal Extraction Using Combined {{SWT}} and {{WLSR}} in Parallel {{EKF}}}
       \field{urlday}{16}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{22}
       \field{year}{2019}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{3875\bibrangedash 3881}
       \range{pages}{7}
@@ -401,7 +1473,7 @@
       \endverb
       \keyw{EKF,Fetal electrocardiogram (FECG) signals,Signal to noise ratio (SNR) and maternal ECG (MECG),Stationary wavelet transform (SWT),Weighted least square regression (WLSR)}
     \endentry
-    \entry{sarafan_novel_2022}{inproceedings}{}{}
+    \entry{sarafanNovelECGDenoising2022}{inproceedings}{}{}
       \name{author}{8}{}{%
         {{hash=4fb3e452872c11af9bddef1c18397a67}{%
            family={Sarafan},
@@ -452,19 +1524,20 @@
       \strng{authornamehash}{7758389908a3a01061943431b6ed2ea6}
       \strng{authorfullhash}{8f9f2772d3c9ffe18c701f184d1a5595}
       \strng{authorfullhashraw}{8f9f2772d3c9ffe18c701f184d1a5595}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Monitoring of electrocardiogram (ECG) provides vital information as well as any cardiovascular anomalies. Recent advances in the technology of wearable electronics have enabled compact devices to acquire personal physiological signals in the home setting; however, signals are usually contaminated with high level noise. Thus, an efficient ECG filtering scheme is a dire need. In this paper, a novel method using Ensemble Kalman Filter (EnKF) is developed for denoising ECG signals. We also intensively explore various filtering algorithms, including Savitzky-Golay (SG) filter, Ensemble Empirical mode decomposition (EEMD), Normalized Least-Mean-Square (NLMS), Recursive least squares (RLS) filter, Total variation denoising (TVD), Wavelet and extended Kalman filter (EKF) for comparison. Data from the MIT-BIH Noise Stress Test database were used. The proposed methodology shows the average signal to noise ratio (SNR) of 10.96, the Percentage Root Difference of 150.45, and the correlation coefficient of 0.959 from the modified MIT-BIH database with added motion artifacts.}
-      \field{booktitle}{2022 44th {Annual} {International} {Conference} of the {IEEE} {Engineering} in {Medicine} \& {Biology} {Society} ({EMBC})}
+      \field{booktitle}{2022 44th {{Annual International Conference}} of the {{IEEE Engineering}} in {{Medicine}} \& {{Biology Society}} ({{EMBC}})}
       \field{issn}{2694-0604}
       \field{month}{7}
-      \field{title}{A {Novel} {ECG} {Denoising} {Scheme} {Using} the {Ensemble} {Kalman} {Filter}}
+      \field{title}{A {{Novel ECG Denoising Scheme Using}} the {{Ensemble Kalman Filter}}}
       \field{urlday}{16}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{year}{2022}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{2005\bibrangedash 2008}
       \range{pages}{4}
@@ -479,7 +1552,7 @@
       \endverb
       \keyw{Adaptive filters,Correlation,Databases,Electrocardiography,Filtering,Filtering algorithms,Noise reduction}
     \endentry
-    \entry{cardoso_blind_1998}{article}{}{}
+    \entry{cardosoBlindSignalSeparation1998}{article}{}{}
       \name{author}{1}{}{%
         {{hash=5f51e101ec9061aa2536f23f79023b56}{%
            family={Cardoso},
@@ -495,8 +1568,8 @@
       \strng{authornamehash}{5f51e101ec9061aa2536f23f79023b56}
       \strng{authorfullhash}{5f51e101ec9061aa2536f23f79023b56}
       \strng{authorfullhashraw}{5f51e101ec9061aa2536f23f79023b56}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Blind signal separation (BSS) and independent component analysis (ICA) are emerging techniques of array processing and data analysis that aim to recover unobserved signals or "sources" from observed mixtures (typically, the output of an array of sensors), exploiting only the assumption of mutual independence between the signals. The weakness of the assumptions makes it a powerful approach, but it requires us to venture beyond familiar second order statistics, The objectives of this paper are to review some of the approaches that have been developed to address this problem, to illustrate how they stem from basic principles, and to show how they relate to each other.}
@@ -504,13 +1577,14 @@
       \field{journaltitle}{Proceedings of the IEEE}
       \field{month}{10}
       \field{number}{10}
-      \field{shorttitle}{Blind signal separation}
-      \field{title}{Blind signal separation: statistical principles}
+      \field{shorttitle}{Blind Signal Separation}
+      \field{title}{Blind Signal Separation: Statistical Principles}
       \field{urlday}{16}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{86}
       \field{year}{1998}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{2009\bibrangedash 2025}
       \range{pages}{17}
@@ -525,7 +1599,7 @@
       \endverb
       \keyw{Acoustic sensors,Adaptive arrays,Adaptive signal processing,Array signal processing,Blind source separation,Independent component analysis,Sensor arrays,Signal processing,Source separation,Statistics}
     \endentry
-    \entry{cardoso_blind_1993}{article}{}{}
+    \entry{cardosoBlindBeamformingNongaussian1993}{article}{}{}
       \name{author}{2}{}{%
         {{hash=10083db1fb3f7563cc2ad658a7f1a7d8}{%
            family={Cardoso},
@@ -538,9 +1612,8 @@
            given={A.},
            giveni={A\bibinitperiod}}}%
       }
-      \list{publisher}{2}{%
-        {The Institution of Engineering}%
-        {Technology}%
+      \list{publisher}{1}{%
+        {The Institution of Engineering and Technology}%
       }
       \strng{namehash}{0d2dcbd0d0a7f287d6d6f7011ce74550}
       \strng{fullhash}{0d2dcbd0d0a7f287d6d6f7011ce74550}
@@ -550,20 +1623,21 @@
       \strng{authornamehash}{0d2dcbd0d0a7f287d6d6f7011ce74550}
       \strng{authorfullhash}{0d2dcbd0d0a7f287d6d6f7011ce74550}
       \strng{authorfullhashraw}{0d2dcbd0d0a7f287d6d6f7011ce74550}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The paper considers an application of blind identification to beamforming. The key point is to use estimates of directional vectors rather than resort to their hypothesised value. By using estimates of the directional vectors obtained via blind identification, i.e. without knowing the array manifold, beamforming is made robust with respect to array deformations, distortion of the wave front, pointing errors etc., so that neither array calibration nor physical modelling is necessary. Rather suprisingly, ‘blind beamformers’ may outperform ‘informed beamformers’ in a plausible range of parameters, even when the array is perfectly known to the informed beamformer. The key assumption on which blind identification relies is the statistical independence of the sources, which is exploited using fourth-order cumulants. A computationally efficient technique is presented for the blind estimation of directional vectors, based on joint diagonalisation of fourth-order cumulant matrices; its implementation is described, and its performance is investigated by numerical experiments.}
       \field{journaltitle}{IEE Proceedings F (Radar and Signal Processing)}
       \field{month}{12}
       \field{number}{6}
-      \field{title}{Blind beamforming for non-gaussian signals}
+      \field{title}{Blind Beamforming for Non-Gaussian Signals}
       \field{urlday}{16}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{140}
       \field{year}{1993}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{362\bibrangedash 370}
       \range{pages}{9}
@@ -577,7 +1651,7 @@
       \verb https://digital-library.theiet.org/doi/abs/10.1049/ip-f-2.1993.0054
       \endverb
     \endentry
-    \entry{hyvarinen_independent_2000}{article}{}{}
+    \entry{hyvarinenIndependentComponentAnalysis2000}{article}{}{}
       \name{author}{2}{}{%
         {{hash=180707fa9008b43831465424c3a94be5}{%
            family={Hyvärinen},
@@ -598,8 +1672,8 @@
       \strng{authornamehash}{1a56ef55cb5e484636b792a5878c3979}
       \strng{authorfullhash}{1a56ef55cb5e484636b792a5878c3979}
       \strng{authorfullhashraw}{1a56ef55cb5e484636b792a5878c3979}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{A fundamental problem in neural network research, as well as in many other disciplines, is finding a suitable representation of multivariate data, i.e. random vectors. For reasons of computational and conceptual simplicity, the representation is often sought as a linear transformation of the original data. In other words, each component of the representation is a linear combination of the original variables. Well-known linear transformation methods include principal component analysis, factor analysis, and projection pursuit. Independent component analysis (ICA) is a recently developed method in which the goal is to find a linear representation of non-Gaussian data so that the components are statistically independent, or as independent as possible. Such a representation seems to capture the essential structure of the data in many applications, including feature extraction and signal separation. In this paper, we present the basic theory and applications of ICA, and our recent work on the subject.}
@@ -607,13 +1681,14 @@
       \field{journaltitle}{Neural Networks}
       \field{month}{6}
       \field{number}{4}
-      \field{shorttitle}{Independent component analysis}
-      \field{title}{Independent component analysis: algorithms and applications}
+      \field{shorttitle}{Independent Component Analysis}
+      \field{title}{Independent Component Analysis: Algorithms and Applications}
       \field{urlday}{16}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{13}
       \field{year}{2000}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{411\bibrangedash 430}
       \range{pages}{20}
@@ -628,57 +1703,7 @@
       \endverb
       \keyw{Blind signal separation,Factor analysis,Independent component analysis,Projection pursuit,Representation,Source separation}
     \endentry
-    \entry{zarzoso_robust_2010}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=68a402d734ab80fdce6b01101e71f7f9}{%
-           family={Zarzoso},
-           familyi={Z\bibinitperiod},
-           given={Vicente},
-           giveni={V\bibinitperiod}}}%
-        {{hash=73bf39ece81b49202cadbf8c4752dec9}{%
-           family={Comon},
-           familyi={C\bibinitperiod},
-           given={Pierre},
-           giveni={P\bibinitperiod}}}%
-      }
-      \strng{namehash}{4d9df11944d0c0666579c53e6fd84080}
-      \strng{fullhash}{4d9df11944d0c0666579c53e6fd84080}
-      \strng{fullhashraw}{4d9df11944d0c0666579c53e6fd84080}
-      \strng{bibnamehash}{4d9df11944d0c0666579c53e6fd84080}
-      \strng{authorbibnamehash}{4d9df11944d0c0666579c53e6fd84080}
-      \strng{authornamehash}{4d9df11944d0c0666579c53e6fd84080}
-      \strng{authorfullhash}{4d9df11944d0c0666579c53e6fd84080}
-      \strng{authorfullhashraw}{4d9df11944d0c0666579c53e6fd84080}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Independent component analysis (ICA) aims at decomposing an observed random vector into statistically independent variables. Deflation-based implementations, such as the popular one-unit FastICA algorithm and its variants, extract the independent components one after another. A novel method for deflationary ICA, referred to as RobustICA, is put forward in this paper. This simple technique consists of performing exact line search optimization of the kurtosis contrast function. The step size leading to the global maximum of the contrast along the search direction is found among the roots of a fourth-degree polynomial. This polynomial rooting can be performed algebraically, and thus at low cost, at each iteration. Among other practical benefits, RobustICA can avoid prewhitening and deals with real- and complex-valued mixtures of possibly noncircular sources alike. The absence of prewhitening improves asymptotic performance. The algorithm is robust to local extrema and shows a very high convergence speed in terms of the computational cost required to reach a given source extraction quality, particularly for short data records. These features are demonstrated by a comparative numerical analysis on synthetic data. RobustICA's capabilities in processing real-world data involving noncircular complex strongly super-Gaussian sources are illustrated by the biomedical problem of atrial activity (AA) extraction in atrial fibrillation (AF) electrocardiograms (ECGs), where it outperforms an alternative ICA-based technique.}
-      \field{issn}{1941-0093}
-      \field{journaltitle}{IEEE Transactions on Neural Networks}
-      \field{month}{2}
-      \field{number}{2}
-      \field{title}{Robust {Independent} {Component} {Analysis} by {Iterative} {Maximization} of the {Kurtosis} {Contrast} {With} {Algebraic} {Optimal} {Step} {Size}}
-      \field{urlday}{16}
-      \field{urlmonth}{2}
-      \field{urlyear}{2026}
-      \field{volume}{21}
-      \field{year}{2010}
-      \field{urldateera}{ce}
-      \field{pages}{248\bibrangedash 261}
-      \range{pages}{14}
-      \verb{doi}
-      \verb 10.1109/TNN.2009.2035920
-      \endverb
-      \verb{urlraw}
-      \verb https://ieeexplore.ieee.org/abstract/document/5356190
-      \endverb
-      \verb{url}
-      \verb https://ieeexplore.ieee.org/abstract/document/5356190
-      \endverb
-      \keyw{Atrial fibrillation,Atrial fibrillation (AF),Computational efficiency,Convergence,Costs,Data mining,Independent component analysis,Iterative algorithms,Numerical analysis,Polynomials,Robustness,blind source separation (BSS),independent component analysis (ICA),iterative optimization,kurtosis,optimal step size,performance analysis}
-    \endentry
-    \entry{martens_robust_2007}{article}{}{}
+    \entry{martensRobustFetalECG2007}{article}{}{}
       \name{author}{4}{}{%
         {{hash=3ccb8776ec3a73c7e5185bcdde0ac329}{%
            family={Martens},
@@ -701,9 +1726,6 @@
            given={Rob\bibnamedelima J},
            giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
       \strng{namehash}{1ea20a2a32895a3e7b9eee5aaa86a4ff}
       \strng{fullhash}{db4f1631d4fcf44266213c99593cac54}
       \strng{fullhashraw}{db4f1631d4fcf44266213c99593cac54}
@@ -712,21 +1734,23 @@
       \strng{authornamehash}{1ea20a2a32895a3e7b9eee5aaa86a4ff}
       \strng{authorfullhash}{db4f1631d4fcf44266213c99593cac54}
       \strng{authorfullhashraw}{db4f1631d4fcf44266213c99593cac54}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper, we propose a new method for FECG detection in abdominal recordings. The method consists of a sequential analysis approach, in which the a priori information about the interference signals is used for the detection of the FECG. Our method is evaluated on a set of 20 abdominal recordings from pregnant women with different gestational ages. Its performance in terms of fetal heart rate (FHR) detection success is compared with that of independent component analysis (ICA). The results show that our sequential estimation method outperforms ICA with a FHR detection rate of 85\% versus 60\% of ICA. The superior performance of our method is especially evident in recordings with a low signal-to-noise ratio (SNR). This indicates that our method is more robust than ICA for FECG detection.}
       \field{issn}{0967-3334}
       \field{journaltitle}{Physiological Measurement}
+      \field{langid}{english}
       \field{month}{3}
       \field{number}{4}
-      \field{title}{A robust fetal {ECG} detection method for abdominal recordings}
+      \field{title}{A Robust Fetal {{ECG}} Detection Method for Abdominal Recordings}
       \field{urlday}{16}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{28}
       \field{year}{2007}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{373}
       \range{pages}{1}
@@ -740,57 +1764,7 @@
       \verb https://doi.org/10.1088/0967-3334/28/4/004
       \endverb
     \endentry
-    \entry{behar_non-invasive_2013}{inproceedings}{}{}
-      \name{author}{3}{}{%
-        {{hash=b200b53b12615f3cfbf1428bc37deb8b}{%
-           family={Behar},
-           familyi={B\bibinitperiod},
-           given={Joachim},
-           giveni={J\bibinitperiod}}}%
-        {{hash=ca66474b5e2a51218e84c06cca1609aa}{%
-           family={Oster},
-           familyi={O\bibinitperiod},
-           given={Julien},
-           giveni={J\bibinitperiod}}}%
-        {{hash=b927e667e291a47a7437a9a8d631ed0e}{%
-           family={Clifford},
-           familyi={C\bibinitperiod},
-           given={Gari\bibnamedelima D},
-           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \strng{namehash}{f357aa373c1bf74cd782985c4a66132a}
-      \strng{fullhash}{a4896f467eaeaf16b865d22cf3e8b69e}
-      \strng{fullhashraw}{a4896f467eaeaf16b865d22cf3e8b69e}
-      \strng{bibnamehash}{a4896f467eaeaf16b865d22cf3e8b69e}
-      \strng{authorbibnamehash}{a4896f467eaeaf16b865d22cf3e8b69e}
-      \strng{authornamehash}{f357aa373c1bf74cd782985c4a66132a}
-      \strng{authorfullhash}{a4896f467eaeaf16b865d22cf3e8b69e}
-      \strng{authorfullhashraw}{a4896f467eaeaf16b865d22cf3e8b69e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Introduction: Despite significant advances in adult clinical electrocardiography (ECG) signal processing techniques and the power of digital processors, the analysis of non-invasive foetal ECG (NI-FECG) is still in its infancy. The PhysioNet/Computing in Cardiology Challenge 2013 addresses some of these limitations by making publicly available a set of FECG data to the scientific community for evaluation of signal processing techniques. Methods: ECGs were first preprocessed by cascading a low pass and a high pass filter in order to remove higher frequency and baseline wander. A Notch filter to remove power interferences at 50Hz or 60Hz was applied if required. The signals were then normalised before applying various source separation techniques to cancel the maternal ECG. These techniques included: template subtraction, principal/independent component analysis, extended Kalman filter and a combination of a subset of these methods (FUSE method). FQRS detection was performed on all residuals using a Pan and Tompkins QRS detector and the channel with the smoothest FHR time series was selected. Results: The FUSE algorithm performed better than all the individual methods on the training set data. On the validation set, best Challenge scores obtained were E4=29.6. E5=4.67 for events 4-5 respectively using the FUSE method.}
-      \field{booktitle}{Computing in {Cardiology} 2013}
-      \field{issn}{2325-8853}
-      \field{month}{9}
-      \field{title}{Non-invasive {FECG} extraction from a set of abdominal sensors}
-      \field{urlday}{16}
-      \field{urlmonth}{2}
-      \field{urlyear}{2026}
-      \field{year}{2013}
-      \field{urldateera}{ce}
-      \field{pages}{297\bibrangedash 300}
-      \range{pages}{4}
-      \verb{urlraw}
-      \verb https://ieeexplore.ieee.org/abstract/document/6712470
-      \endverb
-      \verb{url}
-      \verb https://ieeexplore.ieee.org/abstract/document/6712470
-      \endverb
-      \keyw{Electrocardiography,Fetal heart rate,Fuses,Source separation,Time series analysis}
-    \endentry
-    \entry{lee_fetal_2018}{article}{}{}
+    \entry{leeFetalQRSDetection2018}{article}{}{}
       \name{author}{4}{}{%
         {{hash=7b34fdbd72fdecd596f0c583dd483a0f}{%
            family={{Lee}},
@@ -813,16 +1787,17 @@
       \strng{authornamehash}{01d0827e15d4e6b1f81ec4fe644c660e}
       \strng{authorfullhash}{a5007c1881deab89cfc339fe66dc4dd5}
       \strng{authorfullhashraw}{a5007c1881deab89cfc339fe66dc4dd5}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{2018 4th International Conference on Frontiers of Signal Processing (ICFSP)}
-      \field{title}{Fetal {QRS} {Detection} {Based} on {Convolutional} {Neural} {Networks} in {Noninvasive} {Fetal} {Electrocardiogram}}
+      \field{title}{Fetal {{QRS Detection Based}} on {{Convolutional Neural Networks}} in {{Noninvasive Fetal Electrocardiogram}}}
       \field{urlday}{28}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{year}{2018}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \verb{doi}
       \verb 10.1109/icfsp.2018.8552074
@@ -834,7 +1809,7 @@
       \verb https://sci-hub.vn/10.1109/icfsp.2018.8552074
       \endverb
     \endentry
-    \entry{cao_morphology_2022}{article}{}{}
+    \entry{caoMorphologyExtractionFetal2022}{article}{}{}
       \name{author}{5}{}{%
         {{hash=8fed52f7a18aa7f4e740269e9ecade9e}{%
            family={Cao},
@@ -862,9 +1837,6 @@
            given={Chaomin},
            giveni={C\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
       \list{publisher}{1}{%
         {Public Library of Science}%
       }
@@ -876,21 +1848,23 @@
       \strng{authornamehash}{5c7e84cf425e168df0a35b0c308dcc42}
       \strng{authorfullhash}{63c3b4a3e80ab2c7a06b1141668f649c}
       \strng{authorfullhashraw}{63c3b4a3e80ab2c7a06b1141668f649c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Objectives Noninvasive fetal electrocardiography (FECG) offers many advantages over alternative fetal monitoring techniques in evaluating fetal health conditions. However, it is difficult to extract a clean FECG signal with morphological features from an abdominal ECG recorded at the maternal abdomen; the signal is usually contaminated by the maternal ECG and various noises. The aim of the work is to extract an FECG signal that preserves the morphological features from the mother’s abdominal ECG recording, which allows for accurately estimating the fetal heart rate (FHR) and analyzing the waveforms of the fetal ECG. Methods We propose a novel nonlinear adaptive noise cancelling framework (ANC) based on a temporal convolutional neural network (CNN) to effectively extract fetal ECG signals from mothers’ abdominal ECG recordings. The proposed framework consists of a two-stage network, using the ANC architecture; one network is for the maternal ECG component elimination and the other is for the residual noise component removal of the extracted fetal ECG signal. Then, JADE (one of the blind source separation algorithms) is applied as a postprocessing step to produce a clean fetal ECG signal. Results Synthetic ECG data (FECGSYNDB) and clinical ECG data (NIFECGDB, PCDB) are used to evaluate the extraction performance of the proposed framework. The statistical and visual results demonstrate that our method outperforms the other state-of-the-art algorithms in the literature. Specifically, on the FECGSYNDB, the mean squared error (MSE), signal-to-noise ratio (SNR), correlation coefficient (R) and F1-score of our method are 0.16, 7.94, 0.95 and 98.89\%, respectively. The F1-score on the NIFECGDB reaches 98.62\%. The value of the F1-score on the PCDB is 98.62\%. Conclusion As opposed to the existing algorithms being restricted to fetal QRS complex detection, the proposed framework can preserve the morphological features of the extracted fetal ECG signal well, which could support medical diagnoses based on the morphology of the fetal ECG signal.}
       \field{issn}{1932-6203}
       \field{journaltitle}{PLOS ONE}
+      \field{langid}{english}
       \field{month}{12}
       \field{number}{12}
-      \field{title}{Morphology extraction of fetal {ECG} using temporal {CNN}-based nonlinear adaptive noise cancelling}
+      \field{title}{Morphology Extraction of Fetal {{ECG}} Using Temporal {{CNN-based}} Nonlinear Adaptive Noise Cancelling}
       \field{urlday}{28}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{17}
       \field{year}{2022}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{e0278917}
       \range{pages}{-1}
@@ -905,7 +1879,7 @@
       \endverb
       \keyw{Antenatal care,Convolution,Electrocardiography,Heart rate,Network analysis,Signal filtering,Signaling networks,Statistical noise}
     \endentry
-    \entry{zhong_deep_2018}{article}{}{}
+    \entry{zhongDeepLearningApproach2018}{article}{}{}
       \name{author}{4}{}{%
         {{hash=57ba13ea1efe60c5683169b75f2eadca}{%
            family={Zhong},
@@ -936,21 +1910,22 @@
       \strng{authornamehash}{b5ebcac993e2ecefa3d95f4e62acdf5e}
       \strng{authorfullhash}{374d8455bc7579c8b866b269f099f22f}
       \strng{authorfullhashraw}{374d8455bc7579c8b866b269f099f22f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Objective: Non-Invasive foetal electrocardiography (NI-FECG) has the potential to provide more additional clinical information for detecting and diagnosing fetal diseases. We propose and demonstrate a deep learning approach for fetal QRS complex detection from raw NI-FECG signals by using Convolutional Neural Network (CNN) model. The main objective is to investigate whether reliable fetal QRS complex detection performance can still be obtained from features of single-channel NI-FECG signals, without canceling maternal ECG (MECG) signals. Approach: A deep learning method is proposed for recognizing fetal QRS complexes. Firstly, We collecte the data from set-a of PhysioNet/Computing in Cardiology Challenge Database (PCDB). The sample entropy (SampEn) method is used for signal quality assessment. Part of the bad quality signals are excluded in the further analysis. Secondly, in the proposed method, the features of raw NI-FECG signals are normalized before they are fed to a CNN classifier to perform fetal QRS complex detection. We use precision, recall, F-measure and accuracy as the evaluation metrics to assess the performance of fetal QRS complex detection. Main results: The proposed deep learning method can achieve relatively high precision (75.33\%), recall (80.54\%), and F-measure scores (77.85\%) compared with three other well-known pattern classification methods namely KNN, Naive Bayes (NB) and the SVM. Significance: The proposed deep learning method can attain reliable fetal QRS complex detection performance from the raw NI-FECG signals without canceling MECG signals. In addition, the influence of different activation functions and signal quality assessment on classification performance are evaluated, and results show that Relu outperforms the Sigmoid and Tanh on this particular task, and better classification performance is obtained with the signal quality assessment step in this study.}
       \field{journaltitle}{Physiological Measurement}
       \field{month}{2}
-      \field{title}{A deep learning approach for fetal {QRS} complex detection}
+      \field{title}{A Deep Learning Approach for Fetal {{QRS}} Complex Detection}
       \field{volume}{39}
       \field{year}{2018}
+      \field{dateera}{ce}
       \verb{doi}
       \verb 10.1088/1361-6579/aab297
       \endverb
     \endentry
-    \entry{vo_efficient_2020}{article}{}{}
+    \entry{voEfficientRobustDeep2020}{article}{}{}
       \name{author}{5}{}{%
         {{hash=5a028a4a90974cacd3c77664bbd73533}{%
            family={Vo},
@@ -986,23 +1961,24 @@
       \strng{authornamehash}{61cc982cec0573596a9c52ae531e20c1}
       \strng{authorfullhash}{cdaf4051c4acc9f715b5e8c05aa03a79}
       \strng{authorfullhashraw}{cdaf4051c4acc9f715b5e8c05aa03a79}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The invasive method of fetal electrocardiogram (fECG) monitoring is widely used with electrodes directly attached to the fetal scalp. There are potential risks such as infection and, thus, it is usually carried out during labor in rare cases. Recent advances in electronics and technologies have enabled fECG monitoring from the early stages of pregnancy through fECG extraction from the combined fetal/maternal ECG (f/mECG) signal recorded non-invasively in the abdominal area of the mother. However, cumbersome algorithms that require the reference maternal ECG as well as heavy feature crafting makes out-of-clinics fECG monitoring in daily life not yet feasible. To address these challenges, we proposed a pure end-to-end deep learning model to detect fetal QRS complexes (i.e., the main spikes observed on a fetal ECG waveform). Additionally, the model has the residual network (ResNet) architecture that adopts the novel 1-D octave convolution (OctConv) for learning multiple temporal frequency features, which in turn reduce memory and computational cost. Importantly, the model is capable of highlighting the contribution of regions that are more prominent for the detection. To evaluate our approach, data from the PhysioNet 2013 Challenge with labeled QRS complex annotations were used in the original form, and the data were then modified with Gaussian and motion noise, mimicking real-world scenarios. The model can achieve a F1 score of 91.1\% while being able to save more than 50\% computing cost with less than 2\% performance degradation, demonstrating the effectiveness of our method.}
       \field{journaltitle}{Sensors}
       \field{month}{7}
-      \field{title}{An {Efficient} and {Robust} {Deep} {Learning} {Method} with 1-{D} {Octave} {Convolution} to {Extract} {Fetal} {Electrocardiogram}}
+      \field{title}{An {{Efficient}} and {{Robust Deep Learning Method}} with 1-{{D Octave Convolution}} to {{Extract Fetal Electrocardiogram}}}
       \field{volume}{20}
       \field{year}{2020}
+      \field{dateera}{ce}
       \field{pages}{3757}
       \range{pages}{1}
       \verb{doi}
       \verb 10.3390/s20133757
       \endverb
     \endentry
-    \entry{hochreiter_long_1997}{article}{}{}
+    \entry{hochreiterLongShorttermMemory1997}{article}{}{}
       \name{author}{2}{}{%
         {{hash=67eed9a763828f8510ead534591a2d63}{%
            family={Hochreiter},
@@ -1015,9 +1991,6 @@
            given={J.},
            giveni={J\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {eng}%
-      }
       \strng{namehash}{c955bbc46524c46b7bd1441b444cef54}
       \strng{fullhash}{c955bbc46524c46b7bd1441b444cef54}
       \strng{fullhashraw}{c955bbc46524c46b7bd1441b444cef54}
@@ -1026,18 +1999,20 @@
       \strng{authornamehash}{c955bbc46524c46b7bd1441b444cef54}
       \strng{authorfullhash}{c955bbc46524c46b7bd1441b444cef54}
       \strng{authorfullhashraw}{c955bbc46524c46b7bd1441b444cef54}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error backflow. We briefly review Hochreiter's (1991) analysis of this problem, then address it by introducing a novel, efficient, gradient-based method called long short-term memory (LSTM). Truncating the gradient where this does not do harm, LSTM can learn to bridge minimal time lags in excess of 1000 discrete-time steps by enforcing constant error flow through constant error carousels within special units. Multiplicative gate units learn to open and close access to the constant error flow. LSTM is local in space and time; its computational complexity per time step and weight is O(1). Our experiments with artificial data involve local, distributed, real-valued, and noisy pattern representations. In comparisons with real-time recurrent learning, back propagation through time, recurrent cascade correlation, Elman nets, and neural sequence chunking, LSTM leads to many more successful runs, and learns much faster. LSTM also solves complex, artificial long-time-lag tasks that have never been solved by previous recurrent network algorithms.}
       \field{issn}{0899-7667}
       \field{journaltitle}{Neural Computation}
+      \field{langid}{english}
       \field{month}{11}
       \field{number}{8}
-      \field{title}{Long short-term memory}
+      \field{title}{Long Short-Term Memory}
       \field{volume}{9}
       \field{year}{1997}
+      \field{dateera}{ce}
       \field{pages}{1735\bibrangedash 1780}
       \range{pages}{46}
       \verb{doi}
@@ -1045,7 +2020,7 @@
       \endverb
       \keyw{Algorithms,Computer,Learning,Models,Nerve Net,Neural Networks,Neurological,Psychological,Time Factors}
     \endentry
-    \entry{darmawahyuni_accurate_2023}{article}{}{}
+    \entry{darmawahyuniAccurateFetalQRSComplex2023}{article}{}{}
       \name{author}{8}{}{%
         {{hash=78a3303c9b5650c57b002d9733e416b6}{%
            family={Darmawahyuni},
@@ -1088,9 +2063,6 @@
            given={Anggun},
            giveni={A\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
       \strng{namehash}{f7431e0ba33c4eb9e8ef645d384bfff2}
       \strng{fullhash}{328837ba28d9553e4c2b45df9dde2c2d}
       \strng{fullhashraw}{328837ba28d9553e4c2b45df9dde2c2d}
@@ -1100,21 +2072,23 @@
       \strng{authorfullhash}{328837ba28d9553e4c2b45df9dde2c2d}
       \strng{authorfullhashraw}{328837ba28d9553e4c2b45df9dde2c2d}
       \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Fetal heart monitoring during pregnancy plays a critical role in diagnosing congenital heart disease (CHD). A noninvasive fetal electrocardiogram (fECG) provides additional clinical information for fetal heart monitoring. To date, the analysis of noninvasive fECG is challenging due to the cancellation of maternal QRS-complexes, despite significant advances in electrocardiography. Fetal QRS-complex is highly considered to measure fetal heart rate to detect some fetal abnormalities such as arrhythmia. In this study, we proposed a deep learning (DL) framework that stacked a convolutional layer and bidirectional long short-term memory for fetal QRS-complexes classification. The fECG signals are first preprocessed using discrete wavelet transform (DWT) to remove the noise or inferences. The following step beats and QRS-complex segmentation. The last step is fetal QRS-complex classification based on DL. In the experiment of Physionet/Computing in Cardiology Challenge 2013, this study achieved 100\% accuracy, sensitivity, specificity, precision, and F1-score. A stacked DL model demonstrates an effective tool for fetal QRS-complex classification and contributes to clinical applications for long-term maternal and fetal monitoring.}
       \field{issn}{1875-6883}
       \field{journaltitle}{International Journal of Computational Intelligence Systems}
+      \field{langid}{english}
       \field{month}{9}
       \field{number}{1}
-      \field{title}{Accurate {Fetal} {QRS}-{Complex} {Classification} from {Abdominal} {Electrocardiogram} {Using} {Deep} {Learning}}
+      \field{title}{Accurate {{Fetal QRS-Complex Classification}} from {{Abdominal Electrocardiogram Using Deep Learning}}}
       \field{urlday}{28}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{16}
       \field{year}{2023}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{158}
       \range{pages}{1}
@@ -1129,7 +2103,7 @@
       \endverb
       \keyw{Deep learning,Fetal electrocardiogram,QRS-complex}
     \endentry
-    \entry{darmawahyuni_deep_2023}{inproceedings}{}{}
+    \entry{darmawahyuniDeepLearningFetal2023}{inproceedings}{}{}
       \name{author}{8}{}{%
         {{hash=78a3303c9b5650c57b002d9733e416b6}{%
            family={Darmawahyuni},
@@ -1181,18 +2155,19 @@
       \strng{authorfullhash}{9eebd91d736e1c6be7c706c5094ecde7}
       \strng{authorfullhashraw}{9eebd91d736e1c6be7c706c5094ecde7}
       \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Fetal QRS-complex generated from an abdominal electrocardiogram (ECG) is an effective noninvasive tool for accurately measuring the fetus well-being during pregnancy. Classification of fetal QRS is significant to avoid fetal heart abnormalities, such as asphyxia, bradycardia, and hypoxia. However, accurately classifying the fetal QRS-complex is hard because the characteristic fetal ECG (fECG) has small amount of signal energy and it has undesired signal components, including recording devices, movement artifacts, and fetal brain activity. The sophisticated fECG signal processing for fetal QRS-complex classification has been used in the literature. However, they mostly use human intervention for feature extraction, leading to time-consume and raising the measurement error. Hence, this study investigates deep learning (DL) that performs automated feature extraction tasks excellently. DL has excellence amount of data scales, which is its ability to automatically learn and improve from data without the need for explicit programming. A sequence-to-sequence learning task was generated using a hybrid four convolution layers as a part of convolutional neural networks and bidirectional long short-term memory (ConvBiLSTM). As the results, the performance is outstanding; the accuracy, sensitivity, specificity, precision, and F1-score were 100\%. The observed results show the proposed ConvBiLSTM model is worth evaluating their effectiveness for fetal QRS-complex classification.}
-      \field{booktitle}{2023 {International} {Conference} on {Data} {Science} and {Its} {Applications} ({ICoDSA})}
+      \field{booktitle}{2023 {{International Conference}} on {{Data Science}} and {{Its Applications}} ({{ICoDSA}})}
       \field{month}{8}
-      \field{title}{Deep {Learning} for {Fetal} {QRS}-complex {Classification} in {Noninvasive} {Fetal} {Electrocardiogram}}
+      \field{title}{Deep {{Learning}} for {{Fetal QRS-complex Classification}} in {{Noninvasive Fetal Electrocardiogram}}}
       \field{urlday}{28}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{year}{2023}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{215\bibrangedash 218}
       \range{pages}{4}
@@ -1205,9 +2180,9 @@
       \verb{url}
       \verb https://ieeexplore.ieee.org/document/10277016
       \endverb
-      \keyw{Convolution,Deep learning,Electrocardiography,Feature extraction,Programming,Sensitivity,Signal processing algorithms,convBiLSTM,deep learning,fetal electrocardiogram,qrs-complex}
+      \keyw{convBiLSTM,Convolution,deep learning,Deep learning,Electrocardiography,Feature extraction,fetal electrocardiogram,Programming,qrs-complex,Sensitivity,Signal processing algorithms}
     \endentry
-    \entry{ghonchi_common_2022}{inproceedings}{}{}
+    \entry{ghonchiCommonSpatialPattern2022}{inproceedings}{}{}
       \name{author}{3}{}{%
         {{hash=ae92730d1f1a09541ec5c4c30549f65a}{%
            family={Ghonchi},
@@ -1225,9 +2200,6 @@
            given={Vahid},
            giveni={V\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
       \list{location}{1}{%
         {Rennes, France}%
       }
@@ -1242,19 +2214,21 @@
       \strng{authornamehash}{f3ba4e3de37df404898f9eabb5ccfa43}
       \strng{authorfullhash}{35fa6caf7a14f88733b02145ae838c5f}
       \strng{authorfullhashraw}{35fa6caf7a14f88733b02145ae838c5f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{In this paper, the problem of monitoring the electrical pulse of the fetal heart using non-invasive electrocardiogram (ECG) signal is studied. To overcome challenges like the overlap between maternal and fetal heart components and noise in the mother’s abdomen signal, we propose a new single-channel signal processing technique to detect the fetal QRS (fQRS) events. We ﬁrst propose a modiﬁed sample entropy technique to ﬁlter out noisy and complex signal components. Then, common spatial pattern (CSP) technique is employed to ﬁnd a new sub-space with reduced overlap among maternal and fetal patterns. Then, a one-dimensional convolutional neural network is trained to detect the fQRS events from the abdominal ECG. The obtained results on several well-established datasets are promising and conﬁrm the effectiveness of the proposed approach.}
-      \field{booktitle}{2022 {IEEE} {Workshop} on {Signal} {Processing} {Systems} ({SiPS})}
+      \field{abstract}{In this paper, the problem of monitoring the electrical pulse of the fetal heart using non-invasive electrocardiogram (ECG) signal is studied. To overcome challenges like the overlap between maternal and fetal heart components and noise in the mother’s abdomen signal, we propose a new single-channel signal processing technique to detect the fetal QRS (fQRS) events. We first propose a modified sample entropy technique to filter out noisy and complex signal components. Then, common spatial pattern (CSP) technique is employed to find a new sub-space with reduced overlap among maternal and fetal patterns. Then, a one-dimensional convolutional neural network is trained to detect the fQRS events from the abdominal ECG. The obtained results on several well-established datasets are promising and confirm the effectiveness of the proposed approach.}
+      \field{booktitle}{2022 {{IEEE Workshop}} on {{Signal Processing Systems}} ({{SiPS}})}
       \field{isbn}{978-1-6654-8524-1}
+      \field{langid}{english}
       \field{month}{11}
-      \field{title}{Common {Spatial} {Pattern} with {Deep} {Learning} for {Fetal} {Heart} {Rate} {Monitoring}}
+      \field{title}{Common {{Spatial Pattern}} with {{Deep Learning}} for {{Fetal Heart Rate Monitoring}}}
       \field{urlday}{28}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{year}{2022}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{1\bibrangedash 6}
       \range{pages}{6}
@@ -1268,7 +2242,7 @@
       \verb https://ieeexplore.ieee.org/document/9919257/
       \endverb
     \endentry
-    \entry{goodfellow_generative_2014}{inproceedings}{}{}
+    \entry{goodfellowGenerativeAdversarialNets2014}{inproceedings}{}{}
       \name{author}{8}{}{%
         {{hash=d4f74ef4c79f3bb1e51e378184d8850e}{%
            family={Goodfellow},
@@ -1322,17 +2296,18 @@
       \strng{authornamehash}{8b5c7065f4df4f81627df9460343f166}
       \strng{authorfullhash}{5afe3eb3246d0b46f32cdc5ff3e9d6b8}
       \strng{authorfullhashraw}{5afe3eb3246d0b46f32cdc5ff3e9d6b8}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Advances in {Neural} {Information} {Processing} {Systems}}
-      \field{title}{Generative {Adversarial} {Nets}}
+      \field{booktitle}{Advances in {{Neural Information Processing Systems}}}
+      \field{title}{Generative {{Adversarial Nets}}}
       \field{urlday}{28}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{27}
       \field{year}{2014}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://papers.nips.cc/paper_files/paper/2014/hash/f033ed80deb0234979a61f95710dbe25-Abstract.html
@@ -1341,7 +2316,7 @@
       \verb https://papers.nips.cc/paper_files/paper/2014/hash/f033ed80deb0234979a61f95710dbe25-Abstract.html
       \endverb
     \endentry
-    \entry{zhu_unpaired_2017}{inproceedings}{}{}
+    \entry{zhuUnpairedImageToImageTranslation2017}{inproceedings}{}{}
       \name{author}{4}{}{%
         {{hash=9fbb4b31963f07f34a13b375b4997338}{%
            family={Zhu},
@@ -1372,15 +2347,16 @@
       \strng{authornamehash}{6bbc73cad9d67ffe67a198aaeed8ce61}
       \strng{authorfullhash}{69bc0b2da0c2e1bc9b8395c1d38556bb}
       \strng{authorfullhashraw}{69bc0b2da0c2e1bc9b8395c1d38556bb}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Unpaired {Image}-{To}-{Image} {Translation} {Using} {Cycle}-{Consistent} {Adversarial} {Networks}}
+      \field{title}{Unpaired {{Image-To-Image Translation Using Cycle-Consistent Adversarial Networks}}}
       \field{urlday}{28}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{year}{2017}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{2223\bibrangedash 2232}
       \range{pages}{10}
@@ -1391,7 +2367,7 @@
       \verb https://openaccess.thecvf.com/content_iccv_2017/html/Zhu_Unpaired_Image-To-Image_Translation_ICCV_2017_paper.html
       \endverb
     \endentry
-    \entry{mohebbian_fetal_2022}{article}{}{}
+    \entry{mohebbianFetalECGExtraction2022}{article}{}{}
       \name{author}{6}{}{%
         {{hash=2117da5ad6512d848edf9110880f2a59}{%
            family={Mohebbian},
@@ -1424,9 +2400,6 @@
            given={Kouhyar},
            giveni={K\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
       \strng{namehash}{97c4c9995686ef7cb7eb09fa82f218eb}
       \strng{fullhash}{44c18ee76a94db113d719352a2eb3b1c}
       \strng{fullhashraw}{44c18ee76a94db113d719352a2eb3b1c}
@@ -1435,21 +2408,23 @@
       \strng{authornamehash}{97c4c9995686ef7cb7eb09fa82f218eb}
       \strng{authorfullhash}{44c18ee76a94db113d719352a2eb3b1c}
       \strng{authorfullhashraw}{44c18ee76a94db113d719352a2eb3b1c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Non-invasive fetal electrocardiogram (FECG) is used to monitor the electrical pulse of the fetal heart. Decomposing the FECG signal from maternal ECG (MECG) is a blind source separation problem, which is hard due to the low amplitude of FECG, the overlap of R waves, and the potential exposure to noise from different sources. Traditional decomposition techniques, such as adaptive filters, require tuning, alignment, or preconfiguration, such as modeling the noise or desired signal. to map MECG to FECG efficiently. The high correlation between maternal and fetal ECG parts decreases the performance of convolution layers. Therefore, the masking region of interest using the attention mechanism is performed for improving signal generators' precision. The sine activation function is also used since it could retain more details when converting two signal domains. Three available datasets from the Physionet, including A\&D FECG, NI-FECG, and NI-FECG challenge, and one synthetic dataset using FECGSYN toolbox, are used to evaluate the performance. The proposed method could map abdominal MECG to scalp FECG with an average 98\% R-Square [CI 95\%: 97\%, 99\%] as the goodness of fit on A\&D FECG dataset. Moreover, it achieved 99.7 \% F1-score [CI 95\%: 97.8-99.9], 99.6\% F1-score [CI 95\%: 98.2\%, 99.9\%] and 99.3\% F1-score [CI 95\%: 95.3\%, 99.9\%] for fetal QRS detection on, A\&D FECG, NI-FECG and NI-FECG challenge datasets, respectively. These results are comparable to the state-of-the-art; thus, the proposed algorithm has the potential of being used for high-performance signal-tosignal conversion.}
       \field{issn}{2168-2194, 2168-2208}
       \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
+      \field{langid}{english}
       \field{month}{2}
       \field{number}{2}
-      \field{title}{Fetal {ECG} {Extraction} {From} {Maternal} {ECG} {Using} {Attention}-{Based} {CycleGAN}}
+      \field{title}{Fetal {{ECG Extraction From Maternal ECG Using Attention-Based CycleGAN}}}
       \field{urlday}{28}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{26}
       \field{year}{2022}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{515\bibrangedash 526}
       \range{pages}{12}
@@ -1463,7 +2438,7 @@
       \verb https://ieeexplore.ieee.org/document/9536378/
       \endverb
     \endentry
-    \entry{shokouhmand_fetal_2023}{article}{}{}
+    \entry{shokouhmandFetalElectrocardiogramExtraction2023}{article}{}{}
       \name{author}{2}{}{%
         {{hash=101744c7d3dd9c593b193311366f32f6}{%
            family={Shokouhmand},
@@ -1476,9 +2451,6 @@
            given={Negar},
            giveni={N\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {eng}%
-      }
       \strng{namehash}{57b42701b22f531152e3c46bac5537ad}
       \strng{fullhash}{57b42701b22f531152e3c46bac5537ad}
       \strng{fullhashraw}{57b42701b22f531152e3c46bac5537ad}
@@ -1487,18 +2459,20 @@
       \strng{authornamehash}{57b42701b22f531152e3c46bac5537ad}
       \strng{authorfullhash}{57b42701b22f531152e3c46bac5537ad}
       \strng{authorfullhashraw}{57b42701b22f531152e3c46bac5537ad}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{OBJECTIVE: The development of a method for non-invasive monitoring of fetal electrocardiogram (FECG) signals from single-channel abdominal recordings. METHODS: The dual-path source separation (DPSS) architecture is introduced for the simultaneous separation of fetal and maternal ECG signals from abdominal ECG recordings. DPSS initially denoises abdominal ECG (AECG) recordings using a generative dual-path long short-term memory (DP-LSTM) network. An inception module along with a series of DP-LSTM blocks is then employed to extract the masking maps associated with fetal and maternal components. Finally, these masking maps are weighted by the AECG recording to separate maternal and fetal ECG signals. The performance of this network is evaluated on 10 pregnancies from the fetal ECG synthetic database (FECGSYNDB), 22 cases of labor and pregnancy from the abdominal and direct fetal ECG database (ADFECGDB), and 69 pregnancies from set A of non-invasive FECG challenge (NIFECGC) datasets. RESULTS: F1-scores of 99.03\%, 97.7\%, and 95.3\% are reported for the detection of fetal QRS complexes in FECGSYNDB, ADFECGDB, and NIFECGC respectively. DPSS technique is also evaluated in terms of separability of fetal and maternal clusters. According to the clustering-based analyses, the average purity index of 0.9750, Jaccard index of 0.9705, and Davies-Bouldin index of 0.7429 demonstrate the high source separation capability of DPSS. CONCLUSION: The achieved performance suggests that DPSS enables accurate single-channel FECG extraction, and can replace state-of-the-art source separation techniques for this purpose. SIGNIFICANCE: This study signifies a fundamental step towards non-invasive fetal ECG monitoring systems, which favors at-home prenatal care.}
       \field{issn}{1558-2531}
       \field{journaltitle}{IEEE transactions on bio-medical engineering}
+      \field{langid}{english}
       \field{month}{1}
       \field{number}{1}
-      \field{title}{Fetal {Electrocardiogram} {Extraction} {Using} {Dual}-{Path} {Source} {Separation} of {Single}-{Channel} {Non}-{Invasive} {Abdominal} {Recordings}}
+      \field{title}{Fetal {{Electrocardiogram Extraction Using Dual-Path Source Separation}} of {{Single-Channel Non-Invasive Abdominal Recordings}}}
       \field{volume}{70}
       \field{year}{2023}
+      \field{dateera}{ce}
       \field{pages}{283\bibrangedash 295}
       \range{pages}{13}
       \verb{doi}
@@ -1506,88 +2480,7 @@
       \endverb
       \keyw{Abdomen,Algorithms,Computer-Assisted,Electrocardiography,Female,Fetal Monitoring,Fetus,Humans,Pregnancy,Signal Processing}
     \endentry
-    \entry{hatamizadeh_unetr_2021}{misc}{}{}
-      \name{author}{8}{}{%
-        {{hash=4a8b0d75ef5dd9aff244bd459eb56921}{%
-           family={Hatamizadeh},
-           familyi={H\bibinitperiod},
-           given={Ali},
-           giveni={A\bibinitperiod}}}%
-        {{hash=caeb0e5523b56ad22085585d7f65afa4}{%
-           family={Tang},
-           familyi={T\bibinitperiod},
-           given={Yucheng},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=d0968ce3719368d26817f02301e44c29}{%
-           family={Nath},
-           familyi={N\bibinitperiod},
-           given={Vishwesh},
-           giveni={V\bibinitperiod}}}%
-        {{hash=43bfecf0db835905ffe98dadaa0b057f}{%
-           family={Yang},
-           familyi={Y\bibinitperiod},
-           given={Dong},
-           giveni={D\bibinitperiod}}}%
-        {{hash=c4dd0f2ee007b795cefdfd28a46af79f}{%
-           family={Myronenko},
-           familyi={M\bibinitperiod},
-           given={Andriy},
-           giveni={A\bibinitperiod}}}%
-        {{hash=d074e703f5720bb6657ce078797d7f0d}{%
-           family={Landman},
-           familyi={L\bibinitperiod},
-           given={Bennett},
-           giveni={B\bibinitperiod}}}%
-        {{hash=930b2a18b29ddf8edf110e14b3428bfc}{%
-           family={Roth},
-           familyi={R\bibinitperiod},
-           given={Holger},
-           giveni={H\bibinitperiod}}}%
-        {{hash=40c221ac11c898cb10013b2468fc229b}{%
-           family={Xu},
-           familyi={X\bibinitperiod},
-           given={Daguang},
-           giveni={D\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {en}%
-      }
-      \list{publisher}{1}{%
-        {arXiv}%
-      }
-      \strng{namehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
-      \strng{fullhash}{9d62965442e88de4d80c68fbcb73bced}
-      \strng{fullhashraw}{9d62965442e88de4d80c68fbcb73bced}
-      \strng{bibnamehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
-      \strng{authorbibnamehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
-      \strng{authornamehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
-      \strng{authorfullhash}{9d62965442e88de4d80c68fbcb73bced}
-      \strng{authorfullhashraw}{9d62965442e88de4d80c68fbcb73bced}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{Fully Convolutional Neural Networks (FCNNs) with contracting and expanding paths have shown prominence for the majority of medical image segmentation applications since the past decade. In FCNNs, the encoder plays an integral role by learning both global and local features and contextual representations which can be utilized for semantic output prediction by the decoder. Despite their success, the locality of convolutional layers in FCNNs, limits the capability of learning long-range spatial dependencies. Inspired by the recent success of transformers for Natural Language Processing (NLP) in long-range sequence learning, we reformulate the task of volumetric (3D) medical image segmentation as a sequence-to-sequence prediction problem. We introduce a novel architecture, dubbed as UNEt TRansformers (UNETR), that utilizes a transformer as the encoder to learn sequence representations of the input volume and effectively capture the global multi-scale information, while also following the successful “U-shaped” network design for the encoder and decoder. The transformer encoder is directly connected to a decoder via skip connections at different resolutions to compute the ﬁnal semantic segmentation output. We have validated the performance of our method on the Multi Atlas Labeling Beyond The Cranial Vault (BTCV) dataset for multiorgan segmentation and the Medical Segmentation Decathlon (MSD) dataset for brain tumor and spleen segmentation tasks. Our benchmarks demonstrate new state-of-the-art performance on the BTCV leaderboard.}
-      \field{month}{10}
-      \field{shorttitle}{{UNETR}}
-      \field{title}{{UNETR}: {Transformers} for {3D} {Medical} {Image} {Segmentation}}
-      \field{urlday}{27}
-      \field{urlmonth}{2}
-      \field{urlyear}{2026}
-      \field{year}{2021}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.48550/arXiv.2103.10504
-      \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/2103.10504
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/2103.10504
-      \endverb
-      \keyw{Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Electrical Engineering and Systems Science - Image and Video Processing}
-    \endentry
-    \entry{lee_end--end_2022}{article}{}{}
+    \entry{leeEndtoEndDeepLearning2022}{article}{}{}
       \name{author}{2}{}{%
         {{hash=296ccb934db27aa0c28a0be5828a86f9}{%
            family={Lee},
@@ -1608,19 +2501,20 @@
       \strng{authornamehash}{3404d8d4b373cf2b30faff0dbb17deaa}
       \strng{authorfullhash}{3404d8d4b373cf2b30faff0dbb17deaa}
       \strng{authorfullhashraw}{3404d8d4b373cf2b30faff0dbb17deaa}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Fetal cardiac monitoring and assessment during pregnancy play a critical role in the early detection of the potential risk of fetal cardiac problems, thus allowing for timely preventive measures and healthy births. It is necessary to continuously monitor the fetal heart for this purpose. Methods of fetal cardiac monitoring by extracting maternal and fetal electrocardiograms (ECGs) from maternal abdominal ECGs have been extensively investigated. However, the extraction of a clear fetal ECG is a major challenge because fetal signals are typically dominated by maternal ECG signals and noise. Most existing methods for fetal ECG extraction involve several steps, such as extracting and removing the maternal ECG and then extracting the fetal ECG. To address the complexity of this process, we propose a novel method for effectively decomposing a single-channel maternal abdominal ECG into a maternal ECG and fetal ECG without using multiple steps by employing an end-to-end deep learning network architecture using W-net. Model training is performed using a simulation dataset. Then, a fetal ECG is extracted from a real maternal abdominal ECG. The performance of the proposed architecture is compared with that of other state-of-the-art deep learning models on the basis of the detection of QRS complexes. The proposed model shows higher precision and recall values and F1 scores. This demonstrates that the proposed model can effectively extract a fetal ECG from a single-channel maternal abdominal ECG. The model is expected to contribute to commercial applications for long-term maternal and fetal monitoring.}
       \field{issn}{2169-3536}
       \field{journaltitle}{IEEE Access}
-      \field{title}{End-to-{End} {Deep} {Learning} {Architecture} for {Separating} {Maternal} and {Fetal} {ECGs} {Using} {W}-{Net}}
+      \field{title}{End-to-{{End Deep Learning Architecture}} for {{Separating Maternal}} and {{Fetal ECGs Using W-Net}}}
       \field{urlday}{16}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{10}
       \field{year}{2022}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{39782\bibrangedash 39788}
       \range{pages}{7}
@@ -1633,121 +2527,9 @@
       \verb{url}
       \verb https://ieeexplore.ieee.org/abstract/document/9755920
       \endverb
-      \keyw{Data mining,Data models,Electrocardiography,Feature extraction,Fetal electrocardiogram,Lead,Monitoring,R-peak,Training,U-net,W-net,maternal electrocardiogram}
+      \keyw{Data mining,Data models,Electrocardiography,Feature extraction,Fetal electrocardiogram,Lead,maternal electrocardiogram,Monitoring,R-peak,Training,U-net,W-net}
     \endentry
-    \entry{ye_elevating_2024}{inproceedings}{}{}
-      \name{author}{2}{}{%
-        {{hash=802c4eb1745883b347d8250617fc640e}{%
-           family={Ye},
-           familyi={Y\bibinitperiod},
-           given={Lvzhou},
-           giveni={L\bibinitperiod}}}%
-        {{hash=593cddc5c4c6c06f101db9ec3eaf35f3}{%
-           family={Guo},
-           familyi={G\bibinitperiod},
-           given={Zhen},
-           giveni={Z\bibinitperiod}}}%
-      }
-      \strng{namehash}{91f598e6cf085081b4c92aa4689f26f0}
-      \strng{fullhash}{91f598e6cf085081b4c92aa4689f26f0}
-      \strng{fullhashraw}{91f598e6cf085081b4c92aa4689f26f0}
-      \strng{bibnamehash}{91f598e6cf085081b4c92aa4689f26f0}
-      \strng{authorbibnamehash}{91f598e6cf085081b4c92aa4689f26f0}
-      \strng{authornamehash}{91f598e6cf085081b4c92aa4689f26f0}
-      \strng{authorfullhash}{91f598e6cf085081b4c92aa4689f26f0}
-      \strng{authorfullhashraw}{91f598e6cf085081b4c92aa4689f26f0}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{In this paper, we propose an innovative image recognition model called KAN-VIT, which applies the Kolmogorov-Arnold Networks (KANs) architecture to the Vision Transformer (VIT), replacing the traditional multilayer perceptron (MLP) layers and the MLP head at the output. KANs are neural networks based on the Kolmogorov-Arnold representation theorem, which introduces learnable activation functions between nodes, parameterized by spline functions, thereby providing higher accuracy and interpretability. Based on this, the VIT model was improved by replacing the original MLP layers with KANs, and experiments were conducted on the CIFAR-10, Oxford Flowers, and MNIST datasets. The results show that the improved model has demonstrated superior performance on the test datasets. We also analyzed the interpretability of KANs, and the results show that the improved model not only has improved performance but also has advantages in the visualization and interpretability of the model.}
-      \field{booktitle}{2024 {IEEE} {Smart} {World} {Congress} ({SWC})}
-      \field{issn}{2993-396X}
-      \field{month}{12}
-      \field{shorttitle}{Elevating {Vision} {Transformer} {Performance}}
-      \field{title}{Elevating {Vision} {Transformer} {Performance}: {The} {KAN}-{VIT} {Model} for {Image} {Recognition}}
-      \field{urlday}{27}
-      \field{urlmonth}{2}
-      \field{urlyear}{2026}
-      \field{year}{2024}
-      \field{urldateera}{ce}
-      \field{pages}{2321\bibrangedash 2328}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1109/SWC62898.2024.00353
-      \endverb
-      \verb{urlraw}
-      \verb https://ieeexplore.ieee.org/document/10925129
-      \endverb
-      \verb{url}
-      \verb https://ieeexplore.ieee.org/document/10925129
-      \endverb
-      \keyw{Analytical models,Computer vision,Flowering plants,Head,Image recognition,KAN,MLP,Multilayer perceptrons,Neural networks,Spline Function,Splines (mathematics),Transformers,VisionTransformer,Visualization}
-    \endentry
-    \entry{andreotti_open-source_2016}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=dbf7d97872a14e030d8e7b808dd416ea}{%
-           family={Andreotti},
-           familyi={A\bibinitperiod},
-           given={Fernando},
-           giveni={F\bibinitperiod}}}%
-        {{hash=b200b53b12615f3cfbf1428bc37deb8b}{%
-           family={Behar},
-           familyi={B\bibinitperiod},
-           given={Joachim},
-           giveni={J\bibinitperiod}}}%
-        {{hash=5d3c139f97526054ffc04c8846300c3b}{%
-           family={Zaunseder},
-           familyi={Z\bibinitperiod},
-           given={Sebastian},
-           giveni={S\bibinitperiod}}}%
-        {{hash=ca66474b5e2a51218e84c06cca1609aa}{%
-           family={Oster},
-           familyi={O\bibinitperiod},
-           given={Julien},
-           giveni={J\bibinitperiod}}}%
-        {{hash=b927e667e291a47a7437a9a8d631ed0e}{%
-           family={Clifford},
-           familyi={C\bibinitperiod},
-           given={Gari\bibnamedelima D},
-           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \strng{namehash}{eff1fcc3135226e7b5ac4d12381004f3}
-      \strng{fullhash}{d3563884150829328bac2154f2ee740e}
-      \strng{fullhashraw}{d3563884150829328bac2154f2ee740e}
-      \strng{bibnamehash}{d3563884150829328bac2154f2ee740e}
-      \strng{authorbibnamehash}{d3563884150829328bac2154f2ee740e}
-      \strng{authornamehash}{eff1fcc3135226e7b5ac4d12381004f3}
-      \strng{authorfullhash}{d3563884150829328bac2154f2ee740e}
-      \strng{authorfullhashraw}{d3563884150829328bac2154f2ee740e}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{0967-3334, 1361-6579}
-      \field{journaltitle}{Physiological Measurement}
-      \field{month}{5}
-      \field{number}{5}
-      \field{title}{An open-source framework for stress-testing non-invasive foetal {ECG} extraction algorithms}
-      \field{urlday}{16}
-      \field{urlmonth}{2}
-      \field{urlyear}{2026}
-      \field{volume}{37}
-      \field{year}{2016}
-      \field{urldateera}{ce}
-      \field{pages}{627\bibrangedash 648}
-      \range{pages}{22}
-      \verb{doi}
-      \verb 10.1088/0967-3334/37/5/627
-      \endverb
-      \verb{urlraw}
-      \verb https://iopscience.iop.org/article/10.1088/0967-3334/37/5/627
-      \endverb
-      \verb{url}
-      \verb https://iopscience.iop.org/article/10.1088/0967-3334/37/5/627
-      \endverb
-    \endentry
-    \entry{pan_real-time_1985}{article}{}{}
+    \entry{panRealTimeQRSDetection1985}{article}{}{}
       \name{author}{2}{}{%
         {{hash=ccdc3e3d241b1ce26d7c7d2405695bca}{%
            family={Pan},
@@ -1768,8 +2550,8 @@
       \strng{authornamehash}{5e252c476d27bcdedcda3919fec475d6}
       \strng{authorfullhash}{5e252c476d27bcdedcda3919fec475d6}
       \strng{authorfullhashraw}{5e252c476d27bcdedcda3919fec475d6}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We have developed a real-time algorithm for detection of the QRS complexes of ECG signals. It reliably recognizes QRS complexes based upon digital analyses of slope, amplitude, and width. A special digital bandpass filter reduces false detections caused by the various types of interference present in ECG signals. This filtering permits use of low thresholds, thereby increasing detection sensitivity. The algorithm automatically adjusts thresholds and parameters periodically to adapt to such ECG changes as QRS morphology and heart rate. For the standard 24 h MIT/BIH arrhythmia database, this algorithm correctly detects 99.3 percent of the QRS complexes.}
@@ -1777,12 +2559,13 @@
       \field{journaltitle}{IEEE Transactions on Biomedical Engineering}
       \field{month}{3}
       \field{number}{3}
-      \field{title}{A {Real}-{Time} {QRS} {Detection} {Algorithm}}
+      \field{title}{A {{Real-Time QRS Detection Algorithm}}}
       \field{urlday}{16}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{BME-32}
       \field{year}{1985}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \field{pages}{230\bibrangedash 236}
       \range{pages}{7}
@@ -1796,61 +2579,6 @@
       \verb https://ieeexplore.ieee.org/document/4122029
       \endverb
       \keyw{Band pass filters,Computer displays,Databases,Detection algorithms,Detectors,Digital filters,Electrocardiography,Filtering,Interference,Noise reduction}
-    \endentry
-    \entry{almadani_one-dimensional_2023}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=7d372afcdfb4e49cc73b91f8888cad9b}{%
-           family={Almadani},
-           familyi={A\bibinitperiod},
-           given={Murad},
-           giveni={M\bibinitperiod}}}%
-        {{hash=1a0fa6906a4f7a2bcbfde3508eac14db}{%
-           family={Hadjileontiadis},
-           familyi={H\bibinitperiod},
-           given={Leontios},
-           giveni={L\bibinitperiod}}}%
-        {{hash=d2871cc9d63fd112c044434c1d9d4b04}{%
-           family={Khandoker},
-           familyi={K\bibinitperiod},
-           given={Ahsan},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{f68a93880c3e952a91b326948e155ed3}
-      \strng{fullhash}{44a6a2e9de6e78831ba8132acff06ace}
-      \strng{fullhashraw}{44a6a2e9de6e78831ba8132acff06ace}
-      \strng{bibnamehash}{44a6a2e9de6e78831ba8132acff06ace}
-      \strng{authorbibnamehash}{44a6a2e9de6e78831ba8132acff06ace}
-      \strng{authornamehash}{f68a93880c3e952a91b326948e155ed3}
-      \strng{authorfullhash}{44a6a2e9de6e78831ba8132acff06ace}
-      \strng{authorfullhashraw}{44a6a2e9de6e78831ba8132acff06ace}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Fetal cardiac monitoring is very helpful in the early detection of the potential risk of fetal cardiac abnormalities, which enables prompt preventative care and ensures safe births. As a result, it is crucial to regularly check on the embryonic heart. Methods of non-invasively fetal ECG extraction from maternal abdominal ECG signal are thoroughly discussed. Although fetal signals are generally obscured by maternal ECG signals and noise, extracting a clean fetal ECG is a significant difficulty. The majority of techniques for fetal ECG extraction include many extraction steps. We describe a unique method for splitting a single-channel maternal abdominal ECG into maternal and fetus ECG employing two parallel U-nets with transformer encoding, which we refer to as W-NEt TRansformers (W-NETR). Due to its enhanced capacity to simulate remote interactions and capture global context, the suggested pipeline utilizes the self-attention mechanism of the transformer. We tested the proposed pipeline on synthetic and real datasets and outperformed the current state-of-the-art deep learning models. The proposed model achieved the best results on both datasets for QRS detection precision, recall, and F1 scores. More specifically, it achieved F1 score of 99.88\% and 98.9\% on the real ADFECGDB and PCDB datasets, respectively. These encouraging results highlight the suggested W-NETR's effectiveness in precisely extracting the fetal ECG, which was achieved with high SSIM and PSNR values in the results. This provides the bed set for long-term maternal and fetal monitoring via portable devices as the proposed system performs real-time execution.}
-      \field{issn}{2168-2208}
-      \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
-      \field{month}{7}
-      \field{number}{7}
-      \field{title}{One-{Dimensional} {W}-{NETR} for {Non}-{Invasive} {Single} {Channel} {Fetal} {ECG} {Extraction}}
-      \field{urlday}{27}
-      \field{urlmonth}{2}
-      \field{urlyear}{2026}
-      \field{volume}{27}
-      \field{year}{2023}
-      \field{urldateera}{ce}
-      \field{pages}{3198\bibrangedash 3209}
-      \range{pages}{12}
-      \verb{doi}
-      \verb 10.1109/JBHI.2023.3266645
-      \endverb
-      \verb{urlraw}
-      \verb https://ieeexplore.ieee.org/document/10100866
-      \endverb
-      \verb{url}
-      \verb https://ieeexplore.ieee.org/document/10100866
-      \endverb
-      \keyw{Electrocardiography,Feature extraction,Fetal ECG,Fetal heart rate,Neural networks,PSNR,Pipelines,SSIM,Training,Transformers,W-NETR,deep learning,non-invasive ECG extraction,self-attention mechanism,transformers}
     \endentry
   \enddatalist
 \endrefsection

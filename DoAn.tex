@@ -5,7 +5,7 @@
 \usepackage[top=2cm, bottom=2cm, left=3.5cm, right=2.5cm]{geometry}
 
 \usepackage{graphicx} % Cho phép chèn hỉnh ảnh
-\usepackage{svg}
+% \usepackage{svg} % Đã comment vì gây lỗi gói transparent trên MiKTeX
 \usepackage{fancybox} % Tạo khung box
 \usepackage{indentfirst} % Thụt đầu dòng ở dòng đầu tiên trong đoạn
 \usepackage{amsthm} % Cho phép thêm các môi trường định nghĩa
@@ -52,6 +52,8 @@
 \usepackage{blindtext}
 
 % ===================================================
+ 
+
 
 \renewcommand{\bibname}{Danh_sach_tai_lieu_tham_khao}
 % Sort citations by order of appearance in the document (not by .bib order)
@@ -114,12 +116,12 @@
 [] % after
 \titlespacing{\subsection}{30pt}{\parskip}{0.5\parskip}
 
-\renewcommand\thesubsubsection{\alph{subsubsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
 \titleformat
 {\subsubsection} % command
 [hang] % shape
 {\bfseries} % format
-{\alph{subsubsection}, \ } % label
+{\thechapter.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}\ \ \ \ } % label
 {0pt} %sep
 {} % before
 [] % after
@@ -273,33 +275,15 @@ CHƯƠNG \thecontentslabel.\ }}
 
 \newpage
 %\pagestyle{fancy} % Áp dụng header và footer
-\chapter{CƠ SỞ VỀ ĐIỆN TIM THAI VÀ THEO DÕI THAI NHI}
-\label{chapter:FECGBackground}
-\subfile{Chuong/2_FECG_BG}
+\chapter{CƠ SỞ LÝ THUYẾT VÀ TỔNG QUAN NGHIÊN CỨU}
+\label{chapter:Background}
+\subfile{Chuong/2_CoSo_TongQuan}
 
 \newpage
 %\pagestyle{fancy} % Áp dụng header và footer
-\chapter{TỔNG QUAN CÁC PHƯƠNG PHÁP TÁCH fECG KHÔNG XÂM LẤN}
-\label{chapter:RelatedWorks}
-\subfile{Chuong/3_DL_Model}
-
-\newpage
-%\pagestyle{fancy} % Áp dụng header và footer
-\chapter{CƠ SỞ LÝ THUYẾT HỌC SÂU}
-\label{chapter:DLBackground}
-\subfile{Chuong/4_CoSoLyThuyet}
-
-\newpage
-%\pagestyle{fancy} % Áp dụng header và footer
-\chapter{MÔ HÌNH ĐỀ XUẤT KAN-WNETR}
-\label{chapter:ProposedModel}
-\subfile{Chuong/5_MoHinhDeXuat}
-
-\newpage
-%\pagestyle{fancy} % Áp dụng header và footer
-\chapter{DỮ LIỆU, TIỀN XỬ LÝ VÀ THIẾT LẬP THỰC NGHIỆM}
-\label{chapter:DataAndSetup}
-\subfile{Chuong/6_Dulieu_ThietLap}
+\chapter{PHƯƠNG PHÁP ĐỀ XUẤT VÀ THIẾT LẬP THỰC NGHIỆM}
+\label{chapter:Proposed}
+\subfile{Chuong/3_DeXuat_ThietLap}
 
 \newpage
 %\pagestyle{fancy} % Áp dụng header và footer

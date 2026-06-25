@@ -11,11 +11,11 @@
 
 % \subsection{Two U-NetR Structure}
 
-% \cite{hatamizadeh_unetr_2021}
+% \cite{hatamizadehUNETRTransformers3D2021}
 
-% \cite{lee_end--end_2022}
+% \cite{leeEndtoEndDeepLearning2022}
 
-% \cite{almadani_one-dimensional_2023}
+% \cite{almadaniOneDimensionalWNETRNonInvasive2023}
 
 % \subsection{KAN-ViT - Replacement for MLP in Vision Transformer}
 
@@ -39,7 +39,7 @@
 %   z_i'=\mathrm{MSA}(\mathrm{Norm}(z_{i-1}))+z_{i-1}, \qquad
 %   z_i=\mathrm{MLP}(\mathrm{Norm}(z_i'))+z_i'.
 % \end{equation}
-% \cite{almadani_one-dimensional_2023}
+% \cite{almadaniOneDimensionalWNETRNonInvasive2023}
 
 % Khác với MLP (học ma trận trọng số tuyến tính và dùng hàm kích hoạt cố định), KAN đặt \textit{hàm kích hoạt có thể học} trên các cạnh (edges) của mạng, và các hàm này thường được tham số hoá bằng spline (ví dụ B-spline). \cite{kanvit}
 % Một dạng cài đặt điển hình là \textit{residual activation}:
@@ -153,7 +153,7 @@ Encoder block chuẩn:
 trong đó MSA là multi-head self-attention, LN là layer norm.
 
 \paragraph{KAN-ViT: giữ MSA, thay MLP bằng KAN.}
-\cite{ye_elevating_2024}
+\cite{yeElevatingVisionTransformer2024}
 KAN-ViT giữ nguyên cơ chế attention và residual, nhưng thay FFN:
 \begin{equation}
   z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},
@@ -187,12 +187,12 @@ Dù KAN-ViT được đề xuất cho ảnh 2D, bản chất ``Transformer encod
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{Hinhve/image_44.png}
-  \caption{Cấu trúc model UNETR \cite{hatamizadeh_unetr_2021}.}
+  \caption{Cấu trúc model UNETR \cite{hatamizadehUNETRTransformers3D2021}.}
   \label{fig:example_image}
   
 \end{figure}
 
-UNETR thay encoder CNN của U-Net bằng Transformer encoder để lấy ngữ cảnh toàn cục; decoder vẫn dùng CNN (1D) để phục hồi chi tiết cục bộ. \cite{hatamizadeh_unetr_2021}
+UNETR thay encoder CNN của U-Net bằng Transformer encoder để lấy ngữ cảnh toàn cục; decoder vẫn dùng CNN (1D) để phục hồi chi tiết cục bộ. \cite{hatamizadehUNETRTransformers3D2021}
 Với bài toán tách fECG từ maECG (single-channel), input $x\in\mathbb{R}^{992\times 1\times C}$ được patchify không chồng lấp kích thước $N=16$,
 chiếu tuyến tính lên embedding $K$, cộng positional embedding:
 \begin{equation}
@@ -202,7 +202,7 @@ Transformer có $L$ lớp; các tầng $i\in\{3,6,9,12\}$ được lấy làm sk
 
 \paragraph{W-NETR: ghép 2 UNETR thành cấu trúc chữ W.}
 
-W-NETR dùng hai UNETR 1D chạy song song \cite{lee_end--end_2022}:
+W-NETR dùng hai UNETR 1D chạy song song \cite{leeEndtoEndDeepLearning2022}:
 \begin{itemize}
   \item Nhánh phải: tái tạo/chiết xuất \textbf{fECG}.
   \item Nhánh trái: tái tạo \textbf{mECG}.

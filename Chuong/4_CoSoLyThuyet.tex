@@ -81,7 +81,7 @@ còn nhánh feed-forward (MLP) tạo phi tuyến theo từng token.
 \end{itemize}
 
 \paragraph{UNETR: U-Net + Transformer encoder.}
-UNETR thay encoder CNN của U-Net bằng Transformer encoder để lấy ngữ cảnh toàn cục; decoder vẫn dùng CNN (1D) để phục hồi chi tiết cục bộ \cite{hatamizadeh_unetr_2021}.
+UNETR thay encoder CNN của U-Net bằng Transformer encoder để lấy ngữ cảnh toàn cục; decoder vẫn dùng CNN (1D) để phục hồi chi tiết cục bộ \cite{hatamizadehUNETRTransformers3D2021}.
 Với tín hiệu 1D, input $x\in\mathbb{R}^{992\times 1\times C}$ được patchify không chồng lấp kích thước $N=16$,
 chiếu tuyến tính lên embedding $K$, cộng positional embedding:
 \begin{equation}
@@ -92,7 +92,7 @@ Transformer có $L$ lớp; các tầng $i\in\{3,6,9,12\}$ được lấy làm sk
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{Hinhve/image_44.png}
-  \caption{Cấu trúc model UNETR \cite{hatamizadeh_unetr_2021}.}
+  \caption{Cấu trúc model UNETR \cite{hatamizadehUNETRTransformers3D2021}.}
   \label{fig:unetr}
 \end{figure}
 
