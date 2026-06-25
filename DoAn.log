@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.24)  25 JUN 2026 14:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.24)  25 JUN 2026 21:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**DoAn.tex
-(./DoAn.tex
+**e:/Datasets/DATN_LaTeX/DATN/DoAn.tex
+(e:/Datasets/DATN_LaTeX/DATN/DoAn.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
 (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/base/report.cls
@@ -243,8 +243,7 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
  (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
-
-(m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
+ (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 ) (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
@@ -396,8 +395,7 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 ) (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
 \ttl@leftsep=\dimen179
-)
-(m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/chngcntr/chngcntr.sty
+) (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
 (chngcntr)             Quitting chngcntr on input line 21.
@@ -474,8 +472,7 @@ Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@cntb=\count308
 \multirow@dima=\skip82
 \bigstrutjot=\dimen187
-)
-(m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+) (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@headwidth=\skip83
 \f@nch@offset@elh=\skip84
@@ -560,8 +557,7 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )) (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2026/04/21 v5.1 (NLCT)
-
-(m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+ (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
  (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/generic/xkeyval/xkeyval.tex (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks45
@@ -633,8 +629,7 @@ File: datatool-utf8.ldf 2025/12/04 v3.4.3 (NLCT)
 \glslongtok=\toks55
  (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
 Package: glossary-hypernav 2026/04/21 v5.1 (NLCT)
-)
-(m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+) (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
 Package: glossary-list 2026/04/21 v5.1 (NLCT)
 \glslistdottedwidth=\skip99
 ) (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
@@ -723,8 +718,7 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 \c@blind@pangrammax=\count378
 ) (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
-
-(m:/Code_Enviroments/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+ (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
  (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
@@ -925,8 +919,7 @@ Package biblatex Info: ... file 'numeric-comp.bbx' found.
 File: numeric-comp.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
-
-(m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+ (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
 File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
@@ -979,8 +972,7 @@ Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
 Package: hyperref 2026-06-17 v7.01r Hypertext links for LaTeX
  (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(m:/Code_Enviroments/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 ) (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
@@ -1045,8 +1037,7 @@ Package hyperref Info: Driver (autodetected): hpdftex.
 File: hpdftex.def 2026-06-17 v7.01r Hyperref driver for pdfTeX
 \Fld@listcount=\count515
 \c@bookmark@seq@number=\count516
-
-(m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+ (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
  (m:/Code_Enviroments/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
@@ -1346,34 +1337,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: Hinhve/image_39.png Graphic file (type png)
 <use Hinhve/image_39.png>
 Package pdftex.def Info: Hinhve/image_39.png  used on input line 42.
-(pdftex.def)             Requested size: 384.1096pt x 225.81229pt.
-
+(pdftex.def)             Requested size: 341.43437pt x 200.72408pt.
+ [8 <./Hinhve/image_38.png (PNG copy)> <./Hinhve/image_39.png (PNG copy)>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./Hinhve/image_38.png (PNG copy)>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9 <./Hinhve/image_39.png (PNG copy)>]
+ [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
-Underfull \vbox (badness 7851) has occurred while \output is active []
-
- [11]
 Overfull \hbox (16.65578pt too wide) in paragraph at lines 104--105
 []\T5/ptm/m/n/13 Scaled dot-product at-ten-tion: $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Q; K; V\OT1/cmr/m/n/12 ) = []  [] \OML/cmm/m/it/12 V$\T5/ptm/m/n/13 ; þ ngh¾a $\OML/cmm/m/it/12 Q; K; V$
  []
 
-[12]
-<Hinhve/image_44.png, id=757, 895.09406pt x 492.33937pt>
+[11]
+<Hinhve/image_44.png, id=749, 895.09406pt x 492.33937pt>
 File: Hinhve/image_44.png Graphic file (type png)
 <use Hinhve/image_44.png>
 Package pdftex.def Info: Hinhve/image_44.png  used on input line 139.
 (pdftex.def)             Requested size: 341.43437pt x 187.80458pt.
- [13 <./Hinhve/image_44.png>] [14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12] [13 <./Hinhve/image_44.png>] [14]
 Overfull \hbox (30.17076pt too wide) in paragraph at lines 205--206
 \T5/ptm/m/n/13 trong h» sinh th¡i ECG nh÷ l m trìn (Savitzky--Golay), khû nhi¹u Wavelet, EMD/EEMD,
  []
@@ -1381,26 +1367,25 @@ Overfull \hbox (30.17076pt too wide) in paragraph at lines 205--206
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [16]
-<Hinhve/image_41.png, id=813, 552.0625pt x 139.52126pt>
+<Hinhve/image_41.png, id=815, 552.0625pt x 139.52126pt>
 File: Hinhve/image_41.png Graphic file (type png)
 <use Hinhve/image_41.png>
 Package pdftex.def Info: Hinhve/image_41.png  used on input line 238.
 (pdftex.def)             Requested size: 341.43437pt x 86.29364pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
+ [17 <./Hinhve/image_41.png (PNG copy)>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18 <./Hinhve/image_41.png (PNG copy)>] [19]) [20]
+ [18]) [19]
 Ch\uhorn \ohorn ng 3.
 (./Chuong/3_DeXuat_ThietLap.tex
-<Hinhve/image_43.png, id=874, 1252.68pt x 623.32875pt>
+<Hinhve/image_43.png, id=870, 1252.68pt x 623.32875pt>
 File: Hinhve/image_43.png Graphic file (type png)
 <use Hinhve/image_43.png>
 Package pdftex.def Info: Hinhve/image_43.png  used on input line 28.
@@ -1408,25 +1393,25 @@ Package pdftex.def Info: Hinhve/image_43.png  used on input line 28.
 
 Underfull \vbox (badness 5302) has occurred while \output is active []
 
- [21
+ [20
 
- <./Hinhve/image_43.png>] [22] [23]
-<Hinhve/KAN_WNETR_Pipeline.png, id=894, 2396.955pt x 754.31813pt>
+ <./Hinhve/image_43.png>] [21] [22]
+<Hinhve/KAN_WNETR_Pipeline.png, id=890, 2396.955pt x 754.31813pt>
 File: Hinhve/KAN_WNETR_Pipeline.png Graphic file (type png)
 <use Hinhve/KAN_WNETR_Pipeline.png>
 Package pdftex.def Info: Hinhve/KAN_WNETR_Pipeline.png  used on input line 141.
 (pdftex.def)             Requested size: 426.79135pt x 134.30963pt.
- [24]
+ [23]
 Overfull \hbox (11.44983pt too wide) in paragraph at lines 147--151
 [] \T5/ptm/b/n/13 Nguy¶n t­c t½ch hñp. \T5/ptm/m/n/13 KAN-WNETR giú nguy¶n macro-architecture cõa W-NETR:
  []
 
-[25 <./Hinhve/KAN_WNETR_Pipeline.png>] [26] [27]
+[24 <./Hinhve/KAN_WNETR_Pipeline.png>] [25] [26]
 Overfull \hbox (3.57272pt too wide) in paragraph at lines 262--263
 []\T5/ptm/m/n/13 Th÷ vi»n: Py-Torch, MONAI (Un-etr-PrUp-Block/UnetrUpBlock), wfdb, scipy, numpy. 
  []
 
-[28]
+[27]
 Overfull \hbox (2.02779pt too wide) in paragraph at lines 319--319
  |[]\T5/ptm/b/n/13 Nhâm ch¿ sè ph¡t hi»n fECG (Pre-ci-sion/Recall/F1/Accuracy)| 
  []
@@ -1434,17 +1419,17 @@ Overfull \hbox (2.02779pt too wide) in paragraph at lines 319--319
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29] [30]) [31]
+ [28] [29]) [30]
 Ch\uhorn \ohorn ng 4.
 (./Chuong/7_Ket_qua.tex
-<Hinhve/image_46.png, id=970, 1503.6175pt x 711.65875pt>
+<Hinhve/image_46.png, id=966, 1503.6175pt x 711.65875pt>
 File: Hinhve/image_46.png Graphic file (type png)
 <use Hinhve/image_46.png>
 Package pdftex.def Info: Hinhve/image_46.png  used on input line 22.
 (pdftex.def)             Requested size: 426.79135pt x 201.99956pt.
- [32
+ [31
 
- <./Hinhve/image_46.png>] [33]) [34]
+ <./Hinhve/image_46.png>] [32]) [33]
 Ch\uhorn \ohorn ng 5.
 (./Chuong/8_HeThong.tex
 LaTeX Font Info:    Trying to load font information for T5+pcr on input line 35.
@@ -1453,14 +1438,14 @@ File: t5ucr.fd 2005/08/24 Fontinst v1.929 font definitions for T5/pcr.
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35
+ [34
 
 ]
 LaTeX Font Info:    Calculating math sizes for size <11.86258> on input line 45.
- [36] [37]
+ [35] [36]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
+ [37]
 Overfull \hbox (124.73174pt too wide) in paragraph at lines 166--167
 []\T5/ptm/m/n/13 Giao di»n sû döng ^^_ìn gi£n: \T5/pcr/m/n/13 proc = Fecg-Pro-ces-sor(); fe = proc.push(raw_sample)\T5/ptm/m/n/13 ,
  []
@@ -1468,29 +1453,29 @@ Overfull \hbox (124.73174pt too wide) in paragraph at lines 166--167
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
+ [38]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40]
+ [39]
 Overfull \hbox (4.28662pt too wide) in paragraph at lines 232--233
 []\T5/ptm/m/n/13 H» thèng c£nh b¡o sû döng ng÷ïng nhàp tim thai theo khuy¸n c¡o NICHD/ACOG
  []
 
-[41]
+[40]
 Overfull \hbox (18.23764pt too wide) in paragraph at lines 252--253
 []\T5/pcr/m/n/13 patients\T5/ptm/m/n/13 : thæng tin b»nh nh¥n (id, name, mrn, sex, dob, notes, cre-ated_at, archived). 
  []
 
-[42]
+[41]
 Overfull \hbox (45.10666pt too wide) in paragraph at lines 316--317
 []\T5/ptm/m/n/13 H» thèng ^^_¢ ^^_÷ñc kiºm thû end-to-end theo kàch b£n: thi¸t bà Pi (ho°c \T5/pcr/m/n/13 stream_sim.py
  []
 
-[43]) [44]
+[42]) [43]
 Ch\uhorn \ohorn ng 6.
-(./Chuong/9_Ket_luan.tex [45
+(./Chuong/9_Ket_luan.tex [44
 
-]) [46]
+]) [45]
 Overfull \hbox (0.52669pt too wide) in paragraph at lines 310--310
 \T5/pcr/m/n/13 / / www . who . int / news -[] room / fact -[] sheets / detail / newborn -[]
  []
@@ -1500,7 +1485,7 @@ Overfull \hbox (50.03287pt too wide) in paragraph at lines 310--310
 \T5/pcr/m/n/13 18097$[] \T5/ptm/m/n/13 Ac-cessed: Jun. 24, 2026. [On-line]. Avail-able: []$\T5/pcr/m/n/13 https : / / onlinelibrary .
  []
 
-[47
+[46
 
 ]
 Overfull \hbox (12.58502pt too wide) in paragraph at lines 310--310
@@ -1512,12 +1497,12 @@ Overfull \hbox (29.60988pt too wide) in paragraph at lines 310--310
 \T5/pcr/m/n/13 00353$[] \T5/ptm/m/n/13 Ac-cessed: Feb. 27, 2026. [On-line]. Avail-able: []$\T5/pcr/m/n/13 https : / / ieeexplore .
  []
 
-[48]
+[47]
 Overfull \hbox (4.37425pt too wide) in paragraph at lines 310--310
 []\T5/ptm/m/n/13 Department of Gen-eral Medicine, Amala In-sti-tute of Med-i-cal Sci-ences, Thris-
  []
 
-[49]
+[48]
 Overfull \hbox (29.46674pt too wide) in paragraph at lines 310--310
 \T5/ptm/m/n/13 2026. [On-line]. Avail-able: []$\T5/pcr/m/n/13 https : / / ieeexplore . ieee . org / abstract /
  []
@@ -1527,12 +1512,12 @@ Overfull \hbox (10.8109pt too wide) in paragraph at lines 310--310
 \T5/ptm/m/n/13 cessed: Feb. 16, 2026. [On-line]. Avail-able: []$\T5/pcr/m/n/13 https : / / digital -[] library .
  []
 
-[50]
+[49]
 Overfull \hbox (17.44019pt too wide) in paragraph at lines 310--310
 \T5/ptm/m/n/13 line]. Avail-able: []$\T5/pcr/m/n/13 https : / / journals . plos . org / plosone / article ?
  []
 
-[51]
+[50]
 Overfull \hbox (12.225pt too wide) in paragraph at lines 310--310
 \T5/ptm/m/n/13 218. \T5/ptm/m/sc/13 doi\T5/ptm/m/n/13 : []$\T5/pcr/m/n/13 10 . 1109 / ICoDSA58501 . 2023 . 10277016$[] \T5/ptm/m/n/13 Ac-cessed: Feb. 28,
  []
@@ -1562,7 +1547,7 @@ Overfull \hbox (10.80864pt too wide) in paragraph at lines 310--310
 \T5/ptm/m/n/13 Avail-able: []$\T5/pcr/m/n/13 https : / / ieeexplore . ieee . org / document / 9536378/$[] 
  []
 
-[52]
+[51]
 Overfull \hbox (2.63377pt too wide) in paragraph at lines 310--310
 \T5/ptm/m/n/13 dom-i-nal Record-ings,'' \T5/ptm/m/it/13 IEEE trans-ac-tions on bio-medical en-gi-neer-ing\T5/ptm/m/n/13 , vol. 70,
  []
@@ -1582,7 +1567,7 @@ Package glossaries Warning: No \printnoidxglossary or \printnoidxglossaries
  found. (Remove \makenoidxglossaries if you don't want any glossaries.)
 This document will not have a glossary.
 
-[53] (./DoAn.aux)
+[52] (./DoAn.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
@@ -1600,18 +1585,17 @@ Package logreq Info: Writing requests to 'DoAn.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  34139 strings out of 467168
- 650451 string characters out of 5404712
+ 650526 string characters out of 5404712
  1588204 words of memory out of 5000000
  62611 multiletter control sequences out of 15000+600000
  684762 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,107p,4875b,1541s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/vntex/urwvn/ucrr8v.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts
-/type1/vntex/urwvn/utmb8v.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/vntex/urwvn/utmr8v.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/vntex/urwvn/utmri8v.pfb>
-Output written on DoAn.pdf (63 pages, 2187121 bytes).
+ 108i,12n,107p,4903b,1541s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/vntex/urwvn/ucrr8v.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/vntex/urwvn/utmb8v.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/vntex/urwvn/utmr8v.pfb><m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/vntex/urwvn/utmri8v.pfb>
+Output written on DoAn.pdf (62 pages, 2186630 bytes).
 PDF statistics:
- 1344 PDF objects out of 1440 (max. 8388607)
- 1142 compressed objects within 12 object streams
- 292 named destinations out of 1000 (max. 500000)
+ 1340 PDF objects out of 1440 (max. 8388607)
+ 1139 compressed objects within 12 object streams
+ 291 named destinations out of 1000 (max. 500000)
  705 words of extra memory for PDF output out of 10000 (max. 10000000)
 
