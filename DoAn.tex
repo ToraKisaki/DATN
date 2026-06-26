@@ -28,6 +28,7 @@
 \usepackage[ruled,vlined]{algorithm2e}  % Hỗ trợ viết các giải thuật
 \usepackage{capt-of} % Cho phép sử dụng caption lớn đối với landscape page
 \usepackage{multirow} % Merge cells
+\usepackage[table]{xcolor} % Tô màu nền cho ô/hàng của bảng (\rowcolor, \cellcolor)
 \usepackage{fancyhdr} % Cho phép tùy biến header và footer
 % \usepackage[natbib,backend=biber,style=ieee]{biblatex} % Giúp chèn tài liệu tham khảo
 \usepackage{appendix}
@@ -49,8 +50,10 @@
 % package content table
 \usepackage{tocbasic}
 
-\usepackage{blindtext}
 
+\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
 % ===================================================
  
 
@@ -170,6 +173,12 @@ pdfauthor={\AUTHOR}}
 \subfile{Bia} % Phần bìa
 \subfile{Bia_lot} % Phần bìa
 % \restoregeometry
+
+% =================== PHIẾU ĐÁNH GIÁ =================
+\newpage
+\subfile{Phieu_danh_gia_GVHD} % Phiếu đánh giá - Cán bộ hướng dẫn
+\newpage
+\subfile{Phieu_danh_gia_GVPB} % Phiếu đánh giá - Cán bộ phản biện
 
 % ===================================================
 \pagenumbering{roman}

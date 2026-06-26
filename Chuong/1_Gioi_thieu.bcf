@@ -2374,6 +2374,29 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">../datn.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1" intorder="1">NewbornMortality</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">devriesFetalElectrocardiographyArtificial2023</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">giangElevatedCongenitalHeart2022</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">ayres-de-camposFIGOConsensusGuidelines2015</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">loversAdvancementsFetalHeart2025</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">abramowiczFetalThermalEffects2008</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">loversAdvancementsFetalHeart2025</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">neilsonFetalElectrocardiogramECG2015</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">sameniReviewFetalECG2010</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">zarzosoRobustIndependentComponent2010</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">karmakarConsumerInsightsFeasibility2025</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">karmakarConsumerInsightsFeasibility2025</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">karmakarConsumerInsightsFeasibility2025</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">karmakarConsumerInsightsFeasibility2025</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">loversAdvancementsFetalHeart2025</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">almadaniOneDimensionalWNETRNonInvasive2023</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">liuKANKolmogorovArnoldNetworks2025</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">yeElevatingVisionTransformer2024</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">andreottiOpensourceFrameworkStresstesting2016</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">beharNoninvasiveFECGExtraction2013</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">hatamizadehUNETRTransformers3D2021</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">almadaniOneDimensionalWNETRNonInvasive2023</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">liuKANKolmogorovArnoldNetworks2025</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
