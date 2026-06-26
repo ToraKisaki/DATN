@@ -6,6 +6,38 @@
 
 ---
 
+## 0. ⭐ CẬP NHẬT 2026-06-26: cặp finetune mới (MLP 150ep vs KAN-10sub) + PCDB
+
+Train thêm một biến thể MLP để so công bằng với KAN tốt nhất ở "đẳng cấp" cao:
+finetune từ checkpoint **unetr đã pretrain đủ 150 epoch** (`20260225_225704`, baseline MLP
+train kỹ nhất của dự án) trên ADFECGDB theo **đúng phác đồ finetune của KAN** (`151427`:
+lr 2e-5, 150 epoch, bs64, norm std, loss hỗn hợp). Kết quả run mới: **`20260626_124331`**.
+
+| Mô hình | ADFECGDB SSIM | ADFECGDB PSNR (dB) | ADFECGDB F1 (%) | **PCDB F1 (%)** | #Params | Run |
+|---|---|---|---|---|---|---|
+| **MLP-FFN** (pretrain 150ep → finetune) | 0.817 | **20.48** | 95.73 | 89.87 | **25.79M** | `20260626_124331` |
+| **KAN-FFN** (pretrain 10sub → finetune)  | **0.819** | 20.09 | **96.21** | **91.21** | 38.87M | `20260620_151427` |
+
+- KAN nhỉnh hơn ở **F1** (ADFECGDB +0.48pp, **PCDB +1.34pp**) và SSIM ~ngang;
+  MLP có **PSNR cao hơn** (+0.39dB) và **ít hơn ~13M tham số**.
+- PCDB là **dữ liệu thực hoàn toàn ngoài phân phối huấn luyện** → mức KAN > MLP trên PCDB
+  (91.21% vs 89.87%) là bằng chứng tổng quát hoá tốt hơn, đáng đưa vào luận văn.
+- PCDB chi tiết: MLP P=0.9207/R=0.8777/F1=0.8987; KAN P=0.9298/R=0.8950/F1=0.9121
+  (cùng 1170 segment, 78 cặp record-lead).
+
+⚠️ **Caveat quan trọng về tính "công bằng":** hai mô hình **pretrain trên dữ liệu mô phỏng
+KHÁC nhau** — MLP pretrain trên `full_k5_c5_kh75_ch19` (toàn bộ subject nhưng chỉ kênh ch19,
+chuẩn hoá `var`, 150 epoch); KAN pretrain trên `10sub_k5_c5_kh75_8ch` (10 subject, 8 kênh,
+chuẩn hoá `std`, 16 epoch). Chúng **chỉ chung phác đồ finetune + tập eval**, không chung
+pretrain. Đây là so sánh "hai baseline mạnh nhất hiện có", KHÔNG phải ablation "chỉ đổi FFN"
+tuyệt đối. Nếu cần ablation chặt tuyệt đối, xem mục 5 (train lại từ cùng pretrain) — một
+pretrain `unetr` trên đúng `10sub_8ch` đã được khởi động rồi dừng (run `20260626_122928`)
+để chuyển sang phương án nhanh này theo yêu cầu.
+
+Cặp ablation "chỉ đổi FFN" sạch nhất vẫn là cặp 1-sub ở **mục 2** bên dưới.
+
+---
+
 ## 1. Số liệu đã đo (đã kiểm chứng)
 
 Đánh giá trên **tập val ADFECGDB (dữ liệu thực), 592 đoạn tín hiệu**, cùng giao thức
@@ -159,3 +191,58 @@ FFN) mà chỉ nêu ở đây để tham chiếu.
   `logs/run_20260620_151427/eval_20260620_151427_mb200.csv`.
 - Config các run: `logs/run_<id>/run_meta_<id>.csv`.
 - run `20260622_171304` (KAN) đã bị loại: không có `checkpoints/best.pth` (chạy dở dang).
+
+---
+
+## 8. Bảng tổng hợp đầy đủ tất cả cấu hình đã đo (2026-06-26)
+
+Gộp toàn bộ số liệu đã đo ở các mục trên vào một chỗ để tiện đối chiếu. Hai cột metric khác
+tập đánh giá: **ADFECGDB** (val nội bộ, 592 đoạn — SSIM/PSNR tái tạo + F1 fQRS) và **PCDB**
+(dữ liệu thực ngoài phân phối, 1170 đoạn / 78 cặp record-lead — chỉ F1 fQRS).
+
+| # | Mô hình (FFN) | Pretrain mô phỏng | ADFECGDB SSIM | ADFECGDB PSNR (dB) | ADFECGDB F1 (%) | PCDB F1 (%) | #Params | Run |
+|---|---|---|---|---|---|---|---|---|
+| 1 | MLP-FFN | 1 sub, 34ch, var | 0.818 | 20.36 | 94.41 | — | 25.79M | `20260623_105156` |
+| 2 | KAN-FFN | 1 sub, 8ch, paper_exact | 0.810 | 20.24 | 94.97 | — | 38.87M | `20260623_093308` |
+| 3 | **MLP-FFN** | **full subj, ch19, var, 150ep** | 0.817 | **20.48** | 95.73 | 89.87 | **25.79M** | `20260626_124331` |
+| 4 | **KAN-FFN** | **10 sub, 8ch, std, 16ep** | **0.819** | 20.09 | **96.21** | **91.21** | 38.87M | `20260620_151427` |
+
+**Cách đọc các cặp:**
+- **Cặp #1–#2** (cùng pretrain 1-subject): ablation "chỉ đổi FFN" sạch nhất → KAN +0.56pp F1, SSIM/PSNR ~ngang. (xem mục 2)
+- **Cặp #3–#4** (hai baseline mạnh nhất, cùng phác đồ finetune nhưng khác pretrain): KAN +0.48pp F1 ADFECGDB, **+1.34pp F1 PCDB**, SSIM ~ngang; MLP hơn PSNR + ít tham số. (xem mục 0)
+- PCDB chỉ đo cho cặp #3–#4 (các run #1–#2 dùng `evaluate_by_run_id` chỉ ra ADFECGDB).
+
+**Chi tiết PCDB (cặp #3–#4), cùng 1170 đoạn / 78 cặp:**
+
+| Mô hình | TP | FP | FN | Precision | Recall | F1 |
+|---|---|---|---|---|---|---|
+| MLP-FFN (`20260626_124331`) | 9587 | 826 | 1336 | 0.9207 | 0.8777 | 0.8987 |
+| KAN-FFN (`20260620_151427`) | 9776 | 738 | 1147 | 0.9298 | 0.8950 | 0.9121 |
+
+### Khối LaTeX gợi ý (bảng tổng hợp có cột PCDB)
+
+```latex
+\begin{table}[htbp]
+\centering
+\caption{So sánh MLP-FFN và KAN-FFN: hai baseline mạnh nhất với cùng phác đồ tinh chỉnh
+ADFECGDB. Đánh giá trên tập ADFECGDB nội bộ (592~đoạn) và PCDB thực ngoài phân phối
+(1170~đoạn). PCDB chỉ báo F1 phát hiện fQRS.}
+\label{tab:ablation_pcdb}
+\begin{tabular}{lccccc}
+\hline
+\textbf{Biến thể FFN} & \textbf{SSIM} & \textbf{PSNR (dB)} & \textbf{F1 ADFECGDB (\%)} & \textbf{F1 PCDB (\%)} & \textbf{\#Tham số} \\
+\hline
+MLP-FFN (baseline) & 0.817 & \textbf{20.48} & 95.73 & 89.87 & \textbf{25.8M} \\
+KAN-FFN (đề xuất)  & \textbf{0.819} & 20.09 & \textbf{96.21} & \textbf{91.21} & 38.9M \\
+\hline
+\end{tabular}
+\end{table}
+```
+
+### Nguồn số liệu mục 8
+- MLP finetune: `logs/run_20260626_124331/eval_20260626_124331_mb200.csv` (ADFECGDB),
+  `logs/run_20260626_124331/pcdb_eval/pcdb_total_metrics_20260626_124331.csv` (PCDB).
+- KAN-10sub: `logs/run_20260620_151427/eval_20260620_151427_mb200.csv` (ADFECGDB),
+  `logs/run_20260620_151427/pcdb_eval/pcdb_total_metrics_20260620_151427.csv` (PCDB).
+- MLP finetune sinh từ checkpoint pretrain 150ep `logs/run_20260225_225704/checkpoints/best.pth`,
+  phác đồ finetune sao y `20260620_151427`. Script PCDB: `evaluate_pcdb_by_run_id_headless.py`.
