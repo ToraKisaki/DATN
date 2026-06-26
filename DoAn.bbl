@@ -1357,6 +1357,675 @@
       \endverb
       \keyw{Acoustic signal processing,Adaptive signal processing,Fetal heart,Fetal heart rate,Heart rate measurement,Pattern analysis,Prediction algorithms,Signal processing algorithms,Timing,Ultrasonic imaging}
     \endentry
+    \entry{vaswaniAttentionAllYou2023}{online}{}{}
+      \name{author}{8}{}{%
+        {{hash=7f28e84700536646dd6620a0db07ad09}{%
+           family={Vaswani},
+           familyi={V\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod}}}%
+        {{hash=62efade83d70f0323fe248755e6c90c5}{%
+           family={Shazeer},
+           familyi={S\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod}}}%
+        {{hash=06649ebab1ea5cac0250746a19764975}{%
+           family={Parmar},
+           familyi={P\bibinitperiod},
+           given={Niki},
+           giveni={N\bibinitperiod}}}%
+        {{hash=831027ee0ebf22375e2a86afc1881909}{%
+           family={Uszkoreit},
+           familyi={U\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2fd2982e30ebcec93ec1cf76e0d797fd}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Llion},
+           giveni={L\bibinitperiod}}}%
+        {{hash=27b07e4eacbf4ef7a1438e3badb7dd8d}{%
+           family={Gomez},
+           familyi={G\bibinitperiod},
+           given={Aidan\bibnamedelima N.},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=f2bc899b1160163417da7bf510f15d33}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={Lukasz},
+           giveni={L\bibinitperiod}}}%
+        {{hash=95595a0fefb86187cbc36e551017d332}{%
+           family={Polosukhin},
+           familyi={P\bibinitperiod},
+           given={Illia},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{fullhash}{f82970bbd2bdd7a002d2af62b743d5cc}
+      \strng{fullhashraw}{f82970bbd2bdd7a002d2af62b743d5cc}
+      \strng{bibnamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authorbibnamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authornamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authorfullhash}{f82970bbd2bdd7a002d2af62b743d5cc}
+      \strng{authorfullhashraw}{f82970bbd2bdd7a002d2af62b743d5cc}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.}
+      \field{day}{2}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{month}{8}
+      \field{pubstate}{prepublished}
+      \field{title}{Attention {{Is All You Need}}}
+      \field{urlday}{26}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1706.03762
+      \endverb
+      \verb{eprint}
+      \verb 1706.03762
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\DCVGL2BG\\Vaswani et al. - 2023 - Attention Is All You Need.pdf;C\:\\Users\\Minh\\Zotero\\storage\\CD46ENAI\\1706.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1706.03762
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1706.03762
+      \endverb
+      \keyw{Computer Science - Computation and Language,Computer Science - Machine Learning}
+    \endentry
+    \entry{nairRectifiedLinearUnits2010}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=0719e279192084705efab5d7e0505f52}{%
+           family={Nair},
+           familyi={N\bibinitperiod},
+           given={Vinod},
+           giveni={V\bibinitperiod}}}%
+        {{hash=813bd95fe553e6079cd53a567b238287}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey\bibnamedelima E.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Madison, WI, USA}%
+      }
+      \list{publisher}{1}{%
+        {Omnipress}%
+      }
+      \strng{namehash}{08d64b697ddc0d522928febb8e7c119b}
+      \strng{fullhash}{08d64b697ddc0d522928febb8e7c119b}
+      \strng{fullhashraw}{08d64b697ddc0d522928febb8e7c119b}
+      \strng{bibnamehash}{08d64b697ddc0d522928febb8e7c119b}
+      \strng{authorbibnamehash}{08d64b697ddc0d522928febb8e7c119b}
+      \strng{authornamehash}{08d64b697ddc0d522928febb8e7c119b}
+      \strng{authorfullhash}{08d64b697ddc0d522928febb8e7c119b}
+      \strng{authorfullhashraw}{08d64b697ddc0d522928febb8e7c119b}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Restricted Boltzmann machines were developed using binary stochastic hidden units. These can be generalized by replacing each binary unit by an infinite number of copies that all have the same weights but have progressively more negative biases. The learning and inference rules for these "Stepped Sigmoid Units" are unchanged. They can be approximated efficiently by noisy, rectified linear units. Compared with binary units, these units learn features that are better for object recognition on the NORB dataset and face verification on the Labeled Faces in the Wild dataset. Unlike binary units, rectified linear units preserve information about relative intensities as information travels through multiple layers of feature detectors.}
+      \field{booktitle}{Proceedings of the 27th {{International Conference}} on {{International Conference}} on {{Machine Learning}}}
+      \field{day}{21}
+      \field{isbn}{978-1-60558-907-7}
+      \field{month}{6}
+      \field{series}{{{ICML}}'10}
+      \field{title}{Rectified Linear Units Improve Restricted Boltzmann Machines}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{pages}{807\bibrangedash 814}
+      \range{pages}{8}
+    \endentry
+    \entry{hendrycksGaussianErrorLinear2023}{online}{}{}
+      \name{author}{2}{}{%
+        {{hash=86d0b4ecd6b6066d49e7aecde6e5e630}{%
+           family={Hendrycks},
+           familyi={H\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6bc70be3492f0800ecee6926d290244f}{%
+           family={Gimpel},
+           familyi={G\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d47b8f6df5cfe597280f14a9ffb6143}
+      \strng{fullhash}{7d47b8f6df5cfe597280f14a9ffb6143}
+      \strng{fullhashraw}{7d47b8f6df5cfe597280f14a9ffb6143}
+      \strng{bibnamehash}{7d47b8f6df5cfe597280f14a9ffb6143}
+      \strng{authorbibnamehash}{7d47b8f6df5cfe597280f14a9ffb6143}
+      \strng{authornamehash}{7d47b8f6df5cfe597280f14a9ffb6143}
+      \strng{authorfullhash}{7d47b8f6df5cfe597280f14a9ffb6143}
+      \strng{authorfullhashraw}{7d47b8f6df5cfe597280f14a9ffb6143}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We propose the Gaussian Error Linear Unit (GELU), a high-performing neural network activation function. The GELU activation function is \$xΦ(x)\$, where \$Φ(x)\$ the standard Gaussian cumulative distribution function. The GELU nonlinearity weights inputs by their value, rather than gates inputs by their sign as in ReLUs (\$x\textbackslash mathbf\{1\}\_\{x{$>$}0\}\$). We perform an empirical evaluation of the GELU nonlinearity against the ReLU and ELU activations and find performance improvements across all considered computer vision, natural language processing, and speech tasks.}
+      \field{day}{6}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{month}{6}
+      \field{pubstate}{prepublished}
+      \field{title}{Gaussian {{Error Linear Units}} ({{GELUs}})}
+      \field{urlday}{26}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1606.08415
+      \endverb
+      \verb{eprint}
+      \verb 1606.08415
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\WPC343IR\\Hendrycks and Gimpel - 2023 - Gaussian Error Linear Units (GELUs).pdf;C\:\\Users\\Minh\\Zotero\\storage\\4MUXDE26\\1606.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1606.08415
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1606.08415
+      \endverb
+      \keyw{Computer Science - Machine Learning}
+    \endentry
+    \entry{hornikMultilayerFeedforwardNetworks1989}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=bec8dd1340457a82c21b54971e4c9417}{%
+           family={Hornik},
+           familyi={H\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod}}}%
+        {{hash=17a26ba07299c37a45cc2475a9f3bc8d}{%
+           family={Stinchcombe},
+           familyi={S\bibinitperiod},
+           given={Maxwell},
+           giveni={M\bibinitperiod}}}%
+        {{hash=426e452a5ec8e692f7740ce0d3e3655c}{%
+           family={White},
+           familyi={W\bibinitperiod},
+           given={Halbert},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8d7f46f242b5a2ff80ecb656326c2de}
+      \strng{fullhash}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{fullhashraw}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{bibnamehash}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{authorbibnamehash}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{authornamehash}{a8d7f46f242b5a2ff80ecb656326c2de}
+      \strng{authorfullhash}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{authorfullhashraw}{31166c18fa8ee825c1eb4693189f9e2a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper rigorously establishes that standard multilayer feedforward networks with as few as one hidden layer using arbitrary squashing functions are capable of approximating any Borel measurable function from one finite dimensional space to another to any desired degree of accuracy, provided sufficiently many hidden units are available. In this sense, multilayer feedforward networks are a class of universal approximators.}
+      \field{day}{1}
+      \field{issn}{0893-6080}
+      \field{journaltitle}{Neural Networks}
+      \field{month}{1}
+      \field{number}{5}
+      \field{shortjournal}{Neural Networks}
+      \field{title}{Multilayer Feedforward Networks Are Universal Approximators}
+      \field{urlday}{26}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{2}
+      \field{year}{1989}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{359\bibrangedash 366}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/0893-6080(89)90020-8
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\MUK6VFDV\\Hornik et al. - 1989 - Multilayer feedforward networks are universal approximators.pdf;C\:\\Users\\Minh\\Zotero\\storage\\QCPSKG59\\0893608089900208.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/0893608089900208
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/0893608089900208
+      \endverb
+      \keyw{Back-propagation networks,Feedforward networks,Mapping networks,Network representation capability,Sigma-Pi networks,Squashing functions,Stone-Weierstrass Theorem,Universal approximation}
+    \endentry
+    \entry{lecunGradientbasedLearningApplied1998}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=c7a5b066431b979612b716532b228554}{%
+           family={Lecun},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=bbfb0f3936c83b7b099561e6f0e32ef3}{%
+           family={Bottou},
+           familyi={B\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=419350ebbeb4eba5351469f378dee007}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=00f962380d25c4d7f23fa6c7e926c3ed}{%
+           family={Haffner},
+           familyi={H\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{dd2ddc978fe083bcff1aa1379cd19643}
+      \strng{fullhash}{4dd3ca3cdc8023700c28169734d6ad61}
+      \strng{fullhashraw}{4dd3ca3cdc8023700c28169734d6ad61}
+      \strng{bibnamehash}{4dd3ca3cdc8023700c28169734d6ad61}
+      \strng{authorbibnamehash}{4dd3ca3cdc8023700c28169734d6ad61}
+      \strng{authornamehash}{dd2ddc978fe083bcff1aa1379cd19643}
+      \strng{authorfullhash}{4dd3ca3cdc8023700c28169734d6ad61}
+      \strng{authorfullhashraw}{4dd3ca3cdc8023700c28169734d6ad61}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Multilayer neural networks trained with the back-propagation algorithm constitute the best example of a successful gradient based learning technique. Given an appropriate network architecture, gradient-based learning algorithms can be used to synthesize a complex decision surface that can classify high-dimensional patterns, such as handwritten characters, with minimal preprocessing. This paper reviews various methods applied to handwritten character recognition and compares them on a standard handwritten digit recognition task. Convolutional neural networks, which are specifically designed to deal with the variability of 2D shapes, are shown to outperform all other techniques. Real-life document recognition systems are composed of multiple modules including field extraction, segmentation recognition, and language modeling. A new learning paradigm, called graph transformer networks (GTN), allows such multimodule systems to be trained globally using gradient-based methods so as to minimize an overall performance measure. Two systems for online handwriting recognition are described. Experiments demonstrate the advantage of global training, and the flexibility of graph transformer networks. A graph transformer network for reading a bank cheque is also described. It uses convolutional neural network character recognizers combined with global training techniques to provide record accuracy on business and personal cheques. It is deployed commercially and reads several million cheques per day.}
+      \field{issn}{1558-2256}
+      \field{journaltitle}{Proceedings of the IEEE}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{Gradient-Based Learning Applied to Document Recognition}
+      \field{urlday}{26}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{86}
+      \field{year}{1998}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2278\bibrangedash 2324}
+      \range{pages}{47}
+      \verb{doi}
+      \verb 10.1109/5.726791
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\WI9IXP4U\726791.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/726791
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/726791
+      \endverb
+      \keyw{Character recognition,Feature extraction,Hidden Markov models,Machine learning,Multi-layer neural network,Neural networks,Optical character recognition software,Optical computing,Pattern recognition,Principal component analysis}
+    \endentry
+    \entry{kiranyaz1DConvolutionalNeural2019}{online}{}{}
+      \name{author}{6}{}{%
+        {{hash=88fcbfc7f3b82fa8bcc91190c133d9f0}{%
+           family={Kiranyaz},
+           familyi={K\bibinitperiod},
+           given={Serkan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2da5f256e88899d776afbd9cf3fdb39e}{%
+           family={Avci},
+           familyi={A\bibinitperiod},
+           given={Onur},
+           giveni={O\bibinitperiod}}}%
+        {{hash=4a1484824cd66e8a1f5ae13802205786}{%
+           family={Abdeljaber},
+           familyi={A\bibinitperiod},
+           given={Osama},
+           giveni={O\bibinitperiod}}}%
+        {{hash=1382a7a111f551dbc93436a462999a84}{%
+           family={Ince},
+           familyi={I\bibinitperiod},
+           given={Turker},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b680f786282bcb3b9a76782c1aa50289}{%
+           family={Gabbouj},
+           familyi={G\bibinitperiod},
+           given={Moncef},
+           giveni={M\bibinitperiod}}}%
+        {{hash=26a229af3cb54093613e2fa7b30d3298}{%
+           family={Inman},
+           familyi={I\bibinitperiod},
+           given={Daniel\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{68b642914426d8dd21cf70de6bdac4b6}
+      \strng{fullhash}{da2c3f2d279ada56cb2042db20ca9ef8}
+      \strng{fullhashraw}{da2c3f2d279ada56cb2042db20ca9ef8}
+      \strng{bibnamehash}{da2c3f2d279ada56cb2042db20ca9ef8}
+      \strng{authorbibnamehash}{da2c3f2d279ada56cb2042db20ca9ef8}
+      \strng{authornamehash}{68b642914426d8dd21cf70de6bdac4b6}
+      \strng{authorfullhash}{da2c3f2d279ada56cb2042db20ca9ef8}
+      \strng{authorfullhashraw}{da2c3f2d279ada56cb2042db20ca9ef8}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{During the last decade, Convolutional Neural Networks (CNNs) have become the de facto standard for various Computer Vision and Machine Learning operations. CNNs are feed-forward Artificial Neural Networks (ANNs) with alternating convolutional and subsampling layers. Deep 2D CNNs with many hidden layers and millions of parameters have the ability to learn complex objects and patterns providing that they can be trained on a massive size visual database with ground-truth labels. With a proper training, this unique ability makes them the primary tool for various engineering applications for 2D signals such as images and video frames. Yet, this may not be a viable option in numerous applications over 1D signals especially when the training data is scarce or application-specific. To address this issue, 1D CNNs have recently been proposed and immediately achieved the state-of-the-art performance levels in several applications such as personalized biomedical data classification and early diagnosis, structural health monitoring, anomaly detection and identification in power electronics and motor-fault detection. Another major advantage is that a real-time and low-cost hardware implementation is feasible due to the simple and compact configuration of 1D CNNs that perform only 1D convolutions (scalar multiplications and additions). This paper presents a comprehensive review of the general architecture and principals of 1D CNNs along with their major engineering applications, especially focused on the recent progress in this field. Their state-of-the-art performance is highlighted concluding with their unique properties. The benchmark datasets and the principal 1D CNN software used in those applications are also publically shared in a dedicated website.}
+      \field{day}{9}
+      \field{eprintclass}{eess.SP}
+      \field{eprinttype}{arXiv}
+      \field{month}{5}
+      \field{pubstate}{prepublished}
+      \field{shorttitle}{{{1D Convolutional Neural Networks}} and {{Applications}}}
+      \field{title}{{{1D Convolutional Neural Networks}} and {{Applications}}: {{A Survey}}}
+      \field{urlday}{26}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1905.03554
+      \endverb
+      \verb{eprint}
+      \verb 1905.03554
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\YGKQV2KR\\Kiranyaz et al. - 2019 - 1D Convolutional Neural Networks and Applications A Survey.pdf;C\:\\Users\\Minh\\Zotero\\storage\\Z35C5UV2\\1905.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1905.03554
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1905.03554
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Electrical Engineering and Systems Science - Signal Processing}
+    \endentry
+    \entry{bahdanauNeuralMachineTranslation2016}{online}{}{}
+      \name{author}{3}{}{%
+        {{hash=6d80adec79a13a33e73215c5f46f1605}{%
+           family={Bahdanau},
+           familyi={B\bibinitperiod},
+           given={Dzmitry},
+           giveni={D\bibinitperiod}}}%
+        {{hash=3da7501a79d9346572c7fd6e41b615df}{%
+           family={Cho},
+           familyi={C\bibinitperiod},
+           given={Kyunghyun},
+           giveni={K\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{a19bd16ae98706ae8eced6dfd6ca3a14}
+      \strng{fullhash}{ccf5ebef61998aaab5ec6eace8f4564d}
+      \strng{fullhashraw}{ccf5ebef61998aaab5ec6eace8f4564d}
+      \strng{bibnamehash}{ccf5ebef61998aaab5ec6eace8f4564d}
+      \strng{authorbibnamehash}{ccf5ebef61998aaab5ec6eace8f4564d}
+      \strng{authornamehash}{a19bd16ae98706ae8eced6dfd6ca3a14}
+      \strng{authorfullhash}{ccf5ebef61998aaab5ec6eace8f4564d}
+      \strng{authorfullhashraw}{ccf5ebef61998aaab5ec6eace8f4564d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Neural machine translation is a recently proposed approach to machine translation. Unlike the traditional statistical machine translation, the neural machine translation aims at building a single neural network that can be jointly tuned to maximize the translation performance. The models proposed recently for neural machine translation often belong to a family of encoder-decoders and consists of an encoder that encodes a source sentence into a fixed-length vector from which a decoder generates a translation. In this paper, we conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder-decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly. With this new approach, we achieve a translation performance comparable to the existing state-of-the-art phrase-based system on the task of English-to-French translation. Furthermore, qualitative analysis reveals that the (soft-)alignments found by the model agree well with our intuition.}
+      \field{day}{19}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{month}{5}
+      \field{pubstate}{prepublished}
+      \field{title}{Neural {{Machine Translation}} by {{Jointly Learning}} to {{Align}} and {{Translate}}}
+      \field{urlday}{26}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1409.0473
+      \endverb
+      \verb{eprint}
+      \verb 1409.0473
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\84IPX825\\Bahdanau et al. - 2016 - Neural Machine Translation by Jointly Learning to Align and Translate.pdf;C\:\\Users\\Minh\\Zotero\\storage\\YYH4F28I\\1409.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1409.0473
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1409.0473
+      \endverb
+      \keyw{Computer Science - Computation and Language,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,Statistics - Machine Learning}
+    \endentry
+    \entry{baLayerNormalization2016}{online}{}{}
+      \name{author}{3}{}{%
+        {{hash=750bb29ebaf655e36626e464041edb6d}{%
+           family={Ba},
+           familyi={B\bibinitperiod},
+           given={Jimmy\bibnamedelima Lei},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=9ce51427604561924b91aa544c9c1b2a}{%
+           family={Kiros},
+           familyi={K\bibinitperiod},
+           given={Jamie\bibnamedelima Ryan},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=813bd95fe553e6079cd53a567b238287}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey\bibnamedelima E.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c9d3265b5af8088b0bec9949217b6eb}
+      \strng{fullhash}{059348b2d0b3fe9a67209502c14057d1}
+      \strng{fullhashraw}{059348b2d0b3fe9a67209502c14057d1}
+      \strng{bibnamehash}{059348b2d0b3fe9a67209502c14057d1}
+      \strng{authorbibnamehash}{059348b2d0b3fe9a67209502c14057d1}
+      \strng{authornamehash}{5c9d3265b5af8088b0bec9949217b6eb}
+      \strng{authorfullhash}{059348b2d0b3fe9a67209502c14057d1}
+      \strng{authorfullhashraw}{059348b2d0b3fe9a67209502c14057d1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Training state-of-the-art, deep neural networks is computationally expensive. One way to reduce the training time is to normalize the activities of the neurons. A recently introduced technique called batch normalization uses the distribution of the summed input to a neuron over a mini-batch of training cases to compute a mean and variance which are then used to normalize the summed input to that neuron on each training case. This significantly reduces the training time in feed-forward neural networks. However, the effect of batch normalization is dependent on the mini-batch size and it is not obvious how to apply it to recurrent neural networks. In this paper, we transpose batch normalization into layer normalization by computing the mean and variance used for normalization from all of the summed inputs to the neurons in a layer on a single training case. Like batch normalization, we also give each neuron its own adaptive bias and gain which are applied after the normalization but before the non-linearity. Unlike batch normalization, layer normalization performs exactly the same computation at training and test times. It is also straightforward to apply to recurrent neural networks by computing the normalization statistics separately at each time step. Layer normalization is very effective at stabilizing the hidden state dynamics in recurrent networks. Empirically, we show that layer normalization can substantially reduce the training time compared with previously published techniques.}
+      \field{day}{21}
+      \field{eprintclass}{stat.ML}
+      \field{eprinttype}{arXiv}
+      \field{month}{7}
+      \field{pubstate}{prepublished}
+      \field{title}{Layer {{Normalization}}}
+      \field{urlday}{26}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1607.06450
+      \endverb
+      \verb{eprint}
+      \verb 1607.06450
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\5UVU97HG\\Ba et al. - 2016 - Layer Normalization.pdf;C\:\\Users\\Minh\\Zotero\\storage\\QWVF537K\\1607.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1607.06450
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1607.06450
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning}
+    \endentry
+    \entry{heDeepResidualLearning2015}{online}{}{}
+      \name{author}{4}{}{%
+        {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kaiming},
+           giveni={K\bibinitperiod}}}%
+        {{hash=5e72bc22dbcf0984c6d113d280e36990}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiangyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=bb295293acacd54387339079ebbe4ead}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Shaoqing},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f85751488058842b5777c7b4074077b5}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{fullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{fullhashraw}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{bibnamehash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{authorbibnamehash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorfullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{authorfullhashraw}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers---8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57\% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28\% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC \& COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.}
+      \field{day}{10}
+      \field{eprintclass}{cs.CV}
+      \field{eprinttype}{arXiv}
+      \field{month}{12}
+      \field{pubstate}{prepublished}
+      \field{title}{Deep {{Residual Learning}} for {{Image Recognition}}}
+      \field{urlday}{26}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1512.03385
+      \endverb
+      \verb{eprint}
+      \verb 1512.03385
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\75VAK6AC\\He et al. - 2015 - Deep Residual Learning for Image Recognition.pdf;C\:\\Users\\Minh\\Zotero\\storage\\JGTBNRHI\\1512.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1512.03385
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1512.03385
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition}
+    \endentry
+    \entry{dosovitskiyImageWorth16x162021}{misc}{}{}
+      \name{author}{12}{}{%
+        {{hash=72308762399d6ab62bbd9391c64c7bfd}{%
+           family={Dosovitskiy},
+           familyi={D\bibinitperiod},
+           given={Alexey},
+           giveni={A\bibinitperiod}}}%
+        {{hash=836254958eac09b30d45dd67a75ce4fa}{%
+           family={Beyer},
+           familyi={B\bibinitperiod},
+           given={Lucas},
+           giveni={L\bibinitperiod}}}%
+        {{hash=6807e3c00242c6bf6a3179905040471b}{%
+           family={Kolesnikov},
+           familyi={K\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b398fca6879fde89a032b8e7de2f26b5}{%
+           family={Weissenborn},
+           familyi={W\bibinitperiod},
+           given={Dirk},
+           giveni={D\bibinitperiod}}}%
+        {{hash=00b950307c7d096765bb6df00c7c5c3a}{%
+           family={Zhai},
+           familyi={Z\bibinitperiod},
+           given={Xiaohua},
+           giveni={X\bibinitperiod}}}%
+        {{hash=1a47640139e63b9b5969c969dfe95def}{%
+           family={Unterthiner},
+           familyi={U\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=965baf6fa5686a42b1564330c5e11f2f}{%
+           family={Dehghani},
+           familyi={D\bibinitperiod},
+           given={Mostafa},
+           giveni={M\bibinitperiod}}}%
+        {{hash=06829adce8713f0ace444279dcd7328f}{%
+           family={Minderer},
+           familyi={M\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c95269b4a2e23e1e526be521c7ec6ad4}{%
+           family={Heigold},
+           familyi={H\bibinitperiod},
+           given={Georg},
+           giveni={G\bibinitperiod}}}%
+        {{hash=450963f966620925cb8fecd32f7a6ee1}{%
+           family={Gelly},
+           familyi={G\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod}}}%
+        {{hash=831027ee0ebf22375e2a86afc1881909}{%
+           family={Uszkoreit},
+           familyi={U\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=493a532418540859dca92cf3b579de2a}{%
+           family={Houlsby},
+           familyi={H\bibinitperiod},
+           given={Neil},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{d96316bc7578db680aba71d4226354c8}
+      \strng{fullhash}{b8c06eaeb698f61fc96ff3e5570552ec}
+      \strng{fullhashraw}{b8c06eaeb698f61fc96ff3e5570552ec}
+      \strng{bibnamehash}{d96316bc7578db680aba71d4226354c8}
+      \strng{authorbibnamehash}{d96316bc7578db680aba71d4226354c8}
+      \strng{authornamehash}{d96316bc7578db680aba71d4226354c8}
+      \strng{authorfullhash}{b8c06eaeb698f61fc96ff3e5570552ec}
+      \strng{authorfullhashraw}{b8c06eaeb698f61fc96ff3e5570552ec}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks. When pre-trained on large amounts of data and transferred to multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.), Vision Transformer (ViT) attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train.}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{shorttitle}{An {{Image}} Is {{Worth}} 16x16 {{Words}}}
+      \field{title}{An {{Image}} Is {{Worth}} 16x16 {{Words}}: {{Transformers}} for {{Image Recognition}} at {{Scale}}}
+      \field{urlday}{28}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2010.11929
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2010.11929
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2010.11929
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning}
+    \endentry
     \entry{fotiadouEnhancementLowqualityFetal2018}{article}{}{}
       \name{author}{4}{}{%
         {{hash=547cad90077ea1b62d3bb8838e5290b8}{%
@@ -1390,8 +2059,8 @@
       \strng{authornamehash}{22bebab109c81072a2be56d8d3060399}
       \strng{authorfullhash}{e2f72d707346c41bc60ce2d556da0c69}
       \strng{authorfullhashraw}{e2f72d707346c41bc60ce2d556da0c69}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Extraction of a clean fetal electrocardiogram (ECG) from non-invasive abdominal recordings is one of the biggest challenges in fetal monitoring. An ECG allows for the interpretation of the electrical heart activity beyond the heart rate and heart rate variability. However, the low signal quality of the fetal ECG hinders the morphological analysis of its waveform in clinical practice. The time-sequenced adaptive filter has been proposed for performing optimal time-varying filtering of non-stationary signals having a recurring statistical character. In our study, the time-sequenced adaptive filter is applied to enhance the quality of multichannel fetal ECG after the maternal ECG is removed. To improve the performance of the filter in cases of low signal-to-noise ratio (SNR), we enhance the ECG reference signals by averaging consecutive ECG complexes. The performance of the proposed augmented time-sequenced adaptive filter is evaluated in both synthetic and real data from PhysioNet. This evaluation shows that the suggested algorithm clearly outperforms other ECG enhancement methods, in terms of uncovering the ECG waveform, even in cases with very low SNR. With the presented method, quality of the fetal ECG morphology can be enhanced to the extent that the ECG might be fit for use in clinical diagnostics.}
@@ -1442,8 +2111,8 @@
       \strng{authornamehash}{5b0fc00e0d10b4d53cd5bc04bf17e5ba}
       \strng{authorfullhash}{5b0fc00e0d10b4d53cd5bc04bf17e5ba}
       \strng{authorfullhashraw}{5b0fc00e0d10b4d53cd5bc04bf17e5ba}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A Fetal Electrocardiogram (FECG) signal will contain some potential information which is precise for assisting the clinicians to make appropriate decisions that are timely at the time of pregnancy and labor. Extraction and detection of such FECG signals from their composite maternal signals of the abdomen using very powerful and advanced methodologies is a very critical need in case of fetal monitoring. The mining of pure FECG signals from the abdominal of the prenatal woman is focused in this paper. This FECG signal is very vulnerable to noise and is very difficult to process it accurately with no significant distortion that can imped its use. So, in order to be able to get some proper information on the status of the fetus or its condition it is important to be able to improve the abdominal signal and its SNR. Since the wavelet transform is well in providing information in time and frequency, the combination of Stationary Wavelet Transform (SWT), Weighted Least Square Regression (WLSR) and parallel Extended Kalman Filter (Par-EKF) are used for FECG extraction. The analysis for different values of Signal to Noise Ratio (SNR) between fetal and maternal ECG’s is implemented using MATLAB. As a Result, the highest SNR obtained is 33.5 which showed that the proposed method is efficient in extracting more information about FECG from Maternal ECG (MECG).}
@@ -1524,8 +2193,8 @@
       \strng{authornamehash}{7758389908a3a01061943431b6ed2ea6}
       \strng{authorfullhash}{8f9f2772d3c9ffe18c701f184d1a5595}
       \strng{authorfullhashraw}{8f9f2772d3c9ffe18c701f184d1a5595}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Monitoring of electrocardiogram (ECG) provides vital information as well as any cardiovascular anomalies. Recent advances in the technology of wearable electronics have enabled compact devices to acquire personal physiological signals in the home setting; however, signals are usually contaminated with high level noise. Thus, an efficient ECG filtering scheme is a dire need. In this paper, a novel method using Ensemble Kalman Filter (EnKF) is developed for denoising ECG signals. We also intensively explore various filtering algorithms, including Savitzky-Golay (SG) filter, Ensemble Empirical mode decomposition (EEMD), Normalized Least-Mean-Square (NLMS), Recursive least squares (RLS) filter, Total variation denoising (TVD), Wavelet and extended Kalman filter (EKF) for comparison. Data from the MIT-BIH Noise Stress Test database were used. The proposed methodology shows the average signal to noise ratio (SNR) of 10.96, the Percentage Root Difference of 150.45, and the correlation coefficient of 0.959 from the modified MIT-BIH database with added motion artifacts.}
@@ -1568,8 +2237,8 @@
       \strng{authornamehash}{5f51e101ec9061aa2536f23f79023b56}
       \strng{authorfullhash}{5f51e101ec9061aa2536f23f79023b56}
       \strng{authorfullhashraw}{5f51e101ec9061aa2536f23f79023b56}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Blind signal separation (BSS) and independent component analysis (ICA) are emerging techniques of array processing and data analysis that aim to recover unobserved signals or "sources" from observed mixtures (typically, the output of an array of sensors), exploiting only the assumption of mutual independence between the signals. The weakness of the assumptions makes it a powerful approach, but it requires us to venture beyond familiar second order statistics, The objectives of this paper are to review some of the approaches that have been developed to address this problem, to illustrate how they stem from basic principles, and to show how they relate to each other.}
@@ -1623,8 +2292,8 @@
       \strng{authornamehash}{0d2dcbd0d0a7f287d6d6f7011ce74550}
       \strng{authorfullhash}{0d2dcbd0d0a7f287d6d6f7011ce74550}
       \strng{authorfullhashraw}{0d2dcbd0d0a7f287d6d6f7011ce74550}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The paper considers an application of blind identification to beamforming. The key point is to use estimates of directional vectors rather than resort to their hypothesised value. By using estimates of the directional vectors obtained via blind identification, i.e. without knowing the array manifold, beamforming is made robust with respect to array deformations, distortion of the wave front, pointing errors etc., so that neither array calibration nor physical modelling is necessary. Rather suprisingly, ‘blind beamformers’ may outperform ‘informed beamformers’ in a plausible range of parameters, even when the array is perfectly known to the informed beamformer. The key assumption on which blind identification relies is the statistical independence of the sources, which is exploited using fourth-order cumulants. A computationally efficient technique is presented for the blind estimation of directional vectors, based on joint diagonalisation of fourth-order cumulant matrices; its implementation is described, and its performance is investigated by numerical experiments.}
@@ -1672,8 +2341,8 @@
       \strng{authornamehash}{1a56ef55cb5e484636b792a5878c3979}
       \strng{authorfullhash}{1a56ef55cb5e484636b792a5878c3979}
       \strng{authorfullhashraw}{1a56ef55cb5e484636b792a5878c3979}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{A fundamental problem in neural network research, as well as in many other disciplines, is finding a suitable representation of multivariate data, i.e. random vectors. For reasons of computational and conceptual simplicity, the representation is often sought as a linear transformation of the original data. In other words, each component of the representation is a linear combination of the original variables. Well-known linear transformation methods include principal component analysis, factor analysis, and projection pursuit. Independent component analysis (ICA) is a recently developed method in which the goal is to find a linear representation of non-Gaussian data so that the components are statistically independent, or as independent as possible. Such a representation seems to capture the essential structure of the data in many applications, including feature extraction and signal separation. In this paper, we present the basic theory and applications of ICA, and our recent work on the subject.}
@@ -1734,8 +2403,8 @@
       \strng{authornamehash}{1ea20a2a32895a3e7b9eee5aaa86a4ff}
       \strng{authorfullhash}{db4f1631d4fcf44266213c99593cac54}
       \strng{authorfullhashraw}{db4f1631d4fcf44266213c99593cac54}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper, we propose a new method for FECG detection in abdominal recordings. The method consists of a sequential analysis approach, in which the a priori information about the interference signals is used for the detection of the FECG. Our method is evaluated on a set of 20 abdominal recordings from pregnant women with different gestational ages. Its performance in terms of fetal heart rate (FHR) detection success is compared with that of independent component analysis (ICA). The results show that our sequential estimation method outperforms ICA with a FHR detection rate of 85\% versus 60\% of ICA. The superior performance of our method is especially evident in recordings with a low signal-to-noise ratio (SNR). This indicates that our method is more robust than ICA for FECG detection.}
@@ -1787,8 +2456,8 @@
       \strng{authornamehash}{01d0827e15d4e6b1f81ec4fe644c660e}
       \strng{authorfullhash}{a5007c1881deab89cfc339fe66dc4dd5}
       \strng{authorfullhashraw}{a5007c1881deab89cfc339fe66dc4dd5}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{2018 4th International Conference on Frontiers of Signal Processing (ICFSP)}
@@ -1848,8 +2517,8 @@
       \strng{authornamehash}{5c7e84cf425e168df0a35b0c308dcc42}
       \strng{authorfullhash}{63c3b4a3e80ab2c7a06b1141668f649c}
       \strng{authorfullhashraw}{63c3b4a3e80ab2c7a06b1141668f649c}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Objectives Noninvasive fetal electrocardiography (FECG) offers many advantages over alternative fetal monitoring techniques in evaluating fetal health conditions. However, it is difficult to extract a clean FECG signal with morphological features from an abdominal ECG recorded at the maternal abdomen; the signal is usually contaminated by the maternal ECG and various noises. The aim of the work is to extract an FECG signal that preserves the morphological features from the mother’s abdominal ECG recording, which allows for accurately estimating the fetal heart rate (FHR) and analyzing the waveforms of the fetal ECG. Methods We propose a novel nonlinear adaptive noise cancelling framework (ANC) based on a temporal convolutional neural network (CNN) to effectively extract fetal ECG signals from mothers’ abdominal ECG recordings. The proposed framework consists of a two-stage network, using the ANC architecture; one network is for the maternal ECG component elimination and the other is for the residual noise component removal of the extracted fetal ECG signal. Then, JADE (one of the blind source separation algorithms) is applied as a postprocessing step to produce a clean fetal ECG signal. Results Synthetic ECG data (FECGSYNDB) and clinical ECG data (NIFECGDB, PCDB) are used to evaluate the extraction performance of the proposed framework. The statistical and visual results demonstrate that our method outperforms the other state-of-the-art algorithms in the literature. Specifically, on the FECGSYNDB, the mean squared error (MSE), signal-to-noise ratio (SNR), correlation coefficient (R) and F1-score of our method are 0.16, 7.94, 0.95 and 98.89\%, respectively. The F1-score on the NIFECGDB reaches 98.62\%. The value of the F1-score on the PCDB is 98.62\%. Conclusion As opposed to the existing algorithms being restricted to fetal QRS complex detection, the proposed framework can preserve the morphological features of the extracted fetal ECG signal well, which could support medical diagnoses based on the morphology of the fetal ECG signal.}
@@ -1910,8 +2579,8 @@
       \strng{authornamehash}{b5ebcac993e2ecefa3d95f4e62acdf5e}
       \strng{authorfullhash}{374d8455bc7579c8b866b269f099f22f}
       \strng{authorfullhashraw}{374d8455bc7579c8b866b269f099f22f}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Objective: Non-Invasive foetal electrocardiography (NI-FECG) has the potential to provide more additional clinical information for detecting and diagnosing fetal diseases. We propose and demonstrate a deep learning approach for fetal QRS complex detection from raw NI-FECG signals by using Convolutional Neural Network (CNN) model. The main objective is to investigate whether reliable fetal QRS complex detection performance can still be obtained from features of single-channel NI-FECG signals, without canceling maternal ECG (MECG) signals. Approach: A deep learning method is proposed for recognizing fetal QRS complexes. Firstly, We collecte the data from set-a of PhysioNet/Computing in Cardiology Challenge Database (PCDB). The sample entropy (SampEn) method is used for signal quality assessment. Part of the bad quality signals are excluded in the further analysis. Secondly, in the proposed method, the features of raw NI-FECG signals are normalized before they are fed to a CNN classifier to perform fetal QRS complex detection. We use precision, recall, F-measure and accuracy as the evaluation metrics to assess the performance of fetal QRS complex detection. Main results: The proposed deep learning method can achieve relatively high precision (75.33\%), recall (80.54\%), and F-measure scores (77.85\%) compared with three other well-known pattern classification methods namely KNN, Naive Bayes (NB) and the SVM. Significance: The proposed deep learning method can attain reliable fetal QRS complex detection performance from the raw NI-FECG signals without canceling MECG signals. In addition, the influence of different activation functions and signal quality assessment on classification performance are evaluated, and results show that Relu outperforms the Sigmoid and Tanh on this particular task, and better classification performance is obtained with the signal quality assessment step in this study.}
@@ -1961,8 +2630,8 @@
       \strng{authornamehash}{61cc982cec0573596a9c52ae531e20c1}
       \strng{authorfullhash}{cdaf4051c4acc9f715b5e8c05aa03a79}
       \strng{authorfullhashraw}{cdaf4051c4acc9f715b5e8c05aa03a79}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The invasive method of fetal electrocardiogram (fECG) monitoring is widely used with electrodes directly attached to the fetal scalp. There are potential risks such as infection and, thus, it is usually carried out during labor in rare cases. Recent advances in electronics and technologies have enabled fECG monitoring from the early stages of pregnancy through fECG extraction from the combined fetal/maternal ECG (f/mECG) signal recorded non-invasively in the abdominal area of the mother. However, cumbersome algorithms that require the reference maternal ECG as well as heavy feature crafting makes out-of-clinics fECG monitoring in daily life not yet feasible. To address these challenges, we proposed a pure end-to-end deep learning model to detect fetal QRS complexes (i.e., the main spikes observed on a fetal ECG waveform). Additionally, the model has the residual network (ResNet) architecture that adopts the novel 1-D octave convolution (OctConv) for learning multiple temporal frequency features, which in turn reduce memory and computational cost. Importantly, the model is capable of highlighting the contribution of regions that are more prominent for the detection. To evaluate our approach, data from the PhysioNet 2013 Challenge with labeled QRS complex annotations were used in the original form, and the data were then modified with Gaussian and motion noise, mimicking real-world scenarios. The model can achieve a F1 score of 91.1\% while being able to save more than 50\% computing cost with less than 2\% performance degradation, demonstrating the effectiveness of our method.}
@@ -1999,8 +2668,8 @@
       \strng{authornamehash}{c955bbc46524c46b7bd1441b444cef54}
       \strng{authorfullhash}{c955bbc46524c46b7bd1441b444cef54}
       \strng{authorfullhashraw}{c955bbc46524c46b7bd1441b444cef54}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error backflow. We briefly review Hochreiter's (1991) analysis of this problem, then address it by introducing a novel, efficient, gradient-based method called long short-term memory (LSTM). Truncating the gradient where this does not do harm, LSTM can learn to bridge minimal time lags in excess of 1000 discrete-time steps by enforcing constant error flow through constant error carousels within special units. Multiplicative gate units learn to open and close access to the constant error flow. LSTM is local in space and time; its computational complexity per time step and weight is O(1). Our experiments with artificial data involve local, distributed, real-valued, and noisy pattern representations. In comparisons with real-time recurrent learning, back propagation through time, recurrent cascade correlation, Elman nets, and neural sequence chunking, LSTM leads to many more successful runs, and learns much faster. LSTM also solves complex, artificial long-time-lag tasks that have never been solved by previous recurrent network algorithms.}
@@ -2072,8 +2741,8 @@
       \strng{authorfullhash}{328837ba28d9553e4c2b45df9dde2c2d}
       \strng{authorfullhashraw}{328837ba28d9553e4c2b45df9dde2c2d}
       \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Fetal heart monitoring during pregnancy plays a critical role in diagnosing congenital heart disease (CHD). A noninvasive fetal electrocardiogram (fECG) provides additional clinical information for fetal heart monitoring. To date, the analysis of noninvasive fECG is challenging due to the cancellation of maternal QRS-complexes, despite significant advances in electrocardiography. Fetal QRS-complex is highly considered to measure fetal heart rate to detect some fetal abnormalities such as arrhythmia. In this study, we proposed a deep learning (DL) framework that stacked a convolutional layer and bidirectional long short-term memory for fetal QRS-complexes classification. The fECG signals are first preprocessed using discrete wavelet transform (DWT) to remove the noise or inferences. The following step beats and QRS-complex segmentation. The last step is fetal QRS-complex classification based on DL. In the experiment of Physionet/Computing in Cardiology Challenge 2013, this study achieved 100\% accuracy, sensitivity, specificity, precision, and F1-score. A stacked DL model demonstrates an effective tool for fetal QRS-complex classification and contributes to clinical applications for long-term maternal and fetal monitoring.}
@@ -2155,8 +2824,8 @@
       \strng{authorfullhash}{9eebd91d736e1c6be7c706c5094ecde7}
       \strng{authorfullhashraw}{9eebd91d736e1c6be7c706c5094ecde7}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Fetal QRS-complex generated from an abdominal electrocardiogram (ECG) is an effective noninvasive tool for accurately measuring the fetus well-being during pregnancy. Classification of fetal QRS is significant to avoid fetal heart abnormalities, such as asphyxia, bradycardia, and hypoxia. However, accurately classifying the fetal QRS-complex is hard because the characteristic fetal ECG (fECG) has small amount of signal energy and it has undesired signal components, including recording devices, movement artifacts, and fetal brain activity. The sophisticated fECG signal processing for fetal QRS-complex classification has been used in the literature. However, they mostly use human intervention for feature extraction, leading to time-consume and raising the measurement error. Hence, this study investigates deep learning (DL) that performs automated feature extraction tasks excellently. DL has excellence amount of data scales, which is its ability to automatically learn and improve from data without the need for explicit programming. A sequence-to-sequence learning task was generated using a hybrid four convolution layers as a part of convolutional neural networks and bidirectional long short-term memory (ConvBiLSTM). As the results, the performance is outstanding; the accuracy, sensitivity, specificity, precision, and F1-score were 100\%. The observed results show the proposed ConvBiLSTM model is worth evaluating their effectiveness for fetal QRS-complex classification.}
@@ -2214,8 +2883,8 @@
       \strng{authornamehash}{f3ba4e3de37df404898f9eabb5ccfa43}
       \strng{authorfullhash}{35fa6caf7a14f88733b02145ae838c5f}
       \strng{authorfullhashraw}{35fa6caf7a14f88733b02145ae838c5f}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper, the problem of monitoring the electrical pulse of the fetal heart using non-invasive electrocardiogram (ECG) signal is studied. To overcome challenges like the overlap between maternal and fetal heart components and noise in the mother’s abdomen signal, we propose a new single-channel signal processing technique to detect the fetal QRS (fQRS) events. We first propose a modified sample entropy technique to filter out noisy and complex signal components. Then, common spatial pattern (CSP) technique is employed to find a new sub-space with reduced overlap among maternal and fetal patterns. Then, a one-dimensional convolutional neural network is trained to detect the fQRS events from the abdominal ECG. The obtained results on several well-established datasets are promising and confirm the effectiveness of the proposed approach.}
@@ -2296,8 +2965,8 @@
       \strng{authornamehash}{8b5c7065f4df4f81627df9460343f166}
       \strng{authorfullhash}{5afe3eb3246d0b46f32cdc5ff3e9d6b8}
       \strng{authorfullhashraw}{5afe3eb3246d0b46f32cdc5ff3e9d6b8}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advances in {{Neural Information Processing Systems}}}
@@ -2347,8 +3016,8 @@
       \strng{authornamehash}{6bbc73cad9d67ffe67a198aaeed8ce61}
       \strng{authorfullhash}{69bc0b2da0c2e1bc9b8395c1d38556bb}
       \strng{authorfullhashraw}{69bc0b2da0c2e1bc9b8395c1d38556bb}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Unpaired {{Image-To-Image Translation Using Cycle-Consistent Adversarial Networks}}}
@@ -2408,8 +3077,8 @@
       \strng{authornamehash}{97c4c9995686ef7cb7eb09fa82f218eb}
       \strng{authorfullhash}{44c18ee76a94db113d719352a2eb3b1c}
       \strng{authorfullhashraw}{44c18ee76a94db113d719352a2eb3b1c}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Non-invasive fetal electrocardiogram (FECG) is used to monitor the electrical pulse of the fetal heart. Decomposing the FECG signal from maternal ECG (MECG) is a blind source separation problem, which is hard due to the low amplitude of FECG, the overlap of R waves, and the potential exposure to noise from different sources. Traditional decomposition techniques, such as adaptive filters, require tuning, alignment, or preconfiguration, such as modeling the noise or desired signal. to map MECG to FECG efficiently. The high correlation between maternal and fetal ECG parts decreases the performance of convolution layers. Therefore, the masking region of interest using the attention mechanism is performed for improving signal generators' precision. The sine activation function is also used since it could retain more details when converting two signal domains. Three available datasets from the Physionet, including A\&D FECG, NI-FECG, and NI-FECG challenge, and one synthetic dataset using FECGSYN toolbox, are used to evaluate the performance. The proposed method could map abdominal MECG to scalp FECG with an average 98\% R-Square [CI 95\%: 97\%, 99\%] as the goodness of fit on A\&D FECG dataset. Moreover, it achieved 99.7 \% F1-score [CI 95\%: 97.8-99.9], 99.6\% F1-score [CI 95\%: 98.2\%, 99.9\%] and 99.3\% F1-score [CI 95\%: 95.3\%, 99.9\%] for fetal QRS detection on, A\&D FECG, NI-FECG and NI-FECG challenge datasets, respectively. These results are comparable to the state-of-the-art; thus, the proposed algorithm has the potential of being used for high-performance signal-tosignal conversion.}
@@ -2459,8 +3128,8 @@
       \strng{authornamehash}{57b42701b22f531152e3c46bac5537ad}
       \strng{authorfullhash}{57b42701b22f531152e3c46bac5537ad}
       \strng{authorfullhashraw}{57b42701b22f531152e3c46bac5537ad}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{OBJECTIVE: The development of a method for non-invasive monitoring of fetal electrocardiogram (FECG) signals from single-channel abdominal recordings. METHODS: The dual-path source separation (DPSS) architecture is introduced for the simultaneous separation of fetal and maternal ECG signals from abdominal ECG recordings. DPSS initially denoises abdominal ECG (AECG) recordings using a generative dual-path long short-term memory (DP-LSTM) network. An inception module along with a series of DP-LSTM blocks is then employed to extract the masking maps associated with fetal and maternal components. Finally, these masking maps are weighted by the AECG recording to separate maternal and fetal ECG signals. The performance of this network is evaluated on 10 pregnancies from the fetal ECG synthetic database (FECGSYNDB), 22 cases of labor and pregnancy from the abdominal and direct fetal ECG database (ADFECGDB), and 69 pregnancies from set A of non-invasive FECG challenge (NIFECGC) datasets. RESULTS: F1-scores of 99.03\%, 97.7\%, and 95.3\% are reported for the detection of fetal QRS complexes in FECGSYNDB, ADFECGDB, and NIFECGC respectively. DPSS technique is also evaluated in terms of separability of fetal and maternal clusters. According to the clustering-based analyses, the average purity index of 0.9750, Jaccard index of 0.9705, and Davies-Bouldin index of 0.7429 demonstrate the high source separation capability of DPSS. CONCLUSION: The achieved performance suggests that DPSS enables accurate single-channel FECG extraction, and can replace state-of-the-art source separation techniques for this purpose. SIGNIFICANCE: This study signifies a fundamental step towards non-invasive fetal ECG monitoring systems, which favors at-home prenatal care.}
@@ -2501,8 +3170,8 @@
       \strng{authornamehash}{3404d8d4b373cf2b30faff0dbb17deaa}
       \strng{authorfullhash}{3404d8d4b373cf2b30faff0dbb17deaa}
       \strng{authorfullhashraw}{3404d8d4b373cf2b30faff0dbb17deaa}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Fetal cardiac monitoring and assessment during pregnancy play a critical role in the early detection of the potential risk of fetal cardiac problems, thus allowing for timely preventive measures and healthy births. It is necessary to continuously monitor the fetal heart for this purpose. Methods of fetal cardiac monitoring by extracting maternal and fetal electrocardiograms (ECGs) from maternal abdominal ECGs have been extensively investigated. However, the extraction of a clear fetal ECG is a major challenge because fetal signals are typically dominated by maternal ECG signals and noise. Most existing methods for fetal ECG extraction involve several steps, such as extracting and removing the maternal ECG and then extracting the fetal ECG. To address the complexity of this process, we propose a novel method for effectively decomposing a single-channel maternal abdominal ECG into a maternal ECG and fetal ECG without using multiple steps by employing an end-to-end deep learning network architecture using W-net. Model training is performed using a simulation dataset. Then, a fetal ECG is extracted from a real maternal abdominal ECG. The performance of the proposed architecture is compared with that of other state-of-the-art deep learning models on the basis of the detection of QRS complexes. The proposed model shows higher precision and recall values and F1 scores. This demonstrates that the proposed model can effectively extract a fetal ECG from a single-channel maternal abdominal ECG. The model is expected to contribute to commercial applications for long-term maternal and fetal monitoring.}
@@ -2529,58 +3198,8 @@
       \endverb
       \keyw{Data mining,Data models,Electrocardiography,Feature extraction,Fetal electrocardiogram,Lead,maternal electrocardiogram,Monitoring,R-peak,Training,U-net,W-net}
     \endentry
-    \entry{panRealTimeQRSDetection1985}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=ccdc3e3d241b1ce26d7c7d2405695bca}{%
-           family={Pan},
-           familyi={P\bibinitperiod},
-           given={Jiapu},
-           giveni={J\bibinitperiod}}}%
-        {{hash=eb83740709bd91915efe2912ce4ea048}{%
-           family={Tompkins},
-           familyi={T\bibinitperiod},
-           given={Willis\bibnamedelima J.},
-           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \strng{namehash}{5e252c476d27bcdedcda3919fec475d6}
-      \strng{fullhash}{5e252c476d27bcdedcda3919fec475d6}
-      \strng{fullhashraw}{5e252c476d27bcdedcda3919fec475d6}
-      \strng{bibnamehash}{5e252c476d27bcdedcda3919fec475d6}
-      \strng{authorbibnamehash}{5e252c476d27bcdedcda3919fec475d6}
-      \strng{authornamehash}{5e252c476d27bcdedcda3919fec475d6}
-      \strng{authorfullhash}{5e252c476d27bcdedcda3919fec475d6}
-      \strng{authorfullhashraw}{5e252c476d27bcdedcda3919fec475d6}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{We have developed a real-time algorithm for detection of the QRS complexes of ECG signals. It reliably recognizes QRS complexes based upon digital analyses of slope, amplitude, and width. A special digital bandpass filter reduces false detections caused by the various types of interference present in ECG signals. This filtering permits use of low thresholds, thereby increasing detection sensitivity. The algorithm automatically adjusts thresholds and parameters periodically to adapt to such ECG changes as QRS morphology and heart rate. For the standard 24 h MIT/BIH arrhythmia database, this algorithm correctly detects 99.3 percent of the QRS complexes.}
-      \field{issn}{1558-2531}
-      \field{journaltitle}{IEEE Transactions on Biomedical Engineering}
-      \field{month}{3}
-      \field{number}{3}
-      \field{title}{A {{Real-Time QRS Detection Algorithm}}}
-      \field{urlday}{16}
-      \field{urlmonth}{2}
-      \field{urlyear}{2026}
-      \field{volume}{BME-32}
-      \field{year}{1985}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{230\bibrangedash 236}
-      \range{pages}{7}
-      \verb{doi}
-      \verb 10.1109/TBME.1985.325532
-      \endverb
-      \verb{urlraw}
-      \verb https://ieeexplore.ieee.org/document/4122029
-      \endverb
-      \verb{url}
-      \verb https://ieeexplore.ieee.org/document/4122029
-      \endverb
-      \keyw{Band pass filters,Computer displays,Databases,Detection algorithms,Detectors,Digital filters,Electrocardiography,Filtering,Interference,Noise reduction}
-    \endentry
   \enddatalist
+  \missing{panRealTimeQRSDetection1985}
 \endrefsection
 \endinput
 

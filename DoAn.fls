@@ -211,6 +211,9 @@ INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/setspace/setspace.st
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/setspace/setspace.sty
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/koma-script/tocbasic.sty
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/koma-script/tocbasic.sty
+INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/tex/generic/ulem/ulem.sty
+INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/tex/generic/ulem/ulem.sty
+INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/blindtext/blindtext.sty
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/blindtext/blindtext.sty
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.sty
@@ -430,7 +433,6 @@ INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmex
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/latex-fonts/lasy9.tfm
-INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
@@ -555,6 +557,11 @@ INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symb
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/tfm/vntex/urwvn/ucrr8v.tfm
+INPUT ./Hinhve/erd_fecg_server.png
+INPUT ./Hinhve/erd_fecg_server.png
+INPUT Hinhve/erd_fecg_server.png
+INPUT ./Hinhve/erd_fecg_server.png
+INPUT ./Hinhve/erd_fecg_server.png
 INPUT ./Chuong/9_Ket_luan.tex
 INPUT ./Chuong/9_Ket_luan.tex
 INPUT Chuong/9_Ket_luan.tex
@@ -571,12 +578,10 @@ INPUT DoAn.run.xml
 OUTPUT DoAn.run.xml
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT m:/Code_Enviroments/texlive/2026/texmf-dist/fonts/type1/vntex/urwvn/ucrr8v.pfb

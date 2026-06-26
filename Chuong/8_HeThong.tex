@@ -239,23 +239,42 @@ Hệ thống cảnh báo sử dụng ngưỡng nhịp tim thai theo khuyến cá
 \end{itemize}
 
 \subsection{Lưu trữ và mô hình dữ liệu}
-% Gạch đầu dòng gốc:
-% - SQLite (chế độ WAL); lưu 1/4 mẫu (downsample lịch sử) để tiết kiệm dung lượng.
-% - Lược đồ: doctors, patients, sessions, samples, doctor_login.
-% - Mật khẩu băm PBKDF2-HMAC-SHA256 (có salt); thiết bị kết nối lại sẽ bỏ lưu trữ (un-archive) bệnh nhân tương ứng.
+% Lược đồ cập nhật: users, staff_profile, user_login, patients, sessions, samples, metrics, events (8 bảng).
+% Mật khẩu băm PBKDF2-HMAC-SHA256 (salt 8 byte, 100.000 vòng); khóa ngoại ở mức ứng dụng.
 
-Dữ liệu được lưu trữ trong cơ sở dữ liệu SQLite ở chế độ WAL (Write-Ahead Logging) để tối ưu hiệu năng ghi đồng thời. Nhằm tiết kiệm dung lượng lưu trữ, hệ thống chỉ ghi lại 1 trong mỗi 4 mẫu (downsample tỷ lệ 1:4) vào cơ sở dữ liệu, trong khi toàn bộ mẫu vẫn được phân phối live qua WebSocket.
+Dữ liệu được lưu trữ trong cơ sở dữ liệu SQLite ở chế độ WAL (Write-Ahead Logging) nhằm tối ưu hiệu năng ghi đồng thời. Để tiết kiệm dung lượng, hệ thống chỉ ghi lại 1 trong mỗi 4 mẫu (downsample tỷ lệ 1:4) vào cơ sở dữ liệu, trong khi toàn bộ mẫu vẫn được phân phối trực tiếp (live) qua WebSocket.
 
-Lược đồ cơ sở dữ liệu gồm năm bảng chính:
+Mô hình dữ liệu được thiết kế dựa trên nguyên tắc phân tách rõ ràng giữa \textit{chủ thể đăng nhập} và \textit{đối tượng theo dõi}. Chỉ nhân viên y tế mới có tài khoản đăng nhập: mỗi nhân viên tương ứng với một bản ghi trong bảng \texttt{users} (thông tin xác thực) và một bản ghi trong bảng \texttt{staff\_profile} (thông tin nghiệp vụ) theo quan hệ một--một. Ngược lại, bệnh nhân (thai phụ) là đối tượng được theo dõi, không có tài khoản đăng nhập, nên được lưu trong bảng riêng \texttt{patients} với khóa chính là một chuỗi định danh tự nhiên (ví dụ ``P001'').
+
+Lược đồ cơ sở dữ liệu gồm tám bảng:
 \begin{itemize}
-  \item \texttt{doctors}: thông tin bác sĩ (id, username, password\_hash, name, created\_at).
-  \item \texttt{patients}: thông tin bệnh nhân (id, name, mrn, sex, dob, notes, created\_at, archived).
-  \item \texttt{sessions}: phiên thu nhận (id, patient\_id, started\_at, ended\_at, sample\_rate).
-  \item \texttt{samples}: dữ liệu mẫu đã downsample (id, session\_id, t, raw, fecg).
-  \item \texttt{doctor\_login}: phiên đăng nhập web (token, doctor\_id, created\_at).
+  \item \texttt{users}: tài khoản đăng nhập của nhân viên y tế (số điện thoại, email, mật khẩu băm, vai trò \texttt{role}, trạng thái \texttt{is\_active}).
+  \item \texttt{staff\_profile}: hồ sơ nghiệp vụ của nhân viên (họ tên, chuyên khoa, học vị), liên kết một--một với \texttt{users}.
+  \item \texttt{user\_login}: phiên đăng nhập web, lưu token cookie ứng với mỗi tài khoản.
+  \item \texttt{patients}: hồ sơ bệnh nhân (họ tên, giới tính, ngày sinh, mã y tế MRN, số căn cước, địa chỉ, ghi chú, cờ \texttt{archived}).
+  \item \texttt{sessions}: mỗi phiên đo/kết nối thiết bị của một bệnh nhân (thời điểm bắt đầu, kết thúc, tần số lấy mẫu).
+  \item \texttt{samples}: dữ liệu dạng sóng thô và tín hiệu fECG đã downsample (nhãn thời gian \texttt{t}, giá trị \texttt{raw}, \texttt{fecg}).
+  \item \texttt{metrics}: chuỗi chỉ số xu hướng theo thời gian (tần suất khoảng 1~Hz) gồm FHR, MHR, chỉ số chất lượng tín hiệu \texttt{sq} và trạng thái cảnh báo.
+  \item \texttt{events}: các sự kiện cảnh báo, mốc phiên và ghi chú.
 \end{itemize}
 
-Mật khẩu bác sĩ được mã hóa bằng thuật toán PBKDF2-HMAC-SHA256 với salt ngẫu nhiên 8 byte và 100.000 vòng lặp. Trường \texttt{archived} cho phép lưu trữ (ẩn) bệnh nhân không còn theo dõi; khi thiết bị kết nối lại cho bệnh nhân đã lưu trữ, hệ thống tự động bỏ lưu trữ (un-archive).
+Các quan hệ giữa các bảng được thể hiện trong Hình~\ref{fig:erd_fecg}. Một tài khoản \texttt{users} có đúng một hồ sơ \texttt{staff\_profile} (quan hệ 1--1) và có thể có nhiều phiên đăng nhập \texttt{user\_login} (quan hệ 1--N). Mỗi bệnh nhân (\texttt{patients}) có thể có nhiều phiên đo (\texttt{sessions}); mỗi phiên đo lại sinh ra nhiều bản ghi \texttt{samples}, \texttt{metrics} và \texttt{events} (quan hệ 1--N). Riêng bảng \texttt{events} lưu đồng thời cả \texttt{patient\_id} lẫn \texttt{session\_id} để có thể truy vết sự kiện theo cả bệnh nhân lẫn phiên đo.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{Hinhve/erd_fecg_server.png}
+  \caption{Sơ đồ quan hệ thực thể (ERD) của cơ sở dữ liệu phân hệ server fECG.}
+  \label{fig:erd_fecg}
+\end{figure}
+
+Một số điểm đáng lưu ý trong thiết kế:
+\begin{itemize}
+  \item \textbf{Ràng buộc khóa ngoại ở mức ứng dụng.} Các cột \texttt{*\_id} đóng vai trò khóa ngoại về mặt logic, song lược đồ không khai báo \texttt{FOREIGN KEY ... REFERENCES}; tính toàn vẹn tham chiếu được đảm bảo bởi tầng ứng dụng.
+  \item \textbf{Đăng nhập bằng số điện thoại hoặc email.} Cả \texttt{phone\_number} và \texttt{email} đều là duy nhất (UNIQUE); hệ thống đối sánh thông tin đăng nhập với một trong hai và chỉ chấp nhận tài khoản đang hoạt động (\texttt{is\_active~=~1}).
+  \item \textbf{Khóa tự nhiên cho bệnh nhân.} \texttt{patients.id} (ví dụ ``P001'') là khóa chính dạng chuỗi, xuất hiện xuyên suốt trong địa chỉ URL, kênh WebSocket, khóa pub/sub và tên tệp CSV khi xuất dữ liệu.
+  \item \textbf{Bảo mật mật khẩu.} Mật khẩu được băm bằng thuật toán PBKDF2-HMAC-SHA256 với salt ngẫu nhiên 8 byte và 100.000 vòng lặp, lưu theo định dạng \texttt{salt\$hash}.
+  \item \textbf{Cờ lưu trữ.} Trường \texttt{archived} cho phép ẩn bệnh nhân không còn theo dõi; khi thiết bị kết nối lại cho bệnh nhân đã lưu trữ, hệ thống tự động bỏ lưu trữ (un-archive).
+\end{itemize}
 
 % ---------------------------------------------------------------------
 \section{Phân hệ giao diện web cho bác sĩ}

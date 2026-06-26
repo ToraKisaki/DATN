@@ -23,99 +23,99 @@
 \contentsline {section}{\numberline {2.3}Cơ sở học sâu}{10}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Mạng nơ-ron và khối MLP/FFN}{11}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Tích chập 1D (CNN) cho tín hiệu thời gian}{11}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Cơ chế Attention và Transformer encoder}{11}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Kiến trúc U-Net và UNETR}{12}{subsection.2.3.4}%
-\contentsline {subsubsection}{\numberline {2.3.4.1}U-Net}{12}{subsubsection.2.3.4.1}%
-\contentsline {subsubsection}{\numberline {2.3.4.2}UNETR: U-Net + Transformer encoder}{12}{subsubsection.2.3.4.2}%
-\contentsline {subsection}{\numberline {2.3.5}Kolmogorov--Arnold Networks (KAN)}{12}{subsection.2.3.5}%
-\contentsline {subsubsection}{\numberline {2.3.5.1}KAN: ``đảo trục'' từ học tuyến tính sang học phi tuyến}{12}{subsubsection.2.3.5.1}%
-\contentsline {subsubsection}{\numberline {2.3.5.2}Residual activation trong KAN và spline parameterization}{13}{subsubsection.2.3.5.2}%
-\contentsline {subsubsection}{\numberline {2.3.5.3}Hệ quả khi so KAN với MLP}{13}{subsubsection.2.3.5.3}%
-\contentsline {section}{\numberline {2.4}Tổng quan phương pháp tách NI-fECG}{14}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Nhóm phương pháp cổ điển}{14}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.3.3}Cơ chế Attention và Transformer encoder}{12}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Kiến trúc U-Net và UNETR}{13}{subsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.4.1}U-Net}{13}{subsubsection.2.3.4.1}%
+\contentsline {subsubsection}{\numberline {2.3.4.2}UNETR: U-Net + Transformer encoder}{13}{subsubsection.2.3.4.2}%
+\contentsline {subsection}{\numberline {2.3.5}Kolmogorov--Arnold Networks (KAN)}{13}{subsection.2.3.5}%
+\contentsline {subsubsection}{\numberline {2.3.5.1}KAN: ``đảo trục'' từ học tuyến tính sang học phi tuyến}{13}{subsubsection.2.3.5.1}%
+\contentsline {subsubsection}{\numberline {2.3.5.2}Residual activation trong KAN và spline parameterization}{14}{subsubsection.2.3.5.2}%
+\contentsline {subsubsection}{\numberline {2.3.5.3}Hệ quả khi so KAN với MLP}{14}{subsubsection.2.3.5.3}%
+\contentsline {section}{\numberline {2.4}Tổng quan phương pháp tách NI-fECG}{15}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Nhóm phương pháp cổ điển}{15}{subsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.1.1}Lọc thích nghi (Adaptive filtering)}{15}{subsubsection.2.4.1.1}%
-\contentsline {subsubsection}{\numberline {2.4.1.2}Kalman Filter (KF) và Extended Kalman Filter (EKF)}{15}{subsubsection.2.4.1.2}%
-\contentsline {subsubsection}{\numberline {2.4.1.3}Các kỹ thuật khử nhiễu thời--tần và phân rã tín hiệu}{15}{subsubsection.2.4.1.3}%
-\contentsline {subsubsection}{\numberline {2.4.1.4}Independent Component Analysis (ICA)}{15}{subsubsection.2.4.1.4}%
-\contentsline {subsubsection}{\numberline {2.4.1.5}Template Subtraction cơ bản}{16}{subsubsection.2.4.1.5}%
-\contentsline {subsubsection}{\numberline {2.4.1.6}Template Subtraction có hiệu chỉnh biên độ (TSc)}{16}{subsubsection.2.4.1.6}%
-\contentsline {subsubsection}{\numberline {2.4.1.7}Kết hợp TS và ICA (Hybrid TS--ICA)}{16}{subsubsection.2.4.1.7}%
+\contentsline {subsubsection}{\numberline {2.4.1.2}Kalman Filter (KF) và Extended Kalman Filter (EKF)}{16}{subsubsection.2.4.1.2}%
+\contentsline {subsubsection}{\numberline {2.4.1.3}Các kỹ thuật khử nhiễu thời--tần và phân rã tín hiệu}{16}{subsubsection.2.4.1.3}%
+\contentsline {subsubsection}{\numberline {2.4.1.4}Independent Component Analysis (ICA)}{16}{subsubsection.2.4.1.4}%
+\contentsline {subsubsection}{\numberline {2.4.1.5}Template Subtraction cơ bản}{17}{subsubsection.2.4.1.5}%
+\contentsline {subsubsection}{\numberline {2.4.1.6}Template Subtraction có hiệu chỉnh biên độ (TSc)}{17}{subsubsection.2.4.1.6}%
+\contentsline {subsubsection}{\numberline {2.4.1.7}Kết hợp TS và ICA (Hybrid TS--ICA)}{17}{subsubsection.2.4.1.7}%
 \contentsline {subsubsection}{\numberline {2.4.1.8}Nhận xét chung về giới hạn của các phương pháp cổ điển}{17}{subsubsection.2.4.1.8}%
-\contentsline {subsection}{\numberline {2.4.2}Nhóm phương pháp học sâu}{17}{subsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.2.1}Nhóm mô hình CNN cho fQRS detection và/hoặc trích dạng sóng fECG}{17}{subsubsection.2.4.2.1}%
+\contentsline {subsection}{\numberline {2.4.2}Nhóm phương pháp học sâu}{18}{subsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.2.1}Nhóm mô hình CNN cho fQRS detection và/hoặc trích dạng sóng fECG}{18}{subsubsection.2.4.2.1}%
 \contentsline {subsubsection}{\numberline {2.4.2.2}Nhóm mô hình RNN (LSTM/GRU) cho phụ thuộc thời gian}{18}{subsubsection.2.4.2.2}%
-\contentsline {subsubsection}{\numberline {2.4.2.3}Nhóm mô hình lai CNN--RNN}{18}{subsubsection.2.4.2.3}%
-\contentsline {subsubsection}{\numberline {2.4.2.4}Nhóm mô hình sinh (GAN/CycleGAN) hướng tới khôi phục dạng sóng và bảo toàn morphology}{18}{subsubsection.2.4.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.2.5}Nhóm Autoencoder và họ U-Net/UNet++/UNet3+ cho bài toán trích dạng sóng fECG}{18}{subsubsection.2.4.2.5}%
-\contentsline {section}{\numberline {2.5}Nhận xét, khoảng trống nghiên cứu và định vị đề tài}{19}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Kết luận chương}{19}{section.2.6}%
-\contentsline {chapter}{\numberline {3}PHƯƠNG PHÁP ĐỀ XUẤT VÀ THIẾT LẬP THỰC NGHIỆM}{20}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Giới thiệu chương}{20}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Bộ dữ liệu FECGSYNDB}{20}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Chiến lược chia dữ liệu}{21}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Tiền xử lý}{21}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Chuẩn hóa tín hiệu}{22}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}Mô hình đề xuất KAN-WNETR}{22}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Ý tưởng tổng thể}{22}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Kiến trúc nền W-NETR}{22}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}KAN-ViT: thay MLP/FFN bằng KAN trong encoder block}{23}{subsection.3.4.3}%
-\contentsline {paragraph}{KAN-ViT: giữ MSA, thay MLP bằng KAN.}{23}{paragraph*.11}%
-\contentsline {paragraph}{Hệ quả khi đem KAN-ViT sang 1D biosignal.}{23}{paragraph*.12}%
-\contentsline {subsection}{\numberline {3.4.4}Tích hợp KAN vào W-NETR: kiến trúc KAN-WNETR}{24}{subsection.3.4.4}%
-\contentsline {paragraph}{Nguyên tắc tích hợp.}{24}{paragraph*.13}%
-\contentsline {paragraph}{Khối encoder sau thay thế.}{24}{paragraph*.15}%
-\contentsline {subsection}{\numberline {3.4.5}Phân tích thiết kế và kỳ vọng}{24}{subsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.4.6}Tổng hợp đóng góp kiến trúc}{25}{subsection.3.4.6}%
-\contentsline {section}{\numberline {3.5}Hàm mất mát và cấu hình huấn luyện}{25}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Hàm mất mát Huber (Huber Loss)}{25}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Cấu hình huấn luyện}{26}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Phương pháp đánh giá}{27}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Phát hiện QRS}{27}{subsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.1.1}Lọc thông dải (Band-pass)}{27}{subsubsection.3.6.1.1}%
-\contentsline {subsubsection}{\numberline {3.6.1.2}Đạo hàm}{27}{subsubsection.3.6.1.2}%
-\contentsline {subsubsection}{\numberline {3.6.1.3}Bình phương}{27}{subsubsection.3.6.1.3}%
-\contentsline {subsubsection}{\numberline {3.6.1.4}Tích phân cửa sổ trượt}{28}{subsubsection.3.6.1.4}%
-\contentsline {subsubsection}{\numberline {3.6.1.5}Phát hiện đỉnh bằng ngưỡng thích nghi}{28}{subsubsection.3.6.1.5}%
-\contentsline {subsection}{\numberline {3.6.2}Chỉ số đánh giá}{28}{subsection.3.6.2}%
-\contentsline {subsubsection}{\numberline {3.6.2.1}Nhóm chỉ số phát hiện fECG (Precision/Recall/F1/Accuracy)}{28}{subsubsection.3.6.2.1}%
-\contentsline {subsubsection}{\numberline {3.6.2.2}Nhóm chỉ số chất lượng tín hiệu (PSNR/SSIM/MSE)}{29}{subsubsection.3.6.2.2}%
-\contentsline {subsubsection}{\numberline {3.6.2.3}Sai số ước lượng nhịp tim thai (FHR error)}{29}{subsubsection.3.6.2.3}%
-\contentsline {section}{\numberline {3.7}Kết luận chương}{29}{section.3.7}%
-\contentsline {chapter}{\numberline {4}KẾT QUẢ THỰC NGHIỆM VÀ ĐÁNH GIÁ}{31}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Giới thiệu chương}{31}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Kết quả định tính}{31}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Chất lượng tín hiệu định lượng (SSIM/PSNR)}{31}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Phát hiện fQRS, ước lượng FHR và so sánh SOTA}{32}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Nghiên cứu loại bỏ (ablation): MLP-FFN vs KAN-FFN}{33}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Phân tích độ phức tạp}{33}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Bàn luận}{33}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Kết luận chương}{33}{section.4.8}%
-\contentsline {chapter}{\numberline {5}THIẾT KẾ VÀ TRIỂN KHAI HỆ THỐNG THEO DÕI fECG THỜI GIAN THỰC}{34}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Giới thiệu chương và yêu cầu hệ thống}{34}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Kiến trúc tổng quan}{34}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Tối ưu mô hình cho thiết bị biên}{35}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Xuất ONNX}{35}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Lượng tử hóa INT8 động (MatMul/Gemm)}{35}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}ONNX Runtime trên Pi 5 và benchmark}{36}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}Phân hệ thu nhận và thiết bị (Raspberry Pi 5)}{36}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Phần cứng}{36}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Driver ADS1293}{37}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Xử lý thời gian thực}{38}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}Giao diện monitor đầu giường}{38}{subsection.5.4.4}%
-\contentsline {subsection}{\numberline {5.4.5}Cơ chế dự phòng}{38}{subsection.5.4.5}%
-\contentsline {section}{\numberline {5.5}Phân hệ server và phân tích lâm sàng (FastAPI + SQLite)}{39}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Giao tiếp WebSocket và xác thực token thiết bị}{39}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Ước lượng FHR / MHR / chỉ số chất lượng tín hiệu}{39}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Cảnh báo lâm sàng}{40}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}Lưu trữ và mô hình dữ liệu}{41}{subsection.5.5.4}%
-\contentsline {section}{\numberline {5.6}Phân hệ giao diện web cho bác sĩ}{41}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Thiết kế cơ khí và vỏ hộp thiết bị}{42}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Kiểm thử và đánh giá hệ thống}{42}{section.5.8}%
-\contentsline {section}{\numberline {5.9}Kết luận chương}{43}{section.5.9}%
-\contentsline {chapter}{\numberline {6}KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{44}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Kết luận}{44}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Hạn chế}{44}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Hướng phát triển}{44}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Bài học kinh nghiệm}{45}{section.6.4}%
-\contentsline {chapter}{TÀI LIỆU THAM KHẢO}{52}{section*.27}%
+\contentsline {subsubsection}{\numberline {2.4.2.3}Nhóm mô hình lai CNN--RNN}{19}{subsubsection.2.4.2.3}%
+\contentsline {subsubsection}{\numberline {2.4.2.4}Nhóm mô hình sinh (GAN/CycleGAN) hướng tới khôi phục dạng sóng và bảo toàn morphology}{19}{subsubsection.2.4.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.2.5}Nhóm Autoencoder và họ U-Net/UNet++/UNet3+ cho bài toán trích dạng sóng fECG}{19}{subsubsection.2.4.2.5}%
+\contentsline {section}{\numberline {2.5}Nhận xét, khoảng trống nghiên cứu và định vị đề tài}{20}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Kết luận chương}{20}{section.2.6}%
+\contentsline {chapter}{\numberline {3}PHƯƠNG PHÁP ĐỀ XUẤT VÀ THIẾT LẬP THỰC NGHIỆM}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Giới thiệu chương}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Bộ dữ liệu FECGSYNDB}{21}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Chiến lược chia dữ liệu}{22}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Tiền xử lý}{22}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Chuẩn hóa tín hiệu}{23}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Mô hình đề xuất KAN-WNETR}{23}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Ý tưởng tổng thể}{23}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Kiến trúc nền W-NETR}{23}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}KAN-ViT: thay MLP/FFN bằng KAN trong encoder block}{24}{subsection.3.4.3}%
+\contentsline {paragraph}{KAN-ViT: giữ MSA, thay MLP bằng KAN.}{24}{paragraph*.11}%
+\contentsline {paragraph}{Hệ quả khi đem KAN-ViT sang 1D biosignal.}{24}{paragraph*.12}%
+\contentsline {subsection}{\numberline {3.4.4}Tích hợp KAN vào W-NETR: kiến trúc KAN-WNETR}{25}{subsection.3.4.4}%
+\contentsline {paragraph}{Nguyên tắc tích hợp.}{25}{paragraph*.13}%
+\contentsline {paragraph}{Khối encoder sau thay thế.}{25}{paragraph*.15}%
+\contentsline {subsection}{\numberline {3.4.5}Phân tích thiết kế và kỳ vọng}{25}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Tổng hợp đóng góp kiến trúc}{26}{subsection.3.4.6}%
+\contentsline {section}{\numberline {3.5}Hàm mất mát và cấu hình huấn luyện}{26}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Hàm mất mát Huber (Huber Loss)}{26}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Cấu hình huấn luyện}{27}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Phương pháp đánh giá}{28}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Phát hiện QRS}{28}{subsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.1.1}Lọc thông dải (Band-pass)}{28}{subsubsection.3.6.1.1}%
+\contentsline {subsubsection}{\numberline {3.6.1.2}Đạo hàm}{28}{subsubsection.3.6.1.2}%
+\contentsline {subsubsection}{\numberline {3.6.1.3}Bình phương}{28}{subsubsection.3.6.1.3}%
+\contentsline {subsubsection}{\numberline {3.6.1.4}Tích phân cửa sổ trượt}{29}{subsubsection.3.6.1.4}%
+\contentsline {subsubsection}{\numberline {3.6.1.5}Phát hiện đỉnh bằng ngưỡng thích nghi}{29}{subsubsection.3.6.1.5}%
+\contentsline {subsection}{\numberline {3.6.2}Chỉ số đánh giá}{29}{subsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.1}Nhóm chỉ số phát hiện fECG (Precision/Recall/F1/Accuracy)}{29}{subsubsection.3.6.2.1}%
+\contentsline {subsubsection}{\numberline {3.6.2.2}Nhóm chỉ số chất lượng tín hiệu (PSNR/SSIM/MSE)}{30}{subsubsection.3.6.2.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.3}Sai số ước lượng nhịp tim thai (FHR error)}{30}{subsubsection.3.6.2.3}%
+\contentsline {section}{\numberline {3.7}Kết luận chương}{30}{section.3.7}%
+\contentsline {chapter}{\numberline {4}KẾT QUẢ THỰC NGHIỆM VÀ ĐÁNH GIÁ}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Giới thiệu chương}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Kết quả định tính}{32}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Chất lượng tín hiệu định lượng (SSIM/PSNR)}{32}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Phát hiện fQRS, ước lượng FHR và so sánh SOTA}{33}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Nghiên cứu loại bỏ (ablation): MLP-FFN vs KAN-FFN}{34}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Phân tích độ phức tạp}{34}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Bàn luận}{34}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Kết luận chương}{34}{section.4.8}%
+\contentsline {chapter}{\numberline {5}THIẾT KẾ VÀ TRIỂN KHAI HỆ THỐNG THEO DÕI fECG THỜI GIAN THỰC}{35}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Giới thiệu chương và yêu cầu hệ thống}{35}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Kiến trúc tổng quan}{35}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Tối ưu mô hình cho thiết bị biên}{36}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Xuất ONNX}{36}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Lượng tử hóa INT8 động (MatMul/Gemm)}{36}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}ONNX Runtime trên Pi 5 và benchmark}{37}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Phân hệ thu nhận và thiết bị (Raspberry Pi 5)}{37}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Phần cứng}{37}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Driver ADS1293}{38}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Xử lý thời gian thực}{39}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Giao diện monitor đầu giường}{39}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Cơ chế dự phòng}{39}{subsection.5.4.5}%
+\contentsline {section}{\numberline {5.5}Phân hệ server và phân tích lâm sàng (FastAPI + SQLite)}{40}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Giao tiếp WebSocket và xác thực token thiết bị}{40}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Ước lượng FHR / MHR / chỉ số chất lượng tín hiệu}{40}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Cảnh báo lâm sàng}{41}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Lưu trữ và mô hình dữ liệu}{42}{subsection.5.5.4}%
+\contentsline {section}{\numberline {5.6}Phân hệ giao diện web cho bác sĩ}{44}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Thiết kế cơ khí và vỏ hộp thiết bị}{45}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Kiểm thử và đánh giá hệ thống}{45}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Kết luận chương}{46}{section.5.9}%
+\contentsline {chapter}{\numberline {6}KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{47}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Kết luận}{47}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Hạn chế}{47}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Hướng phát triển}{47}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Bài học kinh nghiệm}{48}{section.6.4}%
+\contentsline {chapter}{TÀI LIỆU THAM KHẢO}{56}{section*.28}%
 \contentsfinish 

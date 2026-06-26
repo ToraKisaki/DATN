@@ -73,49 +73,86 @@ Mục này trình bày các khối học sâu nền tảng (lý thuyết chuẩn
 
 \subsection{Mạng nơ-ron và khối MLP/FFN}
 
-Trong một Transformer encoder block tiêu chuẩn, nhánh \textbf{self-attention} xử lý tương quan toàn cục giữa token/patch,
-còn nhánh \textbf{feed-forward} (thường gọi là MLP/FFN) thực hiện biến đổi phi tuyến theo từng token.
+Trong một khối mã hoá (encoder block) Transformer tiêu chuẩn \cite{vaswaniAttentionAllYou2023},
+hai nhánh đảm nhiệm hai vai trò bổ trợ nhau: nhánh \textbf{self-attention} mô hình hoá
+tương quan toàn cục giữa các token (hay patch), trong khi nhánh \textbf{feed-forward}
+--- thường gọi là MLP hay FFN --- thực hiện phép biến đổi phi tuyến một cách độc lập
+trên từng token. Dạng điển hình của khối FFN gồm hai phép chiếu tuyến tính bao quanh
+một hàm kích hoạt phi tuyến:
+\begin{equation}
+  \mathrm{FFN}(x)=W_2\,\sigma(W_1x+b_1)+b_2,
+\end{equation}
+trong đó $W_1,W_2$ là các trọng số tuyến tính học được, còn $\sigma$ là hàm kích hoạt
+\emph{cố định}, phổ biến là ReLU \cite{nairRectifiedLinearUnits2010} hoặc GELU \cite{hendrycksGaussianErrorLinear2023}.
 
-\begin{itemize}
-  \item Dạng điển hình:
-    \begin{equation}
-      \mathrm{FFN}(x)=W_2\,\sigma(W_1x+b_1)+b_2,
-    \end{equation}
-    với $\sigma$ là kích hoạt cố định (GELU/ReLU), $W_1,W_2$ là trọng số tuyến tính học được.
-
-  \item Vai trò của MLP: tăng năng lực biểu diễn (representation capacity) sau attention, trộn thông tin theo chiều kênh (channel mixing),
-    và tạo phi tuyến để mô hình hoá quan hệ phức tạp.
-
-  \item Điểm yếu theo hướng \textit{robust + interpretability}: phi tuyến cố định $\rightarrow$ độ mềm/cứng phụ thuộc chủ yếu vào việc học ma trận tuyến tính;
-    khi dữ liệu có cấu trúc phi tuyến mạnh (nhiễu biến thiên theo bối cảnh, biên độ thay đổi, artifacts), MLP có thể cần nhiều tham số/độ rộng để khớp tốt
-    và dễ overfit.
-\end{itemize}
+Về mặt chức năng, khối FFN tăng năng lực biểu diễn sau bước attention, trộn thông tin
+theo chiều kênh (channel mixing) và tạo ra tính phi tuyến cần thiết để mô hình hoá các
+quan hệ phức tạp; trên phương diện lý thuyết, một mạng truyền thẳng với hàm kích hoạt
+phi tuyến đã là một bộ xấp xỉ hàm vạn năng \cite{hornikMultilayerFeedforwardNetworks1989}. Tuy nhiên, do
+hàm kích hoạt $\sigma$ là cố định, ``độ cong'' của ánh xạ phi tuyến phụ thuộc gần như
+hoàn toàn vào việc học các ma trận tuyến tính $W_1,W_2$. Khi dữ liệu mang cấu trúc phi
+tuyến mạnh --- nhiễu biến thiên theo bối cảnh, biên độ thay đổi, hay artifact cục bộ như
+trong tín hiệu ECG bụng --- khối MLP thường phải tăng độ rộng (số tham số) để khớp tốt,
+kéo theo nguy cơ quá khớp (overfitting). Đây chính là động lực cho việc thay khối MLP
+bằng kích hoạt học được, được trình bày ở Mục~\ref{sec:kan}.
 
 \subsection{Tích chập 1D (CNN) cho tín hiệu thời gian}
-\begin{itemize}
-  \item Phép tích chập 1D: cửa sổ kernel trượt dọc trục thời gian, trích đặc trưng cục bộ (đỉnh, sườn dốc, cấu trúc QRS); nêu công thức $y[n]=\sum_k w[k]\,x[n-k]+b$.
-  \item Các khái niệm: stride, padding, số kênh (feature maps), pooling/upsampling; vai trò trong encoder--decoder (decoder CNN của UNETR dùng để phục hồi chi tiết cục bộ).
-  \item Receptive field: tăng theo độ sâu/kernel; \textbf{hạn chế}: receptive field hữu hạn $\Rightarrow$ khó nắm phụ thuộc dài hạn $\Rightarrow$ động lực dùng Attention (mục~\ref{sec:attention}).
-\end{itemize}
+
+Mạng nơ-ron tích chập (CNN), khởi nguồn từ kiến trúc LeNet cho nhận dạng ảnh
+\cite{lecunGradientbasedLearningApplied1998}, trích xuất đặc trưng cục bộ bằng cách cho một cửa sổ trọng số
+(kernel) trượt trên dữ liệu. Với tín hiệu một chiều theo thời gian, phép tích chập 1D
+được viết dưới dạng:
+\begin{equation}
+  y[n]=\sum_{k} w[k]\,x[n-k]+b,
+\end{equation}
+trong đó kernel $w$ trượt dọc trục thời gian để dò các mẫu cục bộ như đỉnh, sườn dốc
+hay cấu trúc phức bộ QRS. Phạm vi và chất lượng đặc trưng được điều khiển bởi các siêu
+tham số như bước trượt (stride), phần đệm (padding), số kênh đặc trưng (feature maps)
+cùng các phép gộp/giải gộp (pooling/upsampling); nhờ tính bất biến tịnh tiến và chia sẻ
+trọng số, CNN 1D đã trở thành công cụ tiêu chuẩn cho xử lý tín hiệu sinh học
+\cite{kiranyaz1DConvolutionalNeural2019}. Trong các kiến trúc encoder--decoder, nhánh decoder dạng CNN còn
+đảm nhiệm việc phục hồi chi tiết cục bộ ở độ phân giải cao, như trong UNETR
+\cite{hatamizadehUNETRTransformers3D2021}.
+
+Hạn chế cố hữu của CNN nằm ở \emph{trường tiếp nhận} (receptive field): mỗi nơ-ron chỉ
+``nhìn'' được một lân cận hữu hạn, mở rộng dần theo độ sâu mạng và kích thước kernel.
+Để nắm bắt các phụ thuộc tầm xa (long-range dependencies) --- vốn quan trọng khi tín
+hiệu mẹ và thai chồng lấp và trải dài theo thời gian --- CNN thuần thường chưa đủ, từ đó
+dẫn tới sự cần thiết của cơ chế Attention trình bày trong Mục~\ref{sec:attention}.
 
 \subsection{Cơ chế Attention và Transformer encoder}
 \label{sec:attention}
-\begin{itemize}
-  \item Scaled dot-product attention: $\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$; ý nghĩa $Q,K,V$ và trọng số chú ý.
-  \item Multi-Head Self-Attention (MSA): chạy nhiều head song song rồi ghép; cho phép học nhiều kiểu quan hệ token-to-token.
-  \item Thành phần khác của encoder block: LayerNorm (LN), positional encoding, kết nối residual.
-\end{itemize}
 
-ViT chia input thành patch, chiếu tuyến tính thành embedding, cộng positional embedding, rồi qua $L$ encoder blocks.
-Encoder block chuẩn:
+Cơ chế attention ban đầu được đề xuất trong dịch máy nơ-ron nhằm cho phép mô hình
+``tập trung'' vào những phần liên quan của chuỗi đầu vào \cite{bahdanauNeuralMachineTranslation2016}.
+Vaswani và cộng sự sau đó tổng quát hoá ý tưởng này thành kiến trúc Transformer hoàn
+toàn dựa trên attention \cite{vaswaniAttentionAllYou2023}, với thành phần lõi là scaled
+dot-product attention:
+\begin{equation}
+  \mathrm{Attention}(Q,K,V)=\mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V,
+\end{equation}
+trong đó truy vấn $Q$, khoá $K$ và giá trị $V$ là các phép chiếu tuyến tính của chuỗi
+đầu vào; tích vô hướng $QK^\top$ (đã chuẩn hoá theo $\sqrt{d_k}$) sinh ra trọng số chú
+ý phản ánh mức độ liên quan giữa từng cặp token. Cơ chế Multi-Head Self-Attention (MSA)
+chạy nhiều ``đầu'' attention song song rồi ghép kết quả, nhờ đó học được đồng thời nhiều
+kiểu quan hệ token-to-token trong các không gian con khác nhau. Mỗi khối encoder còn
+được ổn định bởi chuẩn hoá theo lớp (Layer Normalization) \cite{baLayerNormalization2016} và các kết
+nối residual \cite{heDeepResidualLearning2015}, vốn giúp các mạng rất sâu hội tụ tốt hơn.
+
+Khi áp dụng cho dữ liệu có cấu trúc lưới, Vision Transformer (ViT) chia đầu vào thành
+các patch, chiếu tuyến tính mỗi patch thành embedding, cộng thêm positional embedding để
+bù lại tính bất biến thứ tự của attention, rồi cho đi qua $L$ khối encoder
+\cite{dosovitskiyImageWorth16x162021}. Mỗi khối encoder chuẩn được biểu diễn bởi:
 \begin{equation}
   z_\ell' = \mathrm{MSA}(\mathrm{LN}(z_{\ell-1})) + z_{\ell-1},
 \end{equation}
 \begin{equation}
   z_\ell = \mathrm{MLP}(\mathrm{LN}(z_\ell')) + z_\ell',
 \end{equation}
-trong đó MSA là multi-head self-attention, LN là layer norm. Attention học quan hệ token-to-token (toàn cục),
-còn nhánh feed-forward (MLP) tạo phi tuyến theo từng token.
+trong đó nhánh MSA học quan hệ token-to-token mang tính toàn cục, còn nhánh MLP tạo phi
+tuyến theo từng token như đã phân tích ở trên. Chính sự phân vai rõ ràng này là cơ sở
+để các cải tiến --- bao gồm đề xuất của đồ án --- can thiệp có chọn lọc vào nhánh MLP
+trong khi vẫn giữ nguyên cơ chế attention.
 
 \subsection{Kiến trúc U-Net và UNETR}
 
@@ -142,6 +179,7 @@ Transformer có $L$ lớp; các tầng $i\in\{3,6,9,12\}$ được lấy làm sk
 \end{figure}
 
 \subsection{Kolmogorov--Arnold Networks (KAN)}
+\label{sec:kan}
 
 \subsubsection{KAN: ``đảo trục'' từ học tuyến tính sang học phi tuyến}
 KAN xuất phát từ định lý biểu diễn Kolmogorov--Arnold: hàm nhiều biến liên tục có thể biểu diễn bằng tổ hợp các hàm một biến.
