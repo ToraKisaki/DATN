@@ -1,0 +1,1080 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{NewbornMortality}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{abstract}{WHO fact sheet on newborn mortality, including key facts, causes, priority strategies, newborn care and WHO response.}
+      \field{langid}{english}
+      \field{title}{Newborn Mortality}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\VM8F4M2U\newborn-mortality.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.who.int/news-room/fact-sheets/detail/newborn-mortality
+      \endverb
+      \verb{url}
+      \verb https://www.who.int/news-room/fact-sheets/detail/newborn-mortality
+      \endverb
+    \endentry
+    \entry{devriesFetalElectrocardiographyArtificial2023}{article}{}{}
+      \name{author}{5}{}{%
+        {{useprefix=true,hash=3c361e500f0b53e2ddd115426ac0070a}{%
+           family={Vries},
+           familyi={V\bibinitperiod},
+           given={Ivar\bibnamedelima R.},
+           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{useprefix=true,hash=042cecf0ff0a5597b259ea65d4e466cb}{%
+           family={Laar},
+           familyi={L\bibinitperiod},
+           given={Judith\bibnamedelimb O.\bibnamedelimi E.\bibnamedelimi H.},
+           giveni={J\bibinitperiod\bibinitdelim O\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim H\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{useprefix=true,hash=0de198dd9f0870dbb8798da681c21ddf}{%
+           family={Hout-van\bibnamedelimb der\bibnamedelima Jagt},
+           familyi={H\bibinithyphendelim v\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Marieke\bibnamedelima B.},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=a6626698681242983f371af294b06e32}{%
+           family={Clur},
+           familyi={C\bibinitperiod},
+           given={Sally-Ann\bibnamedelima B.},
+           giveni={S\bibinithyphendelim A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=3386c44802404745cfc9960716015b87}{%
+           family={Vullings},
+           familyi={V\bibinitperiod},
+           given={Rik},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5f478dea45a565383e4c3d26879478e}
+      \strng{fullhash}{8ff84c6db986afab043e35ed120815cb}
+      \strng{fullhashraw}{8ff84c6db986afab043e35ed120815cb}
+      \strng{bibnamehash}{8ff84c6db986afab043e35ed120815cb}
+      \strng{authorbibnamehash}{8ff84c6db986afab043e35ed120815cb}
+      \strng{authornamehash}{f5f478dea45a565383e4c3d26879478e}
+      \strng{authorfullhash}{8ff84c6db986afab043e35ed120815cb}
+      \strng{authorfullhashraw}{8ff84c6db986afab043e35ed120815cb}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{INTRODUCTION: This study aims to investigate non-invasive electrocardiography as a method for the detection of congenital heart disease (CHD) with the help of artificial intelligence. MATERIAL AND METHODS: An artificial neural network was trained for the identification of CHD using non-invasively obtained fetal electrocardiograms. With the help of a Bayesian updating rule, multiple electrocardiographs were used to increase the algorithm's performance. RESULTS: Using 122 measurements containing 65 healthy and 57 CHD cases, the accuracy, sensitivity, and specificity were found to be 71\%, 63\%, and 77\%, respectively. The sensitivity was however 75\% and 69\% for CHD cases requiring an intervention in the neonatal period and first year of life, respectively. Furthermore, a positive effect of measurement length on the detection performance was observed, reaching optimal performance when using 14 electrocardiography segments (37.5\,min) or more. A small negative trend between gestational age and accuracy was found. CONCLUSIONS: The proposed method combining recent advances in obtaining non-invasive fetal electrocardiography with artificial intelligence for the automatic detection of CHD achieved a detection rate of 63\% for all CHD and 75\% for critical CHD. This feasibility study shows that detection rates of CHD might improve by using electrocardiography-based screening complementary to the standard ultrasound-based screening. More research is required to improve performance and determine the benefits to clinical practice.}
+      \field{eprinttype}{pubmed}
+      \field{issn}{1600-0412}
+      \field{journaltitle}{Acta Obstetricia Et Gynecologica Scandinavica}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{11}
+      \field{shortjournal}{Acta Obstet Gynecol Scand}
+      \field{title}{Fetal Electrocardiography and Artificial Intelligence for Prenatal Detection of Congenital Heart Disease}
+      \field{volume}{102}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{pages}{1511\bibrangedash 1520}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1111/aogs.14623
+      \endverb
+      \verb{eprint}
+      \verb 37563851
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\QVF4C47W\de Vries et al. - 2023 - Fetal electrocardiography and artificial intelligence for prenatal detection of congenital heart dis.pdf
+      \endverb
+      \keyw{artificial intelligence,Artificial Intelligence,Bayes Theorem,congenital heart disease,Electrocardiography,Female,fetal electrocardiography,fetal heart,Fetal Heart,Heart Defects Congenital,Humans,Infant Newborn,Pregnancy,prenatal diagnosis,Ultrasonography Prenatal}
+    \endentry
+    \entry{giangElevatedCongenitalHeart2022}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=5982a49ad6d6b892b532634bffd7d300}{%
+           family={Giang},
+           familyi={G\bibinitperiod},
+           given={Hoang\bibnamedelimb Thi\bibnamedelima Nam},
+           giveni={H\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=84eccc48711a8777dded0dcc73cf05ec}{%
+           family={Hai},
+           familyi={H\bibinitperiod},
+           given={Tran\bibnamedelima Thanh},
+           giveni={T\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=79fd72f4be71e0422b856f41096749d3}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Hoang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b93f36d8534613a82430a72478f9f783}{%
+           family={Vuong},
+           familyi={V\bibinitperiod},
+           given={Thanh\bibnamedelima K.},
+           giveni={T\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=7ab96308863bcb2aa2daaf95aa5543e6}{%
+           family={Morton},
+           familyi={M\bibinitperiod},
+           given={Lois\bibnamedelima Wright},
+           giveni={L\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=5484f21a2cd55026a0460c32681430e3}{%
+           family={Culbertson},
+           familyi={C\bibinitperiod},
+           given={Casey\bibnamedelima B.},
+           giveni={C\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science}%
+      }
+      \strng{namehash}{006907af319e0ffc0cf6a6ff21b62c72}
+      \strng{fullhash}{338c980e4eae2bb7dbf7416b63d4def8}
+      \strng{fullhashraw}{338c980e4eae2bb7dbf7416b63d4def8}
+      \strng{bibnamehash}{338c980e4eae2bb7dbf7416b63d4def8}
+      \strng{authorbibnamehash}{338c980e4eae2bb7dbf7416b63d4def8}
+      \strng{authornamehash}{006907af319e0ffc0cf6a6ff21b62c72}
+      \strng{authorfullhash}{338c980e4eae2bb7dbf7416b63d4def8}
+      \strng{authorfullhashraw}{338c980e4eae2bb7dbf7416b63d4def8}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Congenital heart disease (CHD) birth prevalence rate in Da Nang City and two adjacent provinces in Central Vietnam reported by Giang et al. in 2019 was 20.09/1000 births, much higher than any CHD birth rates previously reported. In this current study, three physicians trained in pediatric cardiology reanalyzed and reclassified the Giang et al 2019 cardiac anomalies data, eliminating singular small PDAs and separating cardiac defects into 27 contemporary CHD subgroups. These CHD subgroups were then statistically compared with Liu et al. 2019 Global CHD birth prevalence study of Asian Low-Middle Income Countries (LMIC) CHD subgroup rate of 9.34/1000 births (95\% CI 8.07–10.70). Despite applying newer diagnostic criteria and refining the cardiac anomalies data, the Da Nang region continued to show significantly (p{$<$}0.0001) elevated total CHD birth prevalence rates at 14.71/1000 births (95\% CI 12.74–16.69) compared to the Asian LMIC CHD birth prevalence rate 9.34/1000 births. This finding raises the question of whether environmental persistence of the contaminant dioxin TCDD from 2,4,5-T herbicides (Agent Orange) used during the Vietnam War (1961–1971) in the Da Nang region might be a factor associated with elevated CHD birth prevalence, as it is not present in other LMIC surrounding Vietnam. We recommend testing of soils and sediments in rural and agricultural areas in Central Vietnam that received high volume applications of contaminated herbicides to assess the relationship of the higher CHD birth prevalence rate and the presence of residual dioxin TCDD. Enhanced fetal cardiac echocardiograpy in the region to screen for CHD would enable early interventions and could improve outcomes for infants and children.}
+      \field{day}{12}
+      \field{issn}{2767-3375}
+      \field{journaltitle}{PLOS Global Public Health}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{10}
+      \field{shortjournal}{PLOS Global Public Health}
+      \field{title}{Elevated Congenital Heart Disease Birth Prevalence Rates Found in {{Central Vietnam}} and Dioxin {{TCDD}} Residuals from the Use of 2, 4, 5-{{T}} Herbicides ({{Agent Orange}}) in the {{Da Nang}} Region}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{2}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{e0001050}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pgph.0001050
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\SNA8S3ZU\Giang et al. - 2022 - Elevated congenital heart disease birth prevalence rates found in Central Vietnam and dioxin TCDD re.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0001050
+      \endverb
+      \verb{url}
+      \verb https://journals.plos.org/globalpublichealth/article?id=10.1371/journal.pgph.0001050
+      \endverb
+      \keyw{Birth,Birth rates,Congenital anomalies,Congenital heart defects,Herbicides,Infants,Sediment,Vietnam}
+    \endentry
+    \entry{ayres-de-camposFIGOConsensusGuidelines2015}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=880f8b1fc5b587454cb11db3c7a8fb1b}{%
+           family={Ayres-de-Campos},
+           familyi={A\bibinithyphendelim C\bibinitperiod},
+           given={Diogo},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d31e9a15baff6f8524db8c268db7abd8}{%
+           family={Spong},
+           familyi={S\bibinitperiod},
+           given={Catherine\bibnamedelima Y.},
+           giveni={C\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=3beff6875815cc6fb90e0278d432b0d6}{%
+           family={Chandraharan},
+           familyi={C\bibinitperiod},
+           given={Edwin},
+           giveni={E\bibinitperiod}}}%
+        {{hash=675ef04faa0b429f1fe84eef91a70d60}{%
+           family={Panel},
+           familyi={P\bibinitperiod},
+           given={FIGO\bibnamedelimb Intrapartum\bibnamedelimb Fetal\bibnamedelimb Monitoring\bibnamedelimb Expert\bibnamedelima Consensus},
+           giveni={F\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{0a3855527de26dfc44456622fb71de07}
+      \strng{fullhash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{fullhashraw}{85e116495c6e5352b7773e460c4cc108}
+      \strng{bibnamehash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{authorbibnamehash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{authornamehash}{0a3855527de26dfc44456622fb71de07}
+      \strng{authorfullhash}{85e116495c6e5352b7773e460c4cc108}
+      \strng{authorfullhashraw}{85e116495c6e5352b7773e460c4cc108}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1879-3479}
+      \field{journaltitle}{International Journal of Gynecology \& Obstetrics}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{shorttitle}{{{FIGO}} Consensus Guidelines on Intrapartum Fetal Monitoring}
+      \field{title}{{{FIGO}} Consensus Guidelines on Intrapartum Fetal Monitoring: {{Cardiotocography}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{131}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{13\bibrangedash 24}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.ijgo.2015.06.020
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\DV23BFFZ\\Ayres-de-Campos et al. - 2015 - FIGO consensus guidelines on intrapartum fetal monitoring Cardiotocography.pdf;C\:\\Users\\Minh\\Zotero\\storage\\LZHW8ZEC\\j.ijgo.2015.06.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1016/j.ijgo.2015.06.020
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1016/j.ijgo.2015.06.020
+      \endverb
+    \endentry
+    \entry{loversAdvancementsFetalHeart2025}{article}{}{}
+      \name{author}{17}{}{%
+        {{hash=d4573a9142bc3a7136d20cf911fceac8}{%
+           family={Lovers},
+           familyi={L\bibinitperiod},
+           given={Aimée},
+           giveni={A\bibinitperiod}}}%
+        {{hash=783bf837436315fd979d7f1e66f94ef9}{%
+           family={Daumer},
+           familyi={D\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e38052ff39e0beef24762eaab18c9c16}{%
+           family={Frasch},
+           familyi={F\bibinitperiod},
+           given={Martin\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=9f097b51a0e45262767de4c02268c569}{%
+           family={Ugwumadu},
+           familyi={U\bibinitperiod},
+           given={Austin},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d6692d5ead19ab562bdb064e70746cf2}{%
+           family={Warrick},
+           familyi={W\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3386c44802404745cfc9960716015b87}{%
+           family={Vullings},
+           familyi={V\bibinitperiod},
+           given={Rik},
+           giveni={R\bibinitperiod}}}%
+        {{hash=781472d98fd5a83de22320eea9b05772}{%
+           family={Pini},
+           familyi={P\bibinitperiod},
+           given={Nicolò},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a280b31ccbcf0270a1e8acb029f42195}{%
+           family={Tolladay},
+           familyi={T\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a7aab7996e9cb8b3f33515ed779a0c4f}{%
+           family={Petersen},
+           familyi={P\bibinitperiod},
+           given={Olav\bibnamedelima Bjørn},
+           giveni={O\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=164260e082584e6fead5074ee2e036e1}{%
+           family={Lederer},
+           familyi={L\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=13b67d4d83b1d3002d9480fa84cdc9ee}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Liu},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a7b1e96cf3fd673d46050d53e9bcc553}{%
+           family={Djurić},
+           familyi={D\bibinitperiod},
+           given={Petar\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=215d112cc02f80ee9efa6eed8fc9e849}{%
+           family={Abtahi},
+           familyi={A\bibinitperiod},
+           given={Farhad},
+           giveni={F\bibinitperiod}}}%
+        {{hash=ad7afc4c5f2f19e6533106d5f8e86bcb}{%
+           family={Holzmann},
+           familyi={H\bibinitperiod},
+           given={Malin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=71b2271c6e11e5ded063aba0e737726e}{%
+           family={Boudet},
+           familyi={B\bibinitperiod},
+           given={Samuel},
+           giveni={S\bibinitperiod}}}%
+        {{useprefix=true,hash=1b00976d59ea56e810bbf949d67de0ef}{%
+           family={Aulnoit},
+           familyi={A\bibinitperiod},
+           given={Agathe\bibnamedelima Houzé},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod},
+           prefix={de\bibnamedelima l'},
+           prefixi={d\bibinitperiod\bibinitdelim l\bibinitperiod}}}%
+        {{hash=d7d3da6a448aa6386462a4a9e3e404f0}{%
+           family={Georgieva},
+           familyi={G\bibinitperiod},
+           given={Antoniya},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{4302c15b2c17faa4619e8acc10b5b82a}
+      \strng{fullhash}{35be5f7b562723408d318e85a440992b}
+      \strng{fullhashraw}{35be5f7b562723408d318e85a440992b}
+      \strng{bibnamehash}{4302c15b2c17faa4619e8acc10b5b82a}
+      \strng{authorbibnamehash}{4302c15b2c17faa4619e8acc10b5b82a}
+      \strng{authornamehash}{4302c15b2c17faa4619e8acc10b5b82a}
+      \strng{authorfullhash}{35be5f7b562723408d318e85a440992b}
+      \strng{authorfullhashraw}{35be5f7b562723408d318e85a440992b}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Cardiotocography (CTG), introduced in the 1960s, was initially expected to prevent hypoxia-related deaths and neurological injuries. However, more than five decades later, evidence supporting the evidence of intrapartum CTG in preventing neonatal and long-term childhood morbidity and mortality remains inconclusive. At the same time, shortcomings in CTG interpretation have been recognised as important contributory factors to rising caesarean section rates and missed opportunities for timely interventions. An important limitation is its high false-positive rate and poor specificity, which undermines reliably identifying foetuses at risk of hypoxia-related injuries. These shortcomings are compounded by the technology's significant intra- and interobserver variability, as well as the subjective and complex nature of fetal heart rate interpretation. However, human factors and other environmental factors are equally significant. Advancements in fetal heart rate monitoring are crucial to support clinicians in improving health outcomes for newborns and their mothers, while at the same time avoiding unnecessary operative deliveries. These limitations highlight the clinical need to enhance neonatal outcomes while minimising unnecessary interventions, such as instrumental deliveries or caesarean sections. We believe that achieving this requires a paradigm shift from subjective interpretation of complex and nonspecific fetal heart rate patterns to evidence-based, quantifiable solutions that integrate hardware, engineering and clinical perspectives. Such transformation necessitates an international, multidisciplinary effort encompassing the entire continuum of pregnancy care and the broader healthcare ecosystem, with emphasis on well-defined, actionable health outcomes. Achieving this will depend on collaborations between researchers, clinicians, medical device manufacturers and other relevant stakeholders. This expert review paper outlines the most relevant and promising directions for research and strategic initiatives to address current challenges in fetal heart rate monitoring. Key themes include advancements in computerised fetal heart rate monitoring, the application of big data and artificial intelligence, innovations in home and remote monitoring and consideration of human factors.}
+      \field{issn}{1471-0528}
+      \field{journaltitle}{BJOG: An International Journal of Obstetrics \& Gynaecology}
+      \field{langid}{english}
+      \field{number}{7}
+      \field{shorttitle}{Advancements in {{Fetal Heart Rate Monitoring}}}
+      \field{title}{Advancements in {{Fetal Heart Rate Monitoring}}: {{A Report}} on {{Opportunities}} and {{Strategic Initiatives}} for {{Better Intrapartum Care}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{132}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{853\bibrangedash 866}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1111/1471-0528.18097
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\RDW5MZ3X\\Lovers et al. - 2025 - Advancements in Fetal Heart Rate Monitoring A Report on Opportunities and Strategic Initiatives for.pdf;C\:\\Users\\Minh\\Zotero\\storage\\ZJWME2PA\\1471-0528.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1471-0528.18097
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1471-0528.18097
+      \endverb
+      \keyw{big data,cardiotocography,deep learning,electronic fetal monitoring,fetal (patho)physiology,human factors,hypoxic-ischaemic encephalopathy,intrapartum,remote monitoring,signal processing}
+    \endentry
+    \entry{abramowiczFetalThermalEffects2008}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=093b2e5d29e3a1747e4611208b2075e7}{%
+           family={Abramowicz},
+           familyi={A\bibinitperiod},
+           given={Jacques\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=570ad5e397208ce60b68b0b846ca31fd}{%
+           family={Barnett},
+           familyi={B\bibinitperiod},
+           given={Stanley\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=48b0f56576e6a3209dd9809b0abc49f8}{%
+           family={Duck},
+           familyi={D\bibinitperiod},
+           given={Francis\bibnamedelima A.},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=c6fe71431c3cd4c952a526a17fbd371b}{%
+           family={Edmonds},
+           familyi={E\bibinitperiod},
+           given={Peter\bibnamedelima D.},
+           giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=249debd442d462a6c54db41f09d5bcd8}{%
+           family={Hynynen},
+           familyi={H\bibinitperiod},
+           given={Kullervo\bibnamedelima H.},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=cc51c8ecb6c2f36f2d8d881ed5dc346e}{%
+           family={Ziskin},
+           familyi={Z\bibinitperiod},
+           given={Marvin\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{91e0fe154bd3b43db1411b209885fa34}
+      \strng{fullhash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{fullhashraw}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{bibnamehash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{authorbibnamehash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{authornamehash}{91e0fe154bd3b43db1411b209885fa34}
+      \strng{authorfullhash}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \strng{authorfullhashraw}{f8b71edf5adf2a51641d7d9fc19bddc4}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Processes that can produce a biological effect with some degree of heating (ie, about 1°C above the physiologic temperature) act via a thermal mechanism. Investigations with laboratory animals have documented that pulsed ultrasound can produce elevations of temperature and damage in biological tissues in vivo, particularly in the presence of bone (intracranial temperature elevation). Acoustic outputs used to induce these adverse bioeffects are within the diagnostic range, although exposure times are usually considerably longer than in clinical practice. Conditions present in early pregnancy, such as lack of perfusion, may favor bioeffects. Thermally induced teratogenesis has been shown in many animal studies, as well as several controlled human studies; however, human studies have not shown a causal relationship between diagnostic ultrasound exposure during pregnancy and adverse biological effects to the fetus. All human epidemiologic studies, however, were conducted with commercially available devices predating 1992, that is, with acoustic outputs not exceeding a spatial-peak temporal-average intensity of 94 mW/cm2. Current limits in the United States allow a spatial-peak temporal-average intensity of 720 mW/cm2 for fetal applications. The synergistic effect of a raised body temperature (febrile status) and ultrasound insonation has not been examined in depth. Available evidence, experimental or epidemiologic, is insufficient to conclude that there is a causal relationship between obstetric diagnostic ultrasound exposure and obvious adverse thermal effects to the fetus. However, very subtle effects cannot be ruled out and indicate a need for further research, although research in humans may be extremely difficult to realize. This article analyzes thermal effects of fetal ultrasound exposure. The normal core human body temperature is generally accepted to be 37°C with a diurnal variation of ±0.5°C to 1°C,1,2 although 36.8°C ± 0.4°C (95\% confidence interval) may be closer to the actual mean for large populations.3 During the entire gestation, the temperature of the human embryo/fetus is higher than the maternal core body temperature4 and gradually rises until, in the final trimester (near term), it exceeds that of the mother by 0.5°C.5 Thermally induced teratogenesis has been shown in many animal studies, as well as several controlled human studies.6 Edwards7 and others have shown that hyperthermia is teratogenic for numerous animal species, including the human, and suggested a 1.5°C temperature elevation above the normal value as a universal threshold.8 An elevated maternal temperature in early gestation has been associated with an increased incidence of congenital anomalies.9 Tolerance to increased temperature (thermotolerance) is an important aspect of thermal teratogenesis. Thermotolerance is induced by the production of heat shock proteins (HSPs), which occurs (up to a limit) during a relatively slow (10- to 15-minute) temperature increase of the whole body.10 Diagnostic ultrasound exposures of mammalian embryos or fetuses in vivo and in vitro do not cause a whole-body temperature increase in the mother but can potentially do so in the embryo. In principle, heating with ultrasound could occur so rapidly that the protective effects of HSPs might not come into play. There are data on effects of hyperthermia and measurements of in vivo temperature induced by pulsed ultrasound but not in the human.11–14 These data have been widely reviewed.15–20 However, there is a serious lack of data on the effects of ultrasound while rigorously excluding other confounding factors. A number of epidemiologic studies of possible developmental effects of obstetric ultrasound were performed before 1992, when exposures of the fetus, if anything, were lower on average than they are today. The results overall were negative. Around 1992, the maximum permitted acoustic output of clinical ultrasound instruments operating in the obstetric mode was allowed to increase by a factor of almost 8.21 Potentially of even greater significance, no report clearly defines the duration of actual exposure. Epidemiology, of course, cannot be expected to reveal subtle effects. Today, ultrasound is so much a part of obstetric care that it would be very difficult to design an ethically acceptable epidemiologic study. The material in this article will be presented in the following manner: “Definitions,” “Mechanisms of Tissue Heating,” “Measured Temperature Rise in Human Fetal Tissue,” “Intracranial Temperature Elevation,” “Epidemiologic Data,” “Clinical Studies,” “Discussion Regarding Obstetric Issues in the Human,” and “Conclusions and Recommendations.”}
+      \field{issn}{1550-9613}
+      \field{journaltitle}{Journal of Ultrasound in Medicine}
+      \field{langid}{english}
+      \field{number}{4}
+      \field{title}{Fetal {{Thermal Effects}} of {{Diagnostic Ultrasound}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{27}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{541\bibrangedash 559}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.7863/jum.2008.27.4.541
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\XFMCK9CC\jum.2008.27.4.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.7863/jum.2008.27.4.541
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.7863/jum.2008.27.4.541
+      \endverb
+      \keyw{bioeffects,fetus,obstetrics,safety,thermal effects,ultrasound}
+    \endentry
+    \entry{neilsonFetalElectrocardiogramECG2015}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=219c9e98b3551df1377ffb4efb4a0c93}{%
+           family={Neilson},
+           familyi={N\bibinitperiod},
+           given={James\bibnamedelima P},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=18957a10358c77cd30291f8b815e916f}{%
+           family={{Cochrane Pregnancy and Childbirth Group}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{fullhash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{fullhashraw}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{bibnamehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authorbibnamehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authornamehash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authorfullhash}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{authorfullhashraw}{219c9e98b3551df1377ffb4efb4a0c93}
+      \strng{editorbibnamehash}{18957a10358c77cd30291f8b815e916f}
+      \strng{editornamehash}{18957a10358c77cd30291f8b815e916f}
+      \strng{editorfullhash}{18957a10358c77cd30291f8b815e916f}
+      \strng{editorfullhashraw}{18957a10358c77cd30291f8b815e916f}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{21}
+      \field{issn}{14651858}
+      \field{journaltitle}{Cochrane Database of Systematic Reviews}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{Fetal Electrocardiogram ({{ECG}}) for Fetal Monitoring during Labour}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{2015}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1002/14651858.CD000116.pub5
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.wiley.com/10.1002/14651858.CD000116.pub5
+      \endverb
+      \verb{url}
+      \verb http://doi.wiley.com/10.1002/14651858.CD000116.pub5
+      \endverb
+    \endentry
+    \entry{sameniReviewFetalECG2010}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=eeb4dba2d3aa3bc3a2c2da93c402d140}{%
+           family={{Sameni}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{fullhash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{fullhashraw}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{bibnamehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authorbibnamehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authornamehash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authorfullhash}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \strng{authorfullhashraw}{eeb4dba2d3aa3bc3a2c2da93c402d140}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The eld of electrocardiography has been in existence for over a century, yet despite signi cant advances in adult clinical electrocardiography, signal processing techniques and fast digital processors, the analysis of fetal ECGs is still in its infancy. This is, partly due to a lack of availability of gold standard databases, partly due to the relatively low signal-to-noise ratio of the fetal ECG compared to the maternal ECG (caused by the various media between the fetal heart and the measuring electrodes, and the fact that the fetal heart is simply smaller), and in part, due to the less complete clinical knowledge concerning fetal cardiac function and development. In this paper we review a range of promising recording and signal processing techniques for fetal ECG analysis that have been developed over the last forty years, and discuss both their shortcomings and advantages. Before doing so, however, we review fetal cardiac development, and the etiology of the fetal ECG. A selection of relevant models for the fetal/maternal ECG mixture is also discussed. In light of current understanding of the fetal ECG, we then attempt to justify recommendations for promising future directions in signal processing, and database creation.}
+      \field{issn}{1876536X}
+      \field{journaltitle}{The Open Pacing, Electrophysiology \& Therapy Journal}
+      \field{langid}{english}
+      \field{shortjournal}{opetj}
+      \field{title}{A {{Review}} of {{Fetal ECG Signal Processing Issues}} and {{Promising Directions}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.2174/1876536X01003010004
+      \endverb
+      \verb{file}
+      \verb C:\Users\Minh\Zotero\storage\GYHJI832\Sameni - 2010 - A Review of Fetal ECG Signal Processing Issues and Promising Directions.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://benthamopen.com/ABSTRACT/TOPETJ-3-4
+      \endverb
+      \verb{url}
+      \verb http://benthamopen.com/ABSTRACT/TOPETJ-3-4
+      \endverb
+    \endentry
+    \entry{zarzosoRobustIndependentComponent2010}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=68a402d734ab80fdce6b01101e71f7f9}{%
+           family={Zarzoso},
+           familyi={Z\bibinitperiod},
+           given={Vicente},
+           giveni={V\bibinitperiod}}}%
+        {{hash=73bf39ece81b49202cadbf8c4752dec9}{%
+           family={Comon},
+           familyi={C\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{fullhash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{fullhashraw}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{bibnamehash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{authorbibnamehash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{authornamehash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{authorfullhash}{4d9df11944d0c0666579c53e6fd84080}
+      \strng{authorfullhashraw}{4d9df11944d0c0666579c53e6fd84080}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Independent component analysis (ICA) aims at decomposing an observed random vector into statistically independent variables. Deflation-based implementations, such as the popular one-unit FastICA algorithm and its variants, extract the independent components one after another. A novel method for deflationary ICA, referred to as RobustICA, is put forward in this paper. This simple technique consists of performing exact line search optimization of the kurtosis contrast function. The step size leading to the global maximum of the contrast along the search direction is found among the roots of a fourth-degree polynomial. This polynomial rooting can be performed algebraically, and thus at low cost, at each iteration. Among other practical benefits, RobustICA can avoid prewhitening and deals with real- and complex-valued mixtures of possibly noncircular sources alike. The absence of prewhitening improves asymptotic performance. The algorithm is robust to local extrema and shows a very high convergence speed in terms of the computational cost required to reach a given source extraction quality, particularly for short data records. These features are demonstrated by a comparative numerical analysis on synthetic data. RobustICA's capabilities in processing real-world data involving noncircular complex strongly super-Gaussian sources are illustrated by the biomedical problem of atrial activity (AA) extraction in atrial fibrillation (AF) electrocardiograms (ECGs), where it outperforms an alternative ICA-based technique.}
+      \field{issn}{1941-0093}
+      \field{journaltitle}{IEEE Transactions on Neural Networks}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{Robust {{Independent Component Analysis}} by {{Iterative Maximization}} of the {{Kurtosis Contrast With Algebraic Optimal Step Size}}}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{21}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{248\bibrangedash 261}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/TNN.2009.2035920
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/abstract/document/5356190
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/abstract/document/5356190
+      \endverb
+      \keyw{Atrial fibrillation,Atrial fibrillation (AF),blind source separation (BSS),Computational efficiency,Convergence,Costs,Data mining,Independent component analysis,independent component analysis (ICA),Iterative algorithms,iterative optimization,kurtosis,Numerical analysis,optimal step size,performance analysis,Polynomials,Robustness}
+    \endentry
+    \entry{karmakarConsumerInsightsFeasibility2025}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=876c958205c1a947fb2b657ee36869e8}{%
+           family={Karmakar},
+           familyi={K\bibinitperiod},
+           given={Debjyoti},
+           giveni={D\bibinitperiod}}}%
+        {{hash=01346aced7c3926bb45c9b259d23778f}{%
+           family={Paul},
+           familyi={P\bibinitperiod},
+           given={Tarini},
+           giveni={T\bibinitperiod}}}%
+        {{hash=122187fc3d469d9fe7982b8f77156468}{%
+           family={Keenan},
+           familyi={K\bibinitperiod},
+           given={Emerson},
+           giveni={E\bibinitperiod}}}%
+        {{hash=68cd0238b84a14d073e3f210dba5b591}{%
+           family={Palaniswami},
+           familyi={P\bibinitperiod},
+           given={Marimuthu},
+           giveni={M\bibinitperiod}}}%
+        {{hash=93ed0e2e66ccd0c8b3e076b50511a6da}{%
+           family={Constable},
+           familyi={C\bibinitperiod},
+           given={Kaitlin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=99108dfb2b7acad4dda7c85e20ae2880}{%
+           family={Spessot},
+           familyi={S\bibinitperiod},
+           given={Erica},
+           giveni={E\bibinitperiod}}}%
+        {{hash=5b0ea8cd7c7eb4b84dab9e1ebf6aaa3f}{%
+           family={Brownfoot},
+           familyi={B\bibinitperiod},
+           given={Fiona},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{68e791376bd46985f149d873584d4d69}
+      \strng{fullhash}{55ac75d86e62b6bee7c16e1445966652}
+      \strng{fullhashraw}{55ac75d86e62b6bee7c16e1445966652}
+      \strng{bibnamehash}{68e791376bd46985f149d873584d4d69}
+      \strng{authorbibnamehash}{68e791376bd46985f149d873584d4d69}
+      \strng{authornamehash}{68e791376bd46985f149d873584d4d69}
+      \strng{authorfullhash}{55ac75d86e62b6bee7c16e1445966652}
+      \strng{authorfullhashraw}{55ac75d86e62b6bee7c16e1445966652}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The COVID-19 pandemic accelerated the adoption of telehealth and remote monitoring in obstetric care. This study assessed pregnant patients’ perceptions before and after using a novel non-invasive fetal electrocardiogram (NI-FECG) device. The trial is prospectively registered on the Australia New Zealand Clinical Trials Registry (ANZCTRN12621001260819; submitted June 9th, 2021; approved September 17th, 2021). Seventy participants from 36 weeks’ gestation completed pre- and post-use surveys. Interest in continuous and home fetal monitoring was high (79\% and 90\%, respectively). Post-use, 89\% reported satisfaction; over 90\% comfortable wearing and removing the sensor. Extended use was acceptable to 76\%, and only 3\% reported high skin irritation. Sentiment analysis highlighted themes of reassurance, convenience, and reduced anxiety. Some suggested smaller, wireless design. Analysis by natural language processing and clustering provided deeper insights. Findings support strong interest in at-home fetal monitoring; further refinement and education are needed to enhance acceptability. Future research should assess long-term effects on anxiety and clinical outcomes.}
+      \field{issn}{2398-6352}
+      \field{journaltitle}{npj Digital Medicine}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{1}
+      \field{title}{Consumer Insights from a Feasibility Study on Remote and Extended Use of a Novel Non-Invasive Wearable Fetal Electrocardiogram Monitor}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{8}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{216}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41746-025-01628-9
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41746-025-01628-9
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41746-025-01628-9
+      \endverb
+      \keyw{Outcomes research,Translational research}
+    \endentry
+    \entry{almadaniOneDimensionalWNETRNonInvasive2023}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=7d372afcdfb4e49cc73b91f8888cad9b}{%
+           family={Almadani},
+           familyi={A\bibinitperiod},
+           given={Murad},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1a0fa6906a4f7a2bcbfde3508eac14db}{%
+           family={Hadjileontiadis},
+           familyi={H\bibinitperiod},
+           given={Leontios},
+           giveni={L\bibinitperiod}}}%
+        {{hash=d2871cc9d63fd112c044434c1d9d4b04}{%
+           family={Khandoker},
+           familyi={K\bibinitperiod},
+           given={Ahsan},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f68a93880c3e952a91b326948e155ed3}
+      \strng{fullhash}{44a6a2e9de6e78831ba8132acff06ace}
+      \strng{fullhashraw}{44a6a2e9de6e78831ba8132acff06ace}
+      \strng{bibnamehash}{44a6a2e9de6e78831ba8132acff06ace}
+      \strng{authorbibnamehash}{44a6a2e9de6e78831ba8132acff06ace}
+      \strng{authornamehash}{f68a93880c3e952a91b326948e155ed3}
+      \strng{authorfullhash}{44a6a2e9de6e78831ba8132acff06ace}
+      \strng{authorfullhashraw}{44a6a2e9de6e78831ba8132acff06ace}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Fetal cardiac monitoring is very helpful in the early detection of the potential risk of fetal cardiac abnormalities, which enables prompt preventative care and ensures safe births. As a result, it is crucial to regularly check on the embryonic heart. Methods of non-invasively fetal ECG extraction from maternal abdominal ECG signal are thoroughly discussed. Although fetal signals are generally obscured by maternal ECG signals and noise, extracting a clean fetal ECG is a significant difficulty. The majority of techniques for fetal ECG extraction include many extraction steps. We describe a unique method for splitting a single-channel maternal abdominal ECG into maternal and fetus ECG employing two parallel U-nets with transformer encoding, which we refer to as W-NEt TRansformers (W-NETR). Due to its enhanced capacity to simulate remote interactions and capture global context, the suggested pipeline utilizes the self-attention mechanism of the transformer. We tested the proposed pipeline on synthetic and real datasets and outperformed the current state-of-the-art deep learning models. The proposed model achieved the best results on both datasets for QRS detection precision, recall, and F1 scores. More specifically, it achieved F1 score of 99.88\% and 98.9\% on the real ADFECGDB and PCDB datasets, respectively. These encouraging results highlight the suggested W-NETR's effectiveness in precisely extracting the fetal ECG, which was achieved with high SSIM and PSNR values in the results. This provides the bed set for long-term maternal and fetal monitoring via portable devices as the proposed system performs real-time execution.}
+      \field{issn}{2168-2208}
+      \field{journaltitle}{IEEE Journal of Biomedical and Health Informatics}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{One-{{Dimensional W-NETR}} for {{Non-Invasive Single Channel Fetal ECG Extraction}}}
+      \field{urlday}{27}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{27}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{3198\bibrangedash 3209}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/JBHI.2023.3266645
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/10100866
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/10100866
+      \endverb
+      \keyw{deep learning,Electrocardiography,Feature extraction,Fetal ECG,Fetal heart rate,Neural networks,non-invasive ECG extraction,Pipelines,PSNR,self-attention mechanism,SSIM,Training,transformers,Transformers,W-NETR}
+    \endentry
+    \entry{liuKANKolmogorovArnoldNetworks2025}{online}{}{}
+      \name{author}{8}{}{%
+        {{hash=1c58afd2046daf734847b96dab2bf564}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ziming},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=45f61f91eed498475eb6258bbca165c2}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yixuan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0ab10eff5de236f1519d767e744e5cf0}{%
+           family={Vaidya},
+           familyi={V\bibinitperiod},
+           given={Sachin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0875ba21d3e8d07361aecb3962665cff}{%
+           family={Ruehle},
+           familyi={R\bibinitperiod},
+           given={Fabian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=1a8ee0d401768d2087f11aa88386ce6f}{%
+           family={Halverson},
+           familyi={H\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d4bb6bd2724f026f198fb2fddbe7a5f7}{%
+           family={Soljačić},
+           familyi={S\bibinitperiod},
+           given={Marin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=627dcbbcdb723ced5f9dc3a51fde769d}{%
+           family={Hou},
+           familyi={H\bibinitperiod},
+           given={Thomas\bibnamedelima Y.},
+           giveni={T\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=b9b3c445e1013a97fc6318e06799b37b}{%
+           family={Tegmark},
+           familyi={T\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e02a2c1409094c9140c4b77dd060333}
+      \strng{fullhash}{fe2782c5c026601c4d592a079123770f}
+      \strng{fullhashraw}{fe2782c5c026601c4d592a079123770f}
+      \strng{bibnamehash}{4e02a2c1409094c9140c4b77dd060333}
+      \strng{authorbibnamehash}{4e02a2c1409094c9140c4b77dd060333}
+      \strng{authornamehash}{4e02a2c1409094c9140c4b77dd060333}
+      \strng{authorfullhash}{fe2782c5c026601c4d592a079123770f}
+      \strng{authorfullhashraw}{fe2782c5c026601c4d592a079123770f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Inspired by the Kolmogorov-Arnold representation theorem, we propose Kolmogorov-Arnold Networks (KANs) as promising alternatives to Multi-Layer Perceptrons (MLPs). While MLPs have fixed activation functions on nodes ("neurons"), KANs have learnable activation functions on edges ("weights"). KANs have no linear weights at all -- every weight parameter is replaced by a univariate function parametrized as a spline. We show that this seemingly simple change makes KANs outperform MLPs in terms of accuracy and interpretability. For accuracy, much smaller KANs can achieve comparable or better accuracy than much larger MLPs in data fitting and PDE solving. Theoretically and empirically, KANs possess faster neural scaling laws than MLPs. For interpretability, KANs can be intuitively visualized and can easily interact with human users. Through two examples in mathematics and physics, KANs are shown to be useful collaborators helping scientists (re)discover mathematical and physical laws. In summary, KANs are promising alternatives for MLPs, opening opportunities for further improving today's deep learning models which rely heavily on MLPs.}
+      \field{day}{9}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{month}{2}
+      \field{pubstate}{prepublished}
+      \field{shorttitle}{{{KAN}}}
+      \field{title}{{{KAN}}: {{Kolmogorov-Arnold Networks}}}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2404.19756
+      \endverb
+      \verb{eprint}
+      \verb 2404.19756
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\Minh\\Zotero\\storage\\8SRQJAZ2\\Liu et al. - 2025 - KAN Kolmogorov-Arnold Networks.pdf;C\:\\Users\\Minh\\Zotero\\storage\\7XAWDFVF\\2404.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2404.19756
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2404.19756
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Condensed Matter - Disordered Systems and Neural Networks,Statistics - Machine Learning}
+    \endentry
+    \entry{yeElevatingVisionTransformer2024}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=802c4eb1745883b347d8250617fc640e}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Lvzhou},
+           giveni={L\bibinitperiod}}}%
+        {{hash=593cddc5c4c6c06f101db9ec3eaf35f3}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zhen},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{fullhash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{fullhashraw}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{bibnamehash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{authorbibnamehash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{authornamehash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{authorfullhash}{91f598e6cf085081b4c92aa4689f26f0}
+      \strng{authorfullhashraw}{91f598e6cf085081b4c92aa4689f26f0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{In this paper, we propose an innovative image recognition model called KAN-VIT, which applies the Kolmogorov-Arnold Networks (KANs) architecture to the Vision Transformer (VIT), replacing the traditional multilayer perceptron (MLP) layers and the MLP head at the output. KANs are neural networks based on the Kolmogorov-Arnold representation theorem, which introduces learnable activation functions between nodes, parameterized by spline functions, thereby providing higher accuracy and interpretability. Based on this, the VIT model was improved by replacing the original MLP layers with KANs, and experiments were conducted on the CIFAR-10, Oxford Flowers, and MNIST datasets. The results show that the improved model has demonstrated superior performance on the test datasets. We also analyzed the interpretability of KANs, and the results show that the improved model not only has improved performance but also has advantages in the visualization and interpretability of the model.}
+      \field{booktitle}{2024 {{IEEE Smart World Congress}} ({{SWC}})}
+      \field{issn}{2993-396X}
+      \field{month}{12}
+      \field{shorttitle}{Elevating {{Vision Transformer Performance}}}
+      \field{title}{Elevating {{Vision Transformer Performance}}: {{The KAN-VIT Model}} for {{Image Recognition}}}
+      \field{urlday}{27}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2321\bibrangedash 2328}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/SWC62898.2024.00353
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/10925129
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/10925129
+      \endverb
+      \keyw{Analytical models,Computer vision,Flowering plants,Head,Image recognition,KAN,MLP,Multilayer perceptrons,Neural networks,Spline Function,Splines (mathematics),Transformers,VisionTransformer,Visualization}
+    \endentry
+    \entry{andreottiOpensourceFrameworkStresstesting2016}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=dbf7d97872a14e030d8e7b808dd416ea}{%
+           family={Andreotti},
+           familyi={A\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b200b53b12615f3cfbf1428bc37deb8b}{%
+           family={Behar},
+           familyi={B\bibinitperiod},
+           given={Joachim},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5d3c139f97526054ffc04c8846300c3b}{%
+           family={Zaunseder},
+           familyi={Z\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ca66474b5e2a51218e84c06cca1609aa}{%
+           family={Oster},
+           familyi={O\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b927e667e291a47a7437a9a8d631ed0e}{%
+           family={Clifford},
+           familyi={C\bibinitperiod},
+           given={Gari\bibnamedelima D},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{eff1fcc3135226e7b5ac4d12381004f3}
+      \strng{fullhash}{d3563884150829328bac2154f2ee740e}
+      \strng{fullhashraw}{d3563884150829328bac2154f2ee740e}
+      \strng{bibnamehash}{d3563884150829328bac2154f2ee740e}
+      \strng{authorbibnamehash}{d3563884150829328bac2154f2ee740e}
+      \strng{authornamehash}{eff1fcc3135226e7b5ac4d12381004f3}
+      \strng{authorfullhash}{d3563884150829328bac2154f2ee740e}
+      \strng{authorfullhashraw}{d3563884150829328bac2154f2ee740e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0967-3334, 1361-6579}
+      \field{journaltitle}{Physiological Measurement}
+      \field{month}{5}
+      \field{number}{5}
+      \field{title}{An Open-Source Framework for Stress-Testing Non-Invasive Foetal {{ECG}} Extraction Algorithms}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{37}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{627\bibrangedash 648}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1088/0967-3334/37/5/627
+      \endverb
+      \verb{urlraw}
+      \verb https://iopscience.iop.org/article/10.1088/0967-3334/37/5/627
+      \endverb
+      \verb{url}
+      \verb https://iopscience.iop.org/article/10.1088/0967-3334/37/5/627
+      \endverb
+    \endentry
+    \entry{beharNoninvasiveFECGExtraction2013}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=b200b53b12615f3cfbf1428bc37deb8b}{%
+           family={Behar},
+           familyi={B\bibinitperiod},
+           given={Joachim},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ca66474b5e2a51218e84c06cca1609aa}{%
+           family={Oster},
+           familyi={O\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b927e667e291a47a7437a9a8d631ed0e}{%
+           family={Clifford},
+           familyi={C\bibinitperiod},
+           given={Gari\bibnamedelima D},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f357aa373c1bf74cd782985c4a66132a}
+      \strng{fullhash}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \strng{fullhashraw}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \strng{bibnamehash}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \strng{authorbibnamehash}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \strng{authornamehash}{f357aa373c1bf74cd782985c4a66132a}
+      \strng{authorfullhash}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \strng{authorfullhashraw}{a4896f467eaeaf16b865d22cf3e8b69e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Introduction: Despite significant advances in adult clinical electrocardiography (ECG) signal processing techniques and the power of digital processors, the analysis of non-invasive foetal ECG (NI-FECG) is still in its infancy. The PhysioNet/Computing in Cardiology Challenge 2013 addresses some of these limitations by making publicly available a set of FECG data to the scientific community for evaluation of signal processing techniques. Methods: ECGs were first preprocessed by cascading a low pass and a high pass filter in order to remove higher frequency and baseline wander. A Notch filter to remove power interferences at 50Hz or 60Hz was applied if required. The signals were then normalised before applying various source separation techniques to cancel the maternal ECG. These techniques included: template subtraction, principal/independent component analysis, extended Kalman filter and a combination of a subset of these methods (FUSE method). FQRS detection was performed on all residuals using a Pan and Tompkins QRS detector and the channel with the smoothest FHR time series was selected. Results: The FUSE algorithm performed better than all the individual methods on the training set data. On the validation set, best Challenge scores obtained were E4=29.6. E5=4.67 for events 4-5 respectively using the FUSE method.}
+      \field{booktitle}{Computing in {{Cardiology}} 2013}
+      \field{issn}{2325-8853}
+      \field{month}{9}
+      \field{title}{Non-Invasive {{FECG}} Extraction from a Set of Abdominal Sensors}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{297\bibrangedash 300}
+      \range{pages}{4}
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/abstract/document/6712470
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/abstract/document/6712470
+      \endverb
+      \keyw{Electrocardiography,Fetal heart rate,Fuses,Source separation,Time series analysis}
+    \endentry
+    \entry{hatamizadehUNETRTransformers3D2021}{misc}{}{}
+      \name{author}{8}{}{%
+        {{hash=4a8b0d75ef5dd9aff244bd459eb56921}{%
+           family={Hatamizadeh},
+           familyi={H\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+        {{hash=caeb0e5523b56ad22085585d7f65afa4}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Yucheng},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d0968ce3719368d26817f02301e44c29}{%
+           family={Nath},
+           familyi={N\bibinitperiod},
+           given={Vishwesh},
+           giveni={V\bibinitperiod}}}%
+        {{hash=43bfecf0db835905ffe98dadaa0b057f}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Dong},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c4dd0f2ee007b795cefdfd28a46af79f}{%
+           family={Myronenko},
+           familyi={M\bibinitperiod},
+           given={Andriy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d074e703f5720bb6657ce078797d7f0d}{%
+           family={Landman},
+           familyi={L\bibinitperiod},
+           given={Bennett},
+           giveni={B\bibinitperiod}}}%
+        {{hash=930b2a18b29ddf8edf110e14b3428bfc}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={Holger},
+           giveni={H\bibinitperiod}}}%
+        {{hash=40c221ac11c898cb10013b2468fc229b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Daguang},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
+      \strng{fullhash}{9d62965442e88de4d80c68fbcb73bced}
+      \strng{fullhashraw}{9d62965442e88de4d80c68fbcb73bced}
+      \strng{bibnamehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
+      \strng{authorbibnamehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
+      \strng{authornamehash}{4e0e6478f86fbf44f0fdf0c69f65846f}
+      \strng{authorfullhash}{9d62965442e88de4d80c68fbcb73bced}
+      \strng{authorfullhashraw}{9d62965442e88de4d80c68fbcb73bced}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Fully Convolutional Neural Networks (FCNNs) with contracting and expanding paths have shown prominence for the majority of medical image segmentation applications since the past decade. In FCNNs, the encoder plays an integral role by learning both global and local features and contextual representations which can be utilized for semantic output prediction by the decoder. Despite their success, the locality of convolutional layers in FCNNs, limits the capability of learning long-range spatial dependencies. Inspired by the recent success of transformers for Natural Language Processing (NLP) in long-range sequence learning, we reformulate the task of volumetric (3D) medical image segmentation as a sequence-to-sequence prediction problem. We introduce a novel architecture, dubbed as UNEt TRansformers (UNETR), that utilizes a transformer as the encoder to learn sequence representations of the input volume and effectively capture the global multi-scale information, while also following the successful “U-shaped” network design for the encoder and decoder. The transformer encoder is directly connected to a decoder via skip connections at different resolutions to compute the final semantic segmentation output. We have validated the performance of our method on the Multi Atlas Labeling Beyond The Cranial Vault (BTCV) dataset for multiorgan segmentation and the Medical Segmentation Decathlon (MSD) dataset for brain tumor and spleen segmentation tasks. Our benchmarks demonstrate new state-of-the-art performance on the BTCV leaderboard.}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{shorttitle}{{{UNETR}}}
+      \field{title}{{{UNETR}}: {{Transformers}} for {{3D Medical Image Segmentation}}}
+      \field{urlday}{27}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2103.10504
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2103.10504
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2103.10504
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Electrical Engineering and Systems Science - Image and Video Processing}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
