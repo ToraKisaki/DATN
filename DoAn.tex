@@ -15,6 +15,7 @@
 \usepackage{amsbsy} % Hỗ trợ các kí hiệu in đậm
 \usepackage{times} % Chọn font Time New Romans
 \usepackage{array} % Tạo bảng array
+\usepackage{longtable} % Bảng dài tự ngắt trang (dùng cho danh mục từ viết tắt)
 \usepackage{enumitem} % Tùy biến list (\setlist, ...)
 
 \setlist[itemize]{leftmargin=0pt,labelsep=0.6em,align=left}
@@ -50,8 +51,10 @@
 % package content table
 \usepackage{tocbasic}
 
-\usepackage{ulem}
+\usepackage[normalem]{ulem} % normalem: giữ \emph in nghiêng (không để ulem biến thành gạch chân); \uline/\dotuline vẫn dùng được
 \usepackage{blindtext}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, fit, backgrounds, calc}
 % (multirow + xcolor[table] đã được nạp ở trên, dòng 30-31)
 % ===================================================
  
@@ -68,9 +71,26 @@
 
 \addbibresource{\subfix{datn.bib}} % chèn file chứa danh mục tài liệu tham khảo vào
 
+% Co giãn thêm để dòng dài (tên quyển/tạp chí) tự xuống dòng, không tràn lề
+\setlength{\emergencystretch}{3em}
+% Cho phép URL/DOI tự ngắt dòng (giữ link nhưng không tràn lề phải)
+\setcounter{biburlnumpenalty}{7000}   % ngắt được tại chữ số
+\setcounter{biburlucpenalty}{7000}    % ngắt được tại chữ HOA
+\setcounter{biburllcpenalty}{7000}    % ngắt được tại chữ thường
+
+% --- Chính sách hiển thị link trong danh mục tham khảo ---
+% Luôn bỏ ngày truy cập; giữ DOI. Bỏ URL nếu đã có DOI hoặc arXiv (eprint);
+% nhưng GIỮ URL khi đó là cách duy nhất để tra cứu (vd. GitHub, phần mềm, trang web).
+\AtEveryBibitem{%
+  \clearfield{urlyear}\clearfield{urlmonth}\clearfield{urlday}% bỏ "Accessed: ..."
+  \ifboolexpr{ test {\iffieldundef{doi}} and test {\iffieldundef{eprint}} }
+    {}% không có DOI lẫn eprint -> GIỮ link (GitHub/online-only)
+    {\clearfield{url}}% có DOI hoặc eprint -> bỏ link
+}
+
 %\include{lstlisting} % Phần này cho phép chèn code và formatting code như C, C++, Python
 
-\input{Tu_viet_tat}
+\makenoidxglossaries % (danh mục từ viết tắt nay là bảng trong Tu_viet_tat.tex, in ở phần đầu quyển)
 
 % ===================================================
 
@@ -142,6 +162,7 @@
 % ===================================================
 \usepackage{hyperref}
 \hypersetup{pdfborder = {0 0 0}} %
+\hypersetup{breaklinks=true} % Cho phép link (vd. tựa bài được gắn link) ngắt dòng, không tràn lề
 \hypersetup{pdftitle={\TITLE},
 pdfauthor={\AUTHOR}}
 
@@ -185,9 +206,9 @@ pdfauthor={\AUTHOR}}
 %\newpage
 %\subfile{chapters/0_1_subject.tex}
 
-% \newpage
-% \pagenumbering{gobble}
-% \subfile{Chuong/0_2_Loi_cam_on.tex}
+\newpage
+\pagenumbering{gobble}
+\subfile{Chuong/0_2_Loi_cam_on.tex}
 
 \newpage
 \pagenumbering{gobble}
@@ -254,10 +275,8 @@ CHƯƠNG \thecontentslabel.\ }}
 \renewcommand*{\entryname}{Thuật ngữ}
 \renewcommand*{\descriptionname}{Ý nghĩa}
 
-% \newpage
-% \chapter*{BẢNG TỪ VIẾT TẮT}
-% \phantomsection
-% \subfile{Chuong/0_5_Danh_muc_viet_tat.tex}
+\newpage
+\input{Tu_viet_tat} % Bảng DANH MỤC TỪ VIẾT TẮT
 
 %\printnoidxglossaries
 %\phantomsection\addcontentsline{toc}{section}{\numberline {} DANH MỤC THUẬT NGỮ VÀ TỪ VIẾT TẮT}

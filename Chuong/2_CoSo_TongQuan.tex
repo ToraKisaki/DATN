@@ -298,13 +298,13 @@ Autoencoder (AE) và các biến thể encoder--decoder là lựa chọn tự nh
 % =====================================================================
 \section{Nhận xét, khoảng trống nghiên cứu và định vị đề tài}
 \label{sec:gap_positioning}
-% TODO: viết thành văn xuôi (gạch đầu dòng định hướng) — phần "ăn điểm" định vị đóng góp
-\begin{itemize}
-  \item Tổng kết ưu/nhược: cổ điển phụ thuộc tiền xử lý + giả định mô hình; học sâu mạnh hơn nhưng nặng/khó huấn luyện.
-  \item \textbf{W-NETR là SOTA hiện tại} cho tách fECG dạng sóng (hai nhánh UNETR + khử đặc trưng mECG).
-  \item \textbf{Khoảng trống:} khối MLP-FFN trong Transformer dùng kích hoạt phi tuyến cố định $\Rightarrow$ hạn chế biểu diễn/bảo toàn hình thái.
-  \item \textbf{Định vị đề tài:} thay MLP-FFN bằng KAN (kích hoạt học được theo spline) $\Rightarrow$ động lực cho mô hình đề xuất ở Chương~\ref{chapter:Proposed}.
-\end{itemize}
+Từ tổng quan các hướng tiếp cận ở trên có thể rút ra một bức tranh hai cực rõ rệt. Nhóm phương pháp \textbf{cổ điển} (lọc thích nghi, tách nguồn mù như ICA/PCA, mẫu trừ, lọc Kalman) có ưu điểm nhẹ về tính toán, dễ diễn giải và không đòi hỏi dữ liệu huấn luyện lớn; tuy nhiên chúng phụ thuộc nặng vào bước tiền xử lý và các giả định mô hình (số kênh, tính độc lập thống kê, tính dừng của tín hiệu), nên thường suy giảm mạnh khi SNR thấp, khi chỉ có một kênh bụng, hoặc khi hình thái fECG biến thiên theo đối tượng. Ngược lại, nhóm \textbf{học sâu} (CNN, hybrid CNN--RNN, mô hình sinh GAN/CycleGAN, và họ Autoencoder/U-Net) học trực tiếp ánh xạ từ tín hiệu bụng sang fECG nên mạnh hơn rõ rệt về khả năng khử nhiễu và bảo toàn hình thái, nhưng đổi lại đòi hỏi dữ liệu lớn, chi phí huấn luyện/suy luận cao và khó ổn định hơn.
+
+Trong nhóm học sâu hướng tới khôi phục \emph{dạng sóng} fECG (chứ không chỉ phát hiện đỉnh fQRS), kiến trúc \textbf{W-NETR}~\cite{almadaniOneDimensionalWNETRNonInvasive2023} hiện là phương pháp tiên tiến nhất (SOTA). W-NETR phối hợp hai nhánh UNETR 1D chạy song song cùng cơ chế khử đặc trưng mECG ngay trong không gian latent: nhờ self-attention của Transformer encoder, mô hình nắm bắt được phụ thuộc xa giữa các đoạn tín hiệu, còn việc trừ đặc trưng nhánh mECG khỏi nhánh fECG giúp loại bỏ thành phần mẹ một cách có cấu trúc. Kết quả là W-NETR đạt chất lượng tái tạo và phát hiện fQRS vượt trội so với các phương pháp trước đó trên cả dữ liệu mô phỏng lẫn dữ liệu thực.
+
+Tuy vậy, vẫn tồn tại một \textbf{khoảng trống} đáng chú ý trong chính kiến trúc này. Khối MLP/FFN bên trong mỗi Transformer encoder block --- bộ phận đảm nhiệm toàn bộ biến đổi phi tuyến \emph{theo từng token} sau khi attention đã trộn thông tin --- vẫn sử dụng hai phép chiếu tuyến tính xen kẽ một hàm kích hoạt \emph{cố định} (GELU/ReLU). Với tín hiệu sinh học có dạng phi tuyến phức tạp, biên độ thay đổi theo đối tượng và nhiều artifact cục bộ, một hàm kích hoạt cố định hạn chế năng lực biểu diễn và khả năng bảo toàn hình thái sóng P/QRS/T. Đây chính là điểm có thể cải thiện mà các công trình trước chưa khai thác.
+
+Từ nhận định trên, \textbf{đề tài định vị đóng góp} ở việc thay khối MLP/FFN cố định bằng \textbf{Kolmogorov--Arnold Network (KAN)} --- nơi hàm kích hoạt được \emph{học} trực tiếp trên từng cạnh thông qua các hàm cơ sở (spline/RBF) --- trong khi giữ nguyên macro-architecture chữ W và cơ chế self-attention của W-NETR. Giả thuyết là phi tuyến học được sẽ nâng cao năng lực biểu diễn theo token và cải thiện bảo toàn hình thái mà không phá vỡ khả năng học phụ thuộc xa của mô hình. Mô hình đề xuất theo hướng này, cùng dữ liệu và thiết lập thực nghiệm, được trình bày chi tiết ở Chương~\ref{chapter:Proposed}.
 
 % =====================================================================
 \section{Kết luận chương}

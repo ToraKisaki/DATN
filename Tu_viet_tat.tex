@@ -1,34 +1,60 @@
-%\makeglossaries
-\makenoidxglossaries
+% =====================================================================
+% DANH MỤC TỪ VIẾT TẮT  (bảng — in ở phần đầu quyển)
+% =====================================================================
+\chapter*{DANH MỤC TỪ VIẾT TẮT}
+\addcontentsline{toc}{chapter}{DANH MỤC TỪ VIẾT TẮT}
 
-% Danh mục thuật ngữ và từ viết tắt
-\newglossaryentry{iaas}{
-    type=\acronymtype,
-    name={IaaS},
-    description={Dịch vụ hạ tầng},
-    first={Dịch vụ hạ tầng (Infrastructure  as  a  Service - IaaS)}
-}
-\newglossaryentry{API}{
-    type=\acronymtype,
-    name={API},
-    description={Giao diện lập trình ứng dụng (Application Programming Interface)},
-    first={API}
-}
-\newglossaryentry{EUD}{
-    type=\acronymtype,
-    name={EUD},
-    description={Phát triển ứng dụng người dùng cuối(End-User Development)},
-    first={End-User Development}
-}
-\newglossaryentry{GWT}{
-    type=\acronymtype,
-    name={GWT},
-    description={Công cụ lập trình Javascript bằng Java của Google (Google Web Toolkit)},
-    first={Công cụ lập trình Javascript bằng Java của Google (Google Web Toolkit}
-}
-\newglossaryentry{HTML}{
-    type=\acronymtype,
-    name={HTML},
-    description={Ngôn ngữ đánh dấu siêu văn bản (HyperText Markup Language)},
-    first={Dịch vụ hạ tầng (Infrastructure  as  a  Service - IaaS)}
-}
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{longtable}{p{2.3cm} p{5.5cm} p{6.2cm}}
+\hline
+\textbf{Viết tắt} & \textbf{Thuật ngữ tiếng Anh} & \textbf{Diễn giải} \\
+\hline
+\endfirsthead
+\multicolumn{3}{l}{\textit{(tiếp theo trang trước)}} \\
+\hline
+\textbf{Viết tắt} & \textbf{Thuật ngữ tiếng Anh} & \textbf{Diễn giải} \\
+\hline
+\endhead
+\hline
+\multicolumn{3}{r}{\textit{(tiếp trang sau)}} \\
+\endfoot
+\hline
+\endlastfoot
+ADC        & Analog-to-Digital Converter            & Bộ chuyển đổi tương tự--số (khối thu ADS1293) \\
+ADFECGDB   & Abdominal and Direct Fetal ECG Database & Bộ dữ liệu ECG thai bụng và trực tiếp \\
+CNN        & Convolutional Neural Network            & Mạng nơ-ron tích chập \\
+ECG        & Electrocardiogram                       & Điện tâm đồ \\
+fECG       & Fetal Electrocardiogram                 & Điện tâm đồ thai nhi \\
+FECGSYNDB  & Fetal ECG Synthetic Database            & Bộ dữ liệu ECG thai mô phỏng \\
+FFN        & Feed-Forward Network                    & Mạng truyền thẳng (trong Transformer) \\
+FHR        & Fetal Heart Rate                        & Nhịp tim thai \\
+FP32       & 32-bit Floating Point                   & Số thực dấu phẩy động 32 bit \\
+fQRS       & Fetal QRS complex                       & Phức bộ QRS của thai \\
+GELU       & Gaussian Error Linear Unit              & Hàm kích hoạt GELU \\
+INT8       & 8-bit Integer                           & Số nguyên 8 bit (lượng tử hóa) \\
+KAN        & Kolmogorov--Arnold Network              & Mạng Kolmogorov--Arnold \\
+LN         & Layer Normalization                     & Chuẩn hóa theo lớp \\
+maECG      & Maternal Abdominal ECG                  & ECG đo tại bụng mẹ \\
+MAE        & Mean Absolute Error                     & Sai số tuyệt đối trung bình \\
+mECG       & Maternal Electrocardiogram              & Điện tâm đồ của mẹ \\
+MHR        & Maternal Heart Rate                     & Nhịp tim mẹ \\
+MLP        & Multilayer Perceptron                   & Perceptron đa lớp \\
+MSA        & Multi-Head Self-Attention               & Cơ chế tự chú ý đa đầu \\
+NI-FECG    & Non-Invasive Fetal ECG                  & Điện tâm đồ thai không xâm lấn \\
+ONNX       & Open Neural Network Exchange            & Định dạng trao đổi mô hình nơ-ron mở \\
+PCDB       & PhysioNet/CinC Challenge 2013 Database  & Bộ dữ liệu thử thách PhysioNet/CinC 2013 \\
+PSNR       & Peak Signal-to-Noise Ratio              & Tỷ số tín hiệu trên nhiễu đỉnh \\
+QRS        & QRS complex                             & Phức bộ QRS \\
+RBF        & Radial Basis Function                   & Hàm cơ sở bán kính (trong FasterKAN) \\
+SiLU       & Sigmoid Linear Unit                     & Hàm kích hoạt SiLU \\
+SNR        & Signal-to-Noise Ratio                   & Tỷ số tín hiệu trên nhiễu \\
+SOTA       & State-of-the-Art                        & Tiên tiến nhất hiện nay \\
+SPI        & Serial Peripheral Interface             & Giao tiếp ngoại vi nối tiếp \\
+SSIM       & Structural Similarity Index Measure     & Chỉ số tương đồng cấu trúc \\
+UNETR      & UNet Transformer                        & Kiến trúc UNet kết hợp Transformer \\
+ViT        & Vision Transformer                      & Transformer cho thị giác \\
+W-NETR     & W-NET Transformers                      & Kiến trúc W-NET dùng Transformer \\
+\end{longtable}
+\end{center}
+\renewcommand{\arraystretch}{1.0}

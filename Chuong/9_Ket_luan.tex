@@ -12,38 +12,21 @@ Trong đồ án này, chúng tôi nghiên cứu bài toán trích xuất điện
 
 Thực nghiệm trên bộ dữ liệu tổng hợp FECGSYNDB với nhiều ngữ cảnh sinh lý/nhiễu (C0--C5) và các mức SNR khác nhau cho thấy mô hình có khả năng tái tạo tín hiệu fECG ổn định. Về chất lượng dạng sóng, KAN-WNETR đạt \textbf{SSIM tổng 0.966}, nhỉnh hơn kết quả báo cáo của W-NETR (0.960), đồng thời thể hiện mức cải thiện rõ ở các kịch bản nhiễu phức tạp. Về phát hiện đỉnh R của fECG, mô hình đạt \textbf{Recall 97.53\%}, \textbf{Precision 97.94\%} và \textbf{F1 97.73\%}, phản ánh sự cân bằng tốt giữa giảm bỏ sót và giảm báo sai trong môi trường nhiễu.
 
-% TODO: bổ sung 1-2 câu đối chiếu trực tiếp với 3 mục tiêu ở Chương 1 (gạch đầu dòng):
-\begin{itemize}
-  \item Mục tiêu 1 (mô hình KAN-WNETR): đã đạt — nêu kết quả SSIM/F1.
-  \item Mục tiêu 2 (triển khai biên thời gian thực): đã đạt — INT8 trên Pi 5, $\sim$8--12$\times$ thời gian thực.
-  \item Mục tiêu 3 (hệ thống theo dõi): đã đạt — thiết bị + server + dashboard lâm sàng (Chương~\ref{chapter:System}).
-\end{itemize}
+Đối chiếu trực tiếp với ba mục tiêu đặt ra ở Chương~\ref{chapter:Introduction}, đề tài đã hoàn thành cả ba. Mục tiêu thứ nhất --- xây dựng mô hình trích xuất fECG dựa trên KAN --- được thỏa mãn với KAN-WNETR đạt SSIM tổng $0{,}966$ và F1 $97{,}73\%$, vượt hoặc tương đương phương pháp tiên tiến. Mục tiêu thứ hai --- triển khai mô hình trên thiết bị biên theo thời gian thực --- được thỏa mãn nhờ phiên bản ONNX INT8 chỉ $\sim$$29$~MB chạy nhanh hơn thời gian thực $8$--$12$ lần trên Raspberry Pi~5. Mục tiêu thứ ba --- hiện thực hóa thành một hệ thống theo dõi hoàn chỉnh --- được thỏa mãn với chuỗi thiết bị thu nhận, máy chủ phân tích và dashboard lâm sàng đã được trình bày ở Chương~\ref{chapter:System}.
 
 % ---------------------------------------------------------------------
 \section{Hạn chế}
-% TODO: viết thành văn xuôi (giữ nội dung cũ, gạch đầu dòng định hướng)
-\begin{itemize}
-  \item Kết quả chủ yếu kiểm chứng trên dữ liệu mô phỏng (chưa có dữ liệu lâm sàng thực).
-  \item Hiệu năng phát hiện fQRS còn khoảng cách so với trần SOTA (W-NETR) ở một số thiết lập.
-  \item Chất lượng tín hiệu tụt sau lượng tử hoá INT8 so với FP32.
-  \item Ablation MLP-FFN vs KAN-FFN cần được hoàn tất để định lượng riêng đóng góp của KAN.
-\end{itemize}
+
+Mặc dù đạt được các mục tiêu đề ra, đề tài vẫn còn một số hạn chế cần được nhìn nhận. Trước hết, phần lớn kết quả định lượng được kiểm chứng trên bộ dữ liệu mô phỏng FECGSYNDB và một lượng hạn chế dữ liệu thực (ADFECGDB, PCDB); hệ thống chưa được thử nghiệm lâm sàng có kiểm soát trên sản phụ, nên các con số nên được hiểu là bằng chứng về tiềm năng phương pháp hơn là kết luận y khoa. Thứ hai, ở khía cạnh phát hiện phức bộ fQRS, hiệu năng của mô hình vẫn còn một khoảng cách so với trần SOTA của W-NETR gốc ở một số thiết lập; lợi thế của KAN-WNETR nghiêng về bảo toàn hình thái nhiều hơn. Thứ ba, phiên bản triển khai INT8 chịu một mức suy giảm chất lượng nhất định so với mô hình FP32 do sai số lượng tử hóa. Cuối cùng, đóng góp riêng của khối KAN so với MLP/FFN tuy đã được lập luận về mặt phương pháp nhưng cần được củng cố thêm bằng nghiên cứu loại bỏ (ablation) trong cùng một cấu hình để định lượng tách bạch.
 
 % ---------------------------------------------------------------------
 \section{Hướng phát triển}
-% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
-\begin{itemize}
-  \item Thu \textbf{dữ liệu lâm sàng thực} (chính bộ thu ADS1293 của đề tài có thể đảm nhiệm).
-  \item Mở rộng đa kênh; ablation sâu hơn; quantization-aware training (QAT) để thu hẹp khoảng cách FP32$\leftrightarrow$INT8.
-  \item Tối ưu chiến lược huấn luyện/loss và hậu xử lý peak-picking.
-  \item Tiến tới chuẩn thiết bị y tế.
-\end{itemize}
+
+Từ các hạn chế trên, đề tài mở ra một số hướng phát triển tiếp theo. Hướng quan trọng nhất là \textbf{thu thập dữ liệu lâm sàng thực} --- chính bộ thu nhận dựa trên ADS1293 đã xây dựng trong đề tài có thể đảm nhiệm việc này --- nhằm tinh chỉnh và đánh giá mô hình trên tín hiệu thật, tiến tới kiểm chứng trên sản phụ. Song song, có thể mở rộng mô hình sang xử lý đa kênh để tận dụng thông tin không gian giữa các điện cực, đồng thời hoàn thiện nghiên cứu loại bỏ (ablation) giữa MLP/FFN và KAN-FFN để định lượng rõ đóng góp của KAN. Về phía triển khai, áp dụng huấn luyện có nhận biết lượng tử hóa (quantization-aware training) hứa hẹn thu hẹp khoảng cách chất lượng giữa FP32 và INT8. Ngoài ra, việc tinh chỉnh chiến lược huấn luyện, hàm mất mát và bước hậu xử lý chọn đỉnh (peak-picking) có thể tiếp tục cải thiện độ chính xác phát hiện fQRS. Về lâu dài, hệ thống cần được hoàn thiện theo các tiêu chuẩn của thiết bị y tế để có thể đưa vào sử dụng thực tế.
 
 % ---------------------------------------------------------------------
 \section{Bài học kinh nghiệm}
-% TODO: viết thành văn xuôi (gạch đầu dòng định hướng)
-\begin{itemize}
-  \item Kinh nghiệm về quy trình nghiên cứu, thực nghiệm có đối chứng và triển khai biên.
-\end{itemize}
+
+Quá trình thực hiện đề tài để lại nhiều bài học giá trị. Về mặt nghiên cứu, việc can thiệp có chủ đích vào đúng một thành phần của kiến trúc (khối MLP/FFN) thay vì thay đổi toàn bộ mô hình cho thấy tầm quan trọng của việc hiểu rõ vai trò từng bộ phận trước khi cải tiến, đồng thời giúp việc đánh giá đóng góp trở nên tách bạch hơn. Về thực nghiệm, thói quen so sánh có đối chứng với phương pháp SOTA trên cùng bộ dữ liệu và cùng tiêu chí là điều kiện cần để các kết luận có sức thuyết phục. Cuối cùng, việc đưa một mô hình từ môi trường nghiên cứu xuống thiết bị biên cho thấy độ chính xác chỉ là một phần của bài toán: các ràng buộc thực tế về kích thước mô hình, độ trễ, tài nguyên phần cứng và độ tin cậy của toàn hệ thống mới là yếu tố quyết định khả năng ứng dụng.
 
 \end{document}
